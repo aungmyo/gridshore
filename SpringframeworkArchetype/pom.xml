@@ -1,0 +1,18 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.gridshore.samples.archetype</groupId>
+  <artifactId>SpringframeworkArchetype</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Archetype - SpringframeworkArchetype</name>
+  <url>http://maven.apache.org</url>
+  <description>This is an archetype that creates a web application with some additions. A web application with spring mvc and acegi security is created.</description>
+  <developers>
+      <developer>
+          <id>jettro.coenradie</id>
+          <name>Jettro Coenradie</name>
+          <email>jettro@gridshore.nl</email>
+          <url>http://www.gridshore.nl/blog</url>
+      </developer>
+  </developers>
+</project>

@@ -1,0 +1,18 @@
+<archetype>
+  <id>SpringframeworkArchetype</id>
+  <sources>
+    <source>src/main/java/App.java</source>
+  </sources>
+  <testSources>
+    <source>src/test/java/AppTest.java</source>
+  </testSources>
+  <resources>
+      <resource>src/main/webapp/index.jsp</resource>
+      <resource>src/main/webapp/WEB-INF/web.xml</resource>
+      <resource>src/main/webapp/WEB-INF/jsps/welcome.jsp</resource>
+      <resource>src/main/resources/action-servlet.xml</resource>
+      <resource>src/main/resources/views.properties</resource>
+      <resource>src/main/resources/errormessages.properties</resource>
+      <resource>src/main/resources/sitetext.properties</resource>
+  </resources>
+</archetype>

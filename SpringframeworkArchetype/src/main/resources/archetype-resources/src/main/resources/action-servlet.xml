@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+<beans>
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+        <property name="alwaysUseFullPath" value="true" />
+    </bean>
+    
+    <bean id="welcome" name="/welcome.html" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="welcome"/>
+    </bean>
+    
+    <!--
+    Down here you will find everything related to the views:
+    - specialViewResolver is used if you want something else than the JstlView; rss, pdf and ajax related stuff
+    -->
+    <bean id="specialViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename"><value>views</value></property>
+        <property name="order" value="1"/>
+    </bean>
+    
+    <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsps/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    
+    <bean id="messageSource"
+        class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>errormessages</value>
+                <value>sitetext</value>
+            </list>
+        </property>
+    </bean>
+    
+    <bean id="exceptionResolver"
+        class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="defaultErrorView" value="error" />
+        <property name="defaultStatusCode" value="500" />
+        <property name="exceptionAttribute" value="exception" />
+    </bean>
+    
+</beans>

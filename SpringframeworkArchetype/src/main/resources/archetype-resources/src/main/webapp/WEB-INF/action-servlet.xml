@@ -1,12 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
 <beans>
-    <bean id="urlMapping" class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
-        <property name="alwaysUseFullPath" value="true" />
+    <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <props>
+                <prop key="/welcome.html">welcomeController</prop>
+                <prop key="/login.html">loginController</prop>
+                <prop key="/loginerror.html">loginErrorController</prop>
+                <prop key="/accessdenied.html">accessDeniedController</prop>
+                
+                <prop key="/admin/welcome.html">adminWelcomeController</prop>
+            </props>
+        </property>
     </bean>
     
-    <bean id="welcome" name="/welcome.html" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+    <!-- Controllers -->
+    <bean id="welcomeController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
         <property name="viewName" value="welcome"/>
+    </bean>
+    
+    <bean id="loginController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="login"/>
+    </bean>
+    
+    <bean id="loginErrorController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="loginerror"/>
+    </bean>
+    
+    <bean id="accessDeniedController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="accessdenied"/>
+    </bean>
+    
+    <bean id="adminWelcomeController" class="org.springframework.web.servlet.mvc.ParameterizableViewController">
+        <property name="viewName" value="adminwelcome"/>
     </bean>
     
     <!--

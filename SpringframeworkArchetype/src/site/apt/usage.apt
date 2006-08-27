@@ -1,0 +1,18 @@
+ ------
+ Usage of Springframework Archetype
+ ------
+ Jettro Coenradie
+ ------
+ 27 August 2006
+ ------
+
+Usage
+
+ This is just a standard archetype that can be used as a standard archetype. You can use this command:
+ 
+ mvn archetype:create 
+	-DgroupId=nl.gridshore.sampleproject 
+	-DartifactId=sampleproject 
+	-DarchetypeGroupId=nl.gridshore.samples.archetype 
+	-DarchetypeArtifactId=SpringframeworkArchetype 
+	-DarchetypeVersion=1.0

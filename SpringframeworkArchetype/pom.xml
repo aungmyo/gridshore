@@ -35,4 +35,21 @@
         <url>http://www.gridshore.nl/blog</url>
     </developer>
   </developers>
+  <distributionManagement>
+    <site>
+        <id>coenradiecom</id>
+        <name>Springframework Archetype</name>
+        <!-- url>ftp://ftp.coenradie.com/HTMLWIKI/projects/springframeworkarchetype</url -->
+        <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/projects/springframeworkarchetype</url>
+    </site>
+  </distributionManagement>
+  <build>
+      <extensions>
+          <extension>
+              <groupId>org.apache.maven.wagon</groupId>
+              <artifactId>wagon-ftp</artifactId>
+              <version>1.0-alpha-6</version>
+          </extension>
+      </extensions>
+  </build>
 </project>

@@ -1,4 +1,4 @@
-package $nl.gridshore.samples.archetype.springframework;
+package $groupId;
 
 /**
  * Hello world!

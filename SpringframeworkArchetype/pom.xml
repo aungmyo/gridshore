@@ -39,7 +39,6 @@
     <site>
         <id>coenradiecom</id>
         <name>Springframework Archetype</name>
-        <!-- url>ftp://ftp.coenradie.com/HTMLWIKI/projects/springframeworkarchetype</url -->
         <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/projects/springframeworkarchetype</url>
     </site>
   </distributionManagement>

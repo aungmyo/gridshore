@@ -1,4 +1,4 @@
-package $nl.gridshore.samples.archetype.springframework;
+package $groupId;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

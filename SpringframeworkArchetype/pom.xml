@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.gridshore.samples.archetype</groupId>
   <artifactId>SpringframeworkArchetype</artifactId>
-  <version>1.1-SNAPSHOT</version>
+  <version>1.1</version>
   <name>Archetype - SpringframeworkArchetype</name>
   <url>http://code.google.com/p/gridshore/</url>
   <description>
@@ -16,9 +16,9 @@
     <url>http://code.google.com/p/gridshore/issues/list</url>
   </issueManagement>
   <scm>
-    <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</connection>
-    <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</developerConnection>
-    <url>http://gridshore.googlecode.com/svn/</url>
+    <connection>scm:svn:https://gridshore.googlecode.com/svn/tags/SpringframeworkArchetype-1.1</connection>
+    <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/tags/SpringframeworkArchetype-1.1</developerConnection>
+    <url>http://gridshore.googlecode.com/svn/tags/SpringframeworkArchetype-1.1</url>
   </scm>
   <developers>
     <developer>

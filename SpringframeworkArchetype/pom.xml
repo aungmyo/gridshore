@@ -16,9 +16,9 @@
     <url>http://code.google.com/p/gridshore/issues/list</url>
   </issueManagement>
   <scm>
-      <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</connection>
-      <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</developerConnection>
-      <url>http://gridshore.googlecode.com/svn/</url>
+    <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</connection>
+    <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/SpringframeworkArchetype/</developerConnection>
+    <url>http://gridshore.googlecode.com/svn/</url>
   </scm>
   <developers>
     <developer>
@@ -29,6 +29,11 @@
     </developer>
   </developers>
   <distributionManagement>
+    <repository>
+        <id>gridshore</id>
+        <name>Gridshore</name>
+        <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/repository/nl/gridshore/samples/archetype/springframeworkarchetype</url>  
+    </repository>
     <site>
         <id>coenradiecom</id>
         <name>Springframework Archetype</name>
@@ -36,12 +41,12 @@
     </site>
   </distributionManagement>
   <build>
-      <extensions>
-          <extension>
-              <groupId>org.apache.maven.wagon</groupId>
-              <artifactId>wagon-ftp</artifactId>
-              <version>1.0-alpha-6</version>
-          </extension>
-      </extensions>
+    <extensions>
+        <extension>
+            <groupId>org.apache.maven.wagon</groupId>
+            <artifactId>wagon-ftp</artifactId>
+            <version>1.0-alpha-6</version>
+        </extension>
+    </extensions>
   </build>
 </project>

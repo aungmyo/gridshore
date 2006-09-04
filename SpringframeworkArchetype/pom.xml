@@ -30,7 +30,7 @@
   </developers>
   <distributionManagement>
     <repository>
-        <id>gridshore</id>
+        <id>coenradiecom</id>
         <name>Gridshore</name>
         <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/repository</url>  
     </repository>

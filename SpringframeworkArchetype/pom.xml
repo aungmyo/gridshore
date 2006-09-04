@@ -32,7 +32,7 @@
     <repository>
         <id>gridshore</id>
         <name>Gridshore</name>
-        <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/repository/nl/gridshore/samples/archetype/springframeworkarchetype</url>  
+        <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/repository</url>  
     </repository>
     <site>
         <id>coenradiecom</id>

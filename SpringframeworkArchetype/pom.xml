@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>nl.gridshore.samples.archetype</groupId>
   <artifactId>SpringframeworkArchetype</artifactId>
-  <version>1.4-SNAPSHOT</version>
+  <version>1.4.1-SNAPSHOT</version>
   <name>Archetype - SpringframeworkArchetype</name>
   <url>http://code.google.com/p/gridshore/</url>
   <description>
@@ -28,6 +28,22 @@
         <url>http://www.gridshore.nl/blog</url>
     </developer>
   </developers>
+  <reporting>
+    <plugins>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>changes-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>changelog-maven-plugin</artifactId>
+        </plugin>
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>taglist-maven-plugin</artifactId>
+        </plugin>
+    </plugins>
+  </reporting>
   <distributionManagement>
     <repository>
         <id>coenradiecom</id>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.gridshore.samples.springosgi</groupId>
+  <artifactId>gridshore-sample-spring-osgi</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>The gridshore sample for spring osgi</name>
+  <url>http://www.gridshore.nl/pmwikinew/pmwiki.php?n=Osgi.Osgi</url>
+  <description>
+This is the sample application for the gridshore website making use of the spring-osgi project.
+  </description>
+
+  <!-- ============================================= -->
+  <!-- Basic configuration: JIRA, SCM, CI, devs etc. -->
+  <!-- ============================================= -->
+
+  <issueManagement/>
+
+  <ciManagement/>
+
+  <scm/>
+
+  <inceptionYear>2006</inceptionYear>
+
+  <organization>
+    <name>Gridshore</name>
+    <url>http://www.gridshore.nl</url>
+  </organization>
+
+  <developers>
+    <developer>
+      <id>jettro.coenradie</id>
+      <name>Jettro Coenradie</name>
+      <email>jettro at gridshore.nl</email>
+      <organization>Accenture Technology Solutions</organization>
+      <organizationUrl>http://www.accenturetechnologysolutions.nl</organizationUrl>
+      <roles>
+        <role>Project Admin</role>
+        <role>Developer</role>
+      </roles>
+      <timezone>1</timezone>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <comments>
+Copyright 2006 the original author or authors.
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+      </comments>
+    </license>
+  </licenses>
+
+  <!-- =================================================== -->
+  <!-- Project Modules, Dependencies, Plugins and Profiles -->
+  <!-- =================================================== -->
+
+  <!-- modules for Spring-OSGi -->
+  <modules> 
+    <module>bookreview-service</module>
+    <module>bookreview-service-integration-test</module>
+  </modules>
+
+  <!-- shared dependencies across modules -->
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.felix.plugins</groupId>
+        <artifactId>maven-osgi-plugin</artifactId>
+        <extensions>true</extensions>
+        <version>0.8.0-SNAPSHOT</version>
+        <configuration>
+          <manifestFile>META-INF/MANIFEST.MF</manifestFile>
+          <osgiManifest>
+            <bundleVendor>Spring Framework</bundleVendor>
+            <bundleDocUrl>
+              http://www.springframework.org/osgi
+            </bundleDocUrl>
+          </osgiManifest>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <systemProperties>
+            <property>
+              <name>org.springframework.osgi.test.framework</name>
+              <value>${osgi.test.platform}</value>
+            </property>
+            <!--
+            <property>
+              <name>org.osgi.vendor.framework</name>
+              <value>${org.osgi.vendor.framework}</value>
+            </property>
+            -->
+          </systemProperties>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+	      <groupId>org.apache.maven.plugins</groupId>
+          <configuration>
+            <source>1.4</source>
+            <target>1.4</target>
+          </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <configuration>
+          <descriptors>
+             <descriptor>src/assembly/bin.xml</descriptor>
+          </descriptors>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <!-- profiles for equinox, knoplerfish, and felix                 -->
+  <!-- to use these profiles invoke maven with -Pprofile-name, e.g. -->
+  <!-- mvn -Pfelix test -->
+  <profiles>
+    <profile>
+      <id>equinox</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>org.eclipse.osgi</groupId>
+          <artifactId>org.eclipse.osgi</artifactId>
+          <version>3.2.1</version>
+          <type>jar</type>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <osgi.test.platform>equinox</osgi.test.platform>
+        <log4j.ignoreTCL>true</log4j.ignoreTCL>
+      </properties>
+    </profile>
+    <profile>
+      <id>knopflerfish</id>
+      <dependencies>
+        <dependency>
+          <groupId>org.knopflerfish</groupId>
+          <artifactId>framework</artifactId>
+          <version>2.0.1.1</version>
+          <type>jar</type>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <osgi.test.platform>knopflerfish</osgi.test.platform>
+		<log4j.ignoreTCL>true</log4j.ignoreTCL>        
+      </properties>
+    </profile>
+    <profile>
+      <id>felix</id>
+      <dependencies>       
+        <dependency>
+          <groupId>org.apache.felix</groupId>
+          <artifactId>org.apache.felix.main</artifactId>
+          <version>0.8.0-incubator</version>
+          <type>jar</type>
+          <scope>provided</scope>
+        </dependency>
+      </dependencies>
+      <properties>
+        <osgi.test.platform>felix</osgi.test.platform>
+		<log4j.ignoreTCL>true</log4j.ignoreTCL>        
+        <!--
+		<org.osgi.vendor.framework>org.apache.felix.framework</org.osgi.vendor.framework>
+		-->
+      </properties>
+    </profile>
+  </profiles>
+
+  <!-- ======================================= -->
+  <!--          Website and reporting          -->
+  <!-- ======================================= -->
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <configuration>
+          <aggregate>true</aggregate>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <aggregate>true</aggregate>
+          <groups>
+            <group>
+              <title>Spring OSGi Core</title>
+              <packages>org.springframework.osgi*</packages>
+            </group>
+            <group>
+               <title>Spring OSGi JUnit Support</title>
+               <packages>org.springframework.osgi.test*</packages>
+            </group>
+            <group>
+               <title>Samples</title>
+               <packages>org.springframework.osgi.sample*</packages>
+            </group>
+          </groups>
+          <excludePackageNames>org.springframework.osgi.test.trivial*</excludePackageNames>
+          <links>
+            <link>http://java.sun.com/j2se/1.4.2/docs/api/</link>
+            <link>
+              http://static.springframework.org/spring/docs/2.0.x/api/
+            </link>
+          </links>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <distributionManagement/>
+
+  <!-- ================================================ -->
+  <!--            Repository Configuration              -->
+  <!-- ================================================ -->
+
+  <repositories>
+    <repository>    
+      <id>apache.m2.incubator</id>
+      <name>Apache M2 Incubator Repository</name>
+      <url>http://people.apache.org/repo/m2-incubating-repository/</url>
+    </repository>  
+    <repository>
+        <id>eclipse-repository</id>
+        <name>Eclipse Repository</name>
+        <url>http://repo1.maven.org/eclipse/</url>
+    </repository>
+    <repository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>apache-snapshots</id>
+      <name>Apache Snapshots</name>
+      <url>http://cvs.apache.org/maven-snapshot-repository</url>
+    </repository>
+    <repository>
+      <id>safehaus-repository</id>
+      <name>Safehaus Repository</name>
+      <url>http://m2.safehaus.org</url>
+    </repository>
+    <repository>
+      <id>spring-ext</id>
+      <name>Spring External Dependencies Repository</name>
+      <url>
+        https://svn.sourceforge.net/svnroot/springframework/repos/repo-ext/
+      </url>
+    </repository>
+
+  </repositories>
+
+  <pluginRepositories>
+    <pluginRepository>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      <id>apache.snapshots</id>
+      <name>Apache Snapshots</name>
+      <url>http://cvs.apache.org/maven-snapshot-repository/</url>
+    </pluginRepository>
+    <pluginRepository>
+    	<snapshots>
+    	  <enabled>true</enabled>
+    	</snapshots>
+    	<id>codehaus-snapshot-repository</id>
+    	<name>Codehaus Snapshots Repository</name>
+    	<url>http://snapshots.repository.codehaus.org</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+</project>

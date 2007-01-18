@@ -5,14 +5,14 @@
   <classpathentry kind="src" path="src/test/resources" output="target/test-classes" excluding="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-  <classpathentry kind="var" path="M2_REPO/nl/gridshore/samples/springosgi/bookreview-service/1.0-SNAPSHOT/bookreview-service-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/org.springframework.osgi.test/1.0-SNAPSHOT/org.springframework.osgi.test-1.0-SNAPSHOT.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j-full/1.1.0/slf4j-log4j-full-1.1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/log4j.osgi/1.2.13-SNAPSHOT/log4j.osgi-1.2.13-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/spring-context/2.1-SNAPSHOT/spring-context-2.1-SNAPSHOT.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/jcl104-over-slf4j.osgi/1.1.0/jcl104-over-slf4j.osgi-1.1.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/spring-beans/2.1-SNAPSHOT/spring-beans-2.1-SNAPSHOT.jar"/>
+  <classpathentry kind="var" path="M2_REPO/junit/junit/3.8.1/junit-3.8.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/eclipse/osgi/org.eclipse.osgi/3.2.1/org.eclipse.osgi-3.2.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/org.springframework.osgi.test/1.0-SNAPSHOT/org.springframework.osgi.test-1.0-SNAPSHOT.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-log4j-full/1.1.0/slf4j-log4j-full-1.1.0.jar"/>
+  <classpathentry kind="src" path="/bookreview-service"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/osgi/spring-core/2.1-SNAPSHOT/spring-core-2.1-SNAPSHOT.jar"/>
 </classpath>

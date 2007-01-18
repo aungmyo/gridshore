@@ -292,7 +292,11 @@ limitations under the License.
         https://svn.sourceforge.net/svnroot/springframework/repos/repo-ext/
       </url>
     </repository>
-
+<repository>
+ <id>springframework.org</id>
+  <name>Springframework Maven SNAPSHOT Repository</name>
+  <url>http://static.springframework.org/maven2-snapshots/</url>
+</repository>
   </repositories>
 
   <pluginRepositories>

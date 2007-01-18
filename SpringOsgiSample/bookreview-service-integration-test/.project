@@ -1,7 +1,9 @@
 <projectDescription>
   <name>bookreview-service-integration-test</name>
   <comment>This is the sample application for the gridshore website making use of the spring-osgi project.</comment>
-  <projects/>
+  <projects>
+    <project>bookreview-service</project>
+  </projects>
   <buildSpec>
     <buildCommand>
       <name>org.eclipse.jdt.core.javabuilder</name>

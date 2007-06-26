@@ -1,0 +1,11 @@
+body {
+	background-color: #cd6163;
+}
+
+fieldset {
+	background-color: #fff;
+}
+fieldset legend {
+	background-color: #fff;
+	border : 1px solid black;
+}

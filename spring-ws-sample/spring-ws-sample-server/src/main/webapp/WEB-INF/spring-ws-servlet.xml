@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+    
+    <bean id="servicesEndpoint" class="nl.toeslagen.curamdummy.DummyEndpoint"/>
+    
+    <bean class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+        <property name="mappings">
+            <props>
+                <prop key="{http://dispatcher.congress.osgisamples.com}CongressRegistrationRequest">servicesEndpoint</prop>
+           	</props>
+        </property>
+        <property name="interceptors">
+            <bean class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor"/>
+        </property>
+    </bean>
+    
+    <bean id="service" class="org.springframework.ws.wsdl.wsdl11.DynamicWsdl11Definition">
+        <property name="builder">
+            <bean class="org.springframework.ws.wsdl.wsdl11.builder.XsdBasedSoap11Wsdl4jDefinitionBuilder">
+                <property name="schema" value="/WEB-INF/congressregistration.xsd"/>
+                <property name="portTypeName" value="services"/>
+                <property name="locationUri" value="http://localhost:8080/spring-ws-sample-server/"/>
+                <property name="targetNamespace" value="http://www.gridshore.nl/samples/definitions"/>
+            </bean>
+        </property>
+    </bean>
+</beans>

@@ -2,11 +2,18 @@ package nl.gridshore.samples.springws.integration.converter;
 
 import nl.gridshore.samples.jaxb.CongressRegistrationResponse;
 
+/**
+ * @author Jettro.Coenradie
+ *
+ */
 public class CongressRegistrationResponseConverter implements Converter<String, CongressRegistrationResponse> {
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public String convert(CongressRegistrationResponse toBeConverted) {
-		// TODO Auto-generated method stub
-		return null;
+		String response = toBeConverted.getRegistrationCode();
+		return response;
 	}
 
 }

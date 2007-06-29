@@ -28,6 +28,8 @@
 		<constructor-arg index="0" ref="congressManager" />
 	</bean>
 
+
+	<!--  facilitating beans  -->
 	<bean id="defaultViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="viewClass"
@@ -36,4 +38,12 @@
 		<property name="suffix" value=".jsp" />
 	</bean>
 
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>labels</value>
+				<value>exceptions</value>
+			</list>
+		</property>
+	</bean>
 </beans>

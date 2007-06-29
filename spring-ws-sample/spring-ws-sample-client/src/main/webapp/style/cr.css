@@ -1,5 +1,5 @@
 body {
-	background-color: #cd6163;
+	background-color: #ccc;
 }
 
 fieldset {
@@ -8,4 +8,7 @@ fieldset {
 fieldset legend {
 	background-color: #fff;
 	border : 1px solid black;
+}
+.error {
+	border : 1px solid red;
 }

@@ -9,9 +9,18 @@ import nl.gridshore.samples.springws.web.command.CongressRegistrationCommand;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.SimpleFormController;
 
+/**
+ * @author Jettro.Coenradie
+ * 
+ * Form controller handling a form submission for registering for a congress
+ */
 public class CongressRegistrationFormController extends SimpleFormController {
 	private CongressManager congressManager;
 	
+	/**
+	 * Default constructor
+	 * @param congressManager CongressManager is used to handle the entered data
+	 */
 	public CongressRegistrationFormController(CongressManager congressManager) {
 		this.congressManager = congressManager;
 	}

@@ -10,8 +10,15 @@ import nl.gridshore.samples.jaxb.Session;
 import nl.gridshore.samples.jaxb.Sessions;
 import nl.gridshore.samples.springws.domain.RegistrationDetails;
 
+/**
+ * @author Jettro.Coenradie
+ * Converter for conversion between a domain request object to a jaxb request object
+ */
 public class CongressRegistrationRequestConverter implements Converter<CongressRegistrationRequest,RegistrationDetails> {
 
+	/**
+	 * {@inheritDoc}
+	 */
 	public CongressRegistrationRequest convert(final RegistrationDetails toBeConverted) {
 		final ObjectFactory jaxbFactory = new ObjectFactory();
 		

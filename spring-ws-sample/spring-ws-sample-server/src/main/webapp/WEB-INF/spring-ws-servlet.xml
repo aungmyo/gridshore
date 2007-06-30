@@ -4,7 +4,7 @@
     
     <bean id="servicesEndpoint" class="nl.toeslagen.curamdummy.DummyEndpoint"/>
     
-    <bean class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
+    <!-- bean class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
         <property name="mappings">
             <props>
                 <prop key="{http://dispatcher.congress.osgisamples.com}CongressRegistrationRequest">servicesEndpoint</prop>
@@ -13,7 +13,22 @@
         <property name="interceptors">
             <bean class="org.springframework.ws.server.endpoint.interceptor.PayloadLoggingInterceptor"/>
         </property>
+    </bean -->
+    <bean class="org.springframework.ws.server.endpoint.mapping.SimpleMethodEndpointMapping">
+    	<property name="endpoints" ref="congressRegistrationEndpoint"/>
     </bean>
+    <bean id="congressRegistrationEndpoint" class="nl.gridshore.samples.springws.server.JaxbMarshallingMethodEndpoint">
+    	<property name="marshaller" ref="marshaller"/>
+    	<property name="unmarshaller" ref="unmarshaller"/>
+    </bean>
+
+	<bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath" value="nl.gridshore.samples.jaxb"/>
+	</bean>
+
+	<bean id="unmarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="contextPath" value="nl.gridshore.samples.jaxb"/>
+	</bean>
     
     <bean id="service" class="org.springframework.ws.wsdl.wsdl11.DynamicWsdl11Definition">
         <property name="builder">

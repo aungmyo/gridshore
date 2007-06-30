@@ -31,7 +31,7 @@ public class CongressRegistrationGateway extends WebServiceGatewaySupport implem
 	 */
 	public String registerForCongress(final RegistrationDetails registrationDetails) {
 		Object request = requestConverter.convert(registrationDetails);
-		Object response = getWebServiceTemplate().marshalSendAndReceive(request,new SoapActionCallback(""));
+		Object response = getWebServiceTemplate().marshalSendAndReceive(request);
 		return responseConverter.convert(response);
 	}
 

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema
+		xmlns="http://dispatcher.congress.osgisamples.com"
+		xmlns:xs="http://www.w3.org/2001/XMLSchema"
+		targetNamespace="http://dispatcher.congress.osgisamples.com"
+		elementFormDefault="unqualified" attributeFormDefault="unqualified">
+	
+	<xs:element name="CongressRegistrationRequest">
+		<xs:complexType>
+			<xs:sequence minOccurs="1">
+				<xs:element ref="Congress" />
+				<xs:element ref="Registrant" />
+				<xs:element ref="Sessions" />
+			</xs:sequence>
+			<xs:attribute name="version" type="xs:string" use="optional"/>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CongressRegistrationResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RegistrationCode" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="Congress">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="CongressId"/>
+				<xs:element ref="CongressName"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="CongressName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="25"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="CongressId">
+		<xs:simpleType>
+			<xs:restriction base="xs:int"/>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Registrant">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FirstName"/>
+				<xs:element ref="MiddleName" maxOccurs="1" minOccurs="0"/>
+				<xs:element ref="LastName"/>
+				<xs:element ref="Email"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="FirstName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="25"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="MiddleName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="15"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="LastName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="75"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="Email">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="100"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="RegistrationCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="50"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="Sessions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Session" minOccurs="1" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="Session">
+		<xs:complexType>
+			<xs:choice>
+				<xs:element ref="SessionId"/>
+				<xs:element ref="SessionName"/>
+			</xs:choice>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SessionName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="100"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	
+	<xs:element name="SessionId">
+		<xs:simpleType>
+			<xs:restriction base="xs:int"/>
+		</xs:simpleType>
+	</xs:element>
+</xs:schema>

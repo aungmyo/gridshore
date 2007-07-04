@@ -5,7 +5,6 @@ import nl.gridshore.samples.springws.integration.converter.Converter;
 import nl.gridshore.samples.springws.integration.wsclient.CongressRegistrationDAO;
 
 import org.springframework.ws.client.core.support.WebServiceGatewaySupport;
-import org.springframework.ws.soap.client.core.SoapActionCallback;
 
 /**
  * @author Jettro.Coenradie

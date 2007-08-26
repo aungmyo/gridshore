@@ -24,7 +24,7 @@ public class PaymentManagerImpl implements PaymentManager {
         Payment payment = new Payment();
         payment.setStatus("open");
 
-        return paymentDao.findByExample(payment);  //To change body of implemented methods use File | Settings | File Templates.
+        return paymentDao.findByExample(payment);  
     }
 
     public void storePayment(Payment payment) throws PaymentException {

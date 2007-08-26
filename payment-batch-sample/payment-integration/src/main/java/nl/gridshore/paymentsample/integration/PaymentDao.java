@@ -9,7 +9,7 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 15-aug-2007
  * Time: 23:35:33
- * To change this template use File | Settings | File Templates.
+ * Data access class for the payment domain objects
  */
 public interface PaymentDao {
     void save(Payment payment);

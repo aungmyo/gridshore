@@ -14,10 +14,10 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 16-aug-2007
  * Time: 10:45:19
- * To change this template use File | Settings | File Templates.
+ * Controller class for viewing all payments
  */
 public class ViewPaymentsController extends AbstractController {
-    private PaymentManager paymentManager;
+    private final PaymentManager paymentManager;
 
     public ViewPaymentsController(PaymentManager paymentManager) {
         this.paymentManager = paymentManager;

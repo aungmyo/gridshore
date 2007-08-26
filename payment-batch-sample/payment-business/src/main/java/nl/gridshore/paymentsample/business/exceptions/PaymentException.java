@@ -5,9 +5,9 @@ package nl.gridshore.paymentsample.business.exceptions;
  * User: Jettro.Coenradie
  * Date: 15-aug-2007
  * Time: 23:13:13
- * To change this template use File | Settings | File Templates.
+ * Custom exception used in the business layer
  */
-public class PaymentException extends Exception {
+public class PaymentException extends RuntimeException {
     public PaymentException(String message) {
         super(message);
     }

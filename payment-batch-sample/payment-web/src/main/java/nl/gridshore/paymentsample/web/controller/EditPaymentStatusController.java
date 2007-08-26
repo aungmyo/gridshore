@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
  * User: Jettro.Coenradie
  * Date: 16-aug-2007
  * Time: 16:10:18
- * To change this template use File | Settings | File Templates.
+ * Controller class for editing a payment
  */
 public class EditPaymentStatusController extends SimpleFormController {
-    private PaymentManager paymentManager;
+    private final PaymentManager paymentManager;
 
     public EditPaymentStatusController(PaymentManager paymentManager) {
         this.paymentManager = paymentManager;

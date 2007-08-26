@@ -10,7 +10,7 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 15-aug-2007
  * Time: 23:34:57
- * To change this template use File | Settings | File Templates.
+ * Hibernate implementation for the PaymentDao interface
  */
 public class PaymentDaoHibernate extends HibernateDaoSupport implements PaymentDao {
     public void save(Payment payment) {

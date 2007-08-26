@@ -12,10 +12,10 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 17-aug-2007
  * Time: 0:12:01
- * To change this template use File | Settings | File Templates.
+ * Job used to close all open payments
  */
 public class OpenPaymentsJob extends QuartzJobBean {
-    private static Logger logger = Logger.getLogger(OpenPaymentsJob.class);
+    private final static Logger logger = Logger.getLogger(OpenPaymentsJob.class);
     private int timeout;
 
     public void setTimeout(int timeout) {

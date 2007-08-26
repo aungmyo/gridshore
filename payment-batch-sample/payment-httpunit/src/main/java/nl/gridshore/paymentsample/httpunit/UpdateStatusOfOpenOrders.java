@@ -12,7 +12,7 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 16-aug-2007
  * Time: 23:09:02
- * To change this template use File | Settings | File Templates.
+ * Actual implementation to update all open orders using httpunit
  */
 public class UpdateStatusOfOpenOrders {
 
@@ -20,7 +20,7 @@ public class UpdateStatusOfOpenOrders {
         List<String> results = new ArrayList<String>();
         WebConversation conversation = new WebConversation();
         WebRequest request = new GetMethodWebRequest("http://localhost:8080/payments/viewPayments.html");
-        WebResponse response = null;
+        WebResponse response;
         WebLink[] links = new WebLink[0];
         try {
             response = conversation.getResponse(request);

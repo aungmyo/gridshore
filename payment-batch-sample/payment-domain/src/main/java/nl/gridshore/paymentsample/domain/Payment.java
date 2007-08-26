@@ -6,7 +6,7 @@ public class Payment implements Serializable {
     
     private Integer id;
     private Double amount;
-    private String type;
+    private PaymentType type;
     private PaymentStatus status;
 
     public Integer getId() {
@@ -25,19 +25,33 @@ public class Payment implements Serializable {
         this.amount = amount;
     }
 
-    public String getType() {
+    public PaymentType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(PaymentType type) {
         this.type = type;
     }
 
-    public String getStatus() {
-        return this.status.toString();
+    public PaymentStatus getStatus() {
+        return this.status;
     }
 
-    public void setStatus(String status) {
-        this.status = PaymentStatus.valueOf(status.toUpperCase());
+    public void setStatus(PaymentStatus status) {
+        this.status = status;
+    }
+
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Payment payment = (Payment) o;
+
+        return !(id != null ? !id.equals(payment.id) : payment.id != null);
+
+    }
+
+    public int hashCode() {
+        return (id != null ? id.hashCode() : 0);
     }
 }

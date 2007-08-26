@@ -7,12 +7,10 @@ import junit.framework.TestCase;
  * User: Jettro.Coenradie
  * Date: 16-aug-2007
  * Time: 15:55:20
- * To change this template use File | Settings | File Templates.
+ * Testcase for a payment status
  */
 public class PaymentStatusTest extends TestCase {
     public void testEquals() {
         assertEquals(PaymentStatus.OPEN,PaymentStatus.valueOf("OPEN"));
-        Payment payment = new Payment();
-        payment.setStatus("open");
     }
 }

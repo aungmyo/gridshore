@@ -5,11 +5,9 @@ package nl.gridshore.paymentsample.domain;
  * User: Jettro.Coenradie
  * Date: 16-aug-2007
  * Time: 15:49:47
- * To change this template use File | Settings | File Templates.
+ * All possible values for the status of a payment
  */
 public enum PaymentStatus {
     OPEN,
-    PAID;
-
-    
+    PAID
 }

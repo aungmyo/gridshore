@@ -1,6 +1,8 @@
 package nl.gridshore.paymentsample.integration;
 
 import nl.gridshore.paymentsample.domain.Payment;
+import nl.gridshore.paymentsample.domain.PaymentStatus;
+import nl.gridshore.paymentsample.domain.PaymentType;
 import org.springframework.test.AbstractTransactionalDataSourceSpringContextTests;
 
 import java.util.List;
@@ -10,7 +12,7 @@ import java.util.List;
  * User: Jettro.Coenradie
  * Date: 15-aug-2007
  * Time: 23:57:39
- * To change this template use File | Settings | File Templates.
+ * Test Class for the PaymentDao
  */
 public class PaymentDaoTest extends AbstractTransactionalDataSourceSpringContextTests {
     private PaymentDao paymentDao;
@@ -25,17 +27,18 @@ public class PaymentDaoTest extends AbstractTransactionalDataSourceSpringContext
 
     public void testLoadPayments() {
         Payment payment = new Payment();
-        payment.setStatus("Open");
+        payment.setStatus(PaymentStatus.OPEN);
         List<Payment> payments = this.paymentDao.findByExample(payment);
         assertNotNull(payments);
+        assertEquals("Payment does not have status open", PaymentStatus.OPEN, payments.get(0).getStatus());
     }
 
     public void  testStoreNewPayment() {
         int beforeNumpayments = this.paymentDao.findAll().size();
         Payment newPayment = new Payment();
         newPayment.setAmount(56D);
-        newPayment.setStatus("open");
-        newPayment.setType("ídeal");
+        newPayment.setStatus(PaymentStatus.OPEN);
+        newPayment.setType(PaymentType.IDEAL);
         paymentDao.save(newPayment);
         assertEquals("Number of payments retrieved is not correct, so save went wrong",
                 beforeNumpayments+1,this.paymentDao.findAll().size());

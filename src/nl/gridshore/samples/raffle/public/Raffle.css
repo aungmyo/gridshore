@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: small;
+    margin: 8px;
+}
+
+.gwt-Button {}
+.gwt-Label {}
+.gwt-TextBox {margin-left:20}
+.gwt-TextBox-readonly {}
+
+.gwt-MenuBar { border : 1px solid black; background-color:silver }
+.gwt-MenuBar .gwt-MenuItem { border-bottom: 2px solid blue ; border-right: 2px solid blue ; padding-left:10px;}
+.gwt-MenuBar .gwt-MenuItem-selected {background-color: blue}

@@ -37,12 +37,12 @@ public class UpdateStatusOfOpenOrders {
                 String requestedId = link.getParameterValues("id")[0];
                 try {
                     handleLink(conversation, link);
+                    results.add("update payment with id : " + requestedId);
                 } catch (IOException e) {
                     results.add("IO Problem while handling payment with id " + requestedId);
                 } catch (SAXException e) {
                     results.add("IO Problem while handling payment with id " + requestedId);
                 }
-                results.add("update payment with id : " + requestedId);
             }
         }
         return results;
@@ -52,7 +52,7 @@ public class UpdateStatusOfOpenOrders {
         link.click();
         WebResponse formPage = conversation.getCurrentPage();
         WebForm form = formPage.getForms()[0];
-        form.setParameter("status","paid");
+        form.setParameter("status","PAID");
         form.submit();
     }
 

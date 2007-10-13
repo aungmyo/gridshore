@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping package="nl.gridshore.paymentsample.domain">
+    <class name="PurchaseOrder" table="PurchaseOrders" lazy="false">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+
+        <many-to-one name="payment" class="Payment" column="paymentId" cascade="save-update" unique="true"/>
+        <property name="amountOfProducts" column="amountOfProducts"/>
+        <property name="priceOfProduct" column="priceOfProduct"/>
+        <property name="productName" column="productName"/>
+    </class>
+</hibernate-mapping>

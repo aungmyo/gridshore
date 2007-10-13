@@ -4,7 +4,12 @@
 		xsi:schemaLocation="
 			http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
-    <bean id="paymentDao" class="nl.gridshore.paymentsample.integration.PaymentDaoHibernate">
+    <bean id="paymentDao" class="nl.gridshore.paymentsample.integration.hibernate.PaymentDaoHibernate">
+        <property name="sessionFactory" ref="sessionFactoryBean"/>
+    </bean>
+
+    <bean id="purchaseOrderDaoHibernate"
+          class="nl.gridshore.paymentsample.integration.hibernate.PurchaseOrderDaoHibernate">
         <property name="sessionFactory" ref="sessionFactoryBean"/>
     </bean>
 
@@ -16,14 +21,15 @@
     </bean>
     <bean id="sessionFactoryBean" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="mappingResources" value="orm/Payment.hbm.xml"/>
+        <property name="mappingResources" value="orm/Payment.hbm.xml,orm/PurchaseOrder.hbm.xml"/>
         <property name="hibernateProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+                <!-- prop key="hibernate.hbm2ddl.auto">update</prop -->
             </props>
         </property>
     </bean>
-    <bean id="hibernateTransactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactoryBean"/>
     </bean>
 

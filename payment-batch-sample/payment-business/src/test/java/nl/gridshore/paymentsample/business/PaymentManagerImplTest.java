@@ -5,6 +5,7 @@ import nl.gridshore.paymentsample.domain.Payment;
 import nl.gridshore.paymentsample.domain.PaymentStatus;
 import nl.gridshore.paymentsample.domain.PaymentType;
 import nl.gridshore.paymentsample.integration.PaymentDao;
+import nl.gridshore.paymentsample.business.impl.PaymentManagerImpl;
 import static org.easymock.EasyMock.*;
 
 import java.util.ArrayList;

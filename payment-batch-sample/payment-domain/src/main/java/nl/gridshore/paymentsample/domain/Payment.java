@@ -2,20 +2,11 @@ package nl.gridshore.paymentsample.domain;
 
 import java.io.Serializable;
 
-public class Payment implements Serializable {
+public class Payment extends BaseDomain implements Serializable {
     
-    private Integer id;
     private Double amount;
     private PaymentType type;
     private PaymentStatus status;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Double getAmount() {
         return amount;
@@ -47,11 +38,11 @@ public class Payment implements Serializable {
 
         Payment payment = (Payment) o;
 
-        return !(id != null ? !id.equals(payment.id) : payment.id != null);
+        return !(getId() != null ? !getId().equals(payment.getId()) : payment.getId() != null);
 
     }
 
     public int hashCode() {
-        return (id != null ? id.hashCode() : 0);
+        return (getId() != null ? getId().hashCode() : 0);
     }
 }

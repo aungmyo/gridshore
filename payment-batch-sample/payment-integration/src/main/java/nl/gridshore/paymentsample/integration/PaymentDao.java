@@ -11,9 +11,5 @@ import java.util.List;
  * Time: 23:35:33
  * Data access class for the payment domain objects
  */
-public interface PaymentDao {
-    void save(Payment payment);
-    List<Payment> findByExample(Payment payment);
-    List<Payment> findAll();
-    Payment loadById(Integer id);
+public interface PaymentDao extends BaseDao<Payment> {
 }

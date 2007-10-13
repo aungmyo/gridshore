@@ -1,9 +1,11 @@
-package nl.gridshore.paymentsample.business;
+package nl.gridshore.paymentsample.business.impl;
 
 import nl.gridshore.paymentsample.business.exceptions.PaymentException;
+import nl.gridshore.paymentsample.business.PaymentManager;
 import nl.gridshore.paymentsample.domain.Payment;
 import nl.gridshore.paymentsample.domain.PaymentStatus;
 import nl.gridshore.paymentsample.integration.PaymentDao;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
  * Implementation for the PaymentManager interface
  */
 public class PaymentManagerImpl implements PaymentManager {
+    private final static Logger logger = Logger.getLogger(PaymentManagerImpl.class);
     private PaymentDao paymentDao;
 
     /**
@@ -23,6 +26,7 @@ public class PaymentManagerImpl implements PaymentManager {
      * @throws nl.gridshore.paymentsample.business.exceptions.PaymentException when the provided dao is null
      */
     public PaymentManagerImpl(PaymentDao paymentDao) throws PaymentException {
+        logger.info("PaymentManagerImpl instance is created");
         if (paymentDao == null) {
             throw new PaymentException("The PaymentDao cannot be null, configuration error??");
         }
@@ -35,7 +39,6 @@ public class PaymentManagerImpl implements PaymentManager {
     public List<Payment> listNonPaidpayments() {
         Payment payment = new Payment();
         payment.setStatus(PaymentStatus.OPEN);
-
         return paymentDao.findByExample(payment);  
     }
 
@@ -53,6 +56,6 @@ public class PaymentManagerImpl implements PaymentManager {
      * @{inheritDoc}
      */
     public Payment loadPaymentById(Integer id) {
-        return paymentDao.loadById(id);
+        return paymentDao.load(id);
     }
 }

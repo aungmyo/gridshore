@@ -21,12 +21,12 @@
         <property name="repeatInterval" value="50000"/>
     </bean>
 
-    <bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+    <!-- bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
         <property name="triggers">
             <list>
                 <ref bean="simpleTriggerBean"/>
             </list>
         </property>
-    </bean>
+    </bean -->
 
 </beans>

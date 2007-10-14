@@ -19,14 +19,14 @@ import java.util.Iterator;
 public class Raffle implements EntryPoint {
     
     public void onModuleLoad() {
-        MenuBar menuBar = new MenuBar();
         final ScrollPanel contentPanel = new ScrollPanel();
-        createMenuBar(menuBar, contentPanel);
+        MenuBar menuBar = createMenuBar(contentPanel);
         RootPanel.get().add(menuBar);
         RootPanel.get().add(contentPanel);
     }
 
-    private void createMenuBar(MenuBar menuBar, final ScrollPanel contentPanel) {
+    private MenuBar createMenuBar(final ScrollPanel contentPanel) {
+        MenuBar menuBar = new MenuBar();
         menuBar.addItem("New Name", new Command() {
             public void execute() {
                 contentPanel.setWidget(createNewNameInput(contentPanel));
@@ -47,6 +47,7 @@ public class Raffle implements EntryPoint {
                 contentPanel.setWidget(createWinners());
             }
         });
+        return menuBar;
     }
 
     private FlowPanel createButtonForRandomName(final ScrollPanel contentPanel) {

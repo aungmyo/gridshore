@@ -10,7 +10,7 @@ import java.util.ArrayList;
  * User: Jettro.Coenradie
  * Date: 10-okt-2007
  * Time: 23:05:09
- * To change this template use File | Settings | File Templates.
+ * Server side implementation of the provided remote service.
  */
 public class RaffleServiceGwtRemoteImpl extends RemoteServiceServlet implements RaffleServiceGwtRemote {
     private transient RaffleService<String> raffleService;

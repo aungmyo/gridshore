@@ -1,10 +1,12 @@
 package nl.gridshore.samples.raffle.client;
 
+import com.bouwkamp.gwt.user.client.ui.RoundedPanel;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.*;
+import org.gwtwidgets.client.ui.LightBox;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,9 +22,13 @@ public class Raffle implements EntryPoint {
     
     public void onModuleLoad() {
         final ScrollPanel contentPanel = new ScrollPanel();
+        contentPanel.setStyleName("content_panel");
+        RoundedPanel roundedContentPanel = new RoundedPanel(contentPanel,RoundedPanel.ALL,5);
+        roundedContentPanel.setStyleName("rounded_content_panel");
         MenuBar menuBar = createMenuBar(contentPanel);
-        RootPanel.get().add(menuBar);
-        RootPanel.get().add(contentPanel);
+        RoundedPanel roundedMenuBar = new RoundedPanel(menuBar, RoundedPanel.ALL,5);
+        RootPanel.get().add(roundedMenuBar);
+        RootPanel.get().add(roundedContentPanel);
     }
 
     private MenuBar createMenuBar(final ScrollPanel contentPanel) {
@@ -74,6 +80,8 @@ public class Raffle implements EntryPoint {
 
             public void onSuccess(Object result) {
                 randomName.add(new Label((String) result));
+                LightBox lightBox = new LightBox(new WinnerPopup((String)result));
+                lightBox.show();
             }
         };
         RaffleServiceGwtRemoteAsync service = RaffleServiceGwtRemote.App.getInstance();

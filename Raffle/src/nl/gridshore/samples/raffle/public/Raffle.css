@@ -8,9 +8,29 @@ body {
 
 .gwt-Button {}
 .gwt-Label {}
-.gwt-TextBox {margin-left:20}
+.gwt-TextBox {margin-left:20px}
 .gwt-TextBox-readonly {}
 
-.gwt-MenuBar { border : 1px solid black; background-color:silver }
-.gwt-MenuBar .gwt-MenuItem { border-bottom: 2px solid blue ; border-right: 2px solid blue ; padding-left:10px;}
-.gwt-MenuBar .gwt-MenuItem-selected {background-color: blue}
+.gwt-MenuBar { border-left : 5px solid #c3d9ff; border-right : 5px solid #c3d9ff;padding-top:5px;padding-bottom:5px}
+.gwt-MenuBar .gwt-MenuItem { border-left: 1px solid #c3d9ff; border-top: 1px solid #c3d9ff;border-bottom: 2px solid #a1b7dd; ; border-right: 2px solid #a1b7dd ; padding-left:10px;}
+.gwt-MenuBar .gwt-MenuItem-selected {background-color: #c3d9ff;}
+
+.cbg-RP {
+    background-color:#c3d9ff;
+}
+
+.rounded_content_panel {
+    margin-top: 10px;
+}
+.content_panel {
+    border-left : 5px solid #c3d9ff;
+    border-right : 5px solid #c3d9ff;
+    padding : 10px;
+    height : 380px;
+}
+
+.popup_message {
+    font-size:large;
+    color:white;
+    text-decoration:blink;
+}

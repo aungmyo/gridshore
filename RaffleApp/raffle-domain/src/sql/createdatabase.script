@@ -1,0 +1,4 @@
+create table raffles (id BIGINT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(50) NOT NULL, description VARCHAR(255) NOT NULL);
+create table prices (id BIGINT PRIMARY KEY AUTO_INCREMENT, title VARCHAR(50) NOT NULL, description VARCHAR(255) NOT NULL, raffle_id BIGINT);
+create table participants (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(50) NOT NULL, raffle_id BIGINT NOT NULL);
+create table winners (id BIGINT PRIMARY KEY AUTO_INCREMENT, price_id BIGINT NOT NULL, participant_id BIGINT NOT NULL);

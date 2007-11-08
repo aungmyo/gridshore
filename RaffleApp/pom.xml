@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>nl.gridshore.samples.raffle</groupId>
+    <artifactId>RaffleApp</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>RaffleApp - Raffle Application</name>
+    <url>http://code.google.com/p/gridshore/</url>
+
+    <description>
+        This application is used to showcase a number of techniques. Some of them are:
+        Java Persistence Architecture (JPA), Google Web Toolkit (GWT), Springframework and maven2
+    </description>
+
+    <properties>
+        <spring.version>2.0.7</spring.version>
+        <gwt.version>1.4.60</gwt.version>
+    </properties>
+
+    <modules>
+        <module>raffle-dao</module>
+        <module>raffle-domain</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+    </dependencies>
+
+    <inceptionYear>2007</inceptionYear>
+    <issueManagement>
+        <system>google</system>
+        <url>http://code.google.com/p/gridshore/issues/list</url>
+    </issueManagement>
+    <scm>
+        <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/RaffleApp/</connection>
+        <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/RaffleApp/</developerConnection>
+        <url>http://gridshore.googlecode.com/svn/</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>jettro.coenradie</id>
+            <name>Jettro Coenradie</name>
+            <email>jettro@gridshore.nl</email>
+            <url>http://www.gridshore.nl/blog</url>
+        </developer>
+    </developers>
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>changes-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>changelog-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+    <distributionManagement>
+        <repository>
+            <id>coenradiecom</id>
+            <name>Gridshore</name>
+            <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/repository</url>
+        </repository>
+        <site>
+            <id>coenradiecom</id>
+            <name>Springframework Archetype</name>
+            <url>scp://www.coenradie.com/home/jcoenrad/HTMLWIKI/projects/raffleapp</url>
+        </site>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>            
+        </plugins>
+        <extensions>
+            <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ftp</artifactId>
+                <version>1.0-alpha-6</version>
+            </extension>
+        </extensions>
+    </build>
+</project>

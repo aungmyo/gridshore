@@ -19,7 +19,7 @@ public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao  {
     }
 
     public List<Raffle> loadAll() {
-        Query query = getEntityManager().createQuery("from Raffle");
+        Query query = getEntityManager().createQuery("from Raffle raffle");
         return query.getResultList();
     }
 }

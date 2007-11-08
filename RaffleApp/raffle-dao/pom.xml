@@ -14,12 +14,17 @@
 
     <dependencies>
         <!-- internal -->
-        <dependency>
+        <!-- dependency>
             <groupId>nl.gridshore.samples.raffle</groupId>
             <artifactId>raffle-domain</artifactId>
             <version>${project.parent.version}</version>
+        </dependency -->
+        <!-- external spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${spring.version}</version>
         </dependency>
-        <!-- external -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-dao</artifactId>
@@ -34,6 +39,27 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-hibernate3</artifactId>
             <version>${spring.version}</version>
+        </dependency>
+        <!-- external persistence -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-entitymanager</artifactId>
+            <version>3.3.1.ga</version>
+        </dependency>
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.0.5</version>
+        </dependency>
+        <dependency>
+            <groupId>concurrent</groupId>
+            <artifactId>concurrent</artifactId>
+            <version>1.3.4</version>
         </dependency>
         <!-- test dependencies -->
         <dependency>

@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.dao;
 
 import nl.gridshore.samples.raffle.domain.Raffle;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by IntelliJ IDEA.
@@ -9,5 +10,6 @@ import nl.gridshore.samples.raffle.domain.Raffle;
  * Time: 23:50:57
  * Data access object for the Raffle objects
  */
+@Repository
 public interface RaffleDao extends BaseDao<Raffle> {
 }

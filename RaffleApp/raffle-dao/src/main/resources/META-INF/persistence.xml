@@ -7,7 +7,7 @@
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.26.131/demos"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://192.168.6.130/demos"/>
             <property name="hibernate.connection.username" value="demo"/>
             <property name="hibernate.connection.password" value="demo"/>
             <property name="hibernate.c3p0.min_size" value="5"/>

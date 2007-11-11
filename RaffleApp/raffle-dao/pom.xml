@@ -14,11 +14,11 @@
 
     <dependencies>
         <!-- internal -->
-        <!-- dependency>
+        <dependency>
             <groupId>nl.gridshore.samples.raffle</groupId>
             <artifactId>raffle-domain</artifactId>
             <version>${project.parent.version}</version>
-        </dependency -->
+        </dependency>
         <!-- external spring -->
         <dependency>
             <groupId>org.springframework</groupId>

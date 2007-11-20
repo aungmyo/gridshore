@@ -17,7 +17,7 @@ public class Price extends BaseDomain {
     @ManyToOne
     @JoinColumn(name = "raffle_id")
     private Raffle raffle;
-    @OneToOne
+    @OneToOne(mappedBy = "price")
     private Winner winner;
 
     public Price() {
@@ -45,5 +45,13 @@ public class Price extends BaseDomain {
 
     public void setRaffle(Raffle raffle) {
         this.raffle = raffle;
+    }
+
+    public Winner getWinner() {
+        return winner;
+    }
+
+    public void setWinner(Winner winner) {
+        this.winner = winner;
     }
 }

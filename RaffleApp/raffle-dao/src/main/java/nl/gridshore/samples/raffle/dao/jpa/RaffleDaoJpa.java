@@ -13,13 +13,20 @@ import java.util.List;
  * Time: 0:00:28
  * Hibernate Jpa implementation for the RaffleDao
  */
-public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao  {
+public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao {
     public RaffleDaoJpa() {
-        super(Raffle.class);
+        super(Raffle.class, "Raffle");
     }
 
-    public List<Raffle> loadAll() {
-        Query query = getEntityManager().createQuery("from Raffle as raffle");
+    public List<Raffle> loadByFilter(Raffle entityFilter) {
+        Query query = getEntityManager().createQuery("select r from Raffle as r where r.title like :title");
+        query.setParameter("title", "%" + entityFilter.getTitle() + "%");
+        //noinspection unchecked
         return query.getResultList();
     }
+
+    public Raffle loadByExample(Raffle entity) {
+        throw new UnsupportedOperationException();
+    }
+
 }

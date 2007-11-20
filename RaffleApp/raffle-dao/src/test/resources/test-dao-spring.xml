@@ -4,9 +4,44 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://192.168.6.130/demos"/>
-        <property name="username" value="demo"/>
-        <property name="password" value="demo"/>
+        <property name="driverClassName" value="${jdbc.driverclass}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
     </bean>
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <value>classpath:test-database.properties</value>
+        </property>
+    </bean>
+
+    <bean id="dbUnitInsertOperation" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean"
+          depends-on="transactionManager">
+        <property name="targetObject">
+            <bean class="org.dbunit.operation.RefreshOperation"/>
+        </property>
+        <property name="targetMethod" value="execute"/>
+        <property name="arguments">
+            <list>
+                <ref bean="dbUnitConnection"/>
+                <bean id="dbUnitDataSet"
+                      class="org.dbunit.dataset.xml.FlatXmlDataSet">
+                    <constructor-arg>
+                        <bean id="refDataFile" factory-bean="referenceData" factory-method="getInputStream"/>
+                    </constructor-arg>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="referenceData" class="org.springframework.core.io.ClassPathResource">
+        <constructor-arg value="testdata.xml"/>
+    </bean>
+
+    <bean id="dbUnitConnection" class="util.CustomDatabaseConnection">
+        <constructor-arg>
+            <bean id="connection" factory-bean="dataSource" factory-method="getConnection"/>
+        </constructor-arg>
+    </bean>
+
 </beans>

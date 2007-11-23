@@ -31,4 +31,11 @@ public interface RaffleService {
      *          provided id does not exist.
      */
     Raffle giveRaffleById(Long raffleId) throws UnknownRaffleException;
+
+    /**
+     * Store the provided raffle to be able to obtain it later on
+     *
+     * @param raffle Raffle object to store
+     */
+    void storeRaffle(Raffle raffle);
 }

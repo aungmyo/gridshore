@@ -1,8 +1,9 @@
 package nl.gridshore.samples.raffle.domain;
 
 import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.util.List;
 
 /**
@@ -13,13 +14,13 @@ import java.util.List;
  * Entity class representing a Raffle type
  */
 @Entity
-@Table (name = "raffles")
+@Table(name = "raffles")
 public class Raffle extends BaseDomain {
     private String title;
     private String description;
-    @OneToMany (mappedBy = "raffle")
+    @OneToMany(mappedBy = "raffle")
     private List<Price> prices;
-    @OneToMany (mappedBy = "raffle")
+    @OneToMany(mappedBy = "raffle", fetch = FetchType.EAGER)
     private List<Participant> participants;
 
     public Raffle() {

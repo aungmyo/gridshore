@@ -12,7 +12,7 @@
 
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
-            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <!-- property name="hibernate.hbm2ddl.auto" value="create"/ -->
             <!-- property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
             <property name="hibernate.connection.url" value="jdbc:mysql://192.168.6.130/demos"/>
             <property name="hibernate.connection.username" value="demo"/>

@@ -28,4 +28,8 @@ public class RaffleServiceImpl implements RaffleService {
     public Raffle giveRaffleById(Long raffleId) throws UnknownRaffleException {
         return raffleDao.loadById(raffleId);
     }
+
+    public void storeRaffle(final Raffle raffle) {
+        raffleDao.save(raffle);
+    }
 }

@@ -3,6 +3,7 @@ package nl.gridshore.samples.raffle.domain;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
+import java.io.Serializable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -12,7 +13,7 @@ import javax.persistence.MappedSuperclass;
  * This is the super class for all domain classes
  */
 @MappedSuperclass
-public class BaseDomain {
+public class BaseDomain implements Serializable {
     @Id
     @GeneratedValue
     private Long id;

@@ -1,5 +1,7 @@
 package nl.gridshore.samples.raffle.web.wicket;
 
+import org.apache.wicket.markup.html.basic.Label;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
@@ -9,5 +11,6 @@ package nl.gridshore.samples.raffle.web.wicket;
  */
 public class HomePage extends BasePage {
     public HomePage() {
+        add(new Label("homelabel", "This is the homepage"));
     }
 }

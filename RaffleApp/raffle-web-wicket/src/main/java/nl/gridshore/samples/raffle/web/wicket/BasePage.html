@@ -5,8 +5,15 @@
 </head>
 
 <body>
-<span wicket:id="navigationBorder"></span>
+<div class="menu">
+<span wicket:id="menu" class="menuitem">
+    <a href="#" wicket:id="link"><span wicket:id="caption">caption of link</span></a>
+</span>
+</div>
+<br/>
 
-<wicket:child/>
+<div class="content">
+    <wicket:child/>
+</div>
 </body>
 </html>

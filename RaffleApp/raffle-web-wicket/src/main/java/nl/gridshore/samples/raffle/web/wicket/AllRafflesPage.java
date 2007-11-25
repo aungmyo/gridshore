@@ -2,8 +2,9 @@ package nl.gridshore.samples.raffle.web.wicket;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.domain.Raffle;
+import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
-import org.apache.wicket.markup.html.link.Link;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.spring.injection.annot.SpringBean;
@@ -24,12 +25,9 @@ public class AllRafflesPage extends BasePage {
 
             protected void populateItem(ListItem item) {
                 Raffle raffle = (Raffle) item.getModelObject();
-                item.add(new Link("view", item.getModel()) {
-                    public void onClick() {
-                        Raffle raffle = (Raffle) getModelObject();
-                        setResponsePage(new ViewRafflePage(raffle));
-                    }
-                });
+                PageParameters pageParams = new PageParameters();
+                pageParams.add(RaffleConstants.PARAM_RAFFLE_ID, raffle.getId().toString());
+                item.add(new BookmarkablePageLink("view", ViewRafflePage.class, pageParams));
                 item.add(new Label("title", raffle.getTitle()));
                 item.add(new Label("description", raffle.getDescription()));
             }

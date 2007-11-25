@@ -1,3 +1,15 @@
 body {
 
 }
+
+.menu {
+    border: 1px solid black;
+}
+
+.menuitem {
+    background-color: silver;
+}
+
+.content {
+    border: 1px solid black;
+}

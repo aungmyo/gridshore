@@ -1,5 +1,6 @@
 package nl.gridshore.samples.raffle.web.wicket;
 
+import nl.gridshore.samples.raffle.web.wicket.raffle.AllRafflesPage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;

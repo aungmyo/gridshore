@@ -11,6 +11,7 @@ import org.apache.wicket.markup.html.basic.Label;
  */
 public class HomePage extends BasePage {
     public HomePage() {
-        add(new Label("homelabel", "This is the homepage"));
+        add(new Label("homelabel", "On this page you can find all available raffles and there participants. Ofcourse you" +
+                " can also find all he winners of the raffles."));
     }
 }

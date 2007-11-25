@@ -1,0 +1,28 @@
+<wicket:extend>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>title</th>
+                <th>description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <form wicket:id="form">
+                    <td>
+                        <input type="submit" wicket:id="storeraffle" value="Add new"/>
+                        <input type="button" wicket:id="cancel" value="Cancel"/>
+                    </td>
+                    <td><input wicket:id="raffle-title" type="text"/><br/></td>
+                    <td><input wicket:id="raffle-description" type="text"/></td>
+                </form>
+            </tr>
+            <tr wicket:id="raffles">
+                <td><a href="#" wicket:id="view">view</a></td>
+                <td wicket:id="title">title</td>
+                <td wicket:id="description">description</td>
+            </tr>
+        </tbody>
+    </table>
+</wicket:extend>

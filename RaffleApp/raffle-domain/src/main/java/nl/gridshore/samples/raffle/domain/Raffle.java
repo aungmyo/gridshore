@@ -1,9 +1,6 @@
 package nl.gridshore.samples.raffle.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.List;
 
 /**
@@ -20,7 +17,7 @@ public class Raffle extends BaseDomain {
     private String description;
     @OneToMany(mappedBy = "raffle")
     private List<Price> prices;
-    @OneToMany(mappedBy = "raffle", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "raffle", fetch = FetchType.EAGER, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<Participant> participants;
 
     public Raffle() {
@@ -48,6 +45,15 @@ public class Raffle extends BaseDomain {
 
     public void setPrices(List<Price> prices) {
         this.prices = prices;
+    }
+
+    public void addParticipant(final Participant participant) {
+        participant.setRaffle(this);
+        this.participants.add(participant);
+    }
+
+    public void removeParticipant(final Participant participant) {
+        this.participants.remove(participant);
     }
 
     public List<Participant> getParticipants() {

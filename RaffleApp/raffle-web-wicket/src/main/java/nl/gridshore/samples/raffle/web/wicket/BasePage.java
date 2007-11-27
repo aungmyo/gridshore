@@ -1,11 +1,13 @@
 package nl.gridshore.samples.raffle.web.wicket;
 
+import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.web.wicket.raffle.AllRafflesPage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
+import org.apache.wicket.spring.injection.annot.SpringBean;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +20,9 @@ import java.util.List;
  * BasePage used to get a consistent look and feel.
  */
 public class BasePage extends WebPage {
+    @SpringBean
+    protected RaffleService raffleService;
+
     public BasePage() {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         menuItems.add(new MenuItem("Home", HomePage.class));

@@ -1,0 +1,50 @@
+<wicket:extend>
+    <table>
+        <tbody>
+            <form wicket:id="raffle-form">
+                <tr>
+                    <th wicket:id="title-label">title label</th>
+                    <td><input type="text" wicket:id="raffle-title-input"/></td>
+                </tr>
+                <tr>
+                    <th wicket:id="description-label">description label</th>
+                    <td><input type="text" wicket:id="raffle-description-input"/></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" wicket:id="storeraffle" value="Update"/>
+                        <input type="button" wicket:id="cancelraffle" value="Cancel"/>
+                    </td>
+                </tr>
+            </form>
+            <tr>
+                <td>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th wicket:id="participant-name-label">name column</th>
+                            </tr>
+                            <tr>
+                                <form wicket:id="participant-form">
+                                    <td>
+                                        <input type="submit" wicket:id="addparticipant" value="Add new"/>
+                                    </td>
+                                    <td>
+                                        <input type="text" wicket:id="participant-name"/>
+                                    </td>
+                                </form>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr wicket:id="participants">
+                                <td><a href="#" wicket:id="delete-participant">delete</a></td>
+                                <td wicket:id="name">name</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</wicket:extend>

@@ -28,15 +28,16 @@ public class AllRafflesPage extends BasePage {
     RaffleService raffleService;
 
     public AllRafflesPage() {
-        add(createNewRaffleForm());
-        add(createListOfRaffles());
+        add(new Label("page-title-label", "Raffles"));
+        createNewRaffleForm();
+        createListOfRaffles();
     }
 
-    private Form createNewRaffleForm() {
+    private void createNewRaffleForm() {
         Form form = new Form("form");
         final Raffle raffle = new Raffle();
-        form.add(new TextField("raffle-title", new PropertyModel(raffle, "title")));
-        form.add(new TextField("raffle-description", new PropertyModel(raffle, "description")));
+        form.add(new TextField("raffle-title-input", new PropertyModel(raffle, "title")));
+        form.add(new TextField("raffle-description-input", new PropertyModel(raffle, "description")));
 
         form.add(new Link("cancel") {
             public void onClick() {
@@ -50,21 +51,24 @@ public class AllRafflesPage extends BasePage {
                 setResponsePage(AllRafflesPage.class);
             }
         });
-
-        return form;
+        add(form);
     }
 
-    private ListView createListOfRaffles() {
-        return new ListView("raffles", raffleService.giveAllRaffles()) {
+    private void createListOfRaffles() {
+        add(new Label("raffle-title-label", "Title"));
+        add(new Label("raffle-description-label", "Description"));
+        add(new ListView("raffles", raffleService.giveAllRaffles()) {
 
             protected void populateItem(ListItem item) {
                 Raffle raffle = (Raffle) item.getModelObject();
                 PageParameters pageParams = new PageParameters();
                 pageParams.add(RaffleConstants.PARAM_RAFFLE_ID, raffle.getId().toString());
                 item.add(new BookmarkablePageLink("view", ViewRafflePage.class, pageParams));
-                item.add(new Label("title", raffle.getTitle()));
-                item.add(new Label("description", raffle.getDescription()));
+                item.add(new BookmarkablePageLink("edit", EditRafflePage.class, pageParams));
+                item.add(new BookmarkablePageLink("delete", DeleteRafflePage.class, pageParams));
+                item.add(new Label("raffle-title-value", raffle.getTitle()));
+                item.add(new Label("raffle-description-value", raffle.getDescription()));
             }
-        };
+        });
     }
 }

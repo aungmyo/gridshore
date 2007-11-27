@@ -9,9 +9,14 @@
                 <th wicket:id="description-label">description label</th>
                 <td wicket:id="description">description</td>
             </tr>
-            <tr>
-                <td colspan="2"><input type="button" wicket:id="back" value="Back"/></td>
-            </tr>
+            <form wicket:id="form">
+                <tr>
+                    <td colspan="2">
+                        <input type="button" wicket:id="deleteraffle" value="Delete"/>
+                        <input type="button" wicket:id="cancelraffle" value="Cancel"/>
+                    </td>
+                </tr>
+            </form>
             <tr>
                 <td>
                     <table>

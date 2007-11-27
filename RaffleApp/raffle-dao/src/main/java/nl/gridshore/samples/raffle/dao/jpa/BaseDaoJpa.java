@@ -31,7 +31,11 @@ public abstract class BaseDaoJpa<T extends BaseDomain> implements BaseDao<T> {
     public abstract T loadByExample(T entity);
 
     public T save(T entity) {
-        entityManager.persist(entity);
+        if (entity.getId() != null) {
+            entityManager.merge(entity);
+        } else {
+            entityManager.persist(entity);
+        }
         return entity;
     }
 
@@ -43,6 +47,11 @@ public abstract class BaseDaoJpa<T extends BaseDomain> implements BaseDao<T> {
         Query query = getEntityManager().createQuery("select obj from " + entityName + " obj order by obj.id");
         //noinspection unchecked
         return query.getResultList();
+    }
+
+    public void delete(final T entity) {
+        T loadedEntity = loadById(entity.getId());
+        entityManager.remove(loadedEntity);
     }
 
     protected final T newPrototype(Class<T> cl) throws IllegalArgumentException {

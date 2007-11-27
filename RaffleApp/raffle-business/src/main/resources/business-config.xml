@@ -10,6 +10,7 @@
 
     <bean id="raffleService" class="nl.gridshore.samples.raffle.business.impl.RaffleServiceImpl">
         <constructor-arg ref="raffleDao"/>
+        <constructor-arg ref="participantDao"/>
     </bean>
 
 

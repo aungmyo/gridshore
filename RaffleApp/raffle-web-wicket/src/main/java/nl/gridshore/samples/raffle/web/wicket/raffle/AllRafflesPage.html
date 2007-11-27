@@ -3,8 +3,8 @@
         <thead>
             <tr>
                 <th></th>
-                <th>title</th>
-                <th>description</th>
+                <th><span wicket:id="raffle-title-label">Title</span></th>
+                <th><span wicket:id="raffle-description-label">Description</span></th>
             </tr>
         </thead>
         <tbody>
@@ -14,14 +14,18 @@
                         <input type="submit" wicket:id="storeraffle" value="Add new"/>
                         <input type="button" wicket:id="cancel" value="Cancel"/>
                     </td>
-                    <td><input wicket:id="raffle-title" type="text"/><br/></td>
-                    <td><input wicket:id="raffle-description" type="text"/></td>
+                    <td><input wicket:id="raffle-title-input" type="text"/><br/></td>
+                    <td><input wicket:id="raffle-description-input" type="text"/></td>
                 </form>
             </tr>
             <tr wicket:id="raffles">
-                <td><a href="#" wicket:id="view">view</a></td>
-                <td wicket:id="title">title</td>
-                <td wicket:id="description">description</td>
+                <td>
+                    <a href="#" wicket:id="view">view</a>&nbsp;
+                    <a href="#" wicket:id="edit">edit</a>&nbsp;
+                    <a href="#" wicket:id="delete">delete</a>
+                </td>
+                <td wicket:id="raffle-title-value">title</td>
+                <td wicket:id="raffle-description-value">description</td>
             </tr>
         </tbody>
     </table>

@@ -51,4 +51,11 @@ public interface BaseDao<T extends BaseDomain> {
      * @return List of objects of type same as provided filter object
      */
     List<T> loadByFilter(T entityFilter);
+
+    /**
+     * Removes the provided item from the persistent storage
+     *
+     * @param entity Entity to remove from persistent storage
+     */
+    void delete(T entity);
 }

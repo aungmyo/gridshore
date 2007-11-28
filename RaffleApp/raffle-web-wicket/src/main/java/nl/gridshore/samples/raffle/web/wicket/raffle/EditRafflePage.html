@@ -18,28 +18,64 @@
                 </tr>
             </form>
             <tr>
-                <td>
+                <td colspan="2">
                     <table>
                         <thead>
-                            <tr>
-                                <th></th>
-                                <th wicket:id="participant-name-label">name column</th>
-                            </tr>
-                            <tr>
-                                <form wicket:id="participant-form">
+                            <form wicket:id="participant-form">
+                                <tr>
+                                    <th></th>
+                                    <th wicket:id="participant-name-label">name column</th>
+                                </tr>
+                                <tr>
+
                                     <td>
                                         <input type="submit" wicket:id="addparticipant" value="Add new"/>
                                     </td>
                                     <td>
                                         <input type="text" wicket:id="participant-name"/>
                                     </td>
-                                </form>
-                            </tr>
+                                </tr>
+                            </form>
                         </thead>
                         <tbody>
                             <tr wicket:id="participants">
                                 <td><a href="#" wicket:id="delete-participant">delete</a></td>
                                 <td wicket:id="name">name</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table>
+                        <thead>
+                            <form wicket:id="price-form">
+                                <tr>
+                                    <th></th>
+                                    <th wicket:id="price-title-label">title column</th>
+                                    <th wicket:id="price-description-label">description column</th>
+                                </tr>
+                                <tr>
+
+                                    <td>
+                                        <input type="submit" wicket:id="addprice" value="Add new"/>
+                                    </td>
+                                    <td>
+                                        <input type="text" wicket:id="price-title"/>
+                                    </td>
+                                    <td>
+                                        <input type="text" wicket:id="price-description"/>
+                                    </td>
+
+                                </tr>
+                            </form>
+                        </thead>
+                        <tbody>
+                            <tr wicket:id="prices">
+                                <td><a href="#" wicket:id="delete-price">delete</a></td>
+                                <td wicket:id="title">title</td>
+                                <td wicket:id="description">description</td>
                             </tr>
                         </tbody>
                     </table>

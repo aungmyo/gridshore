@@ -3,6 +3,7 @@ package nl.gridshore.samples.raffle.business;
 import junit.framework.TestCase;
 import nl.gridshore.samples.raffle.business.impl.RaffleServiceImpl;
 import nl.gridshore.samples.raffle.dao.ParticipantDao;
+import nl.gridshore.samples.raffle.dao.PriceDao;
 import nl.gridshore.samples.raffle.dao.RaffleDao;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import static org.easymock.EasyMock.*;
@@ -20,13 +21,15 @@ import java.util.List;
 public class RaffleServiceTest extends TestCase {
     private RaffleDao mockRaffleDao;
     private ParticipantDao mockParticipantDao;
+    private PriceDao mockPriceDao;
 
     private RaffleService raffleService;
 
     protected void setUp() throws Exception {
         mockRaffleDao = createMock(RaffleDao.class);
         mockParticipantDao = createMock(ParticipantDao.class);
-        raffleService = new RaffleServiceImpl(mockRaffleDao, mockParticipantDao);
+        mockPriceDao = createMock(PriceDao.class);
+        raffleService = new RaffleServiceImpl(mockRaffleDao, mockParticipantDao, mockPriceDao);
     }
 
     public void testGiveAllRaffles() {

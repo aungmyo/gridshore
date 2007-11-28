@@ -2,6 +2,7 @@ package nl.gridshore.samples.raffle.business;
 
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.domain.Participant;
+import nl.gridshore.samples.raffle.domain.Price;
 import nl.gridshore.samples.raffle.domain.Raffle;
 
 import java.util.List;
@@ -53,4 +54,11 @@ public interface RaffleService {
      * @param participant Participant to remove
      */
     void removeParticipantFromRaffle(Participant participant);
+
+    /**
+     * Remove the provided price from the raffle
+     *
+     * @param price Price to be removed
+     */
+    void removePriceFromRaffle(Price price);
 }

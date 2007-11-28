@@ -3,8 +3,10 @@ package nl.gridshore.samples.raffle.business.impl;
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.dao.ParticipantDao;
+import nl.gridshore.samples.raffle.dao.PriceDao;
 import nl.gridshore.samples.raffle.dao.RaffleDao;
 import nl.gridshore.samples.raffle.domain.Participant;
+import nl.gridshore.samples.raffle.domain.Price;
 import nl.gridshore.samples.raffle.domain.Raffle;
 
 import java.util.List;
@@ -19,10 +21,12 @@ import java.util.List;
 public class RaffleServiceImpl implements RaffleService {
     private RaffleDao raffleDao;
     private ParticipantDao participantDao;
+    private PriceDao priceDao;
 
-    public RaffleServiceImpl(RaffleDao raffleDao, ParticipantDao participantDao) {
+    public RaffleServiceImpl(RaffleDao raffleDao, ParticipantDao participantDao, PriceDao priceDao) {
         this.raffleDao = raffleDao;
         this.participantDao = participantDao;
+        this.priceDao = priceDao;
     }
 
     public List<Raffle> giveAllRaffles() {
@@ -46,5 +50,13 @@ public class RaffleServiceImpl implements RaffleService {
         Participant foundPaticipant = participantDao.loadById(participant.getId());
         raffle.removeParticipant(foundPaticipant);
         participantDao.delete(participant);
+    }
+
+    public void removePriceFromRaffle(Price price) {
+        Raffle raffle = raffleDao.loadById(price.getRaffle().getId());
+        Price foundPrice = priceDao.loadById(price.getId());
+        raffle.removePrice(foundPrice);
+        priceDao.delete(foundPrice);
+
     }
 }

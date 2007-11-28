@@ -22,11 +22,28 @@ public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao {
         Query query = getEntityManager().createQuery("select r from Raffle as r where r.title like :title");
         query.setParameter("title", "%" + entityFilter.getTitle() + "%");
         //noinspection unchecked
-        return query.getResultList();
+        List<Raffle> raffles = query.getResultList();
+        for (Raffle raffle : raffles) {
+            raffle.getPrices().size();
+        }
+        return raffles;
     }
 
     public Raffle loadByExample(Raffle entity) {
         throw new UnsupportedOperationException();
     }
 
+    public Raffle loadById(Long entityId) {
+        Raffle raffle = super.loadById(entityId);
+        raffle.getPrices().size();
+        return raffle;
+    }
+
+    public List<Raffle> loadAll() {
+        List<Raffle> raffles = super.loadAll();
+        for (Raffle raffle : raffles) {
+            raffle.getPrices().size();
+        }
+        return raffles;
+    }
 }

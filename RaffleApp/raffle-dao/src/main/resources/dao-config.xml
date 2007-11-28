@@ -12,6 +12,7 @@
 
     <bean id="raffleDao" class="nl.gridshore.samples.raffle.dao.jpa.RaffleDaoJpa"/>
     <bean id="participantDao" class="nl.gridshore.samples.raffle.dao.jpa.ParticipantDaoJpa"/>
+    <bean id="priceDao" class="nl.gridshore.samples.raffle.dao.jpa.PriceDaoJpa"/>
 
     <!-- infrastructure beans -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">

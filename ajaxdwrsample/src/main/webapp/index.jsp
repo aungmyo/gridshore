@@ -34,7 +34,7 @@
     </head>
     <body>
         <div id="ac">
-            <h1>Auto complete using DWR &amp; Spring</h1>
+            <h1>Auto complete using DWR &amp; Spring, start typing a postal code with a 1</h1>
             <input id="searchPostalCode" type="text" />
             <input type="button" value="Search" onclick="handleAddClick();"/>
             <div id="postalCodeList" class="auto_complete"></div>

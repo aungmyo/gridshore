@@ -7,6 +7,11 @@
     <name>Ajax DWR autocomplete sample</name>
     <version>1.0-SNAPSHOT</version>
     <url>http://www.gridshore.nl</url>
+    <scm>
+        <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/ajaxdwrsample</connection>
+        <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/ajaxdwrsample</developerConnection>
+		<url>http://gridshore.googlecode.com/svn/</url>
+    </scm>
     <build>
         <finalName>ajaxdwrsample</finalName>
         <plugins>

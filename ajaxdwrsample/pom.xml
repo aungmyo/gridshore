@@ -20,6 +20,7 @@
                 <artifactId>tomcat-maven-plugin</artifactId>
                 <configuration>
                     <server>localtomcat</server>
+                    <url>http://localhost/manager</url>
                 </configuration>
             </plugin>
         </plugins>

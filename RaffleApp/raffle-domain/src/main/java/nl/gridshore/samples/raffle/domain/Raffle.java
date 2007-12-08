@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,9 +19,9 @@ public class Raffle extends BaseDomain {
     // Due to a limitation of JPA we cannot eager fetch multiple bags, so we need a diferent mechanism. Check the Dao
     // for a raffle.
     @OneToMany(mappedBy = "raffle", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
-    private List<Price> prices;
+    private List<Price> prices = new ArrayList<Price>();
     @OneToMany(mappedBy = "raffle", fetch = FetchType.EAGER, cascade = {CascadeType.ALL, CascadeType.REMOVE})
-    private List<Participant> participants;
+    private List<Participant> participants = new ArrayList<Participant>();
 
     public Raffle() {
     }

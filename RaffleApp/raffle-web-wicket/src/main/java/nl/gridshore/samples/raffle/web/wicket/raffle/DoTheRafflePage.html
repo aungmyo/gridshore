@@ -1,0 +1,26 @@
+<wicket:extend>
+
+    <form wicket:id="choiceraffle">
+        <select wicket:id="raffleChoice">
+            <option>raffle 1</option>
+            <option>raffle 2</option>
+        </select>
+        <br/>
+        <input type="submit" value="Choose raffle"/>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th wicket:id="price-title-label">name column</th>
+                <th wicket:id="price-description-label">description column</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr wicket:id="prizes">
+                <td wicket:id="price-title-value">name</td>
+                <td wicket:id="price-description-value">description</td>
+            </tr>
+        </tbody>
+    </table>
+</wicket:extend>

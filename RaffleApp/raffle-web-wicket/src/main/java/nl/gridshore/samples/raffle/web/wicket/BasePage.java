@@ -2,6 +2,7 @@ package nl.gridshore.samples.raffle.web.wicket;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.web.wicket.raffle.AllRafflesPage;
+import nl.gridshore.samples.raffle.web.wicket.raffle.DoTheRafflePage;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -27,6 +28,7 @@ public class BasePage extends WebPage {
         List<MenuItem> menuItems = new ArrayList<MenuItem>();
         menuItems.add(new MenuItem("Home", HomePage.class));
         menuItems.add(new MenuItem("All raffles", AllRafflesPage.class));
+        menuItems.add(new MenuItem("Do the raffle", DoTheRafflePage.class));
         ListView menuItemsComponent = new ListView("menu", menuItems) {
 
             protected void populateItem(ListItem item) {

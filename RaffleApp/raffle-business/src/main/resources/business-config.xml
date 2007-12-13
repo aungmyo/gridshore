@@ -12,7 +12,10 @@
         <constructor-arg ref="raffleDao"/>
         <constructor-arg ref="participantDao"/>
         <constructor-arg ref="priceDao"/>
+        <constructor-arg ref="randomizer"/>
     </bean>
+
+    <bean id="randomizer" class="nl.gridshore.samples.raffle.business.impl.BasicRandomizer"/>
 
 
     <tx:advice id="txAdvice" transaction-manager="transactionManager">

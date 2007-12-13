@@ -74,12 +74,12 @@
       </facet-type>
       <facet-type id="web">
         <modules>
-          <module name="raffle-web-wicket">
-            <files>
-              <file url="file://$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/WEB-INF/web.xml" />
-              <file url="file://$PROJECT_DIR$/raffle-web-wicket/src/main/webpp/WEB-INF/web.xml" />
-            </files>
-          </module>
+          <module name="raffle-web-wicket" />
+        </modules>
+      </facet-type>
+      <facet-type id="Spring">
+        <modules>
+          <module name="raffle-web-wicket" />
         </modules>
       </facet-type>
     </autodetection-disabled>

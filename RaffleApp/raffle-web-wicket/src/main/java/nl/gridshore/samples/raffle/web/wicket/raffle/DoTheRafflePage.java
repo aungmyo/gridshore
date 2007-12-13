@@ -8,6 +8,7 @@ import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
 import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
+import org.apache.wicket.markup.html.link.Link;
 import org.apache.wicket.markup.html.list.ListItem;
 import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.model.PropertyModel;
@@ -23,7 +24,7 @@ import java.util.List;
  * Page used to actually to a raffle.
  */
 public class DoTheRafflePage extends BasePage {
-    public DoTheRafflePage(PageParameters pageParams) {
+    public DoTheRafflePage(final PageParameters pageParams) {
         Raffle raffle = new Raffle();
         add(new Label("page-title-label", "Do The Raffle"));
         add(new ChooseRaffleForm("choiceraffle", raffle));
@@ -31,6 +32,8 @@ public class DoTheRafflePage extends BasePage {
 
         add(new Label("price-title-label", "Price title"));
         add(new Label("price-description-label", "Price description"));
+        add(new Label("price-winner-label", "winner"));
+        add(new Label("price-choose-winner-label", "choose winner"));
         Raffle selectedRaffle;
         if (pageParams.containsKey(RaffleConstants.PARAM_RAFFLE_ID)) {
             Long raffleId = pageParams.getLong(RaffleConstants.PARAM_RAFFLE_ID);
@@ -41,9 +44,22 @@ public class DoTheRafflePage extends BasePage {
 
         add(new ListView("prizes", selectedRaffle.getPrices()) {
             protected void populateItem(ListItem item) {
-                Price price = (Price) item.getModelObject();
+                final Price price = (Price) item.getModelObject();
                 item.add(new Label("price-title-value", price.getTitle()));
                 item.add(new Label("price-description-value", price.getDescription()));
+
+                String winner = "";
+                if (price.getWinner() != null) {
+                    winner = price.getWinner().getParticipant().getName();
+                }
+                item.add(new Label("price-winner-value", winner));
+//                item.add(new Label("price-choose-winner-value", "choose me"));
+                item.add(new Link("price-choose-winner-value") {
+                    public void onClick() {
+                        raffleService.chooseWinnerForPrice(price);
+                        setResponsePage(DoTheRafflePage.class, pageParams);
+                    }
+                });
             }
         });
     }

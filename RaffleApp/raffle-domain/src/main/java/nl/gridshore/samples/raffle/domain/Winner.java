@@ -1,6 +1,9 @@
 package nl.gridshore.samples.raffle.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,14 +13,22 @@ import javax.persistence.*;
  * Entity class representing a Winner
  */
 @Entity
-@Table (name = "winners")
+@Table(name = "winners")
 public class Winner extends BaseDomain {
     @OneToOne
     @JoinColumn(name = "price_id")
     private Price price;
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "participant_id")
     private Participant participant;
+
+    public Winner() {
+    }
+
+    public Winner(Price price, Participant participant) {
+        this.price = price;
+        this.participant = participant;
+    }
 
     public Price getPrice() {
         return price;

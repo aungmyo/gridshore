@@ -1,0 +1,11 @@
+<module>
+
+    <inherits name='com.google.gwt.user.User'/>
+    <inherits name="com.bouwkamp.gwt.user.User"/>
+    <inherits name="org.gwtwidgets.WidgetLibrary"/>
+
+    <entry-point class='nl.gridshore.samples.raffle.web.gwt.client.Raffle'/>
+
+    <servlet path="/nl.gridshore.samples.raffle.web.gwt.Raffle/RaffleServiceGwtRemote"
+             class="nl.gridshore.samples.raffle.web.gwt.server.RaffleServiceGwtRemoteImpl"/>
+</module>

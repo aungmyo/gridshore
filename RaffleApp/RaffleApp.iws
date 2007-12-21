@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project relativePaths="false" version="4">
+  <component name="BookmarkManager">
+    <editor_bookmark url="file://$PROJECT_DIR$/raffle-dao/src/test/java/nl/gridshore/samples/raffle/dao/jpa/RaffleDaoJpaTest.java" line="10" number="0" description="AbstractJpaTests" />
+  </component>
   <component name="CCaseConfig">
     <option name="checkoutReserved" value="false" />
     <option name="markExternalChangeAsUpToDate" value="true" />
@@ -16,22 +19,71 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/RaffleServiceImpl.java" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/RaffleServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/target/raffle-business-1.0.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/raffle-business/target/raffle-business-1.0.0-SNAPSHOT.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaffleApp.ipr" afterPath="$PROJECT_DIR$/RaffleApp.ipr" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/exceptions/WinnerHasBeenSelectedException.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/main/resources/business-config.xml" afterPath="$PROJECT_DIR$/raffle-business/src/main/resources/business-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-business/src/test/java/nl/gridshore/samples/raffle/business/BasicRandomizerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Price.java" afterPath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Price.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/test/java/nl/gridshore/samples/raffle/business/RaffleServiceTest.java" afterPath="$PROJECT_DIR$/raffle-business/src/test/java/nl/gridshore/samples/raffle/business/RaffleServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/Randomizer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/BasicRandomizer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/DoTheRafflePage.html" afterPath="$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/DoTheRafflePage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/DoTheRafflePage.java" afterPath="$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/DoTheRafflePage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/styles/raffle.css" afterPath="$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/styles/raffle.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/BaseDomain.java" afterPath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/BaseDomain.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleServiceStringFileBased.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/src/test/java/nl/gridshore/samples/raffle/dao/jpa/RaffleDaoJpaTest.java" afterPath="$PROJECT_DIR$/raffle-dao/src/test/java/nl/gridshore/samples/raffle/dao/jpa/RaffleDaoJpaTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/test/resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/src/test/resources/test-dao-spring.xml" afterPath="$PROJECT_DIR$/raffle-dao/src/test/resources/test-dao-spring.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleFileInteraction.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/resources" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/styles/raffle.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/webapp/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaffleApp.iws" afterPath="$PROJECT_DIR$/RaffleApp.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Winner.java" afterPath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Winner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/pom.xml" afterPath="$PROJECT_DIR$/raffle-dao/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/raffle-dao/src/main/resources/META-INF/persistence.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/RaffleServiceGwtRemote.java" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/RaffleServiceGwtRemote.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/TextFile.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/resources/spring-servlet.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/test" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/test" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleServiceGwtRemoteServer.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/src/main/resources/dao-config.xml" afterPath="$PROJECT_DIR$/raffle-dao/src/main/resources/dao-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/pom.xml" afterPath="$PROJECT_DIR$/raffle-business/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RunnerForIntegrationTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/resources/gwt-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/RaffleServiceGwtRemoteAsync.java" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/RaffleServiceGwtRemoteAsync.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/web.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/webapp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/test/main" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/public/Raffle.html" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/public/Raffle.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/test/resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/Raffle.java" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/Raffle.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/webapp/WEB-INF" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/footer.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaffleApp.ipr" afterPath="$PROJECT_DIR$/RaffleApp.ipr" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/test/java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/styles" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleService.java" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-business/src/test/java/nl/gridshore/samples/raffle/business/RaffleServiceTest.java" afterPath="$PROJECT_DIR$/raffle-business/src/test/java/nl/gridshore/samples/raffle/business/RaffleServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/src/main/resources/database.properties" afterPath="$PROJECT_DIR$/raffle-dao/src/main/resources/database.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleServiceGwtRemoteImpl.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/RaffleController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/WinnerPopup.java" afterPath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/client/WinnerPopup.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/resources" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="RaffleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,6 +102,47 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/web/gwt/server/RaffleServiceGwtRemoteServer.java" line="54" class="nl.gridshore.samples.raffle.web.gwt.server.RaffleServiceGwtRemoteServer" package="nl.gridshore.samples.raffle.web.gwt.server">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/RaffleServiceImpl.java" line="45" class="nl.gridshore.samples.raffle.business.impl.RaffleServiceImpl" package="nl.gridshore.samples.raffle.business.impl">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/EditRafflePage.java" line="68" class="Class at EditRafflePage.java:68" package="nl.gridshore.samples.raffle.web.wicket.raffle">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -111,53 +204,72 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="raffle.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/styles/raffle.css">
+      <file leaf-file-name="welcome.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="22" selection-start="731" selection-end="731" vertical-scroll-proportion="1.283721">
+            <state line="14" column="60" selection-start="400" selection-end="400" vertical-scroll-proportion="0.3243243">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AllRafflesPage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/AllRafflesPage.html">
+      <file leaf-file-name="header.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="53" selection-start="299" selection-end="299" vertical-scroll-proportion="0.29347825">
+            <state line="13" column="52" selection-start="457" selection-end="464" vertical-scroll-proportion="0.3011583">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="HtmlPreview">
+        </entry>
+      </file>
+      <file leaf-file-name="raffle.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/styles/raffle.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="8" selection-start="738" selection-end="738" vertical-scroll-proportion="1.1011236">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="includes.jsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="61" selection-start="335" selection-end="335" vertical-scroll-proportion="0.115830116">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Raffle.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Raffle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="13" selection-start="315" selection-end="315" vertical-scroll-proportion="0.30532786">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
             <state />
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MenuItem.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/MenuItem.java">
+      <file leaf-file-name="RaffleController.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/RaffleController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.30697674">
-              <folding />
+            <state line="26" column="39" selection-start="803" selection-end="803" vertical-scroll-proportion="0.58426964">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasePage.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/BasePage.html">
+      <file leaf-file-name="RaffleService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.26086956">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="HtmlPreview">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasePage.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/BasePage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="13" selection-start="784" selection-end="784" vertical-scroll-proportion="0.30697674">
-              <folding />
+            <state line="23" column="17" selection-start="709" selection-end="709" vertical-scroll-proportion="0.3071161">
+              <folding>
+                <marker date="1198275024000" expanded="true" signature="1887:2274" placeholder="/**...*/" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,6 +286,11 @@
     <option name="SORT_ALPHABETICALLY" value="false" />
     <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
   </component>
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp" context-file="file://$PROJECT_DIR$/raffle-web-springmvc/target/raffle-web-springmvc-1.0.0-SNAPSHOT/WEB-INF/jsp/welcome.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/footer.jsp" context-file="file://$PROJECT_DIR$/raffle-web-springmvc/target/raffle-web-springmvc-1.0.0-SNAPSHOT/WEB-INF/jsp/welcome.jsp" />
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp" context-file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
+  </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
@@ -186,6 +303,22 @@
   </component>
   <component name="MavenCore">
     <option name="checksumPolicy" value="warn" />
+    <option name="usePluginRegistry" value="true" />
+    <option name="workOffline" value="true" />
+  </component>
+  <component name="MavenEventsHandler">
+    <option name="beforeRun">
+      <map>
+        <entry key="Tomcat Server#tomcat 5">
+          <value>
+            <MavenTask>
+              <option name="pomPath" value="$PROJECT_DIR$/raffle-web-gwt/pom.xml" />
+              <option name="goal" value="compile" />
+            </MavenTask>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="MavenImportPreferences">
     <option name="myImporterPreferences">
@@ -196,6 +329,36 @@
   </component>
   <component name="MavenProjectNavigator">
     <option name="groupByModule" value="true" />
+    <option name="groupByDirectory" value="false" />
+    <option name="showIgnored" value="false" />
+  </component>
+  <component name="MavenProjectsState">
+    <option name="attachedPlugins">
+      <map>
+        <entry key="$PROJECT_DIR$/pom.xml">
+          <value>
+            <set>
+              <MavenId>
+                <option name="groupId" value="com.totsp.gwt" />
+                <option name="artifactId" value="maven-googlewebtoolkit2-plugin" />
+                <option name="version" value="1.5.3-SNAPSHOT" />
+              </MavenId>
+            </set>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/raffle-web-gwt/pom.xml">
+          <value>
+            <set>
+              <MavenId>
+                <option name="groupId" value="com.totsp.gwt" />
+                <option name="artifactId" value="maven-googlewebtoolkit2-plugin" />
+                <option name="version" value="1.5.3-SNAPSHOT" />
+              </MavenId>
+            </set>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="ModuleEditorState">
     <option name="LAST_EDITED_MODULE_NAME" />
@@ -302,6 +465,10 @@
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main/webapp" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -395,31 +562,189 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-wicket" />
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main/java" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/styles" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/resources" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -443,16 +768,36 @@
     </navigator>
   </component>
   <component name="PropertiesComponent">
-    <property name="TEMP_MODULE_EXPLODED_DIR_FOR_RaffleApp/web/Web" value="/private/tmp/webExplodedDir27974tmp" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder0" value="0" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth2" value="107" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth2" value="129" />
+    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth3" value="35" />
+    <property name="TEMP_MODULE_EXPLODED_DIR_FOR_RaffleApp/web/Web" value="/private/tmp/webExplodedDir27974tmp" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder4" value="4" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
-    <property name="MemberChooser.sorted" value="false" />
-    <property name="GoToFile.includeJavaFiles" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth0" value="108" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth0" value="103" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth4" value="923" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder1" value="1" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder4" value="4" />
     <property name="RunManagerConfig.showSettingsBeforeRunnig" value="true" />
     <property name="TEMP_MODULE_EXPLODED_DIR_FOR_raffle-web-wicket/web/Web2" value="/private/tmp/webExplodedDir27975tmp" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatWidth1" value="161" />
+    <property name="MemberChooser.sorted" value="false" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth1" value="141" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth4" value="902" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.org.jetbrains.idea.svn.history.SvnHistoryProvider_treeWidth3" value="103" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -467,24 +812,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.tomcat 5">
-    <tempConfiguration default="false" name="BasicRandomizerTest.testWithOnlyOneItem" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="nl.gridshore.samples.raffle.business.*" />
-      <module name="raffle-business" />
+    <tempConfiguration default="false" name="RunnerForIntegrationTest" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.raffle.business.RunnerForIntegrationTest" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="nl.gridshore.samples.raffle.business" />
-      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.raffle.business.BasicRandomizerTest" />
-      <option name="METHOD_NAME" value="testWithOnlyOneItem" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
+      <module name="raffle-business" />
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -492,6 +830,42 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <JAVAEE_FACET FACET_ID="raffle-web-gwt/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="raffle-web-springmvc/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="raffle-web-wicket/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -521,33 +895,44 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="raffle-web-wicket/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
+    <configuration default="true" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="buildParameters">
+          <MavenBuildParameters>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomPath" value="" />
+          </MavenBuildParameters>
+        </option>
+        <option name="coreState">
+          <MavenCoreState>
+            <option name="checksumPolicy" value="warn" />
+            <option name="failureBehavior" value="fail-fast" />
+            <option name="localRepository" value="" />
+            <option name="mavenHome" value="" />
+            <option name="mavenSettingsFile" value="" />
+            <option name="nonRecursive" value="false" />
+            <option name="pluginUpdatePolicy" value="false" />
+            <option name="produceExceptionErrorMessages" value="false" />
+            <option name="usePluginRegistry" value="true" />
+            <option name="workOffline" value="false" />
+          </MavenCoreState>
+        </option>
+        <option name="builderState">
+          <MavenBuilderState>
+            <option name="jreName" value="1.5" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="syncAfterBuild" value="true" />
+            <option name="useMavenEmbedder" value="false" />
+            <option name="vmOptions" value="" />
+          </MavenBuilderState>
+        </option>
+      </MavenSettings>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
@@ -564,6 +949,13 @@
       <method>
         <option name="Make" value="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -587,24 +979,25 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="false" name="tomcat 5" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/raffle-web-springmvc/welcome.view" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="raffle-web-wicket/web/Web" DEPLOYMENT_SOURCE_NAME="jar">
+      <JAVAEE_FACET FACET_ID="raffle-web-gwt/web/Web">
         <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="raffle-web-springmvc/web/Web" DEPLOYMENT_SOURCE_NAME="jar">
+        <option name="CONTEXT_PATH" value="/raffle-web-springmvc" />
         <option name="DEPLOY" value="true" />
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="raffle-web-wicket/web/Web">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_RaffleAppf1f9aec0" />
@@ -646,11 +1039,12 @@
         </SHUTDOWN>
       </ConfigurationWrapper>
       <method>
+        <option name="Run Maven goal" value="false" />
         <option name="Make" value="true" />
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BasicRandomizerTest.testWithOnlyOneItem" />
+      <item index="0" class="java.lang.String" itemvalue="Application.RunnerForIntegrationTest" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat 5" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -704,30 +1098,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1440" height="811" extended-state="0" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24563953" order="11" />
+      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2809587" order="11" x="24" y="353" width="1403" height="504" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994187" order="8" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27246585" order="0" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="2" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="2" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3866279" order="12" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3355526" order="12" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="7" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="6" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="13" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
-      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29043853" order="5" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21366279" order="14" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29215115" order="3" x="21" y="99" width="1390" height="697" />
+      <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29978433" order="5" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21304926" order="14" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2663116" order="3" x="21" y="99" width="1390" height="697" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39971244" order="0" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3997093" order="4" x="25" y="290" width="1409" height="520" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" order="4" x="25" y="290" width="1409" height="520" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="15" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="9" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="9" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="10" />
       <window_info id="SVN Repositories" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994187" order="0" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="1" />
@@ -745,7 +1139,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the drop down box for raffles and a list with prices." />
+    <option name="LAST_COMMIT_MESSAGE" value="added the first implementation for the spring mvc application of the raffle front end" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -764,6 +1158,8 @@
     <MESSAGE value="Added the update and remove raffle, I also added the functionality to add participants to a raffle and of course remove them as well" />
     <MESSAGE value="added the prices to the input screen and ha some problems with lazy loading." />
     <MESSAGE value="added the drop down box for raffles and a list with prices." />
+    <MESSAGE value="now complete functionality for initial release available with the wicket front end" />
+    <MESSAGE value="added the first implementation for the spring mvc application of the raffle front end" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -804,118 +1200,68 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Participant.java">
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="380" selection-end="380" vertical-scroll-proportion="0.3627907">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Winner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="8" selection-start="370" selection-end="370" vertical-scroll-proportion="0.4744186">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Price.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="38" selection-start="508" selection-end="508" vertical-scroll-proportion="0.5860465">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Raffle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="36" selection-start="1624" selection-end="1624" vertical-scroll-proportion="0.81395346">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/DoTheRafflePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="29" selection-start="2458" selection-end="2458" vertical-scroll-proportion="0.72289157">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/EditRafflePage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="49" selection-start="3283" selection-end="3289" vertical-scroll-proportion="1.0108696">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="HtmlPreview">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/exceptions/WinnerHasBeenSelectedException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="53" selection-start="364" selection-end="364" vertical-scroll-proportion="0.27906978">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/RaffleServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="100" selection-start="2826" selection-end="2826" vertical-scroll-proportion="0.9255814">
+        <state line="63" column="0" selection-start="2375" selection-end="2375" vertical-scroll-proportion="1.3556485">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/RaffleService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="47" selection-start="1604" selection-end="1604" vertical-scroll-proportion="1.3116279">
+        <state line="23" column="17" selection-start="709" selection-end="709" vertical-scroll-proportion="0.3071161">
+          <folding>
+            <marker date="1198275024000" expanded="true" signature="1887:2274" placeholder="/**...*/" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/impl/RaffleServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="55" selection-start="920" selection-end="933" vertical-scroll-proportion="0.2672065">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-business/src/main/java/nl/gridshore/samples/raffle/business/exceptions/UnknownRaffleException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="257" selection-end="257" vertical-scroll-proportion="0.2511628">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/resources/wicket-web-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/raffle-business/src/main/resources/business-config.xml">
       <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/MenuItem.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="13" selection-start="245" selection-end="245" vertical-scroll-proportion="0.30697674">
+        <state line="10" column="82" selection-start="725" selection-end="725" vertical-scroll-proportion="0.2777778">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/resources/spring-servlet.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="90" selection-start="631" selection-end="631" vertical-scroll-proportion="0.2777778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="15" selection-start="631" selection-end="631" vertical-scroll-proportion="0.5277778">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/BasePage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="164" selection-end="164" vertical-scroll-proportion="0.26086956">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="HtmlPreview">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/BasePage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="13" selection-start="784" selection-end="784" vertical-scroll-proportion="0.30697674">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/java/nl/gridshore/samples/raffle/web/wicket/raffle/AllRafflesPage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="53" selection-start="299" selection-end="299" vertical-scroll-proportion="0.29347825">
+        <state line="11" column="0" selection-start="164" selection-end="299" vertical-scroll-proportion="0.30555555">
           <folding />
         </state>
       </provider>
@@ -925,8 +1271,69 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/raffle-web-wicket/src/main/webapp/styles/raffle.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="22" selection-start="731" selection-end="731" vertical-scroll-proportion="1.283721">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Users/jettro/.m2/repository/org/springframework/spring-context/2.5/spring-context-2.5-sources.jar!/org/springframework/ui/ModelMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="93" column="31" selection-start="3281" selection-end="3281" vertical-scroll-proportion="0.4534413">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Users/jettro/.m2/repository/org/springframework/spring-core/2.5/spring-core-2.5-sources.jar!/org/springframework/core/Conventions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="87" column="22" selection-start="2985" selection-end="2985" vertical-scroll-proportion="0.951417">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/Raffle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="315" selection-end="315" vertical-scroll-proportion="0.30532786">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="61" selection-start="335" selection-end="335" vertical-scroll-proportion="0.115830116">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="52" selection-start="457" selection-end="464" vertical-scroll-proportion="0.3011583">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/styles/raffle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="8" selection-start="738" selection-end="738" vertical-scroll-proportion="1.1011236">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="60" selection-start="400" selection-end="400" vertical-scroll-proportion="0.3243243">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/RaffleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="39" selection-start="803" selection-end="803" vertical-scroll-proportion="0.58426964">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

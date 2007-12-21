@@ -1,0 +1,111 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>RaffleApp</artifactId>
+        <groupId>nl.gridshore.samples.raffle</groupId>
+        <version>1.0.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>raffle-web-gwt</artifactId>
+    <groupId>nl.gridshore.samples.raffle</groupId>
+    <packaging>war</packaging>
+    <name>RaffleApp - Google Web Toolit webapplication</name>
+    <description>Web application developed with gwt</description>
+
+    <dependencies>
+        <!-- internal -->
+        <dependency>
+            <groupId>nl.gridshore.samples.raffle</groupId>
+            <artifactId>raffle-domain</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>nl.gridshore.samples.raffle</groupId>
+            <artifactId>raffle-business</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <!-- external -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <!-- google web toolkit -->
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-user</artifactId>
+            <version>1.4.60</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.gwt</groupId>
+            <artifactId>gwt-servlet</artifactId>
+            <version>1.4.60</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.gwt-widget</groupId>
+            <artifactId>gwt-widgets</artifactId>
+            <version>0.1.5</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sf.gwt-widget</groupId>
+            <artifactId>gwt-widgets-server</artifactId>
+            <version>0.1.4</version>
+        </dependency>
+        <!-- beware, this resource is not available on a repo, see http://code.google.com/p/com-bouwkamp-gwt/ -->
+        <dependency>
+            <groupId>com.bouwkamp</groupId>
+            <artifactId>gwt.jar</artifactId>
+            <version>1.1</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>com.totsp.gwt</groupId>
+                <artifactId>maven-googlewebtoolkit2-plugin</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>mergewebxml</goal>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <logLevel>ALL</logLevel>
+                    <runTarget>nl.gridshore.samples.raffle.web.gwt.Raffle/Raffle.html</runTarget>
+                    <compileTarget>
+                        <value>nl.gridshore.samples.raffle.web.gwt.Raffle</value>
+                    </compileTarget>
+                    <generatorRootClasses>nl.gridshore.samples.raffle.web.gwt.client.Raffle</generatorRootClasses>
+                    <generatorDestinationPackage>nl.gridshore.samples.raffle.web.gwt.client
+                    </generatorDestinationPackage>
+                    <generateGettersAndSetters>true</generateGettersAndSetters>
+                    <gwtHome>/Users/jettro/sources/javalibs/gwt-mac-1.4.61</gwtHome>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <webXml>target/web.xml</webXml>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

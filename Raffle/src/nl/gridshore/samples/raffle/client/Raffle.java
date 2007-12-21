@@ -1,4 +1,4 @@
-package nl.gridshore.samples.raffle.client;
+package nl.gridshore.samples.raffle.web.gwt.client;
 
 import com.bouwkamp.gwt.user.client.ui.RoundedPanel;
 import com.google.gwt.core.client.EntryPoint;
@@ -19,14 +19,14 @@ import java.util.Iterator;
  * EntryPoint class for the raffle application
  */
 public class Raffle implements EntryPoint {
-    
+
     public void onModuleLoad() {
         final ScrollPanel contentPanel = new ScrollPanel();
         contentPanel.setStyleName("content_panel");
-        RoundedPanel roundedContentPanel = new RoundedPanel(contentPanel,RoundedPanel.ALL,5);
+        RoundedPanel roundedContentPanel = new RoundedPanel(contentPanel, RoundedPanel.ALL, 5);
         roundedContentPanel.setStyleName("rounded_content_panel");
         MenuBar menuBar = createMenuBar(contentPanel);
-        RoundedPanel roundedMenuBar = new RoundedPanel(menuBar, RoundedPanel.ALL,5);
+        RoundedPanel roundedMenuBar = new RoundedPanel(menuBar, RoundedPanel.ALL, 5);
         RootPanel.get().add(roundedMenuBar);
         RootPanel.get().add(roundedContentPanel);
     }
@@ -75,17 +75,17 @@ public class Raffle implements EntryPoint {
         final FlowPanel randomName = new FlowPanel();
         AsyncCallback callback = new AsyncCallback() {
             public void onFailure(Throwable caught) {
-                GWT.log("Problem while getting random name",caught);
+                GWT.log("Problem while getting random name", caught);
             }
 
             public void onSuccess(Object result) {
                 randomName.add(new Label((String) result));
-                LightBox lightBox = new LightBox(new WinnerPopup((String)result));
+                LightBox lightBox = new LightBox(new WinnerPopup((String) result));
                 lightBox.show();
             }
         };
         RaffleServiceGwtRemoteAsync service = RaffleServiceGwtRemote.App.getInstance();
-        service.getRandomName(priceDesc,callback);
+        service.getRandomName(priceDesc, callback);
         return randomName;
     }
 
@@ -93,16 +93,17 @@ public class Raffle implements EntryPoint {
         final ScrollPanel listNames = new ScrollPanel();
         AsyncCallback callback = new AsyncCallback() {
             public void onFailure(Throwable caught) {
-                GWT.log("Problem while getting random name",caught);
+                GWT.log("Problem while getting random name", caught);
             }
 
             public void onSuccess(Object result) {
                 ArrayList names = (ArrayList) result;
                 String resultString = "";
-                for(Iterator iter = names.iterator();iter.hasNext();) {
-                    resultString += (String) iter.next() + "\n";
+                VerticalPanel verticalnames = new VerticalPanel();
+                for (Iterator iter = names.iterator(); iter.hasNext();) {
+                    verticalnames.add(new Label((String) iter.next()));
                 }
-                listNames.add(new Label(resultString));
+                listNames.add(verticalnames);
             }
         };
         RaffleServiceGwtRemoteAsync service = RaffleServiceGwtRemote.App.getInstance();
@@ -118,20 +119,20 @@ public class Raffle implements EntryPoint {
         nameTextBox.setName("personName");
         nameForm.add(nameTextBox);
         form.add(nameForm);
-        Button saveButton = new Button("Store",new ClickListener(){
+        Button saveButton = new Button("Store", new ClickListener() {
             public void onClick(Widget sender) {
                 String name = nameTextBox.getText();
                 RaffleServiceGwtRemoteAsync service = RaffleServiceGwtRemote.App.getInstance();
                 AsyncCallback callback = new AsyncCallback() {
                     public void onFailure(Throwable caught) {
-                        GWT.log("Failure while creating a new name",caught);
+                        GWT.log("Failure while creating a new name", caught);
                     }
 
                     public void onSuccess(Object result) {
                         contentPanel.setWidget(new Label("Name is stored"));
                     }
                 };
-                service.storeName(name,callback);
+                service.storeName(name, callback);
             }
         });
         form.add(saveButton);
@@ -142,13 +143,13 @@ public class Raffle implements EntryPoint {
         final ScrollPanel listNames = new ScrollPanel();
         AsyncCallback callback = new AsyncCallback() {
             public void onFailure(Throwable caught) {
-                GWT.log("Problem while getting random name",caught);
+                GWT.log("Problem while getting random name", caught);
             }
 
             public void onSuccess(Object result) {
                 ArrayList names = (ArrayList) result;
                 String resultString = "";
-                for(Iterator iter = names.iterator();iter.hasNext();) {
+                for (Iterator iter = names.iterator(); iter.hasNext();) {
                     resultString += (String) iter.next() + "\n";
                 }
                 listNames.add(new Label(resultString));

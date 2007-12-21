@@ -1,4 +1,4 @@
-package nl.gridshore.samples.raffle.client;
+package nl.gridshore.samples.raffle.web.gwt.client;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.rpc.RemoteService;
@@ -16,12 +16,14 @@ import java.util.ArrayList;
 public interface RaffleServiceGwtRemote extends RemoteService {
     /**
      * Returns a random name as a string from the storage
+     *
      * @return String containing a name
      */
     String getRandomName(String priceDesc);
 
     /**
      * Return all available names
+     *
      * @return ArrayList of names
      * @gwt.typeArgs <java.lang.String>
      */
@@ -29,6 +31,7 @@ public interface RaffleServiceGwtRemote extends RemoteService {
 
     /**
      * Stores the provided name
+     *
      * @param name String with the name to store
      */
     void storeName(String name);
@@ -40,12 +43,12 @@ public interface RaffleServiceGwtRemote extends RemoteService {
      * Use RaffleServiceGwtRemote.App.getInstance() to access static instance of RaffleServiceGwtRemoteAsync
      */
     public static class App {
-        private static RaffleServiceGwtRemoteAsync ourInstance = null;
+        private static nl.gridshore.samples.raffle.web.gwt.client.RaffleServiceGwtRemoteAsync ourInstance = null;
 
         public static synchronized RaffleServiceGwtRemoteAsync getInstance() {
             if (ourInstance == null) {
                 ourInstance = (RaffleServiceGwtRemoteAsync) GWT.create(RaffleServiceGwtRemote.class);
-                ((ServiceDefTarget) ourInstance).setServiceEntryPoint(GWT.getModuleBaseURL() + "nl.gridshore.samples.raffle.Raffle/RaffleServiceGwtRemote");
+                ((ServiceDefTarget) ourInstance).setServiceEntryPoint(GWT.getModuleBaseURL() + "../raffleservice.rpc");
             }
             return ourInstance;
         }

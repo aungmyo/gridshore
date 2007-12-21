@@ -71,7 +71,6 @@ public class RaffleServiceTest extends TestCase {
 
         expect(mockPriceDao.loadById(inputPrice.getId())).andReturn(foundPrice);
         expect(mockRandomizer.createRandomNumber(foundRaffle.getPrices().size())).andReturn(0);
-//        expect(mockRaffleDao.save(foundRaffle)).andReturn(foundRaffle);
 
         replay(mockPriceDao, mockRandomizer, mockRaffleDao);
 

@@ -64,10 +64,13 @@ public interface RaffleService {
     void removePriceFromRaffle(Price price);
 
     /**
-     * Chooses a winner for the current provided price
+     * Chooses a winner for the current provided price and throws an exception if the winner is already available
      *
      * @param price Price to choose the raffle for
      * @return Price with the winner
+     * @throws nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException
+     *          thrown if a winner is
+     *          allready available
      */
     Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException;
 }

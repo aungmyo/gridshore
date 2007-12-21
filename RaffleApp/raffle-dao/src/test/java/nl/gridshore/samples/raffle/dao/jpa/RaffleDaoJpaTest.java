@@ -1,5 +1,7 @@
 package nl.gridshore.samples.raffle.dao.jpa;
 
+import nl.gridshore.samples.raffle.dao.RaffleDao;
+import nl.gridshore.samples.raffle.domain.Participant;
 import nl.gridshore.samples.raffle.domain.Price;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import org.springframework.test.jpa.AbstractJpaTests;
@@ -7,9 +9,13 @@ import org.springframework.test.jpa.AbstractJpaTests;
 import java.util.List;
 
 public class RaffleDaoJpaTest extends AbstractJpaTests {
-    private RaffleDaoJpa raffleDao;
+    private RaffleDao raffleDao;
 
-    public void setRaffleDao(RaffleDaoJpa raffleDao) {
+    protected void onSetUp() throws Exception {
+        super.onSetUp();
+    }
+
+    public void setRaffleDao(RaffleDao raffleDao) {
         this.raffleDao = raffleDao;
     }
 
@@ -52,6 +58,17 @@ public class RaffleDaoJpaTest extends AbstractJpaTests {
         newRaffle.setDescription("Description of test raffle");
         raffleDao.save(newRaffle);
         assertEquals("Inserting a new Raffle did not succeed", numRaffles + 1, raffleDao.loadAll().size());
+    }
+
+    public void testAddParticipant() throws Exception {
+        int countBefore = getJdbcTemplate().queryForInt("select count(*) from participants");
+        Raffle raffle = raffleDao.loadById(1L);
+        Participant participant = new Participant();
+        participant.setName("oke");
+        raffle.addParticipant(participant);
+        raffleDao.save(raffle);
+        int count = getJdbcTemplate().queryForInt("select count(*) from participants");
+        assertTrue("no participant is created", (countBefore + 1) == count);
     }
 
     protected String[] getConfigLocations() {

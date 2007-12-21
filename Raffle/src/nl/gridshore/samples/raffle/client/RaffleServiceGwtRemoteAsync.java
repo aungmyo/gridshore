@@ -1,4 +1,4 @@
-package nl.gridshore.samples.raffle.client;
+package nl.gridshore.samples.raffle.web.gwt.client;
 
 import com.google.gwt.user.client.rpc.AsyncCallback;
 

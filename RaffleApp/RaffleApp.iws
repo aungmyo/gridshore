@@ -19,26 +19,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/WinnerForPriceController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/BaseDomain.java" afterPath="$PROJECT_DIR$/raffle-domain/src/main/java/nl/gridshore/samples/raffle/domain/BaseDomain.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/participantForm.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/ValidatorConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeleteParticipantController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/PriceValidator.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/raffle-web-gwt/src/main/java/nl/gridshore/samples/raffle/Raffle.gwt.xml" afterPath="" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/priceForm.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/raffleForm.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/RaffleController.java" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/RaffleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/EditRaffleController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/AddParticipantController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/ParticipantValidator.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/AddPriceController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/welcome.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/raffle-dao/pom.xml" afterPath="$PROJECT_DIR$/raffle-dao/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RaffleApp.iws" afterPath="$PROJECT_DIR$/RaffleApp.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeletePriceController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/RaffleValidator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
     </list>
     <ignored path="RaffleApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,6 +31,11 @@
     <leftPanel />
     <rightPanel />
     <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="/Users/jettro/Library/Caches/IntelliJIDEA70/coverage/RaffleApp$RaffleDaoJpaTest$RaffleDaoJpaTest.es" NAME="RaffleDaoJpaTest" MODIFIED="1198399332873" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>nl.gridshore.samples.raffle.dao.jpa.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -110,7 +98,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeleteParticipantController.java" line="31" class="nl.gridshore.samples.raffle.web.springmvc.DeleteParticipantController" package="nl.gridshore.samples.raffle.web.springmvc">
+      <breakpoint url="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeleteParticipantController.java" line="30" class="nl.gridshore.samples.raffle.web.springmvc.DeleteParticipantController" package="nl.gridshore.samples.raffle.web.springmvc">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -184,7 +172,26 @@
     <favorites_list name="RaffleApp" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/raffle-dao/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="86" column="19" selection-start="3274" selection-end="3274" vertical-scroll-proportion="0.79916316">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="131" column="0" selection-start="4717" selection-end="4717" vertical-scroll-proportion="0.9497908">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -316,6 +323,20 @@
           <option name="myItemId" value="RaffleApp" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="RaffleApp" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -323,7 +344,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -333,11 +354,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -347,15 +368,19 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -365,27 +390,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test/java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -395,31 +416,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test/java" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src/test/java/nl/gridshore/samples/raffle/dao/jpa" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -429,75 +446,15 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
+          <option name="myItemId" value="raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="RaffleApp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="RaffleApp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="raffle-web-springmvc" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/raffle-dao/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -564,18 +521,25 @@
       <recent name="nl.gridshore.samples.raffle.dao" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat 5">
-    <tempConfiguration default="false" name="RunnerForIntegrationTest" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.raffle.business.RunnerForIntegrationTest" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+  <component name="RunManager" selected="JUnit.RaffleDaoJpaTest">
+    <tempConfiguration default="false" name="RaffleDaoJpaTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="nl.gridshore.samples.raffle.dao.jpa.*" />
+      <module name="raffle-dao" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="PACKAGE_NAME" value="nl.gridshore.samples.raffle.dao.jpa" />
+      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.raffle.dao.jpa.RaffleDaoJpaTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="raffle-business" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -797,7 +761,7 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Application.RunnerForIntegrationTest" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.RaffleDaoJpaTest" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat 5" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -852,7 +816,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
@@ -867,8 +831,8 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="4" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29978433" order="5" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24766977" order="14" x="24" y="366" width="1392" height="331" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2663116" order="3" x="21" y="99" width="1390" height="697" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24766977" order="14" x="24" y="366" width="1392" height="331" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2663116" order="3" x="21" y="99" width="1390" height="697" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39971244" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" order="4" x="25" y="290" width="1409" height="520" />
@@ -892,7 +856,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed some files that should not be in svn anymore" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added the complete functionality to add/remove prizes and partcipants as well as creating a winner for a price" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -914,6 +878,7 @@
     <MESSAGE value="now complete functionality for initial release available with the wicket front end" />
     <MESSAGE value="added the first implementation for the spring mvc application of the raffle front end" />
     <MESSAGE value="removed some files that should not be in svn anymore" />
+    <MESSAGE value="Added the complete functionality to add/remove prizes and partcipants as well as creating a winner for a price" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -954,22 +919,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/PriceValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="36" selection-start="779" selection-end="779" vertical-scroll-proportion="0.39372325">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/validator/RaffleValidator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="63" selection-start="1045" selection-end="1045" vertical-scroll-proportion="0.42796007">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/AddPriceController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="0" selection-start="1889" selection-end="1889" vertical-scroll-proportion="0.87303853">
@@ -1053,15 +1002,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeleteParticipantController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1333" selection-end="1411" vertical-scroll-proportion="0.87449396">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/participantForm.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="74" selection-start="801" selection-end="801" vertical-scroll-proportion="0.47698745">
@@ -1069,16 +1009,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp">
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="0" selection-start="426" selection-end="426" vertical-scroll-proportion="0.32635984">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/includes.jsp">
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/webapp/WEB-INF/jsp/header.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="17" column="0" selection-start="425" selection-end="425" vertical-scroll-proportion="0.29781023">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-web-springmvc/src/main/java/nl/gridshore/samples/raffle/web/springmvc/DeleteParticipantController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="80" selection-start="1044" selection-end="1044" vertical-scroll-proportion="0.49643368">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/raffle-dao/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="19" selection-start="3274" selection-end="3274" vertical-scroll-proportion="0.79916316">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="131" column="0" selection-start="4717" selection-end="4717" vertical-scroll-proportion="0.9497908">
           <folding />
         </state>
       </provider>

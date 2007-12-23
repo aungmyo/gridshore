@@ -12,7 +12,7 @@
     <tbody class="data">
         <c:forEach var="raffle" items="${raffleList}">
             <tr>
-                <td><a href="raffe.view?raffleId=${raffle.id}">edit</a></td>
+                <td><a href="editraffle.view?raffleId=${raffle.id}">edit</a></td>
                 <td>${raffle.title}</td>
                 <td>${raffle.description}</td>
             </tr>

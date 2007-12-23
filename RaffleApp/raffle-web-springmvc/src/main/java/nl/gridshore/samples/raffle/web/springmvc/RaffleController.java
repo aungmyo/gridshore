@@ -26,4 +26,5 @@ public class RaffleController {
     public ModelMap welcomeHandler() {
         return new ModelMap("raffleList", raffleService.giveAllRaffles());
     }
+
 }

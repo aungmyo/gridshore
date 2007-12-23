@@ -1,4 +1,4 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html lang="en">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -10,8 +10,7 @@
 <div class="menu">
     <table>
         <tr>
-            <td class="menuitem"><a href="#">Home</a></td>
-            <td class="menuitem"><a href="#">Raffles</a></td>
+            <td class="menuitem"><a href="welcome.view">Raffles</a></td>
         </tr>
     </table>
 </div>

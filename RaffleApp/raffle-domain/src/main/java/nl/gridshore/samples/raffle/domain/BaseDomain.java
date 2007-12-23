@@ -26,4 +26,8 @@ public class BaseDomain implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public boolean isNew() {
+        return (id == null);
+    }
 }

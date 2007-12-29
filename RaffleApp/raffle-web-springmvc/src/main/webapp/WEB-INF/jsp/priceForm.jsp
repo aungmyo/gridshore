@@ -12,7 +12,7 @@
             </tr>
             <tr>
                 <th>description</th>
-                <td><form:input path="description" size="100" maxlength="250"/></td>
+                <td><form:input path="description" size="50" maxlength="250"/></td>
                 <td><form:errors path="description" cssClass="errors"/></td>
             </tr>
             <tr>

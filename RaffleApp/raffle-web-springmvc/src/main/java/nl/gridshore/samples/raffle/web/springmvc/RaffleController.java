@@ -22,9 +22,8 @@ public class RaffleController {
         this.raffleService = raffleService;
     }
 
-    @RequestMapping("/welcome.view")
-    public ModelMap welcomeHandler() {
+    @RequestMapping("/raffles.view")
+    public ModelMap rafflesHandler() {
         return new ModelMap("raffleList", raffleService.giveAllRaffles());
     }
-
 }

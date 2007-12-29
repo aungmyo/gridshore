@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Raffle test page</title>
+    <link href="styles/raffle.css" media="screen" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="js/jquery-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.dimensions.js"></script>
+    <script type="text/javascript" src="js/ui.accordion.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sidemenu").accordion();
+            $("#link-allraffles").click(function() {
+                $("#maincontentbox").load("raffles.view", {}, function() {
+                    $("#raffledata tr:nth-child(even)").addClass("striped");
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="screentitle">Master Raffle Application</div>
+<div id="sidemenubox">
+    <ul id="sidemenu" class="ui-accordion-container">
+        <li>
+            <div class="ui-accordion-left"></div>
+            <a href="#" class="ui-accordion-link" id="link-allraffles">
+                Show all raffles
+                <div class="ui-accordion-right"></div>
+            </a>
+
+            <div class="ui-accordion-content">
+                Here you can browse all raffles, there prizes, there participants and there winners.
+            </div>
+        </li>
+        <li>
+            <div class="ui-accordion-left"></div>
+            <a href="#" class="ui-accordion-link">
+                Create winner for raffle
+                <div class="ui-accordion-right"></div>
+            </a>
+
+            <div class="ui-accordion-content">Here you can choose a raffle and start giving away prizes</div>
+        </li>
+        <li>
+            <div class="ui-accordion-left"></div>
+            <a href="#" class="ui-accordion-link">
+                About
+                <div class="ui-accordion-right"></div>
+            </a>
+
+            <div class="ui-accordion-content">This raffle has been provided by Jettro Coenradie, of course you need
+                to find your own prizes to give away
+            </div>
+        </li>
+    </ul>
+
+</div>
+
+<div id="maincontentbox">
+
+</div>
+
+</body>
+</html>

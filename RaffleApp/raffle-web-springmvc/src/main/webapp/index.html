@@ -7,6 +7,7 @@
     <script type="text/javascript" src="js/jquery-1.2.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.dimensions.js"></script>
     <script type="text/javascript" src="js/ui.accordion.js"></script>
+    <script type="text/javascript" src="js/my-custom-scripts.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#sidemenu").accordion();
@@ -15,7 +16,11 @@
                     $("#raffledata tr:nth-child(even)").addClass("striped");
                 });
             });
+            $("#link-winner").click(function() {
+                doTheWinnerThing();
+            });
         });
+
     </script>
 </head>
 <body>
@@ -35,7 +40,7 @@
         </li>
         <li>
             <div class="ui-accordion-left"></div>
-            <a href="#" class="ui-accordion-link">
+            <a href="#" class="ui-accordion-link" id="link-winner">
                 Create winner for raffle
                 <div class="ui-accordion-right"></div>
             </a>

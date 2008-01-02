@@ -90,6 +90,7 @@
       <facet-type id="gwt">
         <modules>
           <module name="raffle-web-gwt" />
+          <module name="RaffleApp" />
         </modules>
       </facet-type>
     </autodetection-disabled>

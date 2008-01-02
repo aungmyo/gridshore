@@ -12,6 +12,7 @@ import nl.gridshore.samples.raffle.domain.Price;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.domain.Winner;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -82,5 +83,16 @@ public class RaffleServiceImpl implements RaffleService {
         foundPrice.setWinner(winner);
 
         return foundPrice;
+    }
+
+    public List<Participant> giveRandomParticipants(Raffle raffle, Integer numParticipants) {
+        List<Participant> randomParticipants = new ArrayList<Participant>();
+        Raffle foundRaffle = raffleDao.loadById(raffle.getId());
+        List<Participant> participants = foundRaffle.getParticipants();
+        for (int i = 0; i < numParticipants; i++) {
+            Integer randomNumber = randomizer.createRandomNumber(participants.size() - 1); // -1 for starting at zero
+            randomParticipants.add(participants.get(randomNumber));
+        }
+        return randomParticipants;
     }
 }

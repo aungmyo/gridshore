@@ -73,4 +73,6 @@ public interface RaffleService {
      *          allready available
      */
     Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException;
+
+    List<Participant> giveRandomParticipants(Raffle raffle, Integer numParticipants);
 }

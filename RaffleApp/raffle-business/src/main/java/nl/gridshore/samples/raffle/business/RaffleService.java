@@ -1,5 +1,6 @@
 package nl.gridshore.samples.raffle.business;
 
+import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.domain.Participant;
@@ -50,11 +51,15 @@ public interface RaffleService {
     void removeRaffle(Raffle raffle);
 
     /**
-     * Remove a specific participant
+     * Remove a specific participant, a participant that is a winner cannot be removed. A participantIsAWinner
+     * exception will be thrown
      *
      * @param participant Participant to remove
+     * @throws nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException
+     *          if the provided participant
+     *          is a winner it cannot be deleted.
      */
-    void removeParticipantFromRaffle(Participant participant);
+    void removeParticipantFromRaffle(Participant participant) throws ParticipantIsAWinnerException;
 
     /**
      * Remove the provided price from the raffle
@@ -74,5 +79,12 @@ public interface RaffleService {
      */
     Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException;
 
+    /**
+     * Returns a list with the specified amount of random participants
+     *
+     * @param raffle          Object to obtain the participants for
+     * @param numParticipants the number of participants to obtain
+     * @return List of participants
+     */
     List<Participant> giveRandomParticipants(Raffle raffle, Integer numParticipants);
 }

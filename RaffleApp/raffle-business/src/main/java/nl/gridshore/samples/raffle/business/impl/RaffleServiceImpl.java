@@ -2,6 +2,7 @@ package nl.gridshore.samples.raffle.business.impl;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.business.Randomizer;
+import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.dao.ParticipantDao;
@@ -51,9 +52,17 @@ public class RaffleServiceImpl implements RaffleService {
         raffleDao.delete(raffle);
     }
 
-    public void removeParticipantFromRaffle(final Participant participant) {
+    public void removeParticipantFromRaffle(final Participant participant) throws ParticipantIsAWinnerException {
         Raffle raffle = raffleDao.loadById(participant.getRaffle().getId());
+        List<Price> prizes = raffle.getPrices();
         Participant foundPaticipant = participantDao.loadById(participant.getId());
+        for (Price prize : prizes) {
+            if (prize.getWinner() != null && prize.getWinner().getParticipant().equals(foundPaticipant)) {
+                throw new ParticipantIsAWinnerException("The provided participant (" +
+                        foundPaticipant.getName() +
+                        ")is a winner and cannot be deleted");
+            }
+        }
         raffle.removeParticipant(foundPaticipant);
         participantDao.delete(participant);
     }

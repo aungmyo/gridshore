@@ -1,5 +1,7 @@
 package nl.gridshore.samples.raffle.business;
 
+import nl.gridshore.samples.raffle.business.exceptions.InputParameterException;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
@@ -13,6 +15,8 @@ public interface Randomizer {
      *
      * @param maxValue Integer representing the maximum value for the random number
      * @return the created random number
+     * @throws nl.gridshore.samples.raffle.business.exceptions.InputParameterException
+     *          thrown when the maxValue is  smaller than 1
      */
-    Integer createRandomNumber(Integer maxValue);
+    Integer createRandomNumber(Integer maxValue) throws InputParameterException;
 }

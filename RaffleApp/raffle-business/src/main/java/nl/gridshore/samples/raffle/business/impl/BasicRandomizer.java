@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.business.impl;
 
 import nl.gridshore.samples.raffle.business.Randomizer;
+import nl.gridshore.samples.raffle.business.exceptions.InputParameterException;
 
 import java.util.Random;
 
@@ -12,8 +13,12 @@ import java.util.Random;
  * This is the most basic randomizer you can think of. It uses the java ranoom method with the miliseconds as a seed
  */
 public class BasicRandomizer implements Randomizer {
-    public Integer createRandomNumber(Integer maxValue) {
-        Random random = new Random(System.currentTimeMillis());
-        return random.nextInt(maxValue + 1);
+    Random random = new Random(System.currentTimeMillis());
+
+    public Integer createRandomNumber(Integer maxValue) throws InputParameterException {
+        if (maxValue < 1) {
+            throw new InputParameterException("maxValue for random number must be higher than 0");
+        }
+        return (Math.abs(random.nextInt()) % (maxValue)) + 1;
     }
 }

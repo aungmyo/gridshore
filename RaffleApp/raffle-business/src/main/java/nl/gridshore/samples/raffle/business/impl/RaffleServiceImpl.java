@@ -85,7 +85,7 @@ public class RaffleServiceImpl implements RaffleService {
 
         List<Participant> participants = foundPrice.getRaffle().getParticipants();
 
-        Integer randomNumber = randomizer.createRandomNumber(participants.size() - 1); // -1 for starting at zero
+        Integer randomNumber = randomizer.createRandomNumber(participants.size()) - 1; // -1 for starting at zero
 
         Winner winner = new Winner(foundPrice, participants.get(randomNumber));
 
@@ -99,7 +99,7 @@ public class RaffleServiceImpl implements RaffleService {
         Raffle foundRaffle = raffleDao.loadById(raffle.getId());
         List<Participant> participants = foundRaffle.getParticipants();
         for (int i = 0; i < numParticipants; i++) {
-            Integer randomNumber = randomizer.createRandomNumber(participants.size() - 1); // -1 for starting at zero
+            Integer randomNumber = randomizer.createRandomNumber(participants.size()) - 1; // -1 for starting at zero
             randomParticipants.add(participants.get(randomNumber));
         }
         return randomParticipants;

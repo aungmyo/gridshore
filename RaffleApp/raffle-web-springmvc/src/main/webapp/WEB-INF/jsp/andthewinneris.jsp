@@ -17,7 +17,6 @@
         var counter = 0;
 
         $(document).ready(function() {
-            alert(fakewinners.toString());
             $("#link-winner").click(function() {
                 doTheWinnerThingWithRaffleId(${price.raffle.id});
             });

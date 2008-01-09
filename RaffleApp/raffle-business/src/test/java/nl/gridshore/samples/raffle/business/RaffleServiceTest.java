@@ -59,7 +59,7 @@ public class RaffleServiceTest extends TestCase {
         Price foundPrize = createFoundPrize(inputPrize);
 
         expect(mockPriceDao.loadById(inputPrize.getId())).andReturn(foundPrize);
-        expect(mockRandomizer.createRandomNumber(foundPrize.getRaffle().getPrices().size())).andReturn(0);
+        expect(mockRandomizer.createRandomNumber(foundPrize.getRaffle().getParticipants().size())).andReturn(1);
 
         replay(mockPriceDao, mockRandomizer, mockRaffleDao);
 
@@ -125,8 +125,8 @@ public class RaffleServiceTest extends TestCase {
         Integer numParticipants = 2;
 
         expect(mockRaffleDao.loadById(raffleId)).andReturn(raffle);
-        expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size() - 1)).andReturn(0);
-        expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size() - 1)).andReturn(1);
+        expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size())).andReturn(1);
+        expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size())).andReturn(1);
 
         replay(mockPriceDao, mockRandomizer, mockRaffleDao);
 

@@ -12,13 +12,13 @@
     <script type="text/javascript" src="${ctx}/js/jquery.dimensions.js"></script>
     <script type="text/javascript" src="${ctx}/js/my-custom-scripts.js"></script>
     <script type="text/javascript">
-        var actualwinner = "${price.winner.participant.name}";
+        var actualwinner = "${prize.winner.participant.name}";
         var fakewinners = new Array(${notwinners}, actualwinner);
         var counter = 0;
 
         $(document).ready(function() {
             $("#link-winner").click(function() {
-                doTheWinnerThingWithRaffleId(${price.raffle.id});
+                doTheWinnerThingWithRaffleId(${prize.raffle.id});
             });
 
             showWinner();
@@ -52,7 +52,7 @@
 </div>
 <div id="maincontentbox">
 
-    <h2>Prize : ${price.title}</h2>
+    <h2>Prize : ${prize.title}</h2>
 
     <div id="winner">???</div>
 </div>

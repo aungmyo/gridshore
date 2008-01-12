@@ -3,7 +3,7 @@ package nl.gridshore.samples.raffle.dao.jpa;
 import nl.gridshore.samples.raffle.dao.RaffleDao;
 import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 
 import java.util.List;
@@ -22,14 +22,14 @@ public class RaffleDaoJpaTest extends BaseTestDaoJpa {
         Raffle raffle = raffleDao.loadById(RAFFLE_ID_WITH_ALL);
         assertNotNull("A raffle should have been found", raffle);
         assertEquals("Name of raffle is not as expected", "Male raffle", raffle.getTitle());
-        List<Price> prices = raffle.getPrices();
-        assertNotNull("The raffle should have prices", prices);
-        assertEquals("The amount of prices should be 2", 2, prices.size());
-        Price price = prices.get(0);
-        assertEquals("The found price is not as expected", "Bier", price.getTitle());
-        assertNotNull("There should be a winner for this price", price.getWinner());
-        assertNotNull("This winner should be a participant as well", price.getWinner().getParticipant());
-        assertEquals("There should be a winner with the right name for this price", "Roy", price.getWinner().getParticipant().getName());
+        List<Prize> prizes = raffle.getPrizes();
+        assertNotNull("The raffle should have prizes", prizes);
+        assertEquals("The amount of prizes should be 2", 2, prizes.size());
+        Prize prize = prizes.get(0);
+        assertEquals("The found prize is not as expected", "Bier", prize.getTitle());
+        assertNotNull("There should be a winner for this prize", prize.getWinner());
+        assertNotNull("This winner should be a participant as well", prize.getWinner().getParticipant());
+        assertEquals("There should be a winner with the right name for this prize", "Roy", prize.getWinner().getParticipant().getName());
     }
 
     public void testLoadUnknownRaffle() {

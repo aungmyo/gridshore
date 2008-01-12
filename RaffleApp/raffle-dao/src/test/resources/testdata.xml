@@ -10,10 +10,10 @@
     <participants id="6" name="Frederique" raffle_id="2"/>
     <participants id="7" name="Daniek" raffle_id="2"/>
     <participants id="8" name="Milou" raffle_id="2"/>
-    <prices id="1" title="Bier" description="Een krat bier" raffle_id="1"/>
-    <prices id="2" title="Chips" description="Een zak chips" raffle_id="1"/>
-    <prices id="3" title="Juice" description="Een lekker zak chips" raffle_id="2"/>
-    <prices id="4" title="Cake" description="Een lekker plakje cake" raffle_id="2"/>
-    <winners id="1" price_id="1" participant_id="3"/>
-    <winners id="2" price_id="3" participant_id="7"/>
+    <prizes id="1" title="Bier" description="Een krat bier" raffle_id="1"/>
+    <prizes id="2" title="Chips" description="Een zak chips" raffle_id="1"/>
+    <prizes id="3" title="Juice" description="Een lekker zak chips" raffle_id="2"/>
+    <prizes id="4" title="Cake" description="Een lekker plakje cake" raffle_id="2"/>
+    <winners id="1" prize_id="1" participant_id="3"/>
+    <winners id="2" prize_id="3" participant_id="7"/>
 </dataset>

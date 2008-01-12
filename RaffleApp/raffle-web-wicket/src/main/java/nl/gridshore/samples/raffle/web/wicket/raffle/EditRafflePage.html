@@ -50,30 +50,30 @@
                 <td colspan="2">
                     <table>
                         <thead>
-                            <form wicket:id="price-form">
+                            <form wicket:id="prize-form">
                                 <tr>
                                     <th></th>
-                                    <th wicket:id="price-title-label">title column</th>
-                                    <th wicket:id="price-description-label">description column</th>
+                                    <th wicket:id="prize-title-label">title column</th>
+                                    <th wicket:id="prize-description-label">description column</th>
                                 </tr>
                                 <tr>
 
                                     <td>
-                                        <input type="submit" wicket:id="addprice" value="Add new"/>
+                                        <input type="submit" wicket:id="addprize" value="Add new"/>
                                     </td>
                                     <td>
-                                        <input type="text" wicket:id="price-title"/>
+                                        <input type="text" wicket:id="prize-title"/>
                                     </td>
                                     <td>
-                                        <input type="text" wicket:id="price-description"/>
+                                        <input type="text" wicket:id="prize-description"/>
                                     </td>
 
                                 </tr>
                             </form>
                         </thead>
                         <tbody>
-                            <tr wicket:id="prices">
-                                <td><a href="#" wicket:id="delete-price">delete</a></td>
+                            <tr wicket:id="prizes">
+                                <td><a href="#" wicket:id="delete-prize">delete</a></td>
                                 <td wicket:id="title">title</td>
                                 <td wicket:id="description">description</td>
                             </tr>

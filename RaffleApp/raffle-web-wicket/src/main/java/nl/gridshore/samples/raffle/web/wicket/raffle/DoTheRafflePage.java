@@ -1,6 +1,6 @@
 package nl.gridshore.samples.raffle.web.wicket.raffle;
 
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.web.wicket.BasePage;
 import org.apache.wicket.PageParameters;
@@ -30,10 +30,10 @@ public class DoTheRafflePage extends BasePage {
         add(new ChooseRaffleForm("choiceraffle", raffle));
 
 
-        add(new Label("price-title-label", "Price title"));
-        add(new Label("price-description-label", "Price description"));
-        add(new Label("price-winner-label", "winner"));
-        add(new Label("price-choose-winner-label", "choose winner"));
+        add(new Label("prize-title-label", "Prize title"));
+        add(new Label("prize-description-label", "Prize description"));
+        add(new Label("prize-winner-label", "winner"));
+        add(new Label("prize-choose-winner-label", "choose winner"));
         Raffle selectedRaffle;
         if (pageParams.containsKey(RaffleConstants.PARAM_RAFFLE_ID)) {
             Long raffleId = pageParams.getLong(RaffleConstants.PARAM_RAFFLE_ID);
@@ -42,21 +42,20 @@ public class DoTheRafflePage extends BasePage {
             selectedRaffle = new Raffle();
         }
 
-        add(new ListView("prizes", selectedRaffle.getPrices()) {
+        add(new ListView("prizes", selectedRaffle.getPrizes()) {
             protected void populateItem(ListItem item) {
-                final Price price = (Price) item.getModelObject();
-                item.add(new Label("price-title-value", price.getTitle()));
-                item.add(new Label("price-description-value", price.getDescription()));
+                final Prize prize = (Prize) item.getModelObject();
+                item.add(new Label("prize-title-value", prize.getTitle()));
+                item.add(new Label("prize-description-value", prize.getDescription()));
 
                 String winner = "";
-                if (price.getWinner() != null) {
-                    winner = price.getWinner().getParticipant().getName();
+                if (prize.getWinner() != null) {
+                    winner = prize.getWinner().getParticipant().getName();
                 }
-                item.add(new Label("price-winner-value", winner));
-//                item.add(new Label("price-choose-winner-value", "choose me"));
-                item.add(new Link("price-choose-winner-value") {
+                item.add(new Label("prize-winner-value", winner));
+                item.add(new Link("prize-choose-winner-value") {
                     public void onClick() {
-                        raffleService.chooseWinnerForPrice(price);
+                        raffleService.chooseWinnerForPrize(prize);
                         setResponsePage(DoTheRafflePage.class, pageParams);
                     }
                 });

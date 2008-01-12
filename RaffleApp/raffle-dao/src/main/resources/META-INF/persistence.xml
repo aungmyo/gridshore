@@ -4,7 +4,7 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <class>nl.gridshore.samples.raffle.domain.BaseDomain</class>
         <class>nl.gridshore.samples.raffle.domain.Raffle</class>
-        <class>nl.gridshore.samples.raffle.domain.Price</class>
+        <class>nl.gridshore.samples.raffle.domain.Prize</class>
         <class>nl.gridshore.samples.raffle.domain.Participant</class>
         <class>nl.gridshore.samples.raffle.domain.Winner</class>
         <properties>

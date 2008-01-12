@@ -19,7 +19,7 @@ public class Raffle extends BaseDomain {
     // Due to a limitation of JPA we cannot eager fetch multiple bags, so we need a diferent mechanism. Check the Dao
     // for a raffle.
     @OneToMany(mappedBy = "raffle", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
-    private List<Price> prices = new ArrayList<Price>();
+    private List<Prize> prizes = new ArrayList<Prize>();
     @OneToMany(mappedBy = "raffle", fetch = FetchType.EAGER, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<Participant> participants = new ArrayList<Participant>();
 
@@ -42,21 +42,21 @@ public class Raffle extends BaseDomain {
         this.description = description;
     }
 
-    public void addPrice(final Price price) {
-        price.setRaffle(this);
-        this.prices.add(price);
+    public void addPrize(final Prize prize) {
+        prize.setRaffle(this);
+        this.prizes.add(prize);
     }
 
-    public void removePrice(final Price price) {
-        this.prices.remove(price);
+    public void removePrize(final Prize prize) {
+        this.prizes.remove(prize);
     }
 
-    public List<Price> getPrices() {
-        return prices;
+    public List<Prize> getPrizes() {
+        return prizes;
     }
 
-    public void setPrices(List<Price> prices) {
-        this.prices = prices;
+    public void setPrizes(List<Prize> prizes) {
+        this.prizes = prizes;
     }
 
     public void addParticipant(final Participant participant) {

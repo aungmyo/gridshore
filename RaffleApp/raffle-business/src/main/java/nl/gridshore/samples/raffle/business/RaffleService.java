@@ -1,11 +1,11 @@
 package nl.gridshore.samples.raffle.business;
 
 import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
-import nl.gridshore.samples.raffle.business.exceptions.PriceDoesNotHaveAWinnerException;
+import nl.gridshore.samples.raffle.business.exceptions.PrizeDoesNotHaveAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 
 import java.util.List;
@@ -63,24 +63,24 @@ public interface RaffleService {
     void removeParticipantFromRaffle(Participant participant) throws ParticipantIsAWinnerException;
 
     /**
-     * Remove the provided price from the raffle
+     * Remove the provided prize from the raffle
      *
-     * @param price Price to be removed
+     * @param prize prize to be removed
      */
-    void removePriceFromRaffle(Price price);
+    void removePrizeFromRaffle(Prize prize);
 
     /**
-     * Chooses a winner for the current provided price and throws an exception if the winner is already available
+     * Chooses a winner for the current provided prize and throws an exception if the winner is already available
      *
-     * @param price Price to choose the raffle for
-     * @return Price with the winner
+     * @param prize prize to choose the raffle for
+     * @return prize with the winner
      * @throws nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException
      *          thrown if a winner is
      *          allready available
      */
-    Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException;
+    Prize chooseWinnerForPrize(Prize prize) throws WinnerHasBeenSelectedException;
 
-    void removeWinnerFromPrice(Price price) throws PriceDoesNotHaveAWinnerException;
+    void removeWinnerFromPrize(Prize prize) throws PrizeDoesNotHaveAWinnerException;
 
     /**
      * Returns a list with the specified amount of random participants

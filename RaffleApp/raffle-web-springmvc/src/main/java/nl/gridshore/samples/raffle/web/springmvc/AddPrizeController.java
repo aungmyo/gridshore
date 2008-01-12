@@ -1,9 +1,9 @@
 package nl.gridshore.samples.raffle.web.springmvc;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
-import nl.gridshore.samples.raffle.web.springmvc.validator.PriceValidator;
+import nl.gridshore.samples.raffle.web.springmvc.validator.PrizeValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,37 +16,37 @@ import org.springframework.web.bind.support.SessionStatus;
  * User: jettro
  * Date: Dec 23, 2007
  * Time: 8:34:54 AM
- * Controller class to a add a price to a raffle
+ * Controller class to a add a prize to a raffle
  */
 @Controller
-@RequestMapping("/addprice.view")
-@SessionAttributes("price")
-public class AddPriceController {
+@RequestMapping("/addprize.view")
+@SessionAttributes("prize")
+public class AddPrizeController {
     private final RaffleService raffleService;
 
     @Autowired
-    public AddPriceController(RaffleService raffleService) {
+    public AddPrizeController(RaffleService raffleService) {
         this.raffleService = raffleService;
     }
 
     @RequestMapping(method = RequestMethod.GET)
     public String setupForm(@RequestParam("raffleId")long raffleId, ModelMap model) {
         Raffle raffle = this.raffleService.giveRaffleById(raffleId);
-        Price price = new Price();
-        raffle.addPrice(price);
-        model.addAttribute(price);
-        return "priceForm";
+        Prize prize = new Prize();
+        raffle.addPrize(prize);
+        model.addAttribute(prize);
+        return "prizeForm";
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String processSubmit(@ModelAttribute("price")Price price, BindingResult bindingResult, SessionStatus status) {
-        new PriceValidator().validate(price, bindingResult);
+    public String processSubmit(@ModelAttribute("prize")Prize prize, BindingResult bindingResult, SessionStatus status) {
+        new PrizeValidator().validate(prize, bindingResult);
         if (bindingResult.hasErrors()) {
-            return "priceForm";
+            return "prizeForm";
         } else {
-            this.raffleService.storeRaffle(price.getRaffle());
+            this.raffleService.storeRaffle(prize.getRaffle());
             status.setComplete();
-            return "redirect:editraffle.view?raffleId=" + price.getRaffle().getId();
+            return "redirect:editraffle.view?raffleId=" + prize.getRaffle().getId();
         }
     }
 }

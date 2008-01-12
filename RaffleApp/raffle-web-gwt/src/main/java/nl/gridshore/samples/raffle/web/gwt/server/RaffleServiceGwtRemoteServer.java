@@ -2,7 +2,7 @@ package nl.gridshore.samples.raffle.web.gwt.server;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.web.gwt.client.RaffleServiceGwtRemote;
 
@@ -23,11 +23,11 @@ public class RaffleServiceGwtRemoteServer implements RaffleServiceGwtRemote {
         this.raffleService = raffleService;
     }
 
-    public String getRandomName(String priceDesc) {
-        Price price = new Price();
-        price.setTitle(priceDesc);
-        Price foundPrice = raffleService.chooseWinnerForPrice(price);
-        return foundPrice.getWinner().getParticipant().getName();
+    public String getRandomName(String prizeDesc) {
+        Prize prize = new Prize();
+        prize.setTitle(prizeDesc);
+        Prize foundPrize = raffleService.chooseWinnerForPrize(prize);
+        return foundPrize.getWinner().getParticipant().getName();
     }
 
     public ArrayList getAllNames() {

@@ -17,9 +17,10 @@ public interface RaffleServiceGwtRemote extends RemoteService {
     /**
      * Returns a random name as a string from the storage
      *
+     * @param prizeDesc Description of the prize to get a random name for
      * @return String containing a name
      */
-    String getRandomName(String priceDesc);
+    String getRandomName(String prizeDesc);
 
     /**
      * Return all available names

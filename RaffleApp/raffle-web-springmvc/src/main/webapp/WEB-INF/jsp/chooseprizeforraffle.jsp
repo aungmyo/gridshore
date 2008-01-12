@@ -9,7 +9,7 @@
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="prize" items="${raffle.prices}">
+        <c:forEach var="prize" items="${raffle.prizes}">
             <c:if test="${prize.winner == null}">
                 <tr>
                     <td><a href="pickwinner.view?prizeId=${prize.id}">pick winner</a></td>

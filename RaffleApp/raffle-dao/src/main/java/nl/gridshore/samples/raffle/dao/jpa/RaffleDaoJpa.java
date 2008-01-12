@@ -25,7 +25,7 @@ public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao {
         //noinspection unchecked
         List<Raffle> raffles = query.getResultList();
         for (Raffle raffle : raffles) {
-            raffle.getPrices().size();
+            raffle.getPrizes().size();
         }
         return raffles;
     }
@@ -36,14 +36,14 @@ public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao {
 
     public Raffle loadById(Long entityId) throws EntityNotFoundException {
         Raffle raffle = super.loadById(entityId);
-        raffle.getPrices().size();
+        raffle.getPrizes().size();
         return raffle;
     }
 
     public List<Raffle> loadAll() {
         List<Raffle> raffles = super.loadAll();
         for (Raffle raffle : raffles) {
-            raffle.getPrices().size();
+            raffle.getPrizes().size();
         }
         return raffles;
     }

@@ -10,7 +10,7 @@
 
     <bean id="raffleDao" class="nl.gridshore.samples.raffle.dao.jpa.RaffleDaoJpa"/>
     <bean id="participantDao" class="nl.gridshore.samples.raffle.dao.jpa.ParticipantDaoJpa"/>
-    <bean id="priceDao" class="nl.gridshore.samples.raffle.dao.jpa.PriceDaoJpa"/>
+    <bean id="prizeDao" class="nl.gridshore.samples.raffle.dao.jpa.PrizeDaoJpa"/>
     <bean id="winnerDao" class="nl.gridshore.samples.raffle.dao.jpa.WinnerDaoJpa"/>
 
     <!-- infrastructure beans -->

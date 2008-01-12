@@ -16,8 +16,8 @@ import javax.persistence.Table;
 @Table(name = "winners")
 public class Winner extends BaseDomain {
     @OneToOne
-    @JoinColumn(name = "price_id")
-    private Price price;
+    @JoinColumn(name = "prize_id")
+    private Prize prize;
     @OneToOne
     @JoinColumn(name = "participant_id")
     private Participant participant;
@@ -25,17 +25,17 @@ public class Winner extends BaseDomain {
     public Winner() {
     }
 
-    public Winner(Price price, Participant participant) {
-        this.price = price;
+    public Winner(Prize prize, Participant participant) {
+        this.prize = prize;
         this.participant = participant;
     }
 
-    public Price getPrice() {
-        return price;
+    public Prize getPrize() {
+        return prize;
     }
 
-    public void setPrice(Price price) {
-        this.price = price;
+    public void setPrize(Prize prize) {
+        this.prize = prize;
     }
 
     public Participant getParticipant() {

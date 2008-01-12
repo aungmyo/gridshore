@@ -1,7 +1,7 @@
 package nl.gridshore.samples.raffle.web.wicket.raffle;
 
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.web.wicket.BasePage;
 import org.apache.wicket.PageParameters;
@@ -30,8 +30,8 @@ public class EditRafflePage extends BasePage {
         add(new RaffleForm("raffle-form", raffle));
         add(new ParticipantsListView("participants", raffle.getParticipants(), pageParams));
         add(new ParticipantForm("participant-form", raffle, pageParams));
-        add(new PricesListView("prices", raffle.getPrices(), pageParams));
-        add(new PriceForm("price-form", raffle, pageParams));
+        add(new PrizesListView("prizes", raffle.getPrizes(), pageParams));
+        add(new PrizeForm("prize-form", raffle, pageParams));
         add(new Label("page-title-label", "Edit raffle"));
 
     }
@@ -74,17 +74,17 @@ public class EditRafflePage extends BasePage {
         }
     }
 
-    private class PriceForm extends Form {
-        public PriceForm(String id, final Raffle raffle, final PageParameters pageParams) {
+    private class PrizeForm extends Form {
+        public PrizeForm(String id, final Raffle raffle, final PageParameters pageParams) {
             super(id);
-            final Price price = new Price();
-            add(new Label("price-title-label", "Price title"));
-            add(new Label("price-description-label", "Price description"));
-            add(new TextField("price-title", new PropertyModel(price, "title")));
-            add(new TextField("price-description", new PropertyModel(price, "description")));
-            add(new Button("addprice") {
+            final Prize prize = new Prize();
+            add(new Label("prize-title-label", "Prize title"));
+            add(new Label("prize-description-label", "Prize description"));
+            add(new TextField("prize-title", new PropertyModel(prize, "title")));
+            add(new TextField("prize-description", new PropertyModel(prize, "description")));
+            add(new Button("addprize") {
                 public void onSubmit() {
-                    raffle.addPrice(price);
+                    raffle.addPrize(prize);
                     raffleService.storeRaffle(raffle);
                     setResponsePage(EditRafflePage.class, pageParams);
                 }
@@ -112,21 +112,21 @@ public class EditRafflePage extends BasePage {
         }
     }
 
-    private class PricesListView extends ListView {
+    private class PrizesListView extends ListView {
         private final PageParameters pageParams;
 
-        private PricesListView(String id, List list, PageParameters pageParams) {
+        private PrizesListView(String id, List list, PageParameters pageParams) {
             super(id, list);
             this.pageParams = pageParams;
         }
 
         protected void populateItem(ListItem item) {
-            final Price price = (Price) item.getModelObject();
-            item.add(new Label("title", price.getTitle()));
-            item.add(new Label("description", price.getDescription()));
-            item.add(new Link("delete-price") {
+            final Prize prize = (Prize) item.getModelObject();
+            item.add(new Label("title", prize.getTitle()));
+            item.add(new Label("description", prize.getDescription()));
+            item.add(new Link("delete-prize") {
                 public void onClick() {
-                    raffleService.removePriceFromRaffle(price);
+                    raffleService.removePrizeFromRaffle(prize);
                     setResponsePage(EditRafflePage.class, pageParams);
                 }
             });

@@ -71,21 +71,21 @@
         </thead>
         <tbody>
             <tr>
-                <td colspan="4"><a href="addprice.view?raffleId=${raffle.id}">Add Prize</a></td>
+                <td colspan="4"><a href="addprize.view?raffleId=${raffle.id}">Add Prize</a></td>
             </tr>
-            <c:forEach var="price" items="${raffle.prices}">
+            <c:forEach var="prize" items="${raffle.prizes}">
                 <tr>
-                    <td><a href="deleteprice.view?priceId=${price.id}">delete</a></td>
-                    <td>${price.title}</td>
-                    <td>${price.description}</td>
+                    <td><a href="deleteprize.view?prizeId=${prize.id}">delete</a></td>
+                    <td>${prize.title}</td>
+                    <td>${prize.description}</td>
                     <td>
                         <c:choose>
-                            <c:when test="${price.winner == null}">
-                                <a href="addwinner.view?priceId=${price.id}">Choose winner</a>
+                            <c:when test="${prize.winner == null}">
+                                <a href="addwinner.view?prizeId=${prize.id}">Choose winner</a>
                             </c:when>
                             <c:otherwise>
-                                ${price.winner.participant.name}
-                                <a href="deletewinner.view?priceId=${price.id}">remove</a>
+                                ${prize.winner.participant.name}
+                                <a href="deletewinner.view?prizeId=${prize.id}">remove</a>
                             </c:otherwise>
                         </c:choose>
                     </td>

@@ -16,7 +16,7 @@ public interface RaffleServiceGwtRemoteAsync {
      *
      * @return String containing a name
      */
-    void getRandomName(String priceDesc, AsyncCallback async);
+    void getRandomName(String prizeDesc, AsyncCallback async);
 
     /**
      * Return all available names

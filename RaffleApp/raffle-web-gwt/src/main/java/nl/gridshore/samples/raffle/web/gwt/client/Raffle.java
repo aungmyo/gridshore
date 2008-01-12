@@ -58,20 +58,20 @@ public class Raffle implements EntryPoint {
 
     private FlowPanel createButtonForRandomName(final ScrollPanel contentPanel) {
         final FlowPanel randomNameButtonPanel = new FlowPanel();
-        final TextBox priceDescTextBox = new TextBox();
-        randomNameButtonPanel.add(new Label("Name of price : "));
-        randomNameButtonPanel.add(priceDescTextBox);
+        final TextBox prizeDescTextBox = new TextBox();
+        randomNameButtonPanel.add(new Label("Name of prize : "));
+        randomNameButtonPanel.add(prizeDescTextBox);
         randomNameButtonPanel.add(new Button("Random Name", new ClickListener() {
             public void onClick(Widget sender) {
                 FlowPanel nameAndButton = createButtonForRandomName(contentPanel);
-                nameAndButton.add(createRandomNamePanel(priceDescTextBox.getText()));
+                nameAndButton.add(createRandomNamePanel(prizeDescTextBox.getText()));
                 contentPanel.setWidget(nameAndButton);
             }
         }));
         return randomNameButtonPanel;
     }
 
-    private FlowPanel createRandomNamePanel(String priceDesc) {
+    private FlowPanel createRandomNamePanel(String prizeDesc) {
         final FlowPanel randomName = new FlowPanel();
         AsyncCallback callback = new AsyncCallback() {
             public void onFailure(Throwable caught) {
@@ -85,7 +85,7 @@ public class Raffle implements EntryPoint {
             }
         };
         RaffleServiceGwtRemoteAsync service = RaffleServiceGwtRemote.App.getInstance();
-        service.getRandomName(priceDesc, callback);
+        service.getRandomName(prizeDesc, callback);
         return randomName;
     }
 
@@ -98,7 +98,6 @@ public class Raffle implements EntryPoint {
 
             public void onSuccess(Object result) {
                 ArrayList names = (ArrayList) result;
-                String resultString = "";
                 VerticalPanel verticalnames = new VerticalPanel();
                 for (Iterator iter = names.iterator(); iter.hasNext();) {
                     verticalnames.add(new Label((String) iter.next()));

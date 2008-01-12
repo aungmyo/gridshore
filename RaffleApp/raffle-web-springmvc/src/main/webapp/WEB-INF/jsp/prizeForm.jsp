@@ -1,8 +1,8 @@
 <%@ include file="/WEB-INF/jsp/includes.jsp" %>
 <%@ include file="/WEB-INF/jsp/header.jsp" %>
 
-<h2>Raffle : ${price.raffle.title}</h2>
-<form:form modelAttribute="price">
+<h2>Raffle : ${prize.raffle.title}</h2>
+<form:form modelAttribute="prize">
     <table>
         <tbody class="formentry">
             <tr>
@@ -18,7 +18,7 @@
             <tr>
                 <td colspan="3">
                     <c:choose>
-                        <c:when test="${price.new}">
+                        <c:when test="${prize.new}">
                             <input type="submit" value="Add Prize"/>
                         </c:when>
                         <c:otherwise>

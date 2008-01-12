@@ -2,7 +2,7 @@ package nl.gridshore.samples.raffle.web.springmvc;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -16,7 +16,7 @@ import java.util.List;
  * User: jettro
  * Date: Jan 2, 2008
  * Time: 12:25:51 PM
- * Controller used to select a(nother) raffle and price to obtain a winner for.
+ * Controller used to select a(nother) raffle and prize to obtain a winner for.
  */
 @Controller
 public class ChooseWinnerController {
@@ -45,12 +45,12 @@ public class ChooseWinnerController {
 
     @RequestMapping("/pickwinner.view")
     public String createWinnerForPrize(@RequestParam("prizeId")long prizeId, ModelMap model) {
-        Price price = new Price();
-        price.setId(prizeId);
-        price = this.raffleService.chooseWinnerForPrice(price);
-        model.addAttribute(price);
+        Prize prize = new Prize();
+        prize.setId(prizeId);
+        prize = this.raffleService.chooseWinnerForPrize(prize);
+        model.addAttribute(prize);
 
-        List<Participant> randomParticipants = this.raffleService.giveRandomParticipants(price.getRaffle(), 5);
+        List<Participant> randomParticipants = this.raffleService.giveRandomParticipants(prize.getRaffle(), 5);
         StringBuilder notWinners = new StringBuilder();
         for (Participant randomParticipant : randomParticipants) {
             notWinners.append("'").append(randomParticipant.getName()).append("'").append(",");

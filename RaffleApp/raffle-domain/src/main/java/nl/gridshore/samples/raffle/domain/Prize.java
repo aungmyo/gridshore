@@ -7,20 +7,20 @@ import javax.persistence.*;
  * User: Jettro.Coenradie
  * Date: 2-nov-2007
  * Time: 21:45:56
- * Base entity class for the Price
+ * Base entity class for the Prize
  */
 @Entity
-@Table(name = "prices")
-public class Price extends BaseDomain {
+@Table(name = "prizes")
+public class Prize extends BaseDomain {
     private String title;
     private String description;
     @ManyToOne
     @JoinColumn(name = "raffle_id")
     private Raffle raffle;
-    @OneToOne(mappedBy = "price", cascade = {CascadeType.ALL, CascadeType.REMOVE})
+    @OneToOne(mappedBy = "prize", cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private Winner winner;
 
-    public Price() {
+    public Prize() {
     }
 
     public String getTitle() {

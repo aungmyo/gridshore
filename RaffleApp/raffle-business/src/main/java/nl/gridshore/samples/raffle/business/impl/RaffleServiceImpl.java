@@ -3,16 +3,16 @@ package nl.gridshore.samples.raffle.business.impl;
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.business.Randomizer;
 import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
-import nl.gridshore.samples.raffle.business.exceptions.PriceDoesNotHaveAWinnerException;
+import nl.gridshore.samples.raffle.business.exceptions.PrizeDoesNotHaveAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.dao.ParticipantDao;
-import nl.gridshore.samples.raffle.dao.PriceDao;
+import nl.gridshore.samples.raffle.dao.PrizeDao;
 import nl.gridshore.samples.raffle.dao.RaffleDao;
 import nl.gridshore.samples.raffle.dao.WinnerDao;
 import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.domain.Winner;
 
@@ -29,15 +29,15 @@ import java.util.List;
 public class RaffleServiceImpl implements RaffleService {
     private RaffleDao raffleDao;
     private ParticipantDao participantDao;
-    private PriceDao priceDao;
+    private PrizeDao prizeDao;
     private WinnerDao winnerDao;
     private Randomizer randomizer;
 
     public RaffleServiceImpl(
-            RaffleDao raffleDao, ParticipantDao participantDao, PriceDao priceDao, WinnerDao winnerDao, Randomizer randomizer) {
+            RaffleDao raffleDao, ParticipantDao participantDao, PrizeDao prizeDao, WinnerDao winnerDao, Randomizer randomizer) {
         this.raffleDao = raffleDao;
         this.participantDao = participantDao;
-        this.priceDao = priceDao;
+        this.prizeDao = prizeDao;
         this.winnerDao = winnerDao;
         this.randomizer = randomizer;
     }
@@ -64,9 +64,9 @@ public class RaffleServiceImpl implements RaffleService {
 
     public void removeParticipantFromRaffle(final Participant participant) throws ParticipantIsAWinnerException {
         Raffle raffle = raffleDao.loadById(participant.getRaffle().getId());
-        List<Price> prizes = raffle.getPrices();
+        List<Prize> prizes = raffle.getPrizes();
         Participant foundPaticipant = participantDao.loadById(participant.getId());
-        for (Price prize : prizes) {
+        for (Prize prize : prizes) {
             if (prize.getWinner() != null && prize.getWinner().getParticipant().equals(foundPaticipant)) {
                 throw new ParticipantIsAWinnerException("The provided participant (" +
                         foundPaticipant.getName() +
@@ -77,41 +77,41 @@ public class RaffleServiceImpl implements RaffleService {
         participantDao.delete(participant);
     }
 
-    public void removePriceFromRaffle(Price price) {
-        Raffle raffle = raffleDao.loadById(price.getRaffle().getId());
-        Price foundPrice = priceDao.loadById(price.getId());
-        raffle.removePrice(foundPrice);
-        priceDao.delete(foundPrice);
+    public void removePrizeFromRaffle(Prize prize) {
+        Raffle raffle = raffleDao.loadById(prize.getRaffle().getId());
+        Prize foundPrize = prizeDao.loadById(prize.getId());
+        raffle.removePrize(foundPrize);
+        prizeDao.delete(foundPrize);
 
     }
 
-    public Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException {
-        Price foundPrice = priceDao.loadById(price.getId());
-        if (foundPrice.getWinner() != null) {
-            throw new WinnerHasBeenSelectedException("A winner has allready been selected for the price : "
-                    + foundPrice.getTitle() +
-                    ". The current winner is : " + foundPrice.getWinner().getParticipant().getName());
+    public Prize chooseWinnerForPrize(Prize prize) throws WinnerHasBeenSelectedException {
+        Prize foundPrize = prizeDao.loadById(prize.getId());
+        if (foundPrize.getWinner() != null) {
+            throw new WinnerHasBeenSelectedException("A winner has allready been selected for the prize : "
+                    + foundPrize.getTitle() +
+                    ". The current winner is : " + foundPrize.getWinner().getParticipant().getName());
         }
 
-        List<Participant> participants = foundPrice.getRaffle().getParticipants();
+        List<Participant> participants = foundPrize.getRaffle().getParticipants();
 
         Integer randomNumber = randomizer.createRandomNumber(participants.size()) - 1; // -1 for starting at zero
 
-        Winner winner = new Winner(foundPrice, participants.get(randomNumber));
+        Winner winner = new Winner(foundPrize, participants.get(randomNumber));
 
-        foundPrice.setWinner(winner);
+        foundPrize.setWinner(winner);
 
-        return foundPrice;
+        return foundPrize;
     }
 
-    public void removeWinnerFromPrice(Price price) throws PriceDoesNotHaveAWinnerException {
-        Price foundPrice = priceDao.loadById(price.getId());
-        if (foundPrice.getWinner() == null) {
-            throw new PriceDoesNotHaveAWinnerException(
-                    "No winner has been selected for the price : " + foundPrice.getTitle());
+    public void removeWinnerFromPrize(Prize prize) throws PrizeDoesNotHaveAWinnerException {
+        Prize foundPrize = prizeDao.loadById(prize.getId());
+        if (foundPrize.getWinner() == null) {
+            throw new PrizeDoesNotHaveAWinnerException(
+                    "No winner has been selected for the prize : " + foundPrize.getTitle());
         }
-        winnerDao.delete(foundPrice.getWinner());
-        foundPrice.setWinner(null);
+        winnerDao.delete(foundPrize.getWinner());
+        foundPrize.setWinner(null);
     }
 
     public List<Participant> giveRandomParticipants(Raffle raffle, Integer numParticipants) {

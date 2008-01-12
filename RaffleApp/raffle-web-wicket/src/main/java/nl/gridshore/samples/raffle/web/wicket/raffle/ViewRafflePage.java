@@ -2,7 +2,7 @@ package nl.gridshore.samples.raffle.web.wicket.raffle;
 
 import nl.gridshore.samples.raffle.business.RaffleService;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.web.wicket.BasePage;
 import org.apache.wicket.PageParameters;
@@ -38,13 +38,13 @@ public class ViewRafflePage extends BasePage {
                 item.add(new Label("name", participant.getName()));
             }
         });
-        add(new Label("price-title-label", "Price title"));
-        add(new Label("price-description-label", "Price description"));
-        add(new ListView("prizes", raffle.getPrices()) {
+        add(new Label("prize-title-label", "Prize title"));
+        add(new Label("prize-description-label", "Prize description"));
+        add(new ListView("prizes", raffle.getPrizes()) {
             protected void populateItem(ListItem item) {
-                Price price = (Price) item.getModelObject();
-                item.add(new Label("price-title-value", price.getTitle()));
-                item.add(new Label("price-description-value", price.getDescription()));
+                Prize prize = (Prize) item.getModelObject();
+                item.add(new Label("prize-title-value", prize.getTitle()));
+                item.add(new Label("prize-description-value", prize.getDescription()));
             }
         });
         add(new Link("back") {

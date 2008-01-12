@@ -2,17 +2,17 @@ package nl.gridshore.samples.raffle.business;
 
 import junit.framework.TestCase;
 import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
-import nl.gridshore.samples.raffle.business.exceptions.PriceDoesNotHaveAWinnerException;
+import nl.gridshore.samples.raffle.business.exceptions.PrizeDoesNotHaveAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.business.impl.RaffleServiceImpl;
 import nl.gridshore.samples.raffle.dao.ParticipantDao;
-import nl.gridshore.samples.raffle.dao.PriceDao;
+import nl.gridshore.samples.raffle.dao.PrizeDao;
 import nl.gridshore.samples.raffle.dao.RaffleDao;
 import nl.gridshore.samples.raffle.dao.WinnerDao;
 import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.Participant;
-import nl.gridshore.samples.raffle.domain.Price;
+import nl.gridshore.samples.raffle.domain.Prize;
 import nl.gridshore.samples.raffle.domain.Raffle;
 import nl.gridshore.samples.raffle.domain.Winner;
 import static org.easymock.EasyMock.*;
@@ -29,7 +29,7 @@ import java.util.List;
  */
 public class RaffleServiceTest extends TestCase {
     private RaffleDao mockRaffleDao;
-    private PriceDao mockPriceDao;
+    private PrizeDao mockPrizeDao;
     private Randomizer mockRandomizer;
     private ParticipantDao mockParticipantDao;
     private WinnerDao mockWinnerDao;
@@ -39,10 +39,10 @@ public class RaffleServiceTest extends TestCase {
     protected void setUp() throws Exception {
         mockRaffleDao = createMock(RaffleDao.class);
         mockParticipantDao = createMock(ParticipantDao.class);
-        mockPriceDao = createMock(PriceDao.class);
+        mockPrizeDao = createMock(PrizeDao.class);
         mockRandomizer = createMock(Randomizer.class);
         mockWinnerDao = createMock(WinnerDao.class);
-        raffleService = new RaffleServiceImpl(mockRaffleDao, mockParticipantDao, mockPriceDao, mockWinnerDao, mockRandomizer);
+        raffleService = new RaffleServiceImpl(mockRaffleDao, mockParticipantDao, mockPrizeDao, mockWinnerDao, mockRandomizer);
     }
 
     public void testGiveAllRaffles() {
@@ -60,30 +60,30 @@ public class RaffleServiceTest extends TestCase {
     }
 
     public void testChooseWinner() {
-        Price inputPrize = new Price();
+        Prize inputPrize = new Prize();
         inputPrize.setId(3L);
-        Price foundPrize = createFoundPrize(inputPrize);
+        Prize foundPrize = createFoundPrize(inputPrize);
 
-        expect(mockPriceDao.loadById(inputPrize.getId())).andReturn(foundPrize);
+        expect(mockPrizeDao.loadById(inputPrize.getId())).andReturn(foundPrize);
         expect(mockRandomizer.createRandomNumber(foundPrize.getRaffle().getParticipants().size())).andReturn(1);
 
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
-        Price priceForWinner = raffleService.chooseWinnerForPrice(inputPrize);
+        Prize prizeForWinner = raffleService.chooseWinnerForPrize(inputPrize);
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
-        assertNotNull("The returned price is null", priceForWinner);
-        assertNotNull("winner is not stored, the price did not contain a winner", priceForWinner.getWinner());
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
+        assertNotNull("The returned prize is null", prizeForWinner);
+        assertNotNull("winner is not stored, the prize did not contain a winner", prizeForWinner.getWinner());
     }
 
-    private Price createFoundPrize(Price inputPrice) {
-        Price foundPrice = new Price();
-        foundPrice.setId(inputPrice.getId());
-        foundPrice.setDescription("Price for testing");
+    private Prize createFoundPrize(Prize inputPrize) {
+        Prize foundPrize = new Prize();
+        foundPrize.setId(inputPrize.getId());
+        foundPrize.setDescription("Prize for testing");
         Raffle foundRaffle = new Raffle();
         foundRaffle.setId(1L);
         foundRaffle.setDescription("Raffle for testing");
-        foundRaffle.addPrice(foundPrice);
+        foundRaffle.addPrize(foundPrize);
         Participant jettro = new Participant();
         jettro.setId(3L);
         jettro.setName("Jettro");
@@ -92,28 +92,28 @@ public class RaffleServiceTest extends TestCase {
         marijn.setName("Marijn");
         foundRaffle.addParticipant(jettro);
         foundRaffle.addParticipant(marijn);
-        return foundPrice;
+        return foundPrize;
     }
 
     public void testChooseWinnerWhileAlreadyExists() {
-        Price inputPrize = new Price();
+        Prize inputPrize = new Prize();
         inputPrize.setId(3L);
-        Price foundPrize = createFoundPrize(inputPrize);
+        Prize foundPrize = createFoundPrize(inputPrize);
         Winner winner = new Winner(foundPrize, foundPrize.getRaffle().getParticipants().get(0));
         foundPrize.setWinner(winner);
 
-        expect(mockPriceDao.loadById(inputPrize.getId())).andReturn(foundPrize);
+        expect(mockPrizeDao.loadById(inputPrize.getId())).andReturn(foundPrize);
 
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         try {
-            raffleService.chooseWinnerForPrice(inputPrize);
+            raffleService.chooseWinnerForPrize(inputPrize);
             fail("A WinnerHasBeenSelectedException should have been thrown");
         } catch (WinnerHasBeenSelectedException e) {
             // as expected
         }
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
     public void testGiveRandomParticipants() {
@@ -134,11 +134,11 @@ public class RaffleServiceTest extends TestCase {
         expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size())).andReturn(1);
         expect(mockRandomizer.createRandomNumber(raffle.getParticipants().size())).andReturn(1);
 
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         List<Participant> participants = raffleService.giveRandomParticipants(raffle, numParticipants);
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
         assertNotNull("Returned participants cannot be null", participants);
         assertEquals("Number of returned participants is not correct", numParticipants.intValue(), participants.size());
     }
@@ -149,11 +149,11 @@ public class RaffleServiceTest extends TestCase {
 
         expect(mockRaffleDao.loadById(raffle.getId())).andReturn(raffle);
 
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         Raffle foundRaffle = raffleService.giveRaffleById(raffle.getId());
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         assertNotNull("raffle should not be null", foundRaffle);
     }
@@ -162,7 +162,7 @@ public class RaffleServiceTest extends TestCase {
         Raffle raffle = new Raffle();
         raffle.setId(999L);
         expect(mockRaffleDao.loadById(raffle.getId())).andThrow(new EntityNotFoundException(Raffle.class, raffle.getId()));
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         try {
             raffleService.giveRaffleById(raffle.getId());
@@ -171,7 +171,7 @@ public class RaffleServiceTest extends TestCase {
             // as expected
         }
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
     public void testStoreRaffle() {
@@ -179,11 +179,11 @@ public class RaffleServiceTest extends TestCase {
         raffle.setId(3L);
 
         expect(mockRaffleDao.save(raffle)).andReturn(raffle);
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         raffleService.storeRaffle(raffle);
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
     public void testDeleteRaffle() {
@@ -192,11 +192,11 @@ public class RaffleServiceTest extends TestCase {
 
         mockRaffleDao.delete(raffle);
         expectLastCall().once();
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         raffleService.removeRaffle(raffle);
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
     public void testDeleteParticipantFromRaffle() {
@@ -210,10 +210,10 @@ public class RaffleServiceTest extends TestCase {
         expect(mockParticipantDao.loadById(participant.getId())).andReturn(participant);
         mockParticipantDao.delete(participant);
         expectLastCall().once();
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
 
         raffleService.removeParticipantFromRaffle(participant);
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
     }
 
     public void testDeleteParticipantExistingWinnerFromRaffle() {
@@ -222,14 +222,14 @@ public class RaffleServiceTest extends TestCase {
         Raffle raffle = new Raffle();
         raffle.setId(5L);
         raffle.addParticipant(participant);
-        Price price = new Price();
-        price.setId(3L);
-        Winner winner = new Winner(price, participant);
-        price.setWinner(winner);
-        raffle.addPrice(price);
+        Prize prize = new Prize();
+        prize.setId(3L);
+        Winner winner = new Winner(prize, participant);
+        prize.setWinner(winner);
+        raffle.addPrize(prize);
         expect(mockRaffleDao.loadById(raffle.getId())).andReturn(raffle);
         expect(mockParticipantDao.loadById(participant.getId())).andReturn(participant);
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
 
         try {
             raffleService.removeParticipantFromRaffle(participant);
@@ -238,52 +238,52 @@ public class RaffleServiceTest extends TestCase {
             // as expected
         }
 
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao, mockParticipantDao);
     }
 
     public void testDeletePrizeFromRaffle() {
-        Price price = new Price();
-        price.setId(3L);
+        Prize prize = new Prize();
+        prize.setId(3L);
         Raffle raffle = new Raffle();
         raffle.setId(5L);
-        raffle.addPrice(price);
+        raffle.addPrize(prize);
 
         expect(mockRaffleDao.loadById(raffle.getId())).andReturn(raffle);
-        expect(mockPriceDao.loadById(price.getId())).andReturn(price);
-        mockPriceDao.delete(price);
+        expect(mockPrizeDao.loadById(prize.getId())).andReturn(prize);
+        mockPrizeDao.delete(prize);
         expectLastCall().once();
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
-        raffleService.removePriceFromRaffle(price);
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        raffleService.removePrizeFromRaffle(prize);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
-    public void testDeleteWinnerFromPrice() {
-        Price price = new Price();
-        price.setId(3L);
+    public void testDeleteWinnerFromPrize() {
+        Prize prize = new Prize();
+        prize.setId(3L);
         Participant participant = new Participant();
-        Winner winner = new Winner(price, participant);
-        price.setWinner(winner);
-        expect(mockPriceDao.loadById(price.getId())).andReturn(price);
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+        Winner winner = new Winner(prize, participant);
+        prize.setWinner(winner);
+        expect(mockPrizeDao.loadById(prize.getId())).andReturn(prize);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
-        raffleService.removeWinnerFromPrice(price);
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        raffleService.removeWinnerFromPrize(prize);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
-    public void testDeleteNonExistingWinnerFromPrice() {
-        Price price = new Price();
-        price.setId(3L);
-        expect(mockPriceDao.loadById(price.getId())).andReturn(price);
-        replay(mockPriceDao, mockRandomizer, mockRaffleDao);
+    public void testDeleteNonExistingWinnerFromPrize() {
+        Prize prize = new Prize();
+        prize.setId(3L);
+        expect(mockPrizeDao.loadById(prize.getId())).andReturn(prize);
+        replay(mockPrizeDao, mockRandomizer, mockRaffleDao);
 
         try {
-            raffleService.removeWinnerFromPrice(price);
-            fail("A PriceDoesNotHaveAWinnerException should have been thrown");
-        } catch (PriceDoesNotHaveAWinnerException e) {
+            raffleService.removeWinnerFromPrize(prize);
+            fail("A PrizeDoesNotHaveAWinnerException should have been thrown");
+        } catch (PrizeDoesNotHaveAWinnerException e) {
             // as expected
         }
-        verify(mockPriceDao, mockRandomizer, mockRaffleDao);
+        verify(mockPrizeDao, mockRandomizer, mockRaffleDao);
     }
 
 }

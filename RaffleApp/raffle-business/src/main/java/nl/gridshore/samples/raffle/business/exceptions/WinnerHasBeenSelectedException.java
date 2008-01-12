@@ -7,7 +7,7 @@ package nl.gridshore.samples.raffle.business.exceptions;
  * Time: 5:53:20 PM
  * Exception thrown when trying to assign a winner to a price that alredy has a winner
  */
-public class WinnerHasBeenSelectedException extends RuntimeException {
+public class WinnerHasBeenSelectedException extends RaffleBusinessException {
     public WinnerHasBeenSelectedException(String s) {
         super(s);
     }

@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.business;
 
 import nl.gridshore.samples.raffle.business.exceptions.ParticipantIsAWinnerException;
+import nl.gridshore.samples.raffle.business.exceptions.PriceDoesNotHaveAWinnerException;
 import nl.gridshore.samples.raffle.business.exceptions.UnknownRaffleException;
 import nl.gridshore.samples.raffle.business.exceptions.WinnerHasBeenSelectedException;
 import nl.gridshore.samples.raffle.domain.Participant;
@@ -78,6 +79,8 @@ public interface RaffleService {
      *          allready available
      */
     Price chooseWinnerForPrice(Price price) throws WinnerHasBeenSelectedException;
+
+    void removeWinnerFromPrice(Price price) throws PriceDoesNotHaveAWinnerException;
 
     /**
      * Returns a list with the specified amount of random participants

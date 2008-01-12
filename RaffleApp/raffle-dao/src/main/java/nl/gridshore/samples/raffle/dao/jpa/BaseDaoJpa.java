@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.dao.jpa;
 
 import nl.gridshore.samples.raffle.dao.BaseDao;
+import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.BaseDomain;
 
 import javax.persistence.EntityManager;
@@ -39,8 +40,12 @@ public abstract class BaseDaoJpa<T extends BaseDomain> implements BaseDao<T> {
         return entity;
     }
 
-    public T loadById(Long entityId) {
-        return entityManager.find(prototype, entityId);
+    public T loadById(Long entityId) throws EntityNotFoundException {
+        T entity = entityManager.find(prototype, entityId);
+        if (entity == null) {
+            throw new EntityNotFoundException(prototype, entityId);
+        }
+        return entity;
     }
 
     public List<T> loadAll() {

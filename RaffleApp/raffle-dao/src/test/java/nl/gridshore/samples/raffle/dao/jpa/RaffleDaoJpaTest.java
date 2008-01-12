@@ -1,26 +1,25 @@
 package nl.gridshore.samples.raffle.dao.jpa;
 
 import nl.gridshore.samples.raffle.dao.RaffleDao;
+import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.Participant;
 import nl.gridshore.samples.raffle.domain.Price;
 import nl.gridshore.samples.raffle.domain.Raffle;
-import org.springframework.test.jpa.AbstractJpaTests;
 
 import java.util.List;
 
-public class RaffleDaoJpaTest extends AbstractJpaTests {
+public class RaffleDaoJpaTest extends BaseTestDaoJpa {
     private RaffleDao raffleDao;
+    private static final long RAFFLE_ID_WITH_ALL = 1L;
+    private static final long RAFFLE_ID_UNKNOWN = 999L;
 
-    protected void onSetUp() throws Exception {
-        super.onSetUp();
-    }
 
     public void setRaffleDao(RaffleDao raffleDao) {
         this.raffleDao = raffleDao;
     }
 
     public void testLoadRaffle() {
-        Raffle raffle = raffleDao.loadById(1L);
+        Raffle raffle = raffleDao.loadById(RAFFLE_ID_WITH_ALL);
         assertNotNull("A raffle should have been found", raffle);
         assertEquals("Name of raffle is not as expected", "Male raffle", raffle.getTitle());
         List<Price> prices = raffle.getPrices();
@@ -33,6 +32,15 @@ public class RaffleDaoJpaTest extends AbstractJpaTests {
         assertEquals("There should be a winner with the right name for this price", "Roy", price.getWinner().getParticipant().getName());
     }
 
+    public void testLoadUnknownRaffle() {
+        try {
+            raffleDao.loadById(RAFFLE_ID_UNKNOWN);
+            fail("An EntityNotFoundException should have been thrown");
+        } catch (EntityNotFoundException e) {
+            // as expected
+        }
+    }
+
     public void testFilterRaffles() {
         Raffle filter = new Raffle();
         filter.setTitle("Male raffle");
@@ -43,7 +51,7 @@ public class RaffleDaoJpaTest extends AbstractJpaTests {
         assertEquals("Not the right raffle was returned", new Long(1), raffle.getId());
     }
 
-    public void testFilterRafflesWildcrt() {
+    public void testFilterRafflesWildcart() {
         Raffle filter = new Raffle();
         filter.setTitle("raffle");
         List<Raffle> raffles = raffleDao.loadByFilter(filter);
@@ -62,7 +70,7 @@ public class RaffleDaoJpaTest extends AbstractJpaTests {
 
     public void testAddParticipant() throws Exception {
         int countBefore = getJdbcTemplate().queryForInt("select count(*) from participants");
-        Raffle raffle = raffleDao.loadById(1L);
+        Raffle raffle = raffleDao.loadById(RAFFLE_ID_WITH_ALL);
         Participant participant = new Participant();
         participant.setName("oke");
         raffle.addParticipant(participant);
@@ -71,7 +79,4 @@ public class RaffleDaoJpaTest extends AbstractJpaTests {
         assertTrue("no participant is created", (countBefore + 1) == count);
     }
 
-    protected String[] getConfigLocations() {
-        return new String[]{"classpath:test-dao-spring.xml", "classpath:dao-config.xml"};
-    }
 }

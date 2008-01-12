@@ -7,7 +7,7 @@ import nl.gridshore.samples.raffle.domain.Price;
  * User: jettro
  * Date: Nov 28, 2007
  * Time: 8:24:23 PM
- * To change this template use File | Settings | File Templates.
+ * Dao interface for Price related activities
  */
 public interface PriceDao extends BaseDao<Price> {
 }

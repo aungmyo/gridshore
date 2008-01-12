@@ -1,5 +1,6 @@
 package nl.gridshore.samples.raffle.dao;
 
+import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.BaseDomain;
 
 import java.util.List;
@@ -34,8 +35,11 @@ public interface BaseDao<T extends BaseDomain> {
      *
      * @param entityId Long representing the type of the object to load
      * @return Object found belonging to the specified type
+     * @throws nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException
+     *          Thrown if the requested entity
+     *          does not exist.
      */
-    T loadById(Long entityId);
+    T loadById(Long entityId) throws EntityNotFoundException;
 
     /**
      * Returns  list of all objects

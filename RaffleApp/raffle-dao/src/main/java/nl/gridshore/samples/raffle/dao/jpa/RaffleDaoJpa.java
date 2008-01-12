@@ -1,6 +1,7 @@
 package nl.gridshore.samples.raffle.dao.jpa;
 
 import nl.gridshore.samples.raffle.dao.RaffleDao;
+import nl.gridshore.samples.raffle.dao.exceptions.EntityNotFoundException;
 import nl.gridshore.samples.raffle.domain.Raffle;
 
 import javax.persistence.Query;
@@ -33,7 +34,7 @@ public class RaffleDaoJpa extends BaseDaoJpa<Raffle> implements RaffleDao {
         throw new UnsupportedOperationException();
     }
 
-    public Raffle loadById(Long entityId) {
+    public Raffle loadById(Long entityId) throws EntityNotFoundException {
         Raffle raffle = super.loadById(entityId);
         raffle.getPrices().size();
         return raffle;

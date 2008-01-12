@@ -7,7 +7,7 @@ package nl.gridshore.samples.raffle.business.exceptions;
  * Time: 8:18:28 PM
  * Common exception used when strange input parameters are provided.
  */
-public class InputParameterException extends RuntimeException {
+public class InputParameterException extends RaffleBusinessException {
     public InputParameterException(String message) {
         super(message);
     }

@@ -85,6 +85,7 @@
                             </c:when>
                             <c:otherwise>
                                 ${price.winner.participant.name}
+                                <a href="deletewinner.view?priceId=${price.id}">remove</a>
                             </c:otherwise>
                         </c:choose>
                     </td>

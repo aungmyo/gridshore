@@ -17,7 +17,7 @@ public class Price extends BaseDomain {
     @ManyToOne
     @JoinColumn(name = "raffle_id")
     private Raffle raffle;
-    @OneToOne(mappedBy = "price", cascade = {CascadeType.ALL})
+    @OneToOne(mappedBy = "price", cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private Winner winner;
 
     public Price() {

@@ -1,9 +1,9 @@
 package nl.gridshore.samples.raffle.web.springmvc.validator;
 
-import nl.gridshore.samples.raffle.domain.Prize;
 import static nl.gridshore.samples.raffle.web.springmvc.validator.ValidatorConstants.REQUIRED;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
+import org.springframework.validation.Validator;
 
 
 /**
@@ -13,21 +13,13 @@ import org.springframework.validation.Errors;
  * Time: 8:19:37 AM
  * Validator class for validating Prize objects
  */
-public class PrizeValidator {
-    public void validate(Prize prize, Errors errors) {
-        validateTitle(prize.getTitle(), errors);
-        validateDescription(prize.getDescription(), errors);
+public class PrizeValidator implements Validator {
+    public boolean supports(Class clazz) {
+        return PrizeValidator.class.isAssignableFrom(clazz);
     }
 
-    private void validateTitle(String title, Errors errors) {
-        if (!StringUtils.hasLength(title)) {
-            errors.rejectValue("title", REQUIRED, REQUIRED);
-        }
-    }
-
-    private void validateDescription(String description, Errors errors) {
-        if (!StringUtils.hasLength(description)) {
-            errors.rejectValue("description", REQUIRED, REQUIRED);
-        }
+    public void validate(Object target, Errors errors) {
+        ValidationUtils.rejectIfEmpty(errors, "title", REQUIRED, REQUIRED);
+        ValidationUtils.rejectIfEmpty(errors, "description", REQUIRED, REQUIRED);
     }
 }

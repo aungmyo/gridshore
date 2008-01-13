@@ -23,10 +23,12 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("prize")
 public class AddPrizeController {
     private final RaffleService raffleService;
+    private final PrizeValidator prizeValidator;
 
     @Autowired
-    public AddPrizeController(RaffleService raffleService) {
+    public AddPrizeController(RaffleService raffleService, PrizeValidator prizeValidator) {
         this.raffleService = raffleService;
+        this.prizeValidator = prizeValidator;
     }
 
     @RequestMapping(method = RequestMethod.GET)
@@ -40,7 +42,7 @@ public class AddPrizeController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String processSubmit(@ModelAttribute("prize")Prize prize, BindingResult bindingResult, SessionStatus status) {
-        new PrizeValidator().validate(prize, bindingResult);
+        prizeValidator.validate(prize, bindingResult);
         if (bindingResult.hasErrors()) {
             return "prizeForm";
         } else {

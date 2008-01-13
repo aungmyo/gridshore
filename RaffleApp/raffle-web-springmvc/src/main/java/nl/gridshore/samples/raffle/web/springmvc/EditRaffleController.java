@@ -22,10 +22,12 @@ import org.springframework.web.bind.support.SessionStatus;
 @SessionAttributes("raffle")
 public class EditRaffleController {
     private final RaffleService raffleService;
+    private final RaffleValidator raffleValidator;
 
     @Autowired
-    public EditRaffleController(RaffleService raffleService) {
+    public EditRaffleController(RaffleService raffleService, RaffleValidator raffleValidator) {
         this.raffleService = raffleService;
+        this.raffleValidator = raffleValidator;
     }
 
     @RequestMapping(method = RequestMethod.GET)

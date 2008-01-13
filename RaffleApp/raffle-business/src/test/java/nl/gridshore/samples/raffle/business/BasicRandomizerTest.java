@@ -1,7 +1,9 @@
 package nl.gridshore.samples.raffle.business;
 
-import junit.framework.TestCase;
+import nl.gridshore.samples.raffle.business.exceptions.InputParameterException;
 import nl.gridshore.samples.raffle.business.impl.BasicRandomizer;
+import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,28 +12,17 @@ import nl.gridshore.samples.raffle.business.impl.BasicRandomizer;
  * Time: 1:29:29 PM
  * TestCase for the basic randomizer
  */
-public class BasicRandomizerTest extends TestCase {
-    private BasicRandomizer randomizer;
+public class BasicRandomizerTest {
+    private static BasicRandomizer randomizer = new BasicRandomizer();
 
-    public BasicRandomizerTest(String name) {
-        super(name);
-    }
-
-    protected void setUp() throws Exception {
-        randomizer = new BasicRandomizer();
-    }
-
-    public void testWithOnlyOneItem() {
+    @Test
+    public void callRandomizerWithOnlyOneItem() {
         int randomNumber = randomizer.createRandomNumber(1);
         assertEquals(1, randomNumber);
     }
 
-    public void testWithInvalidMaxValue() {
-        try {
-            randomizer.createRandomNumber(0);
-            fail("an exception should have been thrown");
-        } catch (Exception e) {
-            // as expected
-        }
+    @Test(expected = InputParameterException.class)
+    public void callRandomizerWithInvalidMaxValue() {
+        randomizer.createRandomNumber(0);
     }
 }

@@ -15,5 +15,8 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <bean id="participantValidator" class="nl.gridshore.samples.raffle.web.springmvc.validator.ParticipantValidator"/>
+    <bean id="prizeValidator" class="nl.gridshore.samples.raffle.web.springmvc.validator.PrizeValidator"/>
+    <bean id="raffleValidator" class="nl.gridshore.samples.raffle.web.springmvc.validator.RaffleValidator"/>
 
 </beans>

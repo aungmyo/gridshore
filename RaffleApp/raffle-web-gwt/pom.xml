@@ -96,7 +96,7 @@
                     <generatorDestinationPackage>nl.gridshore.samples.raffle.web.gwt.client
                     </generatorDestinationPackage>
                     <generateGettersAndSetters>true</generateGettersAndSetters>
-                    <gwtHome>/Users/jettro/sources/javalibs/gwt-mac-1.4.61</gwtHome>
+                    <gwtHome>${gwt.execution.dir}</gwtHome>
                 </configuration>
             </plugin>
             <plugin>

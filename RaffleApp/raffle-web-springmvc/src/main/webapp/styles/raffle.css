@@ -23,10 +23,10 @@ a {
 
 #maincontentbox {
     background-image: url( ../images/bg_table.png );
-    width: 600px;
+    width: 500px;
     top: 100px;
     left: 250px;
-    height: 450px;
+    height: 400px;
     position: absolute;
     overflow: auto;
     padding: 10px;

@@ -17,6 +17,7 @@
         <spring.version>2.5</spring.version>
         <gwt.version>1.4.61</gwt.version>
         <wicket.version>1.3.0-rc1</wicket.version>
+        <gwt.execution.dir>/Users/jettro/sources/javalibs/gwt-mac-1.4.61</gwt.execution.dir>
     </properties>
 
     <modules>

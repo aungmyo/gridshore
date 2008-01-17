@@ -334,6 +334,15 @@
         <root url="jar:///Users/jettro/sources/javalibs/gwt-mac-1.4.61/gwt-user.jar!/" />
       </SOURCES>
     </library>
+    <library name="gwt-user (5)">
+      <CLASSES>
+        <root url="jar:///Users/jettro/sources/javalibs/gwt-mac-1.4.61/gwt-user.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar:///Users/jettro/sources/javalibs/gwt-mac-1.4.61/gwt-user.jar!/" />
+      </SOURCES>
+    </library>
   </component>
 </project>
 

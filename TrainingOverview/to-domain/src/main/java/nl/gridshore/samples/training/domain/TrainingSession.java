@@ -11,5 +11,28 @@ public class TrainingSession extends BaseDomain {
     private Integer weekNr;
     private Training training;
     private TrainingStatus status;
-    
+
+    public Integer getWeekNr() {
+        return weekNr;
+    }
+
+    public void setWeekNr(Integer weekNr) {
+        this.weekNr = weekNr;
+    }
+
+    public Training getTraining() {
+        return training;
+    }
+
+    public void setTraining(Training training) {
+        this.training = training;
+    }
+
+    public TrainingStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(TrainingStatus status) {
+        this.status = status;
+    }
 }

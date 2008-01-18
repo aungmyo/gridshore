@@ -74,6 +74,7 @@ public class Employee extends BaseDomain {
     }
 
     public void addTrainingPlanning(TrainingPlanning trainingPlanning) {
+        trainingPlanning.setEmployee(this);
         this.trainingPlans.add(trainingPlanning);
     }
 
@@ -94,6 +95,7 @@ public class Employee extends BaseDomain {
     }
 
     public void addTraningsWishes(TrainingStatus trainingStatus) {
+        trainingStatus.setEmployee(this);
         this.trainingWishes.add(trainingStatus);
     }
 

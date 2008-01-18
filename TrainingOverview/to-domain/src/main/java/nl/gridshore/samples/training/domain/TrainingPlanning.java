@@ -11,5 +11,28 @@ public class TrainingPlanning extends BaseDomain {
     private Employee employee;
     private TrainingSession session;
     private SessionStatus status;
-    
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    public TrainingSession getSession() {
+        return session;
+    }
+
+    public void setSession(TrainingSession session) {
+        this.session = session;
+    }
+
+    public SessionStatus getStatus() {
+        return status;
+    }
+
+    public void setStatus(SessionStatus status) {
+        this.status = status;
+    }
 }

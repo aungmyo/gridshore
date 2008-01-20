@@ -1,16 +1,25 @@
 package nl.gridshore.samples.training.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.ManyToOne;
+import javax.persistence.JoinColumn;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
  * Date: Jan 18, 2008
  * Time: 11:37:09 PM
- * To change this template use File | Settings | File Templates.
+ * Entity object representing an instance of a session of a specific training
  */
+@Entity
+@Table (name = "to_trainingsession")
 public class TrainingSession extends BaseDomain {
     private Integer weekNr;
+    @ManyToOne
+    @JoinColumn(name = "training_id")        
     private Training training;
-    private TrainingStatus status;
+    private String status;
 
     public Integer getWeekNr() {
         return weekNr;
@@ -28,11 +37,11 @@ public class TrainingSession extends BaseDomain {
         this.training = training;
     }
 
-    public TrainingStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(TrainingStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 }

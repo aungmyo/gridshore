@@ -5,7 +5,7 @@ package nl.gridshore.samples.training.domain;
  * User: jettro
  * Date: Jan 18, 2008
  * Time: 11:59:57 PM
- * To change this template use File | Settings | File Templates.
+ * Enumertion type for the status of a session
  */
 public enum SessionStatus {
     SCHEDULED("scheduled"),

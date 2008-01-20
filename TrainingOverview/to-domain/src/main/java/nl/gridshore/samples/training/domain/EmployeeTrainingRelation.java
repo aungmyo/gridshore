@@ -5,7 +5,7 @@ package nl.gridshore.samples.training.domain;
  * User: jettro
  * Date: Jan 18, 2008
  * Time: 11:43:26 PM
- * To change this template use File | Settings | File Templates.
+ * Enumaration type for the type of relations between the employee and a training
  */
 public enum EmployeeTrainingRelation {
     INTERESTED("interested"),

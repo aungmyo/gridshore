@@ -1,5 +1,6 @@
 package nl.gridshore.samples.training.domain;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -11,6 +12,8 @@ import java.util.ArrayList;
  * Representation of the project our employees can work on. Contains information about the project manager which is
  * needed for communication.
  */
+@Entity
+@Table (name = "to_project")
 public class Project extends BaseDomain {
     private String name;
     private String client;
@@ -18,6 +21,7 @@ public class Project extends BaseDomain {
     private String managerEmail;
     private String wbs;
 
+    @OneToMany(mappedBy = "project", fetch = FetchType.EAGER)
     private List<Employee> employees = new ArrayList<Employee>();
 
     public String getName() {

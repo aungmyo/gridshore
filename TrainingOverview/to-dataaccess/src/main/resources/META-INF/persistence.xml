@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="trainingoverview" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <class>nl.gridshore.samples.training.domain.TrainingStatus</class>
+        <class>nl.gridshore.samples.training.domain.Training</class>
+        <class>nl.gridshore.samples.training.domain.Employee</class>
+        <class>nl.gridshore.samples.training.domain.Project</class>
+        <class>nl.gridshore.samples.training.domain.TrainingPlanning</class>
+        <class>nl.gridshore.samples.training.domain.TrainingSession</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class"/>
+
+            <!-- property name="hibernate.show_sql" value="true"/ -->
+            <!-- property name="hibernate.format_sql" value="true"/ -->
+            <!-- property name="hibernate.hbm2ddl.auto" value="create"/ -->
+            <!-- property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/ -->
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,5 +1,6 @@
 package nl.gridshore.samples.training.domain;
 
+import javax.persistence.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -10,6 +11,8 @@ import java.util.ArrayList;
  * Time: 11:35:37 PM
  * The employee is most important in this application, we need to check his wishes, his planning and his progress
  */
+@Entity
+@Table (name = "to_employee")
 public class Employee extends BaseDomain {
     private String employeeNumber;
     private String longName;
@@ -17,8 +20,12 @@ public class Employee extends BaseDomain {
     private String cluster;
     private String level;
 
+    @ManyToOne (optional = true)
+    @JoinColumn(name = "project_id")
     private Project project;
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<TrainingPlanning> trainingPlans = new ArrayList<TrainingPlanning>();
+    @OneToMany(mappedBy = "employee", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<TrainingStatus> trainingWishes = new ArrayList<TrainingStatus>();
 
     public String getEmployeeNumber() {

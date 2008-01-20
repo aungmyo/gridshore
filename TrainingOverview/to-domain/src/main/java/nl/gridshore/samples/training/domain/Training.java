@@ -1,5 +1,6 @@
 package nl.gridshore.samples.training.domain;
 
+import javax.persistence.*;
 import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
@@ -9,13 +10,16 @@ import java.util.ArrayList;
  * User: jettro
  * Date: Jan 18, 2008
  * Time: 11:37:18 PM
- * Domain class
+ * Domain class representing a training object
  */
+@Entity
+@Table (name = "to_training")
 public class Training extends BaseDomain {
     private String name;
     private String code;
     private String remark;
-    
+
+    @OneToMany(mappedBy = "training", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<TrainingSession> sessions = new ArrayList<TrainingSession>();
 
     public String getName() {

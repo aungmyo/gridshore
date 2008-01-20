@@ -1,5 +1,7 @@
 package nl.gridshore.samples.training.domain;
 
+import javax.persistence.*;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
@@ -7,10 +9,15 @@ package nl.gridshore.samples.training.domain;
  * Time: 11:36:59 PM
  * Represents the planning for an Employee to follow a sessions when available.
  */
+@Entity
+@Table (name = "to_trainingplanning")
 public class TrainingPlanning extends BaseDomain {
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
     private Employee employee;
+    @ManyToOne
+    @JoinColumn(name = "trainingsession_id")
     private TrainingSession session;
-    private SessionStatus status;
 
     public Employee getEmployee() {
         return employee;
@@ -28,11 +35,4 @@ public class TrainingPlanning extends BaseDomain {
         this.session = session;
     }
 
-    public SessionStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(SessionStatus status) {
-        this.status = status;
-    }
 }

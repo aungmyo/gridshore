@@ -15,4 +15,7 @@ public class ProjectDaoJpa extends BaseDaoJpa<Project> implements ProjectDao {
         super(Project.class, "Project");
     }
 
+    public Project findProjectByClient(String client) {
+        return null;  //TODO change body of implemented methods use File | Settings | File Templates.
+    }
 }

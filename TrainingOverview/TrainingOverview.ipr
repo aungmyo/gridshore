@@ -56,6 +56,19 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="FacetAutodetectingManager">
+    <autodetection-disabled>
+      <facet-type id="web">
+        <modules>
+          <module name="TrainingOverview">
+            <files>
+              <file url="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/web.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
+    </autodetection-disabled>
+  </component>
   <component name="IdProvider" IDEtalkID="37406421EE7EC9194A3BDBB3F7B00A39" />
   <component name="InspectionProjectProfileManager">
     <option name="PROJECT_PROFILE" value="Project Default" />
@@ -260,13 +273,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/TrainingOverview.iml" filepath="$PROJECT_DIR$/TrainingOverview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/to-business/to-business.iml" filepath="$PROJECT_DIR$/to-business/to-business.iml" />
       <module fileurl="file://$PROJECT_DIR$/to-dataaccess/to-dataaccess.iml" filepath="$PROJECT_DIR$/to-dataaccess/to-dataaccess.iml" />
       <module fileurl="file://$PROJECT_DIR$/to-domain/to-domain.iml" filepath="$PROJECT_DIR$/to-domain/to-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/to-integration/to-integration.iml" filepath="$PROJECT_DIR$/to-integration/to-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/to-web/to-web.iml" filepath="$PROJECT_DIR$/to-web/to-web.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
-    <output url="file://$PROJECT_DIR$/out" />
+    <output url="file://$PROJECT_DIR$/to-web/out" />
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">

@@ -15,4 +15,8 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
     public EmployeeDaoJpa() {
         super(Employee.class, "Employee");
     }
+
+    public Employee findByIdNumber(String idNumber) {
+        return null;  //TODO change body of implemented methods use File | Settings | File Templates.
+    }
 }

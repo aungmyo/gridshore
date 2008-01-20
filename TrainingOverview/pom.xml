@@ -20,6 +20,8 @@
         <module>to-integration</module>
         <module>to-domain</module>
         <module>to-dataaccess</module>
+        <module>to-business</module>
+        <module>to-web</module>
     </modules>
 
     <dependencies>

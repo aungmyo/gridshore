@@ -21,7 +21,7 @@ import nl.gridshore.samples.training.integration.ObtainUpdatedEmployeeDataServic
  * @version 1.0
  */
 public class ObtainUpdatedEmployeeDataServiceTest {
-    private static final String TEST_INPUT_FILE_NAME = "src/test/resources/ATS scheduling (Supply) FY08.xls";
+    private static final String TEST_INPUT_FILE_NAME = "src/test/resources/example.xls";
     private ObtainUpdatedEmployeeDataService service;
 
 

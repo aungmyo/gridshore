@@ -89,19 +89,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="c3p0:c3p0:0.9.1.2">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
       <library name="cglib:cglib-nodep:2.1_3">
         <CLASSES>
           <root url="jar:///Users/jettro/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar!/" />
@@ -137,19 +124,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar:///Users/jettro/.m2/repository/commons-collections/commons-collections/2.1.1/commons-collections-2.1.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="commons-lang:commons-lang:2.1">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/commons-lang/commons-lang/2.1/commons-lang-2.1-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -258,19 +232,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library" exported="">
-      <library name="junit-addons:junit-addons:1.4">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/junit-addons/junit-addons/1.4/junit-addons-1.4.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/junit-addons/junit-addons/1.4/junit-addons-1.4-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/junit-addons/junit-addons/1.4/junit-addons-1.4-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
       <library name="junit:junit:4.4">
         <CLASSES>
           <root url="jar:///Users/jettro/.m2/repository/junit/junit/4.4/junit-4.4.jar!/" />
@@ -310,19 +271,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="to-domain" exported="" />
-    <orderEntry type="module-library" exported="">
-      <library name="org.dbunit:dbunit:2.2">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/org/dbunit/dbunit/2.2/dbunit-2.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/org/dbunit/dbunit/2.2/dbunit-2.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/org/dbunit/dbunit/2.2/dbunit-2.2-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="org.easymock:easymock:2.3">
         <CLASSES>
@@ -411,6 +359,32 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar:///Users/jettro/.m2/repository/org/hibernate/hibernate/3.2.5.ga/hibernate-3.2.5.ga-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.slf4j:slf4j-api:1.4.3">
+        <CLASSES>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="org.slf4j:slf4j-simple:1.4.3">
+        <CLASSES>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-simple/1.4.3/slf4j-simple-1.4.3.jar!/" />
+        </CLASSES>
+        <JAVADOC>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-simple/1.4.3/slf4j-simple-1.4.3-javadoc.jar!/" />
+        </JAVADOC>
+        <SOURCES>
+          <root url="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-simple/1.4.3/slf4j-simple-1.4.3-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -515,45 +489,6 @@
         </JAVADOC>
         <SOURCES>
           <root url="jar:///Users/jettro/.m2/repository/org/springframework/spring-tx/2.5.1/spring-tx-2.5.1-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="poi:poi:2.5.1-final-20040804">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/poi/poi/2.5.1-final-20040804/poi-2.5.1-final-20040804.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/poi/poi/2.5.1-final-20040804/poi-2.5.1-final-20040804-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/poi/poi/2.5.1-final-20040804/poi-2.5.1-final-20040804-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="xerces:xercesImpl:2.6.2">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xercesImpl/2.6.2/xercesImpl-2.6.2-sources.jar!/" />
-        </SOURCES>
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library" exported="">
-      <library name="xerces:xmlParserAPIs:2.6.2">
-        <CLASSES>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2.jar!/" />
-        </CLASSES>
-        <JAVADOC>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2-javadoc.jar!/" />
-        </JAVADOC>
-        <SOURCES>
-          <root url="jar:///Users/jettro/.m2/repository/xerces/xmlParserAPIs/2.6.2/xmlParserAPIs-2.6.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>

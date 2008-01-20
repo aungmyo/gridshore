@@ -12,6 +12,8 @@ import java.io.*;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.hssf.eventusermodel.HSSFRequest;
 import org.apache.poi.hssf.eventusermodel.HSSFEventFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,10 +23,12 @@ import org.apache.poi.hssf.eventusermodel.HSSFEventFactory;
  * Default implementation for the ObtainUpdatedEmployeeDataService interface
  */
 public class ObtainUpdatedEmployeeDataServiceImpl implements ObtainUpdatedEmployeeDataService {
+    final Logger logger = LoggerFactory.getLogger(ObtainUpdatedEmployeeDataServiceImpl.class);
 
     public Set<UpdatedEmployeeData> obtainEmployeeData(String filenameIncludingPath) {
         File file = new File(filenameIncludingPath);
         if (!file.exists()) {
+            logger.warn("The file {} could not be found for loading employee data",file);
             throw new IntegrationInputDataException(IntegrationExceptionCodes.ERROR_FILE_PATH_NOT_EXISTS);
         }
         return obtainEmployeeData(file);
@@ -35,6 +39,7 @@ public class ObtainUpdatedEmployeeDataServiceImpl implements ObtainUpdatedEmploy
         try {
             inputStream = new FileInputStream(file);
         } catch (FileNotFoundException e) {
+            logger.warn("The file {} could not be found for loading employee data",file);
             throw new IntegrationInputDataException(IntegrationExceptionCodes.ERROR_FILE_PATH_NOT_EXISTS);
         }
         return obtainEmployeeData(inputStream);
@@ -53,6 +58,7 @@ public class ObtainUpdatedEmployeeDataServiceImpl implements ObtainUpdatedEmploy
             factory.processEvents(req, excelIn);
             excelIn.close();
         } catch (IOException e) {
+            logger.warn("There were problems reading the input stream for importing employee data");
             throw new IntegrationException(IntegrationExceptionCodes.ERROR_OBTAIN_RECORDS_FROM_INPUTSTREAM,e);
         }
 

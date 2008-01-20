@@ -2,10 +2,6 @@ package nl.gridshore.samples.training.dataaccess.jpa;
 
 import nl.gridshore.samples.training.domain.Project;
 import nl.gridshore.samples.training.dataaccess.ProjectDao;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.ContextConfiguration;
-import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * Created by IntelliJ IDEA.

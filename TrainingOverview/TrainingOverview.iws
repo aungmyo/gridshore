@@ -17,59 +17,9 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iws" afterPath="$PROJECT_DIR$/TrainingOverview.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/resources" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions/BusinessException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/resources" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" afterPath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/resources" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/to-web.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iml" afterPath="$PROJECT_DIR$/TrainingOverview.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions/BusinessExceptionCodes.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/to-business.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/to-web.iml" afterPath="$PROJECT_DIR$/to-web/to-web.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/pom.xml" afterPath="$PROJECT_DIR$/to-business/pom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/pom.xml" afterPath="$PROJECT_DIR$/to-dataaccess/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/ProjectDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/ProjectDaoJpa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java" afterPath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/resources/business-config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.ipr" afterPath="$PROJECT_DIR$/TrainingOverview.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions/ImportEmployeeDataException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/web.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/test" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business" />
     </list>
     <ignored path="TrainingOverview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -160,15 +110,13 @@
       <file leaf-file-name="TrainingServiceImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.1897322">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.2433035">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TempRunnerApp.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TempRunnerApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="13" column="72" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3482143">
@@ -177,10 +125,28 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/to-dataaccess/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="76" column="0" selection-start="2871" selection-end="2871" vertical-scroll-proportion="0.9444444">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/to-business/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="58" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.7777778">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="ObtainUpdatedEmployeeDataServiceImpl.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2589285">
+            <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2433035">
               <folding />
             </state>
           </provider>
@@ -281,7 +247,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
+          <option name="myItemId" value="to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -291,11 +257,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
+          <option name="myItemId" value="to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -305,131 +271,15 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
+          <option name="myItemId" value="to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/test/resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -454,182 +304,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/test" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/test/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -686,6 +360,29 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -715,21 +412,17 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
       <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
       <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
@@ -752,25 +445,6 @@
       <method>
         <option name="Make" value="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
     </configuration>
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Application.TempRunnerApp" />
@@ -827,11 +501,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="-1" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="1" />
@@ -843,7 +516,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3350108" order="3" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
@@ -854,6 +527,7 @@
       <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="8" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
+      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
     </layout>
@@ -920,61 +594,9 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/exceptions/BusinessExceptionCodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="89" selection-start="351" selection-end="351" vertical-scroll-proportion="0.26785713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="69" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26785713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="93" selection-start="628" selection-end="628" vertical-scroll-proportion="0.42857143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.42857143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/jettro/.m2/repository/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/org/easymock/internal/matchers/InstanceOf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.13392857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/exceptions/IntegrationExceptionCodes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="17" selection-start="239" selection-end="239" vertical-scroll-proportion="0.24107143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Users/jettro/.m2/repository/org/springframework/spring-context/2.5.1/spring-context-2.5.1-sources.jar!/org/springframework/context/support/ClassPathXmlApplicationContext.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="51" column="43" selection-start="2239" selection-end="2269" vertical-scroll-proportion="0.3325893">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/resources/business-config.xml">
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="656" selection-end="671" vertical-scroll-proportion="0.27979276">
           <folding />
         </state>
       </provider>
@@ -1002,15 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.1897322">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-sources.jar!/org/slf4j/Marker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="40" column="17" selection-start="1694" selection-end="1694" vertical-scroll-proportion="-0.09598214">
@@ -1025,9 +638,54 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="69" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26785713">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.2433035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2589285">
+        <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2433035">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/resources/business-config.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="29" selection-start="656" selection-end="671" vertical-scroll-proportion="0.27979276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Users/jettro/.m2/repository/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/org/easymock/internal/matchers/InstanceOf.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.13392857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.42857143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="93" selection-start="628" selection-end="628" vertical-scroll-proportion="0.42857143">
           <folding />
         </state>
       </provider>
@@ -1035,6 +693,20 @@
     <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="72" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3482143">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.7777778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="2871" selection-end="2871" vertical-scroll-proportion="0.9444444">
           <folding />
         </state>
       </provider>

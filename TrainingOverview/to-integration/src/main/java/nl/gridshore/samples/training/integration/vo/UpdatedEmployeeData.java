@@ -14,6 +14,7 @@ public class UpdatedEmployeeData {
     private String cell;
     private String cluster;
     private String client;
+    private String project;
 
     public String getIdNumber() {
         return idNumber;
@@ -61,5 +62,13 @@ public class UpdatedEmployeeData {
 
     public void setClient(String client) {
         this.client = client;
+    }
+
+    public String getProject() {
+        return project;
+    }
+
+    public void setProject(String project) {
+        this.project = project;
     }
 }

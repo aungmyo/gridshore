@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>to-web</artifactId>
     <groupId>nl.gridshore.samples.training</groupId>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
     <name>Web</name>
     <description>Everything related to showing stuff on the web</description>
 

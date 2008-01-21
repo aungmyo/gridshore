@@ -17,19 +17,79 @@
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iws" afterPath="$PROJECT_DIR$/TrainingOverview.iws" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/log4j.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/SplitFunctionHelper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/RecordListener.java" afterPath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/RecordListener.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/vo/UpdatedEmployeeData.java" afterPath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/vo/UpdatedEmployeeData.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/to-web.iml" afterPath="$PROJECT_DIR$/to-web/to-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/pom.xml" afterPath="$PROJECT_DIR$/to-business/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/pom.xml" afterPath="$PROJECT_DIR$/to-dataaccess/pom.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/ProjectDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/ProjectDaoJpa.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js/jquery-1.2.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/to-business.iml" afterPath="$PROJECT_DIR$/to-business/to-business.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projects.jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/ProjectDaoTest.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/ProjectDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" afterPath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/pom.xml" afterPath="$PROJECT_DIR$/to-web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/to.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/ProjectController.java" />
     </list>
     <ignored path="TrainingOverview.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="to-integration/src/test/resources/example.xls" />
+    <ignored path="to-business/target/surefire-reports/" />
+    <ignored path="to-business/target/" />
+    <ignored path="to-dataaccess/target/" />
+    <ignored path="to-dataaccess/target/surefire-reports/" />
+    <ignored path="to-domain/target/" />
+    <ignored path="to-integration/target/surefire-reports/" />
+    <ignored path="to-integration/target/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/nl/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/nl/gridshore/samples/training/web/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/" />
+    <ignored path="to-web/target/WEB-INF/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/styles/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/lib/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/META-INF/" />
+    <ignored path="to-web/target/war/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/nl/gridshore/samples/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/js/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/nl/gridshore/samples/training/" />
+    <ignored path="to-web/target/war/work/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/jsp/" />
+    <ignored path="to-web/target/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/classes/nl/gridshore/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/" />
+    <ignored path="to-web/target/to-web-1.0.0-SNAPSHOT/" />
   </component>
-  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="ChangesViewManager" flattened_view="false" show_ignored="false" />
   <component name="Commander">
     <leftPanel />
     <rightPanel />
     <splitter proportion="0.5" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="/Users/jettro/Library/Caches/IntelliJIDEA70/coverage/TrainingOverview$nl.gridshore.samples.training.business$nl.gridshore.samples.training.business.es" NAME="nl.gridshore.samples.training.business" MODIFIED="1200952723723" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>nl.gridshore.samples.training.business.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="/Users/jettro/Library/Caches/IntelliJIDEA70/coverage/TrainingOverview$TrainingServiceTest$TrainingServiceTest.es" NAME="TrainingServiceTest" MODIFIED="1200952813476" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider">
+      <FILTER>nl.gridshore.samples.training.business.*</FILTER>
+    </SUITE>
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -41,6 +101,19 @@
   <component name="DebuggerManager">
     <line_breakpoints>
       <breakpoint url="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/BaseDaoJpa.java" line="48" class="nl.gridshore.samples.training.dataaccess.jpa.BaseDaoJpa" package="nl.gridshore.samples.training.dataaccess.jpa">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java" line="63" class="nl.gridshore.samples.training.business.TrainingServiceTest" package="nl.gridshore.samples.training.business">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -97,101 +170,7 @@
     <favorites_list name="TrainingOverview" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="TrainingService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="69" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26785713">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.2433035">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TempRunnerApp.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="72" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3482143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/to-dataaccess/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="2871" selection-end="2871" vertical-scroll-proportion="0.9444444">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.7777778">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ObtainUpdatedEmployeeDataServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2433035">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="business-config.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/main/resources/business-config.xml">
-          <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="9" column="29" selection-start="656" selection-end="671" vertical-scroll-proportion="0.27979276">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstanceOf.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar:///Users/jettro/.m2/repository/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/org/easymock/internal/matchers/InstanceOf.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.13392857">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProjectDao.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.42857143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeDao.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="93" selection-start="628" selection-end="628" vertical-scroll-proportion="0.42857143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -202,6 +181,15 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="SORT_ALPHABETICALLY" value="false" />
     <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
+  </component>
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp" context-file="file://$PROJECT_DIR$/to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/jsp/projects.jsp" />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenBuilder">
     <option name="jreName" value="1.5" />
@@ -247,7 +235,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
+          <option name="myItemId" value="to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -257,11 +245,11 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
+          <option name="myItemId" value="to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -271,15 +259,15 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
+          <option name="myItemId" value="to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -289,8 +277,20 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
+          <option name="myItemId" value="to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
       <PATH>
@@ -299,11 +299,23 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
+          <option name="myItemId" value="to-web" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/resources" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -341,7 +353,7 @@
       <recent name="nl.gridshore.samples.training.dataaccess" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TempRunnerApp">
+  <component name="RunManager" selected="Tomcat Server.tomcat">
     <tempConfiguration default="false" name="TempRunnerApp" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.business.TempRunnerApp" />
       <option name="VM_PARAMETERS" value="" />
@@ -360,13 +372,6 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" />
@@ -378,6 +383,63 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
       <envs />
       <method>
         <option name="Make" value="true" />
@@ -412,42 +474,64 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <envs />
+    <configuration default="false" name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/to/projects.view" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/to" />
+        <option name="DEPLOY" value="true" />
+      </JAVAEE_FACET>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
+      <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_TrainingOverview392479ec" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50324" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="/Users/jettro/sources/javalibs/apache-tomcat-5.5.25/bin/catalina.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="/Users/jettro/sources/javalibs/apache-tomcat-5.5.25/bin/catalina.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="/Users/jettro/sources/javalibs/apache-tomcat-5.5.25/bin/catalina.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" run" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="/Users/jettro/sources/javalibs/apache-tomcat-5.5.25/bin/catalina.sh" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value=" stop" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <method>
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.TempRunnerApp" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -501,10 +585,11 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="874" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="1" />
@@ -516,7 +601,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3350108" order="3" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
@@ -527,7 +612,6 @@
       <window_info id="SVN Properties" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="8" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="0" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Maven Build Output" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
       <window_info id="EJB" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="3" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="5" />
     </layout>
@@ -540,7 +624,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="made the first test run work, now I can import the file and actually insert some things into the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="first end-to-end piece is working, starting with tests as well" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -554,6 +638,8 @@
     <MESSAGE value="added most of all some add and delete methods to the domain model" />
     <MESSAGE value="removed some stuff" />
     <MESSAGE value="made the first test run work, now I can import the file and actually insert some things into the database" />
+    <MESSAGE value="fix in the poms, took the hibernate stuff out of the wrong pom" />
+    <MESSAGE value="first end-to-end piece is working, starting with tests as well" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -594,119 +680,139 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Users/jettro/.m2/repository/org/springframework/spring-context/2.5.1/spring-context-2.5.1-sources.jar!/org/springframework/context/support/ClassPathXmlApplicationContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="43" selection-start="2239" selection-end="2269" vertical-scroll-proportion="0.3325893">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/jettro/.m2/repository/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/org/easymock/IArgumentMatcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="10" selection-start="162" selection-end="162" vertical-scroll-proportion="0.10714286">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="494" selection-end="494" vertical-scroll-proportion="0.035714287">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="71" column="50" selection-start="2844" selection-end="2844" vertical-scroll-proportion="0.5714286">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-sources.jar!/org/slf4j/Marker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="17" selection-start="1694" selection-end="1694" vertical-scroll-proportion="-0.09598214">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/jettro/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3-sources.jar!/org/slf4j/Logger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="448" column="21" selection-start="13137" selection-end="13137" vertical-scroll-proportion="0.46651787">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="69" selection-start="318" selection-end="318" vertical-scroll-proportion="0.26785713">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="92" selection-start="3072" selection-end="3072" vertical-scroll-proportion="1.2433035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/impl/ObtainUpdatedEmployeeDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="100" selection-start="2738" selection-end="2738" vertical-scroll-proportion="1.2433035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/to-business/src/main/resources/business-config.xml">
       <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="29" selection-start="656" selection-end="671" vertical-scroll-proportion="0.27979276">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///Users/jettro/.m2/repository/org/easymock/easymock/2.3/easymock-2.3-sources.jar!/org/easymock/internal/matchers/InstanceOf.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="13" selection-start="218" selection-end="218" vertical-scroll-proportion="0.13392857">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/ProjectDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="42" selection-start="615" selection-end="615" vertical-scroll-proportion="0.42857143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="93" selection-start="628" selection-end="628" vertical-scroll-proportion="0.42857143">
+        <state line="27" column="8" selection-start="1438" selection-end="1438" vertical-scroll-proportion="0.7512953">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="72" selection-start="432" selection-end="432" vertical-scroll-proportion="0.3482143">
+        <state line="11" column="13" selection-start="299" selection-end="299" vertical-scroll-proportion="0.29464287">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/pom.xml">
+    <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="0" selection-start="2352" selection-end="2352" vertical-scroll-proportion="0.7777778">
+        <state line="59" column="15" selection-start="2382" selection-end="2382" vertical-scroll-proportion="-0.015625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/pom.xml">
+    <entry file="file://$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="2871" selection-end="2871" vertical-scroll-proportion="0.9444444">
+        <state line="0" column="38" selection-start="8" selection-end="38" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="30" selection-start="801" selection-end="801" vertical-scroll-proportion="0.66964287">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="54" column="36" selection-start="2263" selection-end="2263" vertical-scroll-proportion="0.91454965">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="336" selection-end="336" vertical-scroll-proportion="0.16666667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/styles/to.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="0" selection-start="1232" selection-end="1232" vertical-scroll-proportion="2.0625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Project.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.15422885">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="19" selection-start="144" selection-end="144" vertical-scroll-proportion="0.12435233">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="HtmlPreview">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/web.xml">
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorReferencesProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.373057">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleGeneralEditorProvider">
+        <state />
+      </provider>
+      <provider editor-type-id="com.intellij.javaee.module.view.web.viewlets.WebModuleAssemblyDescriptorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="75" selection-start="615" selection-end="615" vertical-scroll-proportion="0.27979276">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/ProjectController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="22" selection-start="757" selection-end="757" vertical-scroll-proportion="0.64285713">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/log4j.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="21" selection-start="83" selection-end="83" vertical-scroll-proportion="0.026785715">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="18" selection-start="533" selection-end="533" vertical-scroll-proportion="0.2777778">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projects.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="32" selection-start="1204" selection-end="1204" vertical-scroll-proportion="0.5277778">
           <folding />
         </state>
       </provider>

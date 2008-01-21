@@ -11,10 +11,10 @@ import nl.gridshore.samples.training.domain.Project;
  */
 public interface ProjectDao extends BaseDao<Project> {
     /**
-     * Returns a project from the provided client, if multiple projects exist, only the first is choosen. if no client
-     * or projects are found a null is returned
-     * @param client String representing the client to look for a project
+     * Returns the project from the provided client, if no client/project match can be found a null is returned
+     * @param client String representing the client to look for
+     * @param project String representing the project to look for
      * @return The found Project or a null
      */
-    Project findProjectByClient(String client);
+    Project findProjectByClientAndProject(String client, String project);
 }

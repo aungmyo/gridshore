@@ -2,6 +2,7 @@ package nl.gridshore.samples.training.integration.impl;
 
 import org.apache.poi.hssf.eventusermodel.HSSFListener;
 import org.apache.poi.hssf.record.*;
+import nl.gridshore.samples.training.integration.vo.UpdatedEmployeeData;
 
 /**
  * Created by IntelliJ IDEA.
@@ -61,7 +62,15 @@ class RecordListener implements HSSFListener {
                     serviceHelper.getUpdatedEmployee("row"+lrec.getRow()).setLongName(sstrec.getString(lrec.getSSTIndex()).toString());
                     break;
                 case COL_CLIENT:
-                    serviceHelper.getUpdatedEmployee("row"+lrec.getRow()).setClient(sstrec.getString(lrec.getSSTIndex()).toString());
+                    String clientProject = sstrec.getString(lrec.getSSTIndex()).toString();
+                    UpdatedEmployeeData empData = serviceHelper.getUpdatedEmployee("row"+lrec.getRow());
+                    String[] data = clientProject.split("-");
+                    if (data.length > 1) {
+                        empData.setProject(data[1].trim());
+                    } else {
+                        empData.setProject(null);
+                    }
+                    empData.setClient(data[0].trim());
                     break;
                 case COL_LEVEL:
                     serviceHelper.getUpdatedEmployee("row"+lrec.getRow()).setLevel(sstrec.getString(lrec.getSSTIndex()).toString());

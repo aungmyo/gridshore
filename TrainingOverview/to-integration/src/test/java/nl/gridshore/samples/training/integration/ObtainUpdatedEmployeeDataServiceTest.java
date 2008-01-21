@@ -24,7 +24,6 @@ public class ObtainUpdatedEmployeeDataServiceTest {
     private static final String TEST_INPUT_FILE_NAME = "src/test/resources/example.xls";
     private ObtainUpdatedEmployeeDataService service;
 
-
     @Before
     public void initialize() {
         service = new ObtainUpdatedEmployeeDataServiceImpl();
@@ -95,6 +94,7 @@ public class ObtainUpdatedEmployeeDataServiceTest {
         assertEquals("level is not as expected", "6. Principal Consultant", empData.getLevel());
         assertEquals("cell is not as expeced", "Oracle ERP", empData.getCell());
         assertEquals("cluster is not as expected", "OS", empData.getCluster());
-        assertEquals("client is not as expected", "Cargill - A Force RC", empData.getClient());
+        assertEquals("client is not as expected", "Cargill", empData.getClient());
+        assertEquals("client is not as expected", "A Force RC", empData.getProject());
     }
 }

@@ -5,7 +5,7 @@
       <configuration>
         <fileset id="fileset1" name="My Fileset" removed="false">
           <file>file://$MODULE_DIR$/src/main/resources/business-config.xml</file>
-          <file>jar:///Users/jettro/.m2/repository/nl/gridshore/samples/training/to-dataaccess/1.0.0-SNAPSHOT/to-dataaccess-1.0.0-SNAPSHOT.jar!/dataaccess-config.xml</file>
+          <file>file:///Users/jettro/sources/gridshore/TrainingOverview/to-dataaccess/src/main/resources/dataaccess-config.xml</file>
         </fileset>
         <options>
           <option name="enableValidation" value="true" />

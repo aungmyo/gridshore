@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 import nl.gridshore.samples.training.domain.Employee;
+import nl.gridshore.samples.training.dataaccess.testhelp.DatabaseOperations;
 
 /**
  * Created by IntelliJ IDEA.
@@ -47,6 +48,18 @@ public class EmployeeDaoTest extends AbstractJpaTests {
         employeeDao.save(emp);
 
         assertEquals("number of employees after save is not as expected",numBefore+1,employeeDao.loadAll().size());
+    }
+
+    @Test
+    @Transactional(readOnly = true)
+    public void loadEmployeeByIdNumber() {
+        assertNotNull("an employee should have been found", employeeDao.findByIdNumber("12345678"));
+    }
+
+    @Test
+    @Transactional(readOnly = true)
+    public void loadEmployeeByIdNumberNonExisting() {
+        assertNull("no employee should have been found", employeeDao.findByIdNumber("10000000"));
     }
 
 }

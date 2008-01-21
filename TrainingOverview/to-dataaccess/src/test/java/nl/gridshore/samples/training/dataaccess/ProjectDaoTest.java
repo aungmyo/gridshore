@@ -77,6 +77,27 @@ public class ProjectDaoTest extends AbstractJpaTests {
         projectDao.loadById(999L);
     }
 
+    @Test
+    @Transactional (readOnly = true)
+    public void findProjectByClientAndProject() {
+        Project project = projectDao.findProjectByClientAndProject("Abnamro","OCS");
+        assertNotNull("project should have been found",project);
+    }
+
+    @Test
+    @Transactional (readOnly = true)
+    public void findProjectByClientAndProjectNullProject() {
+        Project project = projectDao.findProjectByClientAndProject("Abnamro",null);
+        assertNull("project should not have been found",project);
+    }
+
+    @Test
+    @Transactional (readOnly = true)
+    public void findProjectByClientAndProjectNonExisting() {
+        Project project = projectDao.findProjectByClientAndProject("Abnamro","OCSSS");
+        assertNull("project should have been null",project);
+    }
+
     private Project createDummyNewProject() {
         Project project = new Project();
         project.setClient("Accenture");

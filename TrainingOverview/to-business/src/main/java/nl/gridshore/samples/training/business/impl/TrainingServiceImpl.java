@@ -12,6 +12,7 @@ import nl.gridshore.samples.training.domain.Employee;
 import nl.gridshore.samples.training.domain.Project;
 
 import java.util.Set;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,7 @@ public class TrainingServiceImpl implements TrainingService {
     }
 
     public void importAndHandleEmployeeDataFile(String filenameAndLocation) {
-        Set<UpdatedEmployeeData> foundEmps = null;
+        Set<UpdatedEmployeeData> foundEmps;
         try {
             foundEmps = empDataService.obtainEmployeeData(filenameAndLocation);
         } catch (IntegrationException e) {
@@ -46,27 +47,76 @@ public class TrainingServiceImpl implements TrainingService {
         }
 
         for(UpdatedEmployeeData foundEmp : foundEmps) {
-            Employee existingEmployee = employeeDao.findByIdNumber(foundEmp.getIdNumber());
-            if (existingEmployee != null) {
-                // TODO : implement this as well
-                logger.warn("Existing employee with id {}",foundEmp.getIdNumber());
-            } else {
-                Employee emp = new Employee();
-                emp.setCell(foundEmp.getCell());
-                emp.setCluster(foundEmp.getCluster());
-                emp.setEmployeeNumber(foundEmp.getIdNumber());
-                emp.setLevel(foundEmp.getLevel());
-                emp.setLongName(foundEmp.getLongName());
-                Project foundProject = projectDao.findProjectByClient(foundEmp.getClient());
-                if (foundProject != null) {
-                    foundProject.addEmployee(emp);
+            insertOrUpdateObtainedEmployeeData(foundEmp);
+        }
+    }
+
+    public List<Project> obtainAllProjects() {
+        return projectDao.loadAll();
+    }
+
+    private void insertOrUpdateObtainedEmployeeData(UpdatedEmployeeData foundEmp) {
+        Employee existingEmployee = employeeDao.findByIdNumber(foundEmp.getIdNumber());
+        if (existingEmployee != null) {
+            logger.info("Existing employee with id {}",foundEmp.getIdNumber());
+            fillEmployeeWithObtainedData(existingEmployee,foundEmp);
+            if (projectOfEmployeeIsChanged(foundEmp, existingEmployee)) {
+                if (foundEmp.getClient() == null) {
+                    existingEmployee.getProject().removeEmployee(existingEmployee);
+                    existingEmployee.setProject(null);
                 } else {
-                    // TODO : create some kind of problem service
-                    logger.warn("Could not find project for client {}", foundEmp.getClient());
+                    fillProjectForProvidedEmployee(foundEmp,existingEmployee);
                 }
-                employeeDao.save(emp);
+            }
+            employeeDao.save(existingEmployee);
+        } else {
+            Employee emp = new Employee();
+            fillEmployeeWithObtainedData(emp,foundEmp);
+            fillProjectForProvidedEmployee(foundEmp, emp);
+            employeeDao.save(emp);
+        }
+    }
+
+    private void fillProjectForProvidedEmployee(UpdatedEmployeeData foundEmp, Employee emp) {
+        Project foundProject = projectDao.findProjectByClientAndProject(foundEmp.getClient(), foundEmp.getProject());
+        if (foundProject != null) {
+            foundProject.addEmployee(emp);
+        } else {
+            logger.warn("Could not find project for client {} and project {}", new String[] {foundEmp.getClient(), foundEmp.getProject()});
+            Project project = new Project();
+            project.setClient(foundEmp.getClient());
+            project.setName(foundEmp.getProject());
+            project = projectDao.save(project);
+            project.addEmployee(emp);
+        }
+    }
+
+    private boolean projectOfEmployeeIsChanged(UpdatedEmployeeData foundEmp, Employee existingEmployee) {
+        boolean changeOfProject = false;
+        boolean nullClient = (foundEmp.getClient() == null);
+        boolean nullExistingProject = (existingEmployee.getProject() == null);
+
+        // if new client is null project is null as well, e can have a client without a project
+        if (!(nullClient && nullExistingProject)) {
+            if (!nullExistingProject && !(
+                    existingEmployee.getProject().getClient().equals(foundEmp.getClient())
+                            || existingEmployee.getProject().getName().equals(foundEmp.getProject())
+                                            )
+                ) {
+                changeOfProject = true;
+            } else if(nullExistingProject && !nullClient) {
+                changeOfProject = true;
             }
         }
+        return changeOfProject;
+    }
+
+    private void fillEmployeeWithObtainedData(Employee emp, UpdatedEmployeeData foundEmp) {
+        emp.setCell(foundEmp.getCell());
+        emp.setCluster(foundEmp.getCluster());
+        emp.setEmployeeNumber(foundEmp.getIdNumber());
+        emp.setLevel(foundEmp.getLevel());
+        emp.setLongName(foundEmp.getLongName());
     }
 
 }

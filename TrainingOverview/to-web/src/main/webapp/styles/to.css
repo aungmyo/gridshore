@@ -1,0 +1,77 @@
+body {
+    font-family: serif;
+    background-repeat: no-repeat;
+    background-color: #ccc;
+}
+
+th {
+    color: #7084aa;
+    font-weight: normal;
+}
+
+a {
+    color: #7084aa;
+}
+
+.content {
+    border: 5px solid #c3d9ff;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 800px;
+}
+
+#maincontentbox {
+    width: 500px;
+    top: 100px;
+    left: 250px;
+    height: 400px;
+    position: absolute;
+    overflow: auto;
+    padding: 10px;
+}
+
+#maincontentbox h2 {
+    font-size: 18pt;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+#screentitle {
+    font-size: 24pt;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid white;
+}
+
+
+/* zebra striping cnfiguration */
+table.zebra {
+    font-family: arial;
+    background-color: #CDCDCD;
+    margin: 10px 0pt 15px;
+    font-size: 8pt;
+    width: 100%;
+    text-align: left;
+}
+
+table.zebra thead tr th, table.zebra tfoot tr th {
+    background-color: #B1DB87;
+    border: 1px solid #FFF;
+    font-size: 8pt;
+    padding: 4px;
+}
+
+table.zebra tbody td {
+    color: #3D3D3D;
+    padding: 4px;
+    background-color: #FFF;
+    vertical-align: top;
+}
+
+table.zebra tbody tr.striped td {
+    background-color: #E0F4D7;
+}
+

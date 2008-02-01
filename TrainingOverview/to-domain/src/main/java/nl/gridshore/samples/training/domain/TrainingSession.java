@@ -1,9 +1,9 @@
 package nl.gridshore.samples.training.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.ManyToOne;
-import javax.persistence.JoinColumn;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.Range;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.NotNull;
+
+import javax.persistence.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,11 +15,17 @@ import javax.persistence.JoinColumn;
 @Entity
 @Table (name = "to_trainingsession")
 public class TrainingSession extends BaseDomain {
+    @Range (min = 1, max = 53)
+    @NotNull
     private Integer weekNr;
+
     @ManyToOne
     @JoinColumn(name = "training_id")        
     private Training training;
-    private String status;
+    
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private SessionStatus status;
 
     public Integer getWeekNr() {
         return weekNr;
@@ -37,11 +43,11 @@ public class TrainingSession extends BaseDomain {
         this.training = training;
     }
 
-    public String getStatus() {
+    public SessionStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(SessionStatus status) {
         this.status = status;
     }
 }

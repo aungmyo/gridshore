@@ -26,11 +26,7 @@ public class DatabaseOperations extends JdbcDaoSupport {
     public static final int TRAINING_NO_SESSIONS = 22;
     public static final int TRAININGSESSION_SCHEDULED = 201;
 
-
-    private static int numRuns = 0;
-
     public DatabaseOperations() {
-        System.out.println("***************************** " + ++numRuns  + "Database Operations object created");
     }
 
     public void initializeDatabase() {

@@ -6,6 +6,8 @@ import nl.gridshore.samples.training.dataaccess.EmployeeDao;
 import javax.persistence.Query;
 import java.util.List;
 
+import org.springframework.orm.ObjectRetrievalFailureException;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
@@ -17,6 +19,19 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
 
     public EmployeeDaoJpa() {
         super(Employee.class, "Employee");
+    }
+
+    /**
+     * Need to overload this method to load the lazily loaded collections for plans and wishes
+     * @param entityId Long representin the id of the employee to find
+     * @return Employee with eagerly fetched collections
+     * @throws ObjectRetrievalFailureException Thrown if the id that was provided is unknown
+     */
+    public Employee loadById(Long entityId) throws ObjectRetrievalFailureException {
+        Employee emp = super.loadById(entityId);
+        emp.getTrainingPlans().size();
+        emp.getTrainingWishes().size();
+        return emp;
     }
 
     public Employee findByIdNumber(String idNumber) {

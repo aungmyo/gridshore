@@ -16,8 +16,8 @@ public enum SessionStatus {
         this.code = code;
     }
 
-    public String toString() {
-        return code;
+    public final String toString() {
+        return this.code;
     }
 
     private final String code;

@@ -10,7 +10,7 @@
 
     <bean id="databaseSetupBean" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
         <property name="targetObject">
-            <bean class="nl.gridshore.samples.training.dataaccess.testhelp.DatabaseOperations">
+            <bean class="nl.gridshore.samples.training.dataaccess.testhelp.DatabaseOperations" >
                 <property name="dataSource" ref="dataSource"/>    
             </bean>
         </property>

@@ -5,44 +5,63 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Training Overview</title>
+    <title><fmt:message key="generic.application.title"/></title>
 
     <link rel="stylesheet" href="${ctx}/styles/to.css" type="text/css"/>
+    <link rel="stylesheet" href="${ctx}/styles/clickmenu.css" type="text/css"/>
     <script type="text/javascript" src="${ctx}/js/jquery-1.2.1.min.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery.tablesorter.pack.js"></script>
+    <script type="text/javascript" src="${ctx}/js/jquery.clickmenu.pack.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+            $("#projectsdata")
+                    .tablesorter({headers:{0:{sorter:false},1:{sorter:false}},sortList:[[3,0],[2,0]], widgets: ['zebra']});
             $(".zebra tr:nth-child(even)").addClass("striped");
+            $("#detailscontentbox").hide();
+            $('#list').clickMenu();
         });
+
+        function fillEmployeesBox(projectId) {
+            $("#detailscontentbox").load("projectemployees.view",{projectId : projectId}, function() {
+                $(".zebra tr:nth-child(even)").addClass("striped");
+                $("#detailscontentbox").show();
+            });
+        }
+
     </script>
 </head>
-
 <body>
-<div id="screentitle">Training Overview Application</div>
+<%@ include file="/WEB-INF/jsp/menu.jsp" %>
 <div id="maincontentbox">
-<table id="projectsdata" class="zebra">
+<table id="projectsdata" class="tablesorter">
     <thead>
         <tr>
             <th>&nbsp;</th>
-            <th>name</th>
-            <th>client</th>
-            <th>manager</th>
-            <th>manager email</th>
-            <th>wbs</th>
+            <th>&nbsp;</th>
+            <th><fmt:message key="project.name"/></th>
+            <th><fmt:message key="project.client"/></th>
+            <th><fmt:message key="project.manager.name"/></th>
+            <th><fmt:message key="project.manager.email"/></th>
+            <th><fmt:message key="project.wbs"/></th>
         </tr>
     </thead>
     <tbody>
-        <c:forEach var="project" items="${projectsList}">
+        <c:forEach var="training" items="${projectsList}">
             <tr>
-                <td><a href="editproject.view?projectId=${project.id}">edit</a></td>
-                <td>${project.name}</td>
-                <td>${project.client}</td>
-                <td>${project.managerName}</td>
-                <td>${project.managerEmail}</td>
-                <td>${project.wbs}</td>
+                <td><a href="#" onclick="fillEmployeesBox(${training.id})"><fmt:message key="project.employees"/></a></td>
+                <td><a href="editproject.view?projectId=${training.id}"><fmt:message key="generic.edit"/></a></td>
+                <td>${training.name}</td>
+                <td>${training.client}</td>
+                <td>${training.managerName}</td>
+                <td>${training.managerEmail}</td>
+                <td>${training.wbs}</td>
             </tr>
         </c:forEach>
     </tbody>
-</table></div>
+</table>
+</div>
+
+<div id="detailscontentbox">empty</div>
 </body>
 
 </html>

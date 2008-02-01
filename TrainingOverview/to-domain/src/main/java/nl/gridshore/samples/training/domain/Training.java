@@ -1,7 +1,11 @@
 package nl.gridshore.samples.training.domain;
 
+import org.springmodules.validation.bean.conf.loader.annotation.handler.NotNull;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.Length;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.MinLength;
+import org.springmodules.validation.bean.conf.loader.annotation.handler.NotBlank;
+
 import javax.persistence.*;
-import java.util.Set;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -15,11 +19,15 @@ import java.util.ArrayList;
 @Entity
 @Table (name = "to_training")
 public class Training extends BaseDomain {
+    @NotNull
+    @Length(min = 3, max = 50 )
     private String name;
+    @MinLength(value = 5)
     private String code;
+    @NotBlank
     private String remark;
 
-    @OneToMany(mappedBy = "training", fetch = FetchType.LAZY, cascade = {CascadeType.ALL, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "training", fetch = FetchType.EAGER, cascade = {CascadeType.ALL, CascadeType.REMOVE})
     private List<TrainingSession> sessions = new ArrayList<TrainingSession>();
 
     public String getName() {

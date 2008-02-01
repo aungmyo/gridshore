@@ -1,7 +1,5 @@
 package nl.gridshore.samples.training.integration.exceptions;
 
-import nl.gridshore.samples.training.integration.exceptions.IntegrationException;
-
 /**
  * Created by IntelliJ IDEA.
  * User: jettro

@@ -7,24 +7,23 @@
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
-    <bean id="trainingService" class="nl.gridshore.samples.training.business.impl.TrainingServiceImpl">
-        <constructor-arg ref="employeeDataService"/>
-        <constructor-arg ref="employeeDao"/>
-        <constructor-arg ref="projectDao"/>
-    </bean>
+
+    <bean id="projectService" class="nl.gridshore.samples.training.business.impl.ProjectServiceImpl"/>
+    <bean id="trainingService" class="nl.gridshore.samples.training.business.impl.TrainingServiceImpl"/>
+    <bean id="employeeService" class="nl.gridshore.samples.training.business.impl.EmployeeServiceImpl"/>
 
     <bean id="employeeDataService" class="nl.gridshore.samples.training.integration.impl.ObtainUpdatedEmployeeDataServiceImpl"/>
 
     <tx:advice id="txAdvice" transaction-manager="transactionManager">
         <tx:attributes>
-            <tx:method name="give*" read-only="true"/>
+            <tx:method name="obtain*" read-only="true"/>
             <tx:method name="*"/>
         </tx:attributes>
     </tx:advice>
 
     <aop:config>
         <aop:pointcut id="serviceOperation"
-                      expression="execution(* nl.gridshore.samples.training.business.TrainingService.*(..))"/>
+                      expression="execution(* nl.gridshore.samples.training.business.*Service.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceOperation"/>
     </aop:config>
 </beans>

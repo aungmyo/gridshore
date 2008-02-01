@@ -6,7 +6,7 @@ import nl.gridshore.samples.training.integration.ObtainUpdatedEmployeeDataServic
 import nl.gridshore.samples.training.integration.vo.UpdatedEmployeeData;
 import nl.gridshore.samples.training.dataaccess.EmployeeDao;
 import nl.gridshore.samples.training.dataaccess.ProjectDao;
-import nl.gridshore.samples.training.business.impl.TrainingServiceImpl;
+import nl.gridshore.samples.training.business.impl.ProjectServiceImpl;
 import nl.gridshore.samples.training.domain.Employee;
 import nl.gridshore.samples.training.domain.Project;
 import static org.easymock.EasyMock.*;
@@ -19,10 +19,10 @@ import java.util.HashSet;
  * User: jettro
  * Date: Jan 20, 2008
  * Time: 10:33:49 PM
- * Test class for the TrainingService
+ * Test class for the ProjectService
  */
-public class TrainingServiceTest {
-    private TrainingService service;
+public class ProjectServiceTest {
+    private ProjectService service;
 
     private ObtainUpdatedEmployeeDataService mockEmpDataService;
     private EmployeeDao mockEmpDao;
@@ -33,7 +33,7 @@ public class TrainingServiceTest {
         mockEmpDataService = createMock(ObtainUpdatedEmployeeDataService.class);
         mockEmpDao = createMock(EmployeeDao.class);
         mockProjectDao = createMock(ProjectDao.class);
-        service = new TrainingServiceImpl(mockEmpDataService, mockEmpDao, mockProjectDao);
+        service = new ProjectServiceImpl(mockEmpDataService, mockEmpDao, mockProjectDao);
     }
 
     @Test

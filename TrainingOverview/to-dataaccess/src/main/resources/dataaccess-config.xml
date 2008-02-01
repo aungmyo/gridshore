@@ -10,6 +10,8 @@
     <bean id="trainingDao" class="nl.gridshore.samples.training.dataaccess.jpa.TrainingDaoJpa"/>
     <bean id="projectDao" class="nl.gridshore.samples.training.dataaccess.jpa.ProjectDaoJpa"/>
     <bean id="employeeDao" class="nl.gridshore.samples.training.dataaccess.jpa.EmployeeDaoJpa"/>
+    <bean id="trainingSessionDao" class="nl.gridshore.samples.training.dataaccess.jpa.TrainingSessionDaoJpa"/>
+    <bean id="trainingPlanningDao" class="nl.gridshore.samples.training.dataaccess.jpa.TrainingPlanningDaoJpa"/>
 
     <!-- infrastructure beans -->
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
@@ -18,7 +20,7 @@
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
                 <property name="databasePlatform" value="${hibernate.sql.dialect}"/>
                 <property name="generateDdl" value="${hibernate.sql.generateddl}"/>
-                <property name="showSql" value="true"/>
+                <property name="showSql" value="${hibernate.sql.show}"/>
             </bean>
         </property>
         <property name="dataSource" ref="dataSource"/>

@@ -10,6 +10,7 @@ http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:spring-servlet.xml,
+            classpath:validation-config.xml,
             classpath:business-config.xml,
             classpath:dataaccess-config.xml
         </param-value>

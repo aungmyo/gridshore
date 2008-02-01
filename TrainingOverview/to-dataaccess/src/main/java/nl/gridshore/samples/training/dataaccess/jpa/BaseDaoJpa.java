@@ -3,7 +3,6 @@ package nl.gridshore.samples.training.dataaccess.jpa;
 import nl.gridshore.samples.training.dataaccess.BaseDao;
 import nl.gridshore.samples.training.domain.BaseDomain;
 import org.springframework.orm.ObjectRetrievalFailureException;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;

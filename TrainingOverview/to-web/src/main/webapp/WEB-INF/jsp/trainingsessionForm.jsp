@@ -16,7 +16,7 @@
             </tr>
             <tr>
                 <th><fmt:message key="training.session.status"/></th>
-                <td><form:select path="status" items="${sessionStatusses}"/></td>
+                <td><form:select path="status" items="${sessionStatusses}" itemLabel="label" itemValue="value"/></td>
                 <td><form:errors path="status" cssClass="errors" /></td>
             </tr>
             <tr>

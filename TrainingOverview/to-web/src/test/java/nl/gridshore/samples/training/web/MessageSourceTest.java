@@ -30,7 +30,7 @@ public class MessageSourceTest {
     @Test
     public void getMessageFromSource() {
         String result =
-                messageSource.getMessage("Training.name[length.min].training.name",new Object[] {3}, Locale.getDefault());
+                messageSource.getMessage("Training.name[length.min].training.name",new Object[] {new Object(),3}, Locale.getDefault());
         assertEquals("Resource string not as expected","Name has  minimal length of 3", result);
     }
 }

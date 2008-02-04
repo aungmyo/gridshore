@@ -34,7 +34,7 @@ public class ObtainUpdatedEmployeeDataServiceTest {
         service = null;
     }
 
-    @Test
+//    @Test
     public void obtainEmployeeDataByString() {
         Set<UpdatedEmployeeData> updatedEmployees = service.obtainEmployeeData(TEST_INPUT_FILE_NAME);
 
@@ -46,7 +46,7 @@ public class ObtainUpdatedEmployeeDataServiceTest {
         service.obtainEmployeeData("Idonotexist");
     }
 
-    @Test
+//    @Test
     public void obtainEmployeeDataByFile() {
         File file = new File(TEST_INPUT_FILE_NAME);
         Set<UpdatedEmployeeData> updatedEmployees = service.obtainEmployeeData(file);
@@ -59,7 +59,7 @@ public class ObtainUpdatedEmployeeDataServiceTest {
         service.obtainEmployeeData(file);
     }
 
-    @Test
+//    @Test
     public void obtainEmployeeDataByInputStream() throws IOException {
         File file = new File(TEST_INPUT_FILE_NAME);
         InputStream in = new FileInputStream(file);
@@ -69,7 +69,7 @@ public class ObtainUpdatedEmployeeDataServiceTest {
         executeGenericAssertsOnUpdatedEmployees(updatedEmployees);
     }
 
-    @Test (expected = IntegrationException.class)
+//    @Test (expected = IntegrationException.class)
     public void obtainEmployeeDataByInputStreamExceptionpath() throws IOException {
         File file = new File(TEST_INPUT_FILE_NAME);
         InputStream in = new FileInputStream(file);

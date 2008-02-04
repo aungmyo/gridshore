@@ -38,16 +38,19 @@ public class EmployeeController {
         return new ModelMap(employeeService.obtainEmployeeById(employeeId));
     }
 
-    @RequestMapping("/showplannedtraining.view")
+//    @RequestMapping("/showplannedtraining.view,/showwishedtraining.view")
+    @RequestMapping(value = {"/showplannedtraining.view","/showwishedtraining.view"})
     public ModelMap showTrainingPlanForEmployeeHandler(@RequestParam("employeeId") Long employeeId) {
         ModelMap map = new ModelMap(employeeService.obtainEmployeeById(employeeId));
         map.addAttribute("trainingList",trainingService.obtainAllTrainings());
         return map;
     }
 
-    public ModelAndView addTrainingPlanForEmployeeHandler(@RequestParam("employeeId") Long employeeId,
-                                                    @RequestParam("trainingsessionId") Long trainingSessionId) {
-        Employee employee = employeeService.addTrainingSessionToPlanningOfEmployee(employeeId,trainingSessionId);
-        return new ModelAndView("/employee.view","employee",employee);
-    }
+//    @RequestMapping("/showwishedtraining.view")
+//    public ModelMap showTrainingWishesForEmployeeHandler(@RequestParam("employeeId") Long employeeId) {
+//        ModelMap map = new ModelMap(employeeService.obtainEmployeeById(employeeId));
+//        map.addAttribute("trainingList",trainingService.obtainAllTrainings());
+//        return map;
+//    }
+
 }

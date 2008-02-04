@@ -4,14 +4,19 @@ import nl.gridshore.samples.training.business.TrainingService;
 import nl.gridshore.samples.training.domain.TrainingSession;
 import nl.gridshore.samples.training.web.controllers.ControllerConstants;
 import nl.gridshore.samples.training.web.controllers.training.helpers.CustomSessionStatusEditor;
+import nl.gridshore.samples.training.web.helpers.SelectOption;
 import org.springframework.validation.Validator;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.bind.WebDataBinder;
+import org.springframework.context.MessageSourceAware;
+import org.springframework.context.MessageSource;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.Locale;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,6 +30,8 @@ public class UpdateableTrainingSessionController {
     protected static final String REDIRECT_TRAININGS_VIEW = "redirect:trainings.view";
     protected static final String TRAINING_SESSION_FORM = "trainingsessionForm";
 
+    protected MessageSource messageSource;
+
     protected TrainingService trainingService;
     protected Validator validator;
 
@@ -33,12 +40,15 @@ public class UpdateableTrainingSessionController {
         this.validator = validator;
     }
 
-    protected Collection<String> createPossibleValuesSessionStatus() {
+    protected Collection<SelectOption> createPossibleValuesSessionStatus(Locale locale) {
 
-        nl.gridshore.samples.training.domain.SessionStatus[] sessionStatuses = nl.gridshore.samples.training.domain.SessionStatus.values();
-        Collection<String> statussus = new HashSet<String>();
+        nl.gridshore.samples.training.domain.SessionStatus[] sessionStatuses =
+                nl.gridshore.samples.training.domain.SessionStatus.values();
+        Collection<SelectOption> statussus = new HashSet<SelectOption>();
         for (nl.gridshore.samples.training.domain.SessionStatus sessionStatus : sessionStatuses) {
-            statussus.add(sessionStatus.toString());
+            statussus.add(new SelectOption(
+                    sessionStatus.toString(),
+                    messageSource.getMessage(sessionStatus.toString(),null,sessionStatus.toString(), locale)));
         }
         return statussus;
     }
@@ -49,8 +59,8 @@ public class UpdateableTrainingSessionController {
     }
 
     @ModelAttribute("sessionStatusses")
-    public Collection<String> populateSessionStatusValues() {
-        return createPossibleValuesSessionStatus();
+    public Collection<SelectOption> populateSessionStatusValues(Locale locale) {
+        return createPossibleValuesSessionStatus(locale);
     }
 
     @RequestMapping(method = RequestMethod.POST)
@@ -77,5 +87,10 @@ public class UpdateableTrainingSessionController {
 
     protected TrainingService getTrainingService() {
         return trainingService;
+    }
+
+    @Autowired
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
     }
 }

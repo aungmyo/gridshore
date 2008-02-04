@@ -44,6 +44,21 @@
             });
         }
 
+        function showTrainingWishes(employeeId) {
+            $("#detailscontentbox").load("showwishedtraining.view",{employeeId : employeeId}, function() {
+                $(".zebra tr:nth-child(even)").addClass("striped");
+                $("#detailscontentbox").show();
+            });
+        }
+
+        function addTrainingWish(employeeId,trainingId) {
+            $("#detailscontentbox").load("addwishedtraining.view",
+                                        {employeeId : employeeId, trainingId : trainingId},
+                                        function() {
+                $(".zebra tr:nth-child(even)").addClass("striped");
+                $("#detailscontentbox").show();
+            });
+        }
     </script>
 </head>
 <body>

@@ -3,6 +3,51 @@
   <component name="AnalysisUIOptions">
     <option name="CUSTOM_SCOPE_NAME" value="Project Files" />
   </component>
+  <component name="BuildServerSettings">
+    <option name="HISTORY" value="" />
+    <option name="LOGIN" value="jettro" />
+    <option name="SERVER_URL" value="http://localhost:8111" />
+    <option name="PASSWORD" value="dfc7dfcbdfd8dfc3dfc0dfc4" />
+    <option name="REMEMBER_ME" value="true" />
+    <option name="INSPECTIONS_BUILD_TYPE_NAME" />
+    <option name="INSPECTIONS_PROJECT_ID" />
+    <option name="INSPECTIONS_BUILD_TYPE_ID" />
+    <option name="DUPLICATES_BUILD_TYPE_NAME" />
+    <option name="DUPLICATES_PROJECT_ID" />
+    <option name="DUPLICATES_BUILD_TYPE_ID" />
+    <option name="PERFORM_COMMIT" value="true" />
+    <option name="REQUEST_CONFIRMATON" value="false" />
+    <option name="STATUS_DIALOG_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILTER_BY_USER" value="true" />
+    <option name="FILTER_REMOTE_RUN_TREE" value="false" />
+    <option name="FILTER_BY_STATUS" value="false" />
+    <option name="SHOW_CLOSE_PROMPT" value="true" />
+    <SELECTED_TYPE id="bt3" />
+    <TreeState key="changes">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Root" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.RootDescriptor" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="ChangesGroup::Today" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.ChangesGroupDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </TreeState>
+    <TreeState key="project">
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Root" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.RootDescriptor" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="TrainingOverview" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.ProjectDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+    </TreeState>
+  </component>
   <component name="CCaseConfig">
     <option name="checkoutReserved" value="false" />
     <option name="markExternalChangeAsUpToDate" value="true" />
@@ -18,105 +63,28 @@
     <option name="historyRevisionsNumber" value="4" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" name="Default" comment="">
+    <list default="true" name="Default" comment="" />
+    <list name="Delayed Commit (basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training)" comment="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iws" afterPath="$PROJECT_DIR$/TrainingOverview.iws" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/controllers/helpers" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/exceptions/IntegrationInputDataException.java" afterPath="$PROJECT_DIR$/to-integration/src/main/java/nl/gridshore/samples/training/integration/exceptions/IntegrationInputDataException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/ProjectService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/TrainingService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/AddTrainingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/asc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/desc.gif" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/EditTrainingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/exceptions.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/to-business.iml" afterPath="$PROJECT_DIR$/to-business/to-business.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js/jquery-tablefilter-0.2.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessions.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/resources/dataaccess-config.xml" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/resources/dataaccess-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/menu.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js/jquery.clickmenu.pack.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml" afterPath="$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/SessionStatus.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/SessionStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/first.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/resources/test-web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/EmployeeTrainingInterest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" afterPath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/resources/labels.properties" afterPath="$PROJECT_DIR$/to-web/src/main/resources/labels.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showwishedtraining.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingSessionController.java" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingSessionController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/helpers/CustomEmployeeTrainingInterestEditor.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/helpers/SelectOption.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/AddWishedTrainingController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/helpers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/bg.gif" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/TrainingServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/helpers/CustomSessionStatusEditor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iml" afterPath="$PROJECT_DIR$/TrainingOverview.iml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TrainingServiceTest.java" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/ProjectServiceTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/AddTrainingSessionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/TrainingSessionDaoJpa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/messages.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/TrainingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/to-web.iml" afterPath="$PROJECT_DIR$/to-web/to-web.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/resources/test-database.properties" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/resources/test-database.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainings.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/helpers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingForm.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/styles/to.css" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/to.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/project" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/controllers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/TrainingControllerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/BaseDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/BaseDaoJpa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Training.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Training.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/myshadow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/ProjectController.java" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/project/ProjectController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js/jquery.tablesorter.pack.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/resources/test-dataaccess-config.xml" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/resources/test-dataaccess-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/TrainingSessionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/pom.xml" afterPath="$PROJECT_DIR$/to-domain/pom.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/addplannedtraining.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingSessionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/MessageSourceTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/last.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/controllers/helpers/CustomSessionStatusEditorTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/TrainingPlanningDaoJpa.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/prev.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projects.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projects.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/labels.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/resources/business-config.xml" afterPath="$PROJECT_DIR$/to-business/src/main/resources/business-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/EditTrainingSessionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/images/next.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/to-domain.iml" afterPath="$PROJECT_DIR$/to-domain/to-domain.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/to-dataaccess.iml" afterPath="$PROJECT_DIR$/to-dataaccess/to-dataaccess.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/ControllerConstants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projectemployees.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/resources/database.properties" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/resources/database.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/projectForm.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/test/java/nl" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/resources/validation-config.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/project/EditProjectController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/TrainingPlanningDao.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/ProjectServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/footer.jsp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/js/jquery.tablesorter.pager.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/AddPlannedTrainingController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/pom.xml" afterPath="$PROJECT_DIR$/to-web/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.ipr" afterPath="$PROJECT_DIR$/TrainingOverview.ipr" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/styles/clickmenu.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/header.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java" />
     </list>
     <ignored path="TrainingOverview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -175,6 +143,19 @@
   <component name="DebuggerManager">
     <line_breakpoints>
       <breakpoint url="jar:///Users/jettro/.m2/repository/org/springframework/spring-orm/2.5.1/spring-orm-2.5.1-sources.jar!/org/springframework/orm/jpa/JpaTransactionManager.java" line="488" class="org.springframework.orm.jpa.JpaTransactionManager" package="org.springframework.orm.jpa">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="false" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java" line="131" class="Class at DatabaseOperations.java:131" package="nl.gridshore.samples.training.dataaccess.testhelp">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -249,84 +230,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="EmployeeController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java">
+      <file leaf-file-name="MessageSourceTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/MessageSourceTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="1.0446428">
+            <state line="21" column="13" selection-start="650" selection-end="650" vertical-scroll-proportion="0.3482143">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AddPlannedTrainingController.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/AddPlannedTrainingController.java">
+      <file leaf-file-name="exceptions.properties" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/exceptions.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="33" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.91071427">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UpdateableTrainingController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="0" selection-start="1360" selection-end="2247" vertical-scroll-proportion="1.2053572">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AddTrainingController.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/AddTrainingController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="0" selection-start="713" selection-end="762" vertical-scroll-proportion="0.3482143">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employee.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="29" selection-start="718" selection-end="718" vertical-scroll-proportion="0.5833333">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="showplannedtraining.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="88" selection-start="1276" selection-end="1276" vertical-scroll-proportion="1.0359712">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="employees.jsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="51" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.25">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="17" selection-start="453" selection-end="453" vertical-scroll-proportion="0.45535713">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EmployeeServiceImpl.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="24" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.9375">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -343,6 +259,9 @@
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="SORT_ALPHABETICALLY" value="false" />
     <option name="HIDE_CLASSES_WHERE_METHOD_NOT_IMPLEMENTED" value="false" />
+  </component>
+  <component name="InspectionPassRegistrar">
+    <option name="LOAD_NEW_PROBLEMS" value="true" />
   </component>
   <component name="JspContextManager">
     <jsp-to-context jsp-file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/includes.jsp" context-file="file://$PROJECT_DIR$/to-web/target/to-web-1.0.0-SNAPSHOT/WEB-INF/jsp/projects.jsp" />
@@ -457,74 +376,6 @@
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
       </PATH>
       <PATH>
         <PATH_ELEMENT>
@@ -549,334 +400,6 @@
         </PATH_ELEMENT>
         <PATH_ELEMENT>
           <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/resources" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="TrainingOverview" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java" />
-          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -921,19 +444,19 @@
       <recent name="nl.gridshore.samples.training.dataaccess" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.tomcat">
-    <tempConfiguration default="false" name="CustomSessionStatusEditorTest.setAsText" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="nl.gridshore.samples.training.web.controllers.helpers.*" />
+  <component name="RunManager" selected="JUnit.MessageSourceTest">
+    <tempConfiguration default="false" name="MessageSourceTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="nl.gridshore.samples.training.web.*" />
       <module name="to-web" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" value="" />
-      <option name="PACKAGE_NAME" value="nl.gridshore.samples.training.web.controllers.helpers" />
-      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.web.controllers.helpers.CustomSessionStatusEditorTest" />
-      <option name="METHOD_NAME" value="setAsText" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="nl.gridshore.samples.training.web" />
+      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.web.MessageSourceTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
@@ -947,35 +470,6 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
-      <module name="" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="ANNOTATION_TYPE" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="ADDITIONAL_CLASS_PATH" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="wholeProject" />
-      </option>
-      <option name="PROPERTIES_FILE" />
-      <envs />
-      <properties />
-      <listeners />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -1011,6 +505,51 @@
       <option name="HOST" value="localhost" />
       <option name="PORT" value="5005" />
     </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
+    <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
+      <module name="" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="ANNOTATION_TYPE" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="ADDITIONAL_CLASS_PATH" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <option name="PROPERTIES_FILE" />
+      <envs />
+      <properties />
+      <listeners />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1032,22 +571,6 @@
       <method>
         <option name="Make" value="true" />
       </method>
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
     </configuration>
     <configuration default="false" name="tomcat" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
@@ -1105,8 +628,8 @@
       </method>
     </configuration>
     <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.CustomSessionStatusEditorTest.setAsText" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
+      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MessageSourceTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -1164,8 +687,8 @@
     <layout>
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="7" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="7" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="1" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
@@ -1173,13 +696,14 @@
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
+      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3350108" order="3" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" order="4" x="24" y="309" width="1416" height="587" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.424767" order="4" x="24" y="309" width="1416" height="587" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Duplicates" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -1199,7 +723,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a lot of stuff based on employees. I also started doing more with the ajax capabilities of jquery. Now you can select a training session for an employee." />
+    <option name="LAST_COMMIT_MESSAGE" value="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -1217,6 +741,7 @@
     <MESSAGE value="first end-to-end piece is working, starting with tests as well" />
     <MESSAGE value="refactored the TrainingService into a ProjectService, now we can create a real TrainingService" />
     <MESSAGE value="Added a lot of stuff based on employees. I also started doing more with the ajax capabilities of jquery. Now you can select a training session for an employee." />
+    <MESSAGE value="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -1257,125 +782,144 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/BaseDomain.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.33333334">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Employee.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="13" selection-start="388" selection-end="388" vertical-scroll-proportion="-2.074627">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/EmployeeTrainingInterest.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="12" selection-start="236" selection-end="236" vertical-scroll-proportion="0.26865673">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Training.java">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="648" selection-end="648" vertical-scroll-proportion="0.33333334">
+        <state line="20" column="13" selection-start="648" selection-end="648" vertical-scroll-proportion="-0.7910448">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/addplannedtraining.jsp">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/ProjectDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="48" selection-start="0" selection-end="1399" vertical-scroll-proportion="0.8611111">
+        <state line="47" column="53" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.546875">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/TrainingSessionDaoJpa.java">
+    <entry file="file://$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="13" selection-start="355" selection-end="355" vertical-scroll-proportion="0.29464287">
+        <state line="72" column="0" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.8125">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/resources/dataaccess-config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="109" selection-start="985" selection-end="985" vertical-scroll-proportion="0.42048517">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/TrainingPlanningDaoJpa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="54" selection-start="629" selection-end="629" vertical-scroll-proportion="0.4017857">
+        <state line="9" column="27" selection-start="234" selection-end="234" vertical-scroll-proportion="0.2562189">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/TrainingPlanningDao.java">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Project.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="16" selection-start="275" selection-end="275" vertical-scroll-proportion="0.29464287">
+        <state line="16" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.41791046">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/labels.properties">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/BaseDaoJpa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="27" selection-start="287" selection-end="314" vertical-scroll-proportion="0.29464287">
+        <state line="49" column="0" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.3325893">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingController.java">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="0" selection-start="1360" selection-end="2247" vertical-scroll-proportion="1.2053572">
+        <state line="146" column="51" selection-start="7039" selection-end="7039" vertical-scroll-proportion="0.55427253">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/AddTrainingController.java">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/TrainingDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="0" selection-start="713" selection-end="762" vertical-scroll-proportion="0.3482143">
+        <state line="31" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.51785713">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingPlanning.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="29" selection-start="718" selection-end="718" vertical-scroll-proportion="0.5833333">
+        <state line="13" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.3880597">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/SessionStatus.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="88" selection-start="1276" selection-end="1276" vertical-scroll-proportion="1.0359712">
+        <state line="9" column="13" selection-start="203" selection-end="203" vertical-scroll-proportion="0.26865673">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp">
+    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="51" selection-start="1664" selection-end="1664" vertical-scroll-proportion="0.25">
+        <state line="27" column="12" selection-start="734" selection-end="734" vertical-scroll-proportion="0.67412937">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java">
+    <entry file="file://$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/MessageSourceTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="17" selection-start="453" selection-end="453" vertical-scroll-proportion="0.45535713">
+        <state line="21" column="13" selection-start="650" selection-end="650" vertical-scroll-proportion="0.3482143">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/exceptions.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="44" column="24" selection-start="1645" selection-end="1645" vertical-scroll-proportion="0.9375">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="0" selection-start="1839" selection-end="1839" vertical-scroll-proportion="1.0446428">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/AddPlannedTrainingController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="33" selection-start="1337" selection-end="1337" vertical-scroll-proportion="0.91071427">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>

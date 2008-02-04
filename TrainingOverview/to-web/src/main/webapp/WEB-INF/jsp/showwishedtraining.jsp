@@ -19,26 +19,23 @@
     </tbody>
 </table>
 
-<table id="trainingplans" class="zebra">
+<table id="trainingwishes" class="zebra">
     <thead>
         <tr>
-            <th><fmt:message key="training.session.weeknr"/></th>
-            <th><fmt:message key="training.session.status"/></th>
+            <th>&nbsp;</th>
+            <th><fmt:message key="training.name"/></th>
+            <th><fmt:message key="training.code"/></th>
+            <th><fmt:message key="training.remark"/></th>
         </tr>
     </thead>
     <tbody>
         <c:forEach var="training" items="${trainingList}">
             <tr>
-                <th></th>
-                <th colspan="2">${training.name}</th>
+                <td><a href="#" onclick="addTrainingWish(${employee.id},${training.id})"><fmt:message key="employee.trainingwishes.add"/></a> </td>
+                <td>${training.name}</td>
+                <td>${training.code}</td>
+                <td>${training.remark}</td>
             </tr>
-            <c:forEach var="session" items="${training.sessions}">
-                <tr>
-                    <td><a href="#" onclick="addTrainingPlan(${employee.id},${session.id})"><fmt:message key="employee.trainingplan.enrol"/></a> </td>
-                    <td>${session.weekNr}</td>
-                    <td>${session.status}</td>
-                </tr>
-            </c:forEach>
         </c:forEach>
     </tbody>
 </table>

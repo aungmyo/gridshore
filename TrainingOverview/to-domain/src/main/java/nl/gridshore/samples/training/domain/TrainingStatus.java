@@ -21,7 +21,7 @@ public class TrainingStatus extends BaseDomain {
     @ManyToOne
     @JoinColumn(name = "training_id")
     private Training training;
-    private String currentRelation;
+    private EmployeeTrainingInterest currentRelation;
 
     public Employee getEmployee() {
         return employee;
@@ -39,11 +39,11 @@ public class TrainingStatus extends BaseDomain {
         this.training = training;
     }
 
-    public String getCurrentRelation() {
+    public EmployeeTrainingInterest getCurrentRelation() {
         return currentRelation;
     }
 
-    public void setCurrentRelation(String currentRelation) {
+    public void setCurrentRelation(EmployeeTrainingInterest currentRelation) {
         this.currentRelation = currentRelation;
     }
 }

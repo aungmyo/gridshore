@@ -130,7 +130,7 @@ public class DatabaseOperations extends JdbcDaoSupport {
         getJdbcTemplate().execute(insert, new PreparedStatementCallback() {
             public Object doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
                 preparedStatement.setInt(1,id);
-                preparedStatement.setString(2, currentRelation.toString());
+                preparedStatement.setString(2, null);
                 preparedStatement.setInt(3, employeeId);
                 preparedStatement.setInt(4, trainingId);
                 preparedStatement.execute();
@@ -144,7 +144,7 @@ public class DatabaseOperations extends JdbcDaoSupport {
         getJdbcTemplate().execute(insert, new PreparedStatementCallback() {
             public Object doInPreparedStatement(PreparedStatement preparedStatement) throws SQLException, DataAccessException {
                 preparedStatement.setInt(1,id);
-                preparedStatement.setString(2, status.toString());
+                preparedStatement.setString(2, null);
                 preparedStatement.setInt(3, weekNr);
                 preparedStatement.setInt(4, trainingId);
                 preparedStatement.execute();

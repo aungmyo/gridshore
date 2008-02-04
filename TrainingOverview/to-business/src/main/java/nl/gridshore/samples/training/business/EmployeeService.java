@@ -18,4 +18,6 @@ public interface EmployeeService {
     Employee obtainEmployeeById(Long employeeId);
 
     Employee addTrainingSessionToPlanningOfEmployee(Long employeeId, Long trainingSessionId);
+
+    Employee addTrainingToWishListOfEmployee(Long employeeId, Long trainingId);
 }

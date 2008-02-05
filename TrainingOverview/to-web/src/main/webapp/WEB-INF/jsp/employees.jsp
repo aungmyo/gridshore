@@ -59,6 +59,7 @@
                 $("#detailscontentbox").show();
             });
         }
+
     </script>
 </head>
 <body>

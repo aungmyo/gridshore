@@ -13,6 +13,10 @@ import java.util.List;
  */
 public interface EmployeeService {
 
+    /**
+     * Returns a list with all availble employees
+     * @return List of all employees
+     */
     List<Employee> obtainAllEmployees();
 
     Employee obtainEmployeeById(Long employeeId);

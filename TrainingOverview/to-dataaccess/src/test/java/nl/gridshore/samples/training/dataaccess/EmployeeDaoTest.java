@@ -8,7 +8,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 import nl.gridshore.samples.training.domain.Employee;
-import nl.gridshore.samples.training.dataaccess.testhelp.DatabaseOperations;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -62,4 +63,45 @@ public class EmployeeDaoTest extends AbstractJpaTests {
         assertNull("no employee should have been found", employeeDao.findByIdNumber("10000000"));
     }
 
+    @Test
+    @Transactional(readOnly = true)
+    public void findByExample() {
+        Employee employee = new Employee();
+        employee.setCell("Java/Web");
+        List<Employee> employees = employeeDao.findByExample(employee);
+        assertNotNull("one employee should have been found",employees);
+        assertEquals("Exactly one employee should have been found",1,employees.size());
+    }
+
+    @Test
+    @Transactional(readOnly = true)
+    public void findByEmptyExample() {
+        Employee employee = new Employee();
+        List<Employee> employees = employeeDao.findByExample(employee);
+        assertNotNull("employees should have been found",employees);
+        assertEquals("Exactly two employees should have been found with an empty employee as filter",
+                2, employees.size());
+    }
+
+    @Test
+    @Transactional(readOnly = true)
+    public void findByExampleTwoArgs() {
+        Employee employee = new Employee();
+        employee.setCell("Java/Web");
+        employee.setCluster("T");
+        List<Employee> employees = employeeDao.findByExample(employee);
+        assertNotNull("one employee should have been found",employees);
+        assertEquals("Exactly one employee should have been found",1,employees.size());
+    }
+
+    @Test
+    @Transactional(readOnly = true)
+    public void findByExampleTwoArgsNoResults() {
+        Employee employee = new Employee();
+        employee.setCell("Java/Web");
+        employee.setCluster("B"); // non existing cluster
+        List<Employee> employees = employeeDao.findByExample(employee);
+        assertNotNull("one employee should have been found",employees);
+        assertEquals("no employees should have been found",0,employees.size());
+    }
 }

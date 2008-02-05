@@ -11,7 +11,10 @@
           <option name="enableValidation" value="true" />
           <option name="reportErrorsAsWarnings" value="true" />
         </options>
-        <customNs />
+        <customNs>
+          <enable>http://www.springframework.org/schema/context</enable>
+          <enable>http://www.springmodules.org/validation/bean/validator</enable>
+        </customNs>
       </configuration>
     </facet>
   </component>

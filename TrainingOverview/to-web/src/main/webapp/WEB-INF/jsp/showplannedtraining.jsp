@@ -24,6 +24,7 @@
         <tr>
             <th><fmt:message key="training.session.weeknr"/></th>
             <th><fmt:message key="training.session.status"/></th>
+            <th><fmt:message key="training.session.remark"/></th>
         </tr>
     </thead>
     <tbody>
@@ -37,6 +38,7 @@
                     <td><a href="#" onclick="addTrainingPlan(${employee.id},${session.id})"><fmt:message key="employee.trainingplan.enrol"/></a> </td>
                     <td>${session.weekNr}</td>
                     <td>${session.status}</td>
+                    <td>${session.remark}</td>
                 </tr>
             </c:forEach>
         </c:forEach>

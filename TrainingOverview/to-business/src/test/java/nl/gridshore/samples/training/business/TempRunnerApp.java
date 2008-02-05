@@ -17,7 +17,7 @@ public class TempRunnerApp {
                 "classpath:business-config.xml",
                 "classpath:dataaccess-config.xml"});
 
-        ProjectService service = (ProjectService) context.getBean("trainingService");
+        ProjectService service = (ProjectService) context.getBean("projectService");
         service.importAndHandleEmployeeDataFile(filename);
     }
 }

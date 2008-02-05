@@ -19,6 +19,8 @@ public class TrainingSession extends BaseDomain {
     @NotNull
     private Integer weekNr;
 
+    private String remark;
+
     @ManyToOne
     @JoinColumn(name = "training_id")        
     private Training training;
@@ -33,6 +35,14 @@ public class TrainingSession extends BaseDomain {
 
     public void setWeekNr(Integer weekNr) {
         this.weekNr = weekNr;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
     }
 
     public Training getTraining() {

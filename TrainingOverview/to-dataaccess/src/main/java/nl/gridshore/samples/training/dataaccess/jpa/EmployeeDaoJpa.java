@@ -5,6 +5,7 @@ import nl.gridshore.samples.training.dataaccess.EmployeeDao;
 
 import javax.persistence.Query;
 import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.orm.ObjectRetrievalFailureException;
 
@@ -45,5 +46,61 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
             foundEmp = employees.get(0);
         }
         return foundEmp;
+    }
+
+    public List<Employee> findByExample(Employee exampleEmployee) {
+        List<QueryCondition> conditions = new ArrayList<QueryCondition>();
+        StringBuilder queryBuiler = new StringBuilder();
+        queryBuiler.append("from Employee where ");
+        addQueryConditionToList("cell",exampleEmployee.getCell(), conditions, queryBuiler);
+        addQueryConditionToList("cluster",exampleEmployee.getCluster(), conditions, queryBuiler);
+        addQueryConditionToList("level",exampleEmployee.getLevel(), conditions, queryBuiler);
+
+        String queryStr = queryBuiler.toString();
+        if (conditions.size() > 0) {
+            // remove the last and (3 characters plus 2 spaces)
+            queryStr = queryStr.substring(0,queryStr.length()-5);
+        } else {
+            // no conditions found so remove the where (5 characters plus two spaces)
+            queryStr = queryStr.substring(0,queryStr.length()-7);
+        }
+
+        Query query = getEntityManager().createQuery(queryStr);
+        for(QueryCondition condition : conditions) {
+            query.setParameter(condition.getParameter(),condition.getFilterValue());
+        }
+        //noinspection unchecked
+        return query.getResultList();
+    }
+
+    private <T> void addQueryConditionToList(String parameter, T filtervalue,List<QueryCondition> conditions, StringBuilder queryBuilder) {
+        if (parameter != null && filtervalue != null) {
+            conditions.add(new QueryCondition(parameter,filtervalue));
+            queryBuilder.append(parameter);
+            if (filtervalue instanceof String) {
+                queryBuilder.append(" like :").append(parameter);
+            } else {
+                queryBuilder.append(" = :").append(parameter);;
+            }
+            queryBuilder.append(" and ");
+        }
+    }
+
+    private class QueryCondition<T> {
+        private String parameter;
+        private T filterValue;
+
+        private QueryCondition(String parameter, T filterValue) {
+            this.parameter = parameter;
+            this.filterValue = filterValue;
+        }
+
+        public String getParameter() {
+            return parameter;
+        }
+
+        public T getFilterValue() {
+            return filterValue;
+        }
     }
 }

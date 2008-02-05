@@ -30,6 +30,16 @@
           <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.RootDescriptor" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
+          <option name="myItemId" value="ChangesGroup::Yesterday" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.ChangesGroupDescriptor" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="Root" />
+          <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.RootDescriptor" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
           <option name="myItemId" value="ChangesGroup::Today" />
           <option name="myItemType" value="jetbrains.buildServer.tree.descriptors.ChangesGroupDescriptor" />
         </PATH_ELEMENT>
@@ -64,27 +74,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" name="Default" comment="" />
-    <list name="Delayed Commit (basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training)" comment="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training">
+    <list name="Delayed Commit (added the dao component for searching employees)" comment="added the dao component for searching employees">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TrainingOverview.iws" afterPath="$PROJECT_DIR$/TrainingOverview.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml" afterPath="$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/EmployeeController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/EmployeeTrainingInterest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" afterPath="$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/resources/labels.properties" afterPath="$PROJECT_DIR$/to-web/src/main/resources/labels.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/resources/META-INF/persistence.xml" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/resources/META-INF/persistence.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessions.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessions.jsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showwishedtraining.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java" afterPath="$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingSessionController.java" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/UpdateableTrainingSessionController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/training/helpers/CustomEmployeeTrainingInterestEditor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/helpers/SelectOption.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/controllers/employee/AddWishedTrainingController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-web/src/main/java/nl/gridshore/samples/training/web/helpers" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/resources/business-config.xml" afterPath="$PROJECT_DIR$/to-business/src/main/resources/business-config.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java" afterPath="$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/to-integration/src/test/resources/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/to-business.iml" afterPath="$PROJECT_DIR$/to-business/to-business.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp" afterPath="$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java" afterPath="$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/impl/EmployeeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java" afterPath="$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java" />
     </list>
     <ignored path="TrainingOverview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -230,20 +237,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MessageSourceTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/MessageSourceTest.java">
+      <file leaf-file-name="EmployeeService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="13" selection-start="650" selection-end="650" vertical-scroll-proportion="0.3482143">
+            <state line="17" column="32" selection-start="433" selection-end="433" vertical-scroll-proportion="0.4017857">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="exceptions.properties" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/exceptions.properties">
+      <file leaf-file-name="EmployeeDaoTest.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
+            <state line="35" column="0" selection-start="1196" selection-end="1196" vertical-scroll-proportion="-0.5245536">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -319,7 +328,7 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
+          <option name="myItemId" value="to-dataaccess" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -329,11 +338,21 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
+          <option name="myItemId" value="to-business" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="TrainingOverview" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -343,15 +362,15 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
+          <option name="myItemId" value="to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -361,19 +380,19 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
+          <option name="myItemId" value="to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -383,23 +402,27 @@
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="to-web" />
+          <option name="myItemId" value="to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewModuleNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-web/src/main/resources" />
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java" />
+          <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="PsiDirectory:$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business" />
           <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
         </PATH_ELEMENT>
       </PATH>
@@ -444,19 +467,19 @@
       <recent name="nl.gridshore.samples.training.dataaccess" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MessageSourceTest">
-    <tempConfiguration default="false" name="MessageSourceTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
-      <pattern value="nl.gridshore.samples.training.web.*" />
-      <module name="to-web" />
+  <component name="RunManager" selected="JUnit.EmployeeDaoTest">
+    <tempConfiguration default="false" name="EmployeeDaoTest" type="JUnit" factoryName="JUnit" enabled="false" merge="false">
+      <pattern value="nl.gridshore.samples.training.dataaccess.*" />
+      <module name="to-dataaccess" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="nl.gridshore.samples.training.web" />
-      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.web.MessageSourceTest" />
-      <option name="METHOD_NAME" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="PACKAGE_NAME" value="nl.gridshore.samples.training.dataaccess" />
+      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.dataaccess.EmployeeDaoTest" />
+      <option name="METHOD_NAME" value="findByExample" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <option name="ADDITIONAL_CLASS_PATH" />
@@ -470,57 +493,6 @@
         <option name="Make" value="true" />
       </method>
     </tempConfiguration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-      <method>
-        <option name="Make" value="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
-    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
-      <option name="WORKING_DIRECTORY" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="8080" />
-      <option name="LOCAL" value="true" />
-      <option name="OPEN_IN_BROWSER" value="true" />
-      <option name="OPEN_IN_BROWSER_URL" value="/" />
-      <option name="COMMON_VM_ARGUMENTS" value="" />
-      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
-      <option name="BASE_DIRECTORY_NAME" value="" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG" enabled="false" merge="false">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -568,6 +540,75 @@
         <value defaultName="wholeProject" />
       </option>
       <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+      <method>
+        <option name="Make" value="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Remote" factoryName="Remote">
+      <option name="USE_SOCKET_TRANSPORT" value="true" />
+      <option name="SERVER_MODE" value="false" />
+      <option name="SHMEM_ADDRESS" value="javadebug" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="5005" />
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+      <option name="WORKING_DIRECTORY" />
+      <option name="HOST" value="localhost" />
+      <option name="PORT" value="8080" />
+      <option name="LOCAL" value="true" />
+      <option name="OPEN_IN_BROWSER" value="true" />
+      <option name="OPEN_IN_BROWSER_URL" value="/" />
+      <option name="COMMON_VM_ARGUMENTS" value="" />
+      <JAVAEE_FACET FACET_ID="to-web/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
+      <option name="BASE_DIRECTORY_NAME" value="" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+    </configuration>
+    <configuration default="false" name="TempRunnerApp" type="Application" factoryName="Application" enabled="false" merge="false">
+      <option name="MAIN_CLASS_NAME" value="nl.gridshore.samples.training.business.TempRunnerApp" />
+      <option name="VM_PARAMETERS" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" value="" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="to-business" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
       </method>
@@ -627,9 +668,10 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <list size="2">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MessageSourceTest" />
+    <list size="3">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.EmployeeDaoTest" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TempRunnerApp" />
+      <item index="2" class="java.lang.String" itemvalue="Tomcat Server.tomcat" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -661,7 +703,7 @@
     <option name="MERGE_DRY_RUN" value="false" />
     <configuration useDefault="false">/Users/jettro/.subversion</configuration>
   </component>
-  <component name="TodoView" selected-index="0">
+  <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
       <are-packages-shown value="false" />
       <are-modules-shown value="false" />
@@ -688,21 +730,21 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="7" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" order="0" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="1" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24946082" order="1" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3288948" order="8" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39946738" order="6" />
       <window_info id="Module Dependencies" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="3" />
-      <window_info id="TeamCity" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
+      <window_info id="TeamCity" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="8" x="24" y="336" width="1373" height="534" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="1" />
       <window_info id="Maven projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3350108" order="3" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="8" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32756326" order="2" x="24" y="336" width="1187" height="546" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" order="2" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" order="0" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39971244" order="0" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.424767" order="4" x="24" y="309" width="1416" height="587" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" order="8" />
@@ -723,7 +765,7 @@
     <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
     <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training" />
+    <option name="LAST_COMMIT_MESSAGE" value="added the dao component for searching employees" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
@@ -742,6 +784,8 @@
     <MESSAGE value="refactored the TrainingService into a ProjectService, now we can create a real TrainingService" />
     <MESSAGE value="Added a lot of stuff based on employees. I also started doing more with the ajax capabilities of jquery. Now you can select a training session for an employee." />
     <MESSAGE value="basic stuff is now available, you can enrol employees for a training session, and you can mark an employee interested in a training" />
+    <MESSAGE value="some not working stuff" />
+    <MESSAGE value="added the dao component for searching employees" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -782,144 +826,125 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/BaseDomain.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/showplannedtraining.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="40" selection-start="1636" selection-end="1636" vertical-scroll-proportion="0.94244605">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessionForm.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="70" selection-start="1063" selection-end="1063" vertical-scroll-proportion="0.6388889">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/trainingsessions.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="36" selection-start="867" selection-end="867" vertical-scroll-proportion="0.48920864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/resources/business-config.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="408" selection-end="408" vertical-scroll-proportion="0.33333334">
+        <state line="8" column="98" selection-start="590" selection-end="590" vertical-scroll-proportion="0.24870466">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Employee.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+    <entry file="file://$PROJECT_DIR$/to-business/src/test/java/nl/gridshore/samples/training/business/TempRunnerApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="436" selection-end="436" vertical-scroll-proportion="0.4017857">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/labels.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="30" selection-start="973" selection-end="973" vertical-scroll-proportion="0.73214287">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/spring-servlet.xml">
+      <provider editor-type-id="com.intellij.spring.perspectives.SpringBeansStructureEditorProvider">
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="13" selection-start="388" selection-end="388" vertical-scroll-proportion="-2.074627">
+        <state line="4" column="0" selection-start="159" selection-end="228" vertical-scroll-proportion="0.12435233">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/EmployeeTrainingInterest.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/js/jquery-tablefilter-0.2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="12" selection-start="236" selection-end="236" vertical-scroll-proportion="0.26865673">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Training.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/EmployeeDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="13" selection-start="648" selection-end="648" vertical-scroll-proportion="-0.7910448">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/ProjectDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="53" selection-start="1734" selection-end="1734" vertical-scroll-proportion="0.546875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-integration/src/test/java/nl/gridshore/samples/training/integration/ObtainUpdatedEmployeeDataServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="0" selection-start="2430" selection-end="2430" vertical-scroll-proportion="0.8125">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingStatus.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="27" selection-start="234" selection-end="234" vertical-scroll-proportion="0.2562189">
+        <state line="13" column="17" selection-start="295" selection-end="295" vertical-scroll-proportion="0.3482143">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/Project.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/EmployeeDaoJpa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="13" selection-start="418" selection-end="418" vertical-scroll-proportion="0.41791046">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/jpa/BaseDaoJpa.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="0" selection-start="1550" selection-end="1550" vertical-scroll-proportion="0.3325893">
+        <state line="65" column="64" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.4734411">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/testhelp/DatabaseOperations.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="146" column="51" selection-start="7039" selection-end="7039" vertical-scroll-proportion="0.55427253">
+        <state line="65" column="55" selection-start="2528" selection-end="2536" vertical-scroll-proportion="0.88683605">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/TrainingDaoTest.java">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/main/java/nl/gridshore/samples/training/dataaccess/BaseDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="0" selection-start="1052" selection-end="1052" vertical-scroll-proportion="0.51785713">
+        <state line="15" column="17" selection-start="407" selection-end="407" vertical-scroll-proportion="0.32142857">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingPlanning.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employees.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="311" selection-end="311" vertical-scroll-proportion="0.3880597">
+        <state line="16" column="0" selection-start="789" selection-end="789" vertical-scroll-proportion="0.22222222">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/SessionStatus.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-web/src/main/webapp/WEB-INF/jsp/employee.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="13" selection-start="203" selection-end="203" vertical-scroll-proportion="0.26865673">
+        <state line="62" column="41" selection-start="2194" selection-end="2194" vertical-scroll-proportion="1.7222222">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-domain/src/main/java/nl/gridshore/samples/training/domain/TrainingSession.java">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/to-business/src/main/java/nl/gridshore/samples/training/business/EmployeeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="12" selection-start="734" selection-end="734" vertical-scroll-proportion="0.67412937">
+        <state line="17" column="32" selection-start="433" selection-end="433" vertical-scroll-proportion="0.4017857">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/test/java/nl/gridshore/samples/training/web/MessageSourceTest.java">
+    <entry file="file://$PROJECT_DIR$/to-dataaccess/src/test/java/nl/gridshore/samples/training/dataaccess/EmployeeDaoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="13" selection-start="650" selection-end="650" vertical-scroll-proportion="0.3482143">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/to-web/src/main/resources/exceptions.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="35" column="0" selection-start="1196" selection-end="1196" vertical-scroll-proportion="-0.5245536">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -26,6 +26,7 @@
             <th><fmt:message key="training.name"/> </th>
             <th><fmt:message key="training.session.weeknr"/></th>
             <th><fmt:message key="training.session.status"/></th>
+            <th><fmt:message key="training.session.remark"/></th>
         </tr>
     </thead>
     <tbody>
@@ -34,6 +35,7 @@
                 <td>${plan.session.training.name}</td>
                 <td>${plan.session.weekNr}</td>
                 <td>${plan.session.status}</td>
+                <td>${plan.session.remark}</td>
             </tr>
         </c:forEach>
     </tbody>

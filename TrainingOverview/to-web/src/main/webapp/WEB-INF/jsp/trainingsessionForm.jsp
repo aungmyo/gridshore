@@ -20,6 +20,11 @@
                 <td><form:errors path="status" cssClass="errors" /></td>
             </tr>
             <tr>
+                <th><fmt:message key="training.session.remark"/></th>
+                <td><form:input path="remark" size="50" maxlength="100"/></td>
+                <td><form:errors path="remark" cssClass="errors"/></td>
+            </tr>
+            <tr>
                 <td colspan="3">
                     <c:choose>
                         <c:when test="${trainingSession.new}">

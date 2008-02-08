@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.ArrayList;
 
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,6 +19,7 @@ import org.springframework.orm.ObjectRetrievalFailureException;
  * Jpa implementation for the Employee data access interface
  */
 public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao {
+    private final Logger logger = LoggerFactory.getLogger(EmployeeDaoJpa.class);
 
     public EmployeeDaoJpa() {
         super(Employee.class, "Employee");
@@ -55,6 +58,8 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
         addQueryConditionToList("cell",exampleEmployee.getCell(), conditions, queryBuiler);
         addQueryConditionToList("cluster",exampleEmployee.getCluster(), conditions, queryBuiler);
         addQueryConditionToList("level",exampleEmployee.getLevel(), conditions, queryBuiler);
+        addQueryConditionToList("employeeNumber",exampleEmployee.getEmployeeNumber(), conditions, queryBuiler);
+        addQueryConditionToList("longName",exampleEmployee.getLongName(), conditions, queryBuiler);
 
         String queryStr = queryBuiler.toString();
         if (conditions.size() > 0) {
@@ -65,6 +70,8 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
             queryStr = queryStr.substring(0,queryStr.length()-7);
         }
 
+        logger.debug("Execute the query {}",queryStr);
+
         Query query = getEntityManager().createQuery(queryStr);
         for(QueryCondition condition : conditions) {
             query.setParameter(condition.getParameter(),condition.getFilterValue());
@@ -74,15 +81,21 @@ public class EmployeeDaoJpa extends BaseDaoJpa<Employee> implements EmployeeDao 
     }
 
     private <T> void addQueryConditionToList(String parameter, T filtervalue,List<QueryCondition> conditions, StringBuilder queryBuilder) {
+        logger.debug("parameter - value : {} - {}", parameter, filtervalue);
         if (parameter != null && filtervalue != null) {
-            conditions.add(new QueryCondition(parameter,filtervalue));
-            queryBuilder.append(parameter);
             if (filtervalue instanceof String) {
-                queryBuilder.append(" like :").append(parameter);
+                if (!"".equals(filtervalue)) {
+                    conditions.add(new QueryCondition<String>(parameter,"%"+filtervalue+"%"));
+                    queryBuilder.append(parameter);
+                    queryBuilder.append(" like :").append(parameter);
+                    queryBuilder.append(" and ");
+                }
             } else {
-                queryBuilder.append(" = :").append(parameter);;
+                conditions.add(new QueryCondition<Object>(parameter,filtervalue));
+                queryBuilder.append(parameter);
+                queryBuilder.append(" = :").append(parameter);
+                queryBuilder.append(" and ");
             }
-            queryBuilder.append(" and ");
         }
     }
 

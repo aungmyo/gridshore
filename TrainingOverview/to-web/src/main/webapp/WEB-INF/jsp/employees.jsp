@@ -12,6 +12,7 @@
     <script type="text/javascript" src="${ctx}/js/jquery-1.2.1.min.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.tablesorter.pack.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.clickmenu.pack.js"></script>
+    <script type="text/javascript" src="${ctx}/js/employees.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#employeesdata")
@@ -20,45 +21,6 @@
             $("#detailscontentbox").hide();
             $('#list').clickMenu();
         });
-
-        function fillEmployeeBox(employeeId) {
-            $("#detailscontentbox").load("employee.view",{employeeId : employeeId}, function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
-                $("#detailscontentbox").show();
-            });
-        }
-
-        function showTrainingPlan(employeeId) {
-            $("#detailscontentbox").load("showplannedtraining.view",{employeeId : employeeId}, function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
-                $("#detailscontentbox").show();
-            });
-        }
-
-        function addTrainingPlan(employeeId,trainingsessionId) {
-            $("#detailscontentbox").load("addplannedtraining.view",
-                                        {employeeId : employeeId, trainingsessionId : trainingsessionId},
-                                        function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
-                $("#detailscontentbox").show();
-            });
-        }
-
-        function showTrainingWishes(employeeId) {
-            $("#detailscontentbox").load("showwishedtraining.view",{employeeId : employeeId}, function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
-                $("#detailscontentbox").show();
-            });
-        }
-
-        function addTrainingWish(employeeId,trainingId) {
-            $("#detailscontentbox").load("addwishedtraining.view",
-                                        {employeeId : employeeId, trainingId : trainingId},
-                                        function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
-                $("#detailscontentbox").show();
-            });
-        }
 
     </script>
 </head>

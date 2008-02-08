@@ -9,9 +9,11 @@
 
     <link rel="stylesheet" href="${ctx}/styles/to.css" type="text/css"/>
     <link rel="stylesheet" href="${ctx}/styles/clickmenu.css" type="text/css"/>
+    <link rel="stylesheet" href="${ctx}/styles/ui.datepicker.css" type="text/css"/>
     <script type="text/javascript" src="${ctx}/js/jquery-1.2.1.min.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.tablesorter.pack.js"></script>
     <script type="text/javascript" src="${ctx}/js/jquery.clickmenu.pack.js"></script>
+    <script type="text/javascript" src="${ctx}/js/ui.datepicker.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
             $("#projectsdata")

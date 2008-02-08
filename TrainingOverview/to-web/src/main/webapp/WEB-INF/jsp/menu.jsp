@@ -15,7 +15,7 @@
         <li><fmt:message key="menu.employee"/>
             <ul>
                 <li><a href="employees.view"><fmt:message key="menu.employee.overview"/></a></li>
-                <li><fmt:message key="menu.employee.find"/></li>
+                <li><a href="searchemployees.view"><fmt:message key="menu.employee.find"/></a></li>
             </ul>
         </li>
     </ul>

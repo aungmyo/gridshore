@@ -54,4 +54,8 @@ public class EmployeeServiceImpl implements EmployeeService {
         employee.addTraningsWishes(wish);
         return employee;
     }
+
+    public List<Employee> searchEmployees(Employee searchEmployee) {
+        return employeeDao.findByExample(searchEmployee);
+    }
 }

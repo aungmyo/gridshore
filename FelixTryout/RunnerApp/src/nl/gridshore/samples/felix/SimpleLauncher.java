@@ -23,6 +23,7 @@ import java.util.Map;
  */
 public class SimpleLauncher {
     private final static String MAVEN_ROOT="/Users/jettro/.m2/repository/nl/gridshore/samples/bundles/";
+    private final static String JETTY_ROOT="/Users/jettro/sources/javalibs/jetty-6.1.7/lib/";
     private static Felix felix = null;
     private HostActivator activator = null;
     
@@ -34,6 +35,11 @@ public class SimpleLauncher {
         Map<String,String> configMap = new StringMap(false);
         configMap.put(FelixConstants.EMBEDDED_EXECUTION_PROP, "true");
         configMap.put(Constants.FRAMEWORK_SYSTEMPACKAGES,
+                "org.xml.sax," +
+                "javax.security.cert," +
+                        "javax.xml.parsers," +
+                        "org.xml.sax.helpers," +
+                        "javax.net.ssl," +
                 "org.osgi.framework; version=1.3.0," +
                 "org.osgi.service.packageadmin; version=1.2.0," +
                 "org.osgi.service.startlevel; version=1.0.0," +
@@ -42,6 +48,9 @@ public class SimpleLauncher {
                 "file:" + MAVEN_ROOT + "service-listener/1.0-SNAPSHOT/service-listener-1.0-SNAPSHOT.jar " +
                 "file:" + MAVEN_ROOT + "training-service/1.0-SNAPSHOT/training-service-1.0-SNAPSHOT.jar " +
                 "file:" + MAVEN_ROOT + "example-client/1.0-SNAPSHOT/example-client-1.0-SNAPSHOT.jar " +
+                "file:" + JETTY_ROOT + "jetty-6.1.7.jar " +
+                "file:" + JETTY_ROOT + "jetty-util-6.1.7.jar " +
+                "file:" + JETTY_ROOT + "servlet-api-2.5-6.1.7.jar " +
                 "file:bundle/slf4j-api-1.4.3.jar " +
                 "file:bundle/slf4j-simple-1.4.3.jar " +
                 "file:bundle/org.apache.felix.shell-1.0.0.jar " +

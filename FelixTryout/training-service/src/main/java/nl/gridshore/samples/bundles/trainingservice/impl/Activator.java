@@ -16,9 +16,7 @@ import nl.gridshore.samples.bundles.trainingservice.api.TrainingService;
  */
 public class Activator implements BundleActivator {
     public void start(BundleContext bundleContext) throws Exception {
-        Properties props = new Properties();
-        props.setProperty("Version","1.0.0");
-        bundleContext.registerService(TrainingService.class.getName(),new TrainingServiceImpl(),props);
+        bundleContext.registerService(TrainingService.class.getName(),new TrainingServiceImpl(),null);
     }
 
     public void stop(BundleContext bundleContext) throws Exception {

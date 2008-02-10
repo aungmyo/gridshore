@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class Activator implements BundleActivator {
     public void start(BundleContext bundleContext) throws Exception {
-        ServiceReference[] references = bundleContext.getServiceReferences(TrainingService.class.getName(),"(Version=*)");
+        ServiceReference[] references = bundleContext.getServiceReferences(TrainingService.class.getName(),null);
 
         if (references != null) {
             TrainingService trainingService = (TrainingService) bundleContext.getService(references[0]);

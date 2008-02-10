@@ -4,8 +4,10 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.ServiceListener;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.util.logging.Logger;
+import nl.gridshore.samples.bundles.trainingservice.api.TrainingService;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,14 +17,19 @@ import java.util.logging.Logger;
  * Simple activator listening to service events
  */
 public class Activator implements BundleActivator, ServiceListener {
-
+    private Logger logger = LoggerFactory.getLogger(Activator.class);
+    private BundleContext bundleContext;
+    
     public Activator() {
-        System.out.println("Logger is created");
+        logger.debug("created");
     }
 
     public void start(BundleContext bundleContext) throws Exception {
-        System.out.println("Activator started");
-        bundleContext.addServiceListener(this);
+        logger.debug("started.");
+        this.bundleContext = bundleContext;
+        synchronized (this) {
+            this.bundleContext.addServiceListener(this,"(&(objectClass=" + TrainingService.class.getName() + "))");
+        }
     }
 
     public void stop(BundleContext bundleContext) throws Exception {
@@ -31,18 +38,14 @@ public class Activator implements BundleActivator, ServiceListener {
     }
 
     public void serviceChanged(ServiceEvent event) {
-        String[] objectClass = (String[])
-                event.getServiceReference().getProperty("objectClass");
+        String[] objectClass = (String[]) event.getServiceReference().getProperty("objectClass");
 
         if (event.getType() == ServiceEvent.REGISTERED) {
-            System.out.println(
-                    "Ex1: Service of type " + objectClass[0] + " registered.");
+            logger.info("Ex1: Service of type {} registered.", objectClass[0]);
         } else if (event.getType() == ServiceEvent.UNREGISTERING) {
-            System.out.println(
-                    "Ex1: Service of type " + objectClass[0] + " unregistered.");
+            logger.info("Ex1: Service of type {} unregistered.", objectClass[0]);
         } else if (event.getType() == ServiceEvent.MODIFIED) {
-            System.out.println(
-                    "Ex1: Service of type " + objectClass[0] + " modified.");
+            logger.info("Ex1: Service of type {} modified.", objectClass[0]);
         }
     }
 }

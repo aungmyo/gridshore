@@ -22,6 +22,7 @@ import java.util.Map;
  * Simple launcher for felix osgi container
  */
 public class SimpleLauncher {
+    private final static String MAVEN_ROOT="/Users/jettro/.m2/repository/nl/gridshore/samples/bundles/";
     private static Felix felix = null;
     private HostActivator activator = null;
     
@@ -38,9 +39,11 @@ public class SimpleLauncher {
                 "org.osgi.service.startlevel; version=1.0.0," +
                 "org.osgi.service.url; version=1.0.0");
         configMap.put(AutoActivator.AUTO_START_PROP + ".1",
-                "file:/Users/jettro/sources/temp/FelixMaven/service-listener/target/service-listener-1.0-SNAPSHOT.jar " +
-                "file:/Users/jettro/sources/temp/FelixMaven/training-service/target/training-service-1.0-SNAPSHOT.jar " +
-                "file:/Users/jettro/sources/temp/FelixMaven/example-client/target/example-client-1.0-SNAPSHOT.jar " +
+                "file:" + MAVEN_ROOT + "service-listener/1.0-SNAPSHOT/service-listener-1.0-SNAPSHOT.jar " +
+                "file:" + MAVEN_ROOT + "training-service/1.0-SNAPSHOT/training-service-1.0-SNAPSHOT.jar " +
+                "file:" + MAVEN_ROOT + "example-client/1.0-SNAPSHOT/example-client-1.0-SNAPSHOT.jar " +
+                "file:bundle/slf4j-api-1.4.3.jar " +
+                "file:bundle/slf4j-simple-1.4.3.jar " +
                 "file:bundle/org.apache.felix.shell-1.0.0.jar " +
                 "file:bundle/org.apache.felix.shell.tui-1.0.0.jar ");
         configMap.put(BundleCache.CACHE_PROFILE_DIR_PROP, "cache");

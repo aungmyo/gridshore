@@ -14,6 +14,6 @@ public class FelixLauncher {
         for (String bundleName :launcher.getBundleNames()) {
             System.out.println("Bundle : " + bundleName);
         }
-        launcher.shutDownpplication();
+//        launcher.shutDownpplication();
     }
 }

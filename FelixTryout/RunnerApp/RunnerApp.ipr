@@ -145,6 +145,9 @@
         <option value="/Users/jettro/sources/gridshore/FelixTryout/example-client/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/service-listener/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/training-service/pom.xml" />
+        <option value="D:/data/projects/gridshore/FelixTryout/example-client/pom.xml" />
+        <option value="D:/data/projects/gridshore/FelixTryout/service-listener/pom.xml" />
+        <option value="D:/data/projects/gridshore/FelixTryout/training-service/pom.xml" />
       </set>
     </option>
   </component>
@@ -276,7 +279,7 @@
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
-    <output url="file:///Users/jettro/sources/gridshore/FelixTryout/training-service/out" />
+    <output url="file://D:/data/projects/gridshore/FelixTryout/service-listener/out" />
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">
@@ -294,6 +297,9 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
+    <mapping directory="D:/data/projects/gridshore/FelixTryout/example-client" vcs="svn" />
+    <mapping directory="D:/data/projects/gridshore/FelixTryout/service-listener" vcs="svn" />
+    <mapping directory="D:/data/projects/gridshore/FelixTryout/training-service" vcs="svn" />
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="simpleUML.UMLToolWindowPlugin">

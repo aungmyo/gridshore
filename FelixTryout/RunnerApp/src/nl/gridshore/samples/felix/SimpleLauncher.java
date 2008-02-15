@@ -2,16 +2,16 @@ package nl.gridshore.samples.felix;
 
 import org.apache.felix.framework.Felix;
 import org.apache.felix.framework.cache.BundleCache;
-import org.apache.felix.framework.util.StringMap;
 import org.apache.felix.framework.util.FelixConstants;
+import org.apache.felix.framework.util.StringMap;
 import org.apache.felix.main.AutoActivator;
-import org.osgi.framework.Constants;
-import org.osgi.framework.BundleException;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleException;
+import org.osgi.framework.Constants;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -22,9 +22,9 @@ import java.util.Map;
  * Simple launcher for felix osgi container
  */
 public class SimpleLauncher {
-    private final static String MAVEN_ROOT="\"/Documents and Settings/Jettro.Coenradie/.m2/repository/";
-    private final static String JETTY_ROOT= MAVEN_ROOT + "org/mortbay/jetty/\"";
-    private final static String BUNDLE_ROOT= MAVEN_ROOT + "nl/gridshore/samples/bundles/\"";
+    private final static String MAVEN_ROOT="/Users/jettro/.m2/repository/";
+    private final static String JETTY_ROOT= MAVEN_ROOT + "org/mortbay/jetty/";
+    private final static String BUNDLE_ROOT= MAVEN_ROOT + "nl/gridshore/samples/bundles/";
     private static Felix felix = null;
     private HostActivator activator = null;
     
@@ -46,7 +46,7 @@ public class SimpleLauncher {
                 "org.osgi.service.startlevel; version=1.0.0," +
                 "org.osgi.service.url; version=1.0.0");
         configMap.put(AutoActivator.AUTO_START_PROP + ".1",
-                "file:" + BUNDLE_ROOT + "service-listener/1.0-SNAPSHOT/service-listener-1.0-SNAPSHOT.jar " +
+//                "file:" + BUNDLE_ROOT + "service-listener/1.0-SNAPSHOT/service-listener-1.0-SNAPSHOT.jar " +
                 "file:" + BUNDLE_ROOT + "training-service/1.0-SNAPSHOT/training-service-1.0-SNAPSHOT.jar " +
                 "file:" + BUNDLE_ROOT + "example-client/1.0-SNAPSHOT/example-client-1.0-SNAPSHOT.jar " +
                 "file:" + JETTY_ROOT + "jetty/6.1.7/jetty-6.1.7.jar " +

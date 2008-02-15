@@ -1,6 +1,8 @@
 package nl.gridshore.samples.felix;
 
-import org.osgi.framework.*;
+import org.osgi.framework.Bundle;
+import org.osgi.framework.BundleActivator;
+import org.osgi.framework.BundleContext;
 
 /**
  * Created by IntelliJ IDEA.

@@ -18,17 +18,15 @@ import nl.gridshore.samples.bundles.trainingservice.api.TrainingService;
  */
 public class Activator implements BundleActivator, ServiceListener {
     private Logger logger = LoggerFactory.getLogger(Activator.class);
-    private BundleContext bundleContext;
-    
+
     public Activator() {
         logger.debug("created");
     }
 
     public void start(BundleContext bundleContext) throws Exception {
         logger.debug("started.");
-        this.bundleContext = bundleContext;
         synchronized (this) {
-            this.bundleContext.addServiceListener(this,"(&(objectClass=" + TrainingService.class.getName() + "))");
+            bundleContext.addServiceListener(this,"(&(objectClass=" + TrainingService.class.getName() + "))");
         }
     }
 

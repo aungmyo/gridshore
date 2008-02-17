@@ -143,6 +143,8 @@
     <option name="autoImport">
       <set>
         <option value="/Users/jettro/sources/gridshore/FelixTryout/example-client/pom.xml" />
+        <option value="/Users/jettro/sources/gridshore/FelixTryout/http-servlets/pom.xml" />
+        <option value="/Users/jettro/sources/gridshore/FelixTryout/jetty-http-service/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/service-listener/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/training-service/pom.xml" />
       </set>
@@ -276,7 +278,7 @@
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.5" project-jdk-type="JavaSDK">
-    <output url="file:///Users/jettro/sources/gridshore/FelixTryout/out" />
+    <output url="file:///Users/jettro/sources/gridshore/FelixTryout/http-servlets/out" />
   </component>
   <component name="ResourceManagerContainer">
     <option name="myResourceBundles">

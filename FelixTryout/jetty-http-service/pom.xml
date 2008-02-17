@@ -1,18 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>nl.gridshore.samples.bundles</groupId>
-    <artifactId>example-client</artifactId>
-    <packaging>bundle</packaging>
-    <version>1.0-SNAPSHOT</version>
-    <name>example-client</name>
-    <url>http://maven.apache.org</url>
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>nl.gridshore.samples.bundles</groupId>
+  <artifactId>jetty-http-service</artifactId>
+  <packaging>bundle</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>jetty-http-service</name>
+  <url>http://maven.apache.org</url>
     <dependencies>
-        <dependency>
-            <groupId>${pom.groupId}</groupId>
-            <artifactId>training-service</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.osgi.core</artifactId>
@@ -56,10 +51,18 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>nl.gridshore.samples.bundles.exampleclient.api</Export-Package>
-                        <Private-Package>nl.gridshore.samples.bundles.exampleclient.impl</Private-Package>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
-                        <Bundle-Activator>nl.gridshore.samples.bundles.exampleclient.impl.Activator</Bundle-Activator>
+                        <Bundle-Activator>nl.gridshore.samples.bundles.jettyhttpservice.impl.Activator</Bundle-Activator>
+                        <DynamicImport-Package>javax.net.ssl</DynamicImport-Package>
+                        <Export-Package>org.osgi.service.http; version=1.1</Export-Package>
+                        <Import-Package>
+                            !org.xml.sax,!org.xml.sax.helpers,!javax.xml.parsers,!javax.security.cert,javax.servlet;version=1.1,
+                            javax.servlet.http;version=1.1,*
+                        </Import-Package>
+                        <Private-Package>org.apache.felix.http.jetty, org.mortbay.*;-split-package:=merge-first,
+                            nl.gridshore.samples.bundles.jettyhttpservice.impl
+                        </Private-Package>
+                        <Export-Service>org.osgi.service.http.HttpService</Export-Service>
                     </instructions>
                 </configuration>
             </plugin>

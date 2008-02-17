@@ -11,9 +11,9 @@ public class FelixLauncher {
 
     public static void main(String[] args) {
         SimpleLauncher launcher = new SimpleLauncher();
-        for (String bundleName :launcher.getBundleNames()) {
-            System.out.println("Bundle : " + bundleName);
-        }
+//        for (String bundleName :launcher.getBundleNames()) {
+//            System.out.println("Bundle : " + bundleName);
+//        }
 //        launcher.shutDownpplication();
     }
 }

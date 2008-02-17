@@ -48,10 +48,13 @@ public class SimpleLauncher {
         configMap.put(AutoActivator.AUTO_START_PROP + ".1",
 //                "file:" + BUNDLE_ROOT + "service-listener/1.0-SNAPSHOT/service-listener-1.0-SNAPSHOT.jar " +
                 "file:" + BUNDLE_ROOT + "training-service/1.0-SNAPSHOT/training-service-1.0-SNAPSHOT.jar " +
-                "file:" + BUNDLE_ROOT + "example-client/1.0-SNAPSHOT/example-client-1.0-SNAPSHOT.jar " +
+                "file:" + BUNDLE_ROOT + "jetty-http-service/1.0-SNAPSHOT/jetty-http-service-1.0-SNAPSHOT.jar " +
+                "file:" + BUNDLE_ROOT + "http-servlets/1.0-SNAPSHOT/http-servlets-1.0-SNAPSHOT.jar " +
+//                "file:" + BUNDLE_ROOT + "example-client/1.0-SNAPSHOT/example-client-1.0-SNAPSHOT.jar " +
                 "file:" + JETTY_ROOT + "jetty/6.1.7/jetty-6.1.7.jar " +
                 "file:" + JETTY_ROOT + "jetty-util/6.1.7/jetty-util-6.1.7.jar " +
                 "file:" + JETTY_ROOT + "servlet-api-2.5/6.1.7/servlet-api-2.5-6.1.7.jar " +
+                "file:bundle/org.osgi.compendium-1.0.0.jar " +
                 "file:bundle/slf4j-api-1.4.3.jar " +
                 "file:bundle/slf4j-simple-1.4.3.jar " +
                 "file:bundle/org.apache.felix.shell-1.0.0.jar " +

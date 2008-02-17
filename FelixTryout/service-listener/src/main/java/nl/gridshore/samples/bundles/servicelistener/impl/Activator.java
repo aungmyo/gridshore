@@ -7,8 +7,6 @@ import org.osgi.framework.ServiceEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import nl.gridshore.samples.bundles.trainingservice.api.TrainingService;
-
 /**
  * Created by IntelliJ IDEA.
  * User: jettro
@@ -26,7 +24,7 @@ public class Activator implements BundleActivator, ServiceListener {
     public void start(BundleContext bundleContext) throws Exception {
         logger.debug("started.");
         synchronized (this) {
-            bundleContext.addServiceListener(this,"(&(objectClass=" + TrainingService.class.getName() + "))");
+            bundleContext.addServiceListener(this,"(!(objectClass=org.apache.felix.shell.Command))");
         }
     }
 

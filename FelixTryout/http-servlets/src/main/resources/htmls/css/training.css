@@ -1,0 +1,10 @@
+body {
+    font-family: serif;
+    background-repeat: no-repeat;
+    background-color: #ccc;
+}
+
+h1 {
+    font-size: large;
+    text-decoration:overline;
+}

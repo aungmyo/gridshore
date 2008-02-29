@@ -144,7 +144,6 @@
       <set>
         <option value="/Users/jettro/sources/gridshore/FelixTryout/example-client/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/http-servlets/pom.xml" />
-        <option value="/Users/jettro/sources/gridshore/FelixTryout/jetty-http-service/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/service-listener/pom.xml" />
         <option value="/Users/jettro/sources/gridshore/FelixTryout/training-service/pom.xml" />
       </set>

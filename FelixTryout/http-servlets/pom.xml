@@ -57,7 +57,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>nl.gridshore.samples.bundles.httpservlets.api</Export-Package>
+                        <Export-Package>nl.gridshore.samples.bundles.httpservlets.api;images</Export-Package>
                         <Private-Package>nl.gridshore.samples.bundles.httpservlets.impl</Private-Package>
                         <Bundle-SymbolicName>${pom.artifactId}</Bundle-SymbolicName>
                         <Bundle-Activator>nl.gridshore.samples.bundles.httpservlets.impl.Activator</Bundle-Activator>

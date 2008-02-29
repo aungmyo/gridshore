@@ -5,10 +5,13 @@ import nl.gridshore.samples.bundles.trainingservice.api.TrainingService;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpServlet;
-import javax.servlet.ServletException;
-import javax.servlet.ServletOutputStream;
+import javax.servlet.*;
 import java.io.IOException;
 import java.util.List;
+import java.util.Enumeration;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by IntelliJ IDEA.
@@ -18,6 +21,7 @@ import java.util.List;
  * Servlet used to show all trainings
  */
 public class TrainingsServlet extends HttpServlet {
+    private Logger logger = LoggerFactory.getLogger(TrainingsServlet.class);
     private TrainingService trainingService;
 
     public TrainingsServlet(TrainingService trainingService) {
@@ -29,6 +33,7 @@ public class TrainingsServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws ServletException, IOException {
+        logger.info("doGet(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)");
         List<String> trainings = trainingService.obtainTrainings();
         httpServletResponse.setContentType("text/html");
         ServletOutputStream out = httpServletResponse.getOutputStream();

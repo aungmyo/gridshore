@@ -1,8 +1,6 @@
 package nl.gridshore.samples.books.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -16,12 +14,24 @@ import java.util.ArrayList;
 @Entity
 @Table(name = "authors")
 public class Author extends BaseDomain {
+    @Column(unique = true)
     private String fullName;
     private String email;
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(mappedBy = "authors", fetch = FetchType.EAGER)
     private List<Book> books = new ArrayList<Book>();
 
     public Author() {
+    }
+
+    public Author(String fullName) {
+        super();
+        this.fullName = fullName;
+    }
+
+    public Author(String email, String fullName) {
+        super();
+        this.email = email;
+        this.fullName = fullName;
     }
 
     public Author(String email, String fullName, Long id) {

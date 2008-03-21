@@ -36,4 +36,14 @@
         <property name="username" value="${jdbc.username}"/>
         <property name="password" value="${jdbc.password}"/>
     </bean>
+
+    <!--<bean id="databaseSetupBean" class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">-->
+        <!--<property name="targetObject">-->
+            <!--<bean class="nl.gridshore.samples.books.integration.PrefillDatabaseOperations" >-->
+                <!--<property name="dataSource" ref="dataSource"/>-->
+            <!--</bean>-->
+        <!--</property>-->
+        <!--<property name="targetMethod" value="initializeDatabase"/>-->
+    <!--</bean>-->
+
 </beans>

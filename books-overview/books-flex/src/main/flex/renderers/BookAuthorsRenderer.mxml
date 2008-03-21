@@ -1,0 +1,17 @@
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" dataChange="renderAuthors(data.authors)">
+    <mx:Script>
+        <![CDATA[
+            import mx.controls.Label;
+            import mx.collections.ArrayCollection;
+
+            public function renderAuthors(authors:ArrayCollection):void {
+                removeAllChildren();
+                for each (var author:Object in authors) {
+                    var authorLabel:Label = new Label();
+                    authorLabel.text = author.fullName;
+                    addChild(authorLabel);
+                }
+            }
+        ]]>
+    </mx:Script>
+</mx:HBox>

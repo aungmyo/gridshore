@@ -12,5 +12,6 @@ import java.util.List;
  * Manager class for all book related functionality
  */
 public interface BookManager {
-    List<Book> listAllBooks();
+    List<Book> obtainAllBooks();
+    void storeBook(Book book);
 }

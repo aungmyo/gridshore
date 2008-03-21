@@ -24,7 +24,7 @@ import javax.persistence.EntityManagerFactory;
  * Test class for the BookDao implementation
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations={"classpath:test-spring-integration.xml","classpath:spring-integration.xml"})
+@ContextConfiguration(locations={"classpath:spring-integration.xml", "classpath:test-spring-integration.xml"})
 public class BookDaoTest extends AbstractJpaTests {
     private BookDao bookDao;
 

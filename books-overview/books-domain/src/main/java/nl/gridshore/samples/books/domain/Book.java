@@ -15,8 +15,9 @@ import java.util.ArrayList;
 @Table(name = "books")
 public class Book extends BaseDomain {
     private String title;
+    private String isbn;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name="Book_Author",
             joinColumns = {@JoinColumn(name = "book_id")},
@@ -28,15 +29,23 @@ public class Book extends BaseDomain {
         super();
     }
 
-    public Book(Long id, String title) {
-        super(id);
+    public Book(String title, String isbn) {
+        super();
         this.title = title;
+        this.isbn = isbn;
     }
 
-    public Book(List<Author> authors, Long id, String title) {
+    public Book(Long id, String title, String isbn) {
+        super(id);
+        this.title = title;
+        this.isbn = isbn;
+    }
+
+    public Book(List<Author> authors, Long id, String title, String isbn) {
         super(id);
         this.authors = authors;
         this.title = title;
+        this.isbn = isbn;
     }
 
     public void addAuthor(final Author author) {
@@ -62,5 +71,13 @@ public class Book extends BaseDomain {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
     }
 }

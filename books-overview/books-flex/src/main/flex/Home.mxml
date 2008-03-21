@@ -1,0 +1,31 @@
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="srv.obtainAllBooks()">
+    <mx:Script>
+        <![CDATA[
+        import mx.rpc.events.FaultEvent;
+        import mx.controls.Alert;
+        function faultHandler(event:FaultEvent):* {
+            Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
+        }
+    ]]>
+    </mx:Script>
+    <mx:RemoteObject id="srv" destination="bookManager" fault="faultHandler(event)"/>
+
+    <mx:ApplicationControlBar dock="true">
+        <mx:HBox>
+            <mx:Button label="All Books" click="srv.obtainAllBooks()"/>
+        </mx:HBox>
+    </mx:ApplicationControlBar>
+    <mx:DataGrid id="myBooks" dataProvider="{srv.obtainAllBooks.lastResult}" width="100%" height="100%">
+        <mx:columns>
+            <mx:DataGridColumn dataField="title"/>
+            <mx:DataGridColumn dataField="isbn"/>
+            <mx:DataGridColumn sortable="false">
+                <mx:itemRenderer>
+                    <mx:Component>
+                        <rend:BookAuthorsRenderer/>
+                    </mx:Component>
+                </mx:itemRenderer>
+            </mx:DataGridColumn>
+        </mx:columns>
+    </mx:DataGrid>
+</mx:Application>

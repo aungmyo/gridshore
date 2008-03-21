@@ -2,6 +2,7 @@ package nl.gridshore.samples.books.integration.jpa;
 
 import nl.gridshore.samples.books.integration.BookDao;
 import nl.gridshore.samples.books.domain.Book;
+import nl.gridshore.samples.books.domain.Author;
 
 /**
  * Created by IntelliJ IDEA.

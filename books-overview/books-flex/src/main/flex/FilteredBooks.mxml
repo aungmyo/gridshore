@@ -1,0 +1,60 @@
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="doFilterBooks()" width="100%" height="100%">
+    <mx:Script>
+        <![CDATA[
+        import mx.rpc.events.FaultEvent;
+        import mx.controls.Alert;
+        import mx.utils.ObjectUtil;
+        import valueobjects.BookSearchRequest;
+
+        function faultHandler(event:FaultEvent):* {
+            Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
+        }
+
+        function doFilterBooks():void {
+            var bookSearchRequest:BookSearchRequest = new BookSearchRequest();
+            bookSearchRequest.bookTitle = titleFilter.text;
+            bookSearchRequest.bookIsbn = isbnFilter.text;
+            srv.obtainFilteredBooks(bookSearchRequest)
+        }
+
+        function clearFilter():void {
+            titleFilter.text = "";
+            isbnFilter.text = "";
+        }
+    ]]>
+    </mx:Script>
+    <mx:RemoteObject id="srv" destination="bookManager" fault="faultHandler(event)"/>
+    <mx:VBox height="100%" width="100%">
+    <mx:VBox width="{myBooks.width}">
+        <mx:Form defaultButton="{doFilterButton}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
+            <mx:HBox width="100%">
+                <mx:Spacer width="100%"/>
+                <mx:Button id="doFilterButton" label="filter" click="doFilterBooks()"/>
+                <mx:Button label="clear" click="clearFilter()"/>
+            </mx:HBox>
+            <mx:HBox width="100%" horizontalGap="0" borderStyle="solid" paddingTop="10" paddingBottom="10">
+                <mx:Spacer width="10"/>
+                <mx:TextInput id="titleFilter" width="{titleColumn.width-20}"/>
+                <mx:Spacer width="20"/>
+                <mx:TextInput id="isbnFilter" width="{isbnColumn.width-20}"/>
+                <mx:Spacer width="20"/>
+                <mx:Text id="authorFilter" width="{authorsColumn.width-20}" text="(problem with type relation)"/>
+                <mx:Spacer width="10"/>
+            </mx:HBox>
+        </mx:Form>
+    </mx:VBox>
+    <mx:DataGrid id="myBooks" dataProvider="{srv.obtainFilteredBooks.lastResult}" verticalScrollPolicy="on" height="100%">
+        <mx:columns>
+            <mx:DataGridColumn id="titleColumn" dataField="title" width="400"/>
+            <mx:DataGridColumn id="isbnColumn" dataField="isbn"  width="200"/>
+            <mx:DataGridColumn id="authorsColumn" sortable="false"  width="400">
+                <mx:itemRenderer>
+                    <mx:Component>
+                        <rend:BookAuthorsRenderer/>
+                    </mx:Component>
+                </mx:itemRenderer>
+            </mx:DataGridColumn>
+        </mx:columns>
+    </mx:DataGrid>
+    </mx:VBox>
+</mx:Canvas>

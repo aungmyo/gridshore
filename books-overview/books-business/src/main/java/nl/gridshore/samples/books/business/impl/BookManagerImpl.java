@@ -5,6 +5,7 @@ import nl.gridshore.samples.books.integration.BookDao;
 import nl.gridshore.samples.books.integration.AuthorDao;
 import nl.gridshore.samples.books.domain.Book;
 import nl.gridshore.samples.books.domain.Author;
+import nl.gridshore.samples.books.common.vo.BookSearchRequest;
 
 import java.util.List;
 
@@ -29,6 +30,10 @@ public class BookManagerImpl implements BookManager {
 
     public List<Book> obtainAllBooks() {
         return bookDao.loadAll();
+    }
+
+    public List<Book> obtainFilteredBooks(BookSearchRequest searchRequest) {
+        return bookDao.loadByFilter(searchRequest);
     }
 
     public void storeBook(final Book book) {

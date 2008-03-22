@@ -72,7 +72,7 @@
     </channels>
 
     <logging>
-        <target class="flex.messaging.log.ConsoleTarget" level="Warn">
+        <target class="flex.messaging.log.ConsoleTarget" level="Debug">
             <properties>
                 <prefix>[BlazeDS]</prefix>
                 <includeDate>false</includeDate>

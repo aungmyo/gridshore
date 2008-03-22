@@ -1,6 +1,7 @@
 package nl.gridshore.samples.books.business;
 
 import nl.gridshore.samples.books.domain.Book;
+import nl.gridshore.samples.books.common.vo.BookSearchRequest;
 
 import java.util.List;
 
@@ -13,5 +14,6 @@ import java.util.List;
  */
 public interface BookManager {
     List<Book> obtainAllBooks();
+    List<Book> obtainFilteredBooks(BookSearchRequest searchRequest);
     void storeBook(Book book);
 }

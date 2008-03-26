@@ -22,10 +22,10 @@ public class BookDaoJpa extends BaseDaoJpa<Book> implements BookDao {
         super(Book.class, "Book");
     }
 
-    public List<Book> loadByFilter(BookSearchRequest searchRequest) {
 // TODO: jettro 22 maart 2008 - implement a query that does support this ManyTOMany browsing
 //        String queryStr = "select b from Book as b where lower(title) like lower(:title) and isbn like :isbn " +
 //                "and b in (select books from Author a where lower(fullName) like lower(:fullname))";
+    public List<Book> loadByFilter(BookSearchRequest searchRequest) {
         String queryStr = "select b from Book as b where lower(title) like lower(:title) and isbn like :isbn ";
         Query query = getEntityManager().createQuery(queryStr)
                 .setParameter("title", '%' + searchRequest.getBookTitle() + '%')

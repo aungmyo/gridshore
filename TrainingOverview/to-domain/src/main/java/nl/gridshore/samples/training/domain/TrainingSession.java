@@ -18,7 +18,7 @@ public class TrainingSession extends BaseDomain {
     @Range (min = 1, max = 53)
     @NotNull
     private Integer weekNr;
-
+    private Integer year;
     private String remark;
 
     @ManyToOne
@@ -39,6 +39,14 @@ public class TrainingSession extends BaseDomain {
 
     public String getRemark() {
         return remark;
+    }
+
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
     }
 
     public void setRemark(String remark) {

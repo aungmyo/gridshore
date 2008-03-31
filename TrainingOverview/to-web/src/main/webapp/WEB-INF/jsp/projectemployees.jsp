@@ -1,6 +1,6 @@
 <%@ include file="/WEB-INF/jsp/includes.jsp" %>
 <h2>${project.client} - ${project.name}</h2>
-<table id="employeesdata" class="zebra">
+<table id="employeesdata" class="tablesorter">
     <thead>
         <tr>
             <th><fmt:message key="employee.idnumber"/></th>

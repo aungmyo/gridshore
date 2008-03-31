@@ -17,6 +17,7 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="false" />
+        <setting name="provider-name" value="" />
         <datasource-mapping>
           <factory-entry name="trainingoverview" value="Datasource" />
         </datasource-mapping>

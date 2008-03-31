@@ -26,6 +26,13 @@
             });
         }
 
+        function fillSessionsDetailsBox(trainingsessionId) {
+            $("#detailscontentbox").load("showregistrantstrainingsession.view",{trainingsessionId : trainingsessionId}, function() {
+                $("#sessionsemployeesdata").tablesorter({headers:{0:{sorter:false}},sortList:[[1,0]], widgets: ['zebra']});
+                $("#detailscontentbox").show();
+            });
+        }
+
     </script>
 </head>
 <body>

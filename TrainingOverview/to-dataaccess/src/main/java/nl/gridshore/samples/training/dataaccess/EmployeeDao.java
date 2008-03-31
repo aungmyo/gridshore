@@ -28,4 +28,5 @@ public interface EmployeeDao extends BaseDao<Employee>{
      * @return List with found employees
      */
     List<Employee> findByExample(Employee exampleEmployee);
+
 }

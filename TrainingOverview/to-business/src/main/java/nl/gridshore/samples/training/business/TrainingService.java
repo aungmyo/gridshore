@@ -2,6 +2,7 @@ package nl.gridshore.samples.training.business;
 
 import nl.gridshore.samples.training.domain.Training;
 import nl.gridshore.samples.training.domain.TrainingSession;
+import nl.gridshore.samples.training.domain.TrainingPlanning;
 
 import java.util.List;
 
@@ -38,4 +39,11 @@ public interface TrainingService {
      * @return TrainingSession belonging to the provided id
      */
     TrainingSession obtainTrainingSessionById(Long trainingsessionId);
+
+    /**
+     * Returns a list of TrainingPlanning objects that contain the Employee for the requested session.
+     * @param trainingsessionId Long representing the id of the training session to obtain all plannings for
+     * @return List of TrainingPlanning objects
+     */
+    public List<TrainingPlanning> obtainPlannedAttendenceTrainingSession(Long trainingsessionId);
 }

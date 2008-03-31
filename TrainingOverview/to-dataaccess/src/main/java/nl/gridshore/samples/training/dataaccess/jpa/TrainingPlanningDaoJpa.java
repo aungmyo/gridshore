@@ -3,6 +3,10 @@ package nl.gridshore.samples.training.dataaccess.jpa;
 import nl.gridshore.samples.training.dataaccess.TrainingPlanningDao;
 import nl.gridshore.samples.training.dataaccess.BaseDao;
 import nl.gridshore.samples.training.domain.TrainingPlanning;
+import nl.gridshore.samples.training.domain.TrainingSession;
+
+import javax.persistence.Query;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,4 +19,14 @@ public class TrainingPlanningDaoJpa extends BaseDaoJpa<TrainingPlanning> impleme
     public TrainingPlanningDaoJpa() {
         super(TrainingPlanning.class,"TrainingPlanning");
     }
+
+
+    public List<TrainingPlanning> findByTrainingSession(Long trainingSessionId) {
+        String queryStr = "select tp from TrainingPlanning tp where tp.session.id = :session";
+        Query query = getEntityManager().createQuery(queryStr);
+        query.setParameter("session",trainingSessionId);
+        //noinspection unchecked
+        return query.getResultList();
+    }
+    
 }

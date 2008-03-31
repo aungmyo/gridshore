@@ -1,6 +1,9 @@
 package nl.gridshore.samples.training.dataaccess;
 
 import nl.gridshore.samples.training.domain.TrainingPlanning;
+import nl.gridshore.samples.training.domain.TrainingSession;
+
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,4 +13,6 @@ import nl.gridshore.samples.training.domain.TrainingPlanning;
  * Data access class for training planning objects
  */
 public interface TrainingPlanningDao extends BaseDao<TrainingPlanning> {
+    List<TrainingPlanning> findByTrainingSession(Long  trainingSessionId);
+    
 }

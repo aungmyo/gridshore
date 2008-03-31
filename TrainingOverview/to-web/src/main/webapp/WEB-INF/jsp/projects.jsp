@@ -23,7 +23,7 @@
 
         function fillEmployeesBox(projectId) {
             $("#detailscontentbox").load("projectemployees.view",{projectId : projectId}, function() {
-                $(".zebra tr:nth-child(even)").addClass("striped");
+                $("#employeesdata").tablesorter({headers:{0:{sorter:false}},sortList:[[1,0]], widgets: ['zebra']});
                 $("#detailscontentbox").show();
             });
         }

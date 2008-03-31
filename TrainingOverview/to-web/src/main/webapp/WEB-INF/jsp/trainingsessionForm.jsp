@@ -16,7 +16,7 @@
     <script type="text/javascript" src="${ctx}/js/ui.datepicker.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
-            $("#weekNr").attachDatepicker();
+//            $("#weekNr").attachDatepicker();
             $('#list').clickMenu();
         });
     </script>
@@ -39,6 +39,11 @@
                 <th><fmt:message key="training.session.weeknr"/></th>
                 <td><form:input path="weekNr" size="2" maxlength="2"/></td>
                 <td><form:errors path="weekNr" cssClass="errors"/></td>
+            </tr>
+            <tr>
+                <th><fmt:message key="training.session.year"/></th>
+                <td><form:input path="year" size="4" maxlength="4"/></td>
+                <td><form:errors path="year" cssClass="errors"/></td>
             </tr>
             <tr>
                 <th><fmt:message key="training.session.status"/></th>
@@ -68,11 +73,5 @@
         </tbody>
     </table>
 </form:form>
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $("weekNr").attachDatepicker();
-    });
-</script>
 
 <%@ include file="/WEB-INF/jsp/footer.jsp" %>

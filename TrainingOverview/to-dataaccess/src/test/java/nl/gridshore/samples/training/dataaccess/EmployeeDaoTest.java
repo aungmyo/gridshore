@@ -101,7 +101,8 @@ public class EmployeeDaoTest extends AbstractJpaTests {
         employee.setCell("Java/Web");
         employee.setCluster("B"); // non existing cluster
         List<Employee> employees = employeeDao.findByExample(employee);
-        assertNotNull("one employee should have been found",employees);
+        assertNotNull("an empty list of employees should have been returned",employees);
         assertEquals("no employees should have been found",0,employees.size());
     }
+
 }

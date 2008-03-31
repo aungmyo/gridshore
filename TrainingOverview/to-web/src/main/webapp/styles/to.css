@@ -71,7 +71,15 @@ a {
     text-align: center;
     font-variant: small-caps;
 }
- /*zebra striping configuration*/
+
+#detailscontentbox h3 {
+    font-size: 12pt;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    font-variant: small-caps;
+}
+/*zebra striping configuration*/
 table.zebra {
     font-family: arial;
     background-color: #CDCDCD;

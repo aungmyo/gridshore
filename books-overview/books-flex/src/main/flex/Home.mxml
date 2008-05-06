@@ -1,28 +1,59 @@
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*"
+                creationComplete="authenticateUser()">
     <mx:Script>
-                <![CDATA[
+                        <![CDATA[
+        import mx.utils.ObjectUtil;
+        import flash.events.Event;
+        import components.MainNavigationComponent;
+        import components.AuthenticationForm;
         import mx.controls.Label;
-        
-        private function eventAction(actionName:String):void {
+        import security.AuthorizationControl;
+        import mx.rpc.events.FaultEvent;
+        import mx.controls.Alert;
+
+        private var authorization:AuthorizationControl;
+
+        public function isAuthorized():Boolean {
+            return authorization != null && authorization.username != 'roleAnonymous';
+        }
+
+        public function authenticateUser():void {
             myMainContentPanel.removeAllChildren();
-            switch(actionName) {
-                case 'books' :
-                    myMainContentPanel.addChild(new FilteredBooks());
-                    break;
-                default:
-                    var label:Label = new Label();
-                    label.text = actionName;
-                    myMainContentPanel.addChild(label);
+            myMainContentPanel.addChild(new AuthenticationForm());
+        }
+
+        public function initComponent():void {
+            securityService.obtainGrantedRoles();
+        }
+
+        private function handleReceivedGrantedRoles(eventResult:Object):void {
+            this.authorization = AuthorizationControl(eventResult);
+            if (isAuthorized()) {
+                var mainNavigation:MainNavigationComponent = new MainNavigationComponent();
+                menuDock.addChild(mainNavigation);
+                mainNavigation.visible = true;
+                mainNavigation.addEventListener(components.MainNavigationEvent.SELECT_ITEM, eventAction);
+                myMainContentPanel.removeAllChildren();
             }
+        }
+
+        private function eventAction(event:components.MainNavigationEvent):void {
+            myMainContentPanel.removeAllChildren();
+            myMainContentPanel.addChild(event.createRightUIComponent());
+        }
+
+        private function authorizationFaultHandler(event:FaultEvent):* {
+            Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
         }
 
         ]]>
     </mx:Script>
-    <mx:ApplicationControlBar dock="true">
-        <mx:HBox>
-            <mx:Button label="All Books" click="eventAction('books')"/>
-        </mx:HBox>
-    </mx:ApplicationControlBar>
+
+    <mx:RemoteObject id="securityService" destination="booksSecurityServices" fault="authorizationFaultHandler(event)">
+        <mx:method name="obtainGrantedRoles" result="handleReceivedGrantedRoles(event.result)"/>
+    </mx:RemoteObject>
+
+    <mx:ApplicationControlBar dock="true" id="menuDock"/>
 
     <mx:Panel id="myMainContentPanel" title="My Books" status="Welcome" width="90%" height="90%"/>
 

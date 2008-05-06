@@ -6,8 +6,11 @@ import nl.gridshore.samples.books.integration.BaseDao;
 import javax.persistence.PersistenceContext;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
+import javax.persistence.EntityManagerFactory;
 
 import org.springframework.orm.ObjectRetrievalFailureException;
+import org.springframework.orm.jpa.EntityManagerFactoryInfo;
+import org.hibernate.ejb.EntityManagerFactoryImpl;
 
 import java.util.List;
 

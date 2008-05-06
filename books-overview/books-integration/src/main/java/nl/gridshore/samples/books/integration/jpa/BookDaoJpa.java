@@ -6,7 +6,11 @@ import nl.gridshore.samples.books.domain.Author;
 import nl.gridshore.samples.books.common.vo.BookSearchRequest;
 
 import javax.persistence.Query;
+import javax.persistence.EntityManagerFactory;
 import java.util.List;
+
+import org.springframework.orm.jpa.EntityManagerFactoryInfo;
+import org.hibernate.ejb.EntityManagerFactoryImpl;
 
 /**
  * Created by IntelliJ IDEA.

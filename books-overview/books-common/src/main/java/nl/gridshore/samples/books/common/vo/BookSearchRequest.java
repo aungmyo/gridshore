@@ -7,7 +7,7 @@ import java.io.Serializable;
  * User: jettro
  * Date: Mar 21, 2008
  * Time: 9:27:20 PM
- * To change this template use File | Settings | File Templates.
+ * Value object used to pass parameters to business methods to search books
  */
 public class BookSearchRequest implements Serializable {
     private String bookTitle;

@@ -13,7 +13,7 @@
     </description>
 
     <properties>
-        <spring.version>2.5.2</spring.version>
+        <spring.version>2.5.3</spring.version>
     </properties>
 
     <modules>

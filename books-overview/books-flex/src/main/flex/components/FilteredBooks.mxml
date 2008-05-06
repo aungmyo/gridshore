@@ -1,13 +1,24 @@
-<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="doFilterBooks()" width="100%" height="100%">
+<?xml version="1.0"?>
+<!-- FilteredBooks.mxml -->
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="initScreen()" width="100%" height="100%">
     <mx:Script>
         <![CDATA[
+        import valueobjects.Book;
+        import mx.events.ListEvent;
         import mx.rpc.events.FaultEvent;
         import mx.controls.Alert;
         import mx.utils.ObjectUtil;
         import valueobjects.BookSearchRequest;
+        import mx.rpc.events.ResultEvent;
+        import mx.core.Application;
 
         function faultHandler(event:FaultEvent):* {
             Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
+        }
+
+        function initScreen():void {
+            doFilterBooks();
+            Alert.show(Application.application.authorization.getMessage());
         }
 
         function doFilterBooks():void {
@@ -20,10 +31,20 @@
         function clearFilter():void {
             titleFilter.text = "";
             isbnFilter.text = "";
+            doFilterBooks();
+        }
+
+        function selectBook(event:ListEvent):void {
+            var selectedBook:Book = Book(event.currentTarget.selectedItem);
+            super.removeAllChildren();
+            var bookForm:BookForm = new BookForm();
+            bookForm.book = selectedBook;
+            super.addChild(bookForm);
         }
     ]]>
     </mx:Script>
     <mx:RemoteObject id="srv" destination="bookManager" fault="faultHandler(event)"/>
+
     <mx:VBox height="100%" width="100%">
         <mx:VBox width="{myBooks.width}">
             <mx:Form defaultButton="{doFilterButton}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
@@ -43,11 +64,12 @@
                 </mx:HBox>
             </mx:Form>
         </mx:VBox>
-        <mx:DataGrid id="myBooks" dataProvider="{srv.obtainFilteredBooks.lastResult}" verticalScrollPolicy="on" height="100%">
+        <mx:DataGrid id="myBooks" dataProvider="{srv.obtainFilteredBooks.lastResult}" verticalScrollPolicy="on"
+                     height="100%" itemClick="selectBook(event)">
             <mx:columns>
-                <mx:DataGridColumn id="titleColumn" dataField="title" width="400" draggable="false"/>
-                <mx:DataGridColumn id="isbnColumn" dataField="isbn"  width="200" draggable="false"/>
-                <mx:DataGridColumn id="authorsColumn" sortable="false"  width="400" draggable="false">
+                <mx:DataGridColumn id="titleColumn" dataField="title" width="300" draggable="false"/>
+                <mx:DataGridColumn id="isbnColumn" dataField="isbn"  width="100" draggable="false"/>
+                <mx:DataGridColumn id="authorsColumn" sortable="false"  width="300" draggable="false" headerText="authors">
                     <mx:itemRenderer>
                         <mx:Component>
                             <rend:BookAuthorsRenderer/>

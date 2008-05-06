@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+<!-- renderers/BookAuthorsRenderer.mxml -->
 <mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml" dataChange="renderAuthors(data.authors)">
     <mx:Script>
         <![CDATA[

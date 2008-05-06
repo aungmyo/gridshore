@@ -17,4 +17,11 @@
         </properties>
     </destination>
 
+    <destination id="booksSecurityServices">
+        <properties>
+            <factory>spring</factory>
+            <source>booksSecurityServices</source>
+        </properties>
+    </destination>
+
 </service>

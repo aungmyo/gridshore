@@ -47,6 +47,7 @@ public class PrefillDatastore {
         for (String authorName : authors) {
             book.addAuthor(new Author(authorName));
         }
-        bookManager.storeBook(book);
+
+        bookManager.internalUseStoreBook(book);
     }
 }

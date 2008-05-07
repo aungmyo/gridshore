@@ -44,4 +44,13 @@ public class BookManagerImpl implements BookManager {
         }
         bookDao.save(book);
     }
+
+    public void internalUseStoreBook(final Book book) {
+        for (Author author : book.getAuthors()) {
+            if (author.getId() == null) {
+                authorDao.save(author);
+            }
+        }
+        bookDao.save(book);
+    }
 }

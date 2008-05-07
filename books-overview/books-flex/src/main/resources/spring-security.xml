@@ -12,11 +12,17 @@
         <security:intercept-url pattern="*.html" access="ROLE_USER"/>
     </security:http>
 
+    <security:global-method-security>
+        <security:protect-pointcut expression="execution(* nl.gridshore.samples.books.business.*Manager.store*(..))"
+                                   access="ROLE_ADMIN"/>
+        <security:protect-pointcut expression="execution(* nl.gridshore.samples.books.business.*Manager.obtain*(..))"
+                                   access="ROLE_USER"/>
+    </security:global-method-security>
+
     <security:authentication-provider>
         <security:user-service>
-            <security:user name="jettro" password="test" authorities="ROLE_USER, ROLE_ADMIN"/>
-            <security:user name="roel" password="test" authorities="ROLE_USER"/>
-            <security:user name="allard" password="test" authorities="ROLE_USER"/>
+            <security:user name="admin" password="admin" authorities="ROLE_USER, ROLE_ADMIN"/>
+            <security:user name="user" password="user" authorities="ROLE_USER"/>
         </security:user-service>
     </security:authentication-provider>
 

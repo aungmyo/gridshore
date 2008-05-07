@@ -4,6 +4,8 @@ package components {
     import flash.events.MouseEvent;
     import mx.controls.Button;
     import mx.containers.HBox;
+    import mx.core.Application;
+    
     public class MainNavigationComponent extends HBox {
         public function MainNavigationComponent() {
             super();
@@ -12,7 +14,9 @@ package components {
 
         function initMyComponent():void {
             addChild(createNewButton('allbooks', 'All Books'));
-            addChild(createNewButton('newbook', 'New Book'));
+            if (Application.application.isAuthorized() && Application.application.authorization.userIsAdmin()) {
+                addChild(createNewButton('newbook', 'New Book'));
+            }
         }
 
         private function clickEventHandler(event:Event):void {

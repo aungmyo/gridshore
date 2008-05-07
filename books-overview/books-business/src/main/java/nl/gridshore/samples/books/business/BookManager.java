@@ -16,4 +16,11 @@ public interface BookManager {
     List<Book> obtainAllBooks();
     List<Book> obtainFilteredBooks(BookSearchRequest searchRequest);
     void storeBook(Book book);
+
+    /**
+     * This method is used to prefill the database, this is not a good practice in real applications.
+     * We need this to be able to demonstrate the security requirements.
+     * @param book Book to store in the database
+     */
+    void internalUseStoreBook(Book book);
 }

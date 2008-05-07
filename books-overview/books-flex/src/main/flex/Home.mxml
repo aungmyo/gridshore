@@ -11,7 +11,7 @@
         import mx.rpc.events.FaultEvent;
         import mx.controls.Alert;
 
-        private var authorization:AuthorizationControl;
+        public var authorization:AuthorizationControl;
 
         public function isAuthorized():Boolean {
             return authorization != null && authorization.username != 'roleAnonymous';

@@ -16,10 +16,9 @@
 
         private function loginServiceResultHandler(event:ResultEvent):void {
             Application.application.initComponent();
-            Alert.show("OKE");
         }
         private function loginServiceFaultHandler(event:FaultEvent):void {
-            Alert.show("PROBLEM ");
+            Alert.show("PROBLEM while authenticating ...");
         }
 ]]></mx:Script>
 
@@ -35,13 +34,15 @@
             <j_password>{password.text}</j_password>
         </mx:request>
     </mx:HTTPService>
-    <mx:Form>
+    <mx:Form defaultButton="{submitButton}">
         <mx:FormItem>
             <mx:TextInput id="userName"/>
         </mx:FormItem>
         <mx:FormItem>
-            <mx:TextInput id="password"/>
+            <mx:TextInput id="password" displayAsPassword="true"/>
         </mx:FormItem>
-        <mx:Button id="submitButton" label="submit" click="submitBook()"/>
+        <mx:FormItem>
+            <mx:Button id="submitButton" label="submit" click="submitBook()"/>
+        </mx:FormItem>
     </mx:Form>
 </mx:Canvas>

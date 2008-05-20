@@ -10,7 +10,7 @@ import org.mortbay.jetty.bio.SocketConnector;
  * Hello world!
  *
  */
-public class App 
+public class WebServiceLauncher 
 {
     public static void main( String[] args )
     {

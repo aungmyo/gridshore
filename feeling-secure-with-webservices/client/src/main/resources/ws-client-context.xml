@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="wsClientImplementation" class="nl.gridshore.demo.webservice.client.WSClientImplementation">
+        <property name="wsTemplate" ref="wsTemplate"/>
+    </bean>
+
+    <bean id="wsTemplate" class="org.springframework.ws.client.core.WebServiceTemplate">
+        <property name="defaultUri" value="http://localhost:8080/ordersService"/>
+        <property name="marshaller" ref="marshaller"/>
+        <property name="unmarshaller" ref="marshaller"/>
+        <property name="interceptors">
+            <list>
+                <bean class="org.springframework.ws.soap.security.wss4j.Wss4jSecurityInterceptor">
+                    <property name="secureRequest" value="true"/>
+                    <property name="secureResponse" value="false"/>
+                    <property name="securementActions" value="Encrypt UsernameToken"/>
+                    <property name="securementEncryptionUser" value="merchant"/>
+                    <property name="securementEncryptionCrypto">
+                        <bean id="crypto" class="org.springframework.ws.soap.security.wss4j.support.CryptoFactoryBean">
+                            <property name="keyStoreLocation" value="file://c:/trustStore.jks"/>
+                            <property name="keyStorePassword" value="password"/>
+                        </bean>
+                    </property>
+                    <property name="securementEncryptionParts" value="{Content}{http://www.gridshore.nl/schema/myservice}ID"/>
+                    <property name="securementMustUnderstand" value="true"/>
+                    <property name="securementUsername" value="username"/>
+                    <property name="securementPassword" value="password"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="marshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+        <property name="contextPath" value="nl.gridshore.schema.myservice"/>
+    </bean>
+
+</beans>

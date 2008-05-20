@@ -1,0 +1,7 @@
+<xwss:SecurityConfiguration xmlns:xwss="http://java.sun.com/xml/ns/xwss/config">
+    <xwss:UsernameToken name="username" password="password"/>
+    <xwss:Encrypt>
+        <xwss:X509Token id="secKey1" certificateAlias="merchant"/>
+        <xwss:Target type="qname">{http://www.gridshore.nl/schema/myservice}ID</xwss:Target>
+    </xwss:Encrypt>
+    </xwss:SecurityConfiguration>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Created with Liquid XML Studio 1.0.8.0 (http://www.liquid-technologies.com) -->
+<xs:schema xmlns:tns="http://www.gridshore.nl/schema/myservice" elementFormDefault="qualified" targetNamespace="http://www.gridshore.nl/schema/myservice" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="MyServiceRequest">
+    <xs:complexType>
+      <xs:all>
+        <xs:element name="ID" type="xs:integer" />
+        <xs:element name="OtherElement" minOccurs="0" />
+      </xs:all>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MyServiceResponse" type="tns:MyServiceResponseType" />
+  <xs:complexType name="MyServiceResponseType">
+    <xs:all>
+      <xs:element name="Data">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="id" type="xs:integer" />
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>

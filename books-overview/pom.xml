@@ -12,6 +12,15 @@
         This application is used to get overview of all my books.
     </description>
 
+    <!--<licenses>-->
+        <!--<license>-->
+            <!--<url>http://www.myurl.com</url>-->
+            <!--<name>custom</name>-->
+            <!--<distribution>donotknow</distribution>-->
+            <!--<comments>self made</comments>-->
+        <!--</license>-->
+    <!--</licenses>-->
+
     <properties>
         <spring.version>2.5.3</spring.version>
     </properties>
@@ -129,6 +138,18 @@
     </distributionManagement>
     <build>
         <plugins>
+            <!--<plugin>-->
+                <!--<groupId>nl.gridshore.samples.maven.plugins.license</groupId>-->
+                <!--<artifactId>maven-licenseoverview-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>writeoverview</id>-->
+                        <!--<goals>-->
+                            <!--<goal>writeoverview</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -160,7 +181,7 @@
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-ftp</artifactId>
-                <version>1.0-alpha-6</version>
+                <!--<version>1.0-alpha-6</version>-->
             </extension>
         </extensions>
     </build>

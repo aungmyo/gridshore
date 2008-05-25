@@ -14,7 +14,8 @@ import org.springframework.security.GrantedAuthority;
  */
 public class BooksSecurityServicesImpl implements BooksSecurityServices {
     public AuthorizationData obtainGrantedRoles() {
-        GrantedAuthority[] authorities = SecurityContextHolder.getContext().getAuthentication().getAuthorities();
+        GrantedAuthority[] authorities =
+                SecurityContextHolder.getContext().getAuthentication().getAuthorities();
         int numAuthorities = authorities.length;
         String[] grantedRoles = new String[numAuthorities];
         for (int counter = 0; counter < numAuthorities ; counter++) {

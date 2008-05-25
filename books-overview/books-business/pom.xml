@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.gridshore.samples.books</groupId>
     <artifactId>books-business</artifactId>
-    <packaging>bundle</packaging>
+    <packaging>jar</packaging>
     <name>books-business</name>
     <url>http://maven.apache.org</url>
     <dependencies>

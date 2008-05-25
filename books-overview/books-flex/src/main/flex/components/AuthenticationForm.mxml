@@ -8,7 +8,7 @@
         import mx.utils.ObjectUtil;
         import mx.controls.Alert;
         
-        function submitBook():void {
+        private function submitLogin():void {
             submitButton.enabled = false;
             loginService.send();
             submitButton.enabled = true;
@@ -18,10 +18,15 @@
             Application.application.initComponent();
         }
         private function loginServiceFaultHandler(event:FaultEvent):void {
-            Alert.show("PROBLEM while authenticating ...");
+            authenticationMessage.text = "Problem while authentication ...";
+            authenticationMessage.visible = true;
         }
 ]]></mx:Script>
-
+    <mx:Style>
+        .warning {
+            color : red;
+        }
+    </mx:Style>
     <mx:HTTPService
             id="loginService"
             url="j_spring_security_check"
@@ -34,15 +39,16 @@
             <j_password>{password.text}</j_password>
         </mx:request>
     </mx:HTTPService>
+    <mx:Text id="authenticationMessage" visible="false" styleName="warning"/>
     <mx:Form defaultButton="{submitButton}">
-        <mx:FormItem>
+        <mx:FormItem label="Username">
             <mx:TextInput id="userName"/>
         </mx:FormItem>
-        <mx:FormItem>
+        <mx:FormItem label="Password">
             <mx:TextInput id="password" displayAsPassword="true"/>
         </mx:FormItem>
         <mx:FormItem>
-            <mx:Button id="submitButton" label="submit" click="submitBook()"/>
+            <mx:Button id="submitButton" label="Login" click="submitLogin()"/>
         </mx:FormItem>
     </mx:Form>
 </mx:Canvas>

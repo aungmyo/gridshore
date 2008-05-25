@@ -49,7 +49,8 @@
         ]]>
     </mx:Script>
 
-    <mx:RemoteObject id="securityService" destination="booksSecurityServices" fault="authorizationFaultHandler(event)">
+    <mx:RemoteObject id="securityService" destination="booksSecurityServices"
+                     fault="authorizationFaultHandler(event)">
         <mx:method name="obtainGrantedRoles" result="handleReceivedGrantedRoles(event.result)"/>
     </mx:RemoteObject>
 

@@ -13,10 +13,12 @@
     </security:http>
 
     <security:global-method-security>
-        <security:protect-pointcut expression="execution(* nl.gridshore.samples.books.business.*Manager.store*(..))"
-                                   access="ROLE_ADMIN"/>
-        <security:protect-pointcut expression="execution(* nl.gridshore.samples.books.business.*Manager.obtain*(..))"
-                                   access="ROLE_USER"/>
+        <security:protect-pointcut
+            expression="execution(* nl.gridshore.samples.books.business.*Manager.store*(..))"
+            access="ROLE_ADMIN"/>
+        <security:protect-pointcut
+            expression="execution(* nl.gridshore.samples.books.business.*Manager.obtain*(..))"
+            access="ROLE_USER"/>
     </security:global-method-security>
 
     <security:authentication-provider>

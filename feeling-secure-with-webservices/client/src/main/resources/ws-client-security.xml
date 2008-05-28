@@ -1,3 +1,5 @@
+<!-- This is what the configuration should contain if XWSS were used on the client side.
+Please note that I've chosen WSS4J on the client side, for the sake of the example -->
 <xwss:SecurityConfiguration xmlns:xwss="http://java.sun.com/xml/ns/xwss/config">
     <xwss:UsernameToken name="username" password="password"/>
     <xwss:Encrypt>

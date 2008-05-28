@@ -10,10 +10,12 @@ import org.mortbay.jetty.bio.SocketConnector;
  * Hello world!
  *
  */
-public class WebServiceLauncher 
+public class WebServiceLauncher
 {
     public static void main( String[] args )
     {
+        String WSKeyStore = "provider/src/main/resources/WSKeyStore.jks";
+
         Server server = new Server();
         SocketConnector connector = new SocketConnector();
         connector.setPort(8080);
@@ -21,7 +23,7 @@ public class WebServiceLauncher
 
         SslSocketConnector sslConnector = new SslSocketConnector();
         sslConnector.setPort(8443);
-        sslConnector.setKeystore("provider/src/main/resources/WSKeyStore.jks");
+        sslConnector.setKeystore(WSKeyStore);
         sslConnector.setKeystoreType("JKS");
         sslConnector.setKeyPassword("mypassword");
 
@@ -36,7 +38,7 @@ public class WebServiceLauncher
 
 
          try {
-            System.out.println(">>> STARTING EMBEDDED JETTY SERVER, PRESS ANY KEY TO STOP");
+            System.out.println(">>> STARTING EMBEDDED JETTY SERVER, PRESS ENTER TO STOP");
             server.start();
             System.in.read();
             server.stop();

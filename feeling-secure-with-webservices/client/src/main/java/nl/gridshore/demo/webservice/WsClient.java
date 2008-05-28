@@ -4,7 +4,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.ClassPathResource;
 import nl.gridshore.demo.webservice.client.WSClientImplementation;
 
-import javax.net.ssl.SSLContext;
 import javax.xml.soap.SOAPException;
 import java.io.IOException;
 
@@ -15,10 +14,13 @@ import java.io.IOException;
 public class WsClient 
 {
     public static void main( String[] args ) throws IOException, SOAPException {
-//        String trustStore = WsClient.class.getClassLoader().getResource("classpath:trustStore.jks").getFile();
-//        String trustStore = new ClassPathResource("trustStore.jks").getURL().toString();
+        // defining a custom truststore for the JRE, since our certificate isn't accepted by default
         System.setProperty("javax.net.ssl.trustStorePassword","password");
-        System.setProperty("javax.net.ssl.trustStore", "/development/workspaces/ws-demo/client/src/main/resources/trustStore.jks");
+        System.setProperty("javax.net.ssl.trustStore", "c:/development/workspaces/ws-demo/client/src/main/resources/trustStore.jks");
+
+        // URL where the web service provider is running.
+        System.setProperty("endpointUrl", "https://localhost:8443/ordersService");        
+
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("ws-client-context.xml");
         context.start();
 

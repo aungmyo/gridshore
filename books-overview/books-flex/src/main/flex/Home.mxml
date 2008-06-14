@@ -56,6 +56,6 @@
 
     <mx:ApplicationControlBar dock="true" id="menuDock"/>
 
-    <mx:Panel id="myMainContentPanel" title="My Books" status="Welcome" width="90%" height="90%"/>
+    <mx:Panel id="myMainContentPanel" title="My Books demo app" status="Welcome" width="90%" height="90%"/>
 
 </mx:Application>

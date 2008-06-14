@@ -13,7 +13,7 @@
             <arg line="-load-config+=flex-config.xml"/>
             <arg line="-source-path ."/>
             <arg line="-compiler.services ../webapp/WEB-INF/flex/services-config.xml"/>
-            <arg line="-compiler.context-root books"/>
+            <arg line="-compiler.context-root books-flex"/>
             <arg line="-output='${deployDirectory}/${testAppFileName}'"/>
         </java>
     </target>

@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!-- FilteredBooks.mxml -->
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="initScreen()" width="100%" height="100%">
-    <mx:Script>
-        <![CDATA[
+    <mx:Script><![CDATA[
+        import services.BookService;
         import valueobjects.Book;
         import mx.events.ListEvent;
         import mx.rpc.events.FaultEvent;
@@ -12,29 +12,26 @@
         import mx.rpc.events.ResultEvent;
         import mx.core.Application;
 
-        function faultHandler(event:FaultEvent):* {
-            Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
-        }
+        private var bookService:BookService = new BookService();
 
-        function initScreen():void {
+        private function initScreen():void {
             doFilterBooks();
-            Alert.show(Application.application.authorization.getMessage());
         }
 
-        function doFilterBooks():void {
+        private function doFilterBooks():void {
             var bookSearchRequest:BookSearchRequest = new BookSearchRequest();
             bookSearchRequest.bookTitle = titleFilter.text;
             bookSearchRequest.bookIsbn = isbnFilter.text;
-            srv.obtainFilteredBooks(bookSearchRequest)
+            bookService.obtainFilteredBooks(bookSearchRequest)
         }
 
-        function clearFilter():void {
+        private function clearFilter():void {
             titleFilter.text = "";
             isbnFilter.text = "";
             doFilterBooks();
         }
 
-        function selectBook(event:ListEvent):void {
+        private function selectBook(event:ListEvent):void {
             var selectedBook:Book = Book(event.currentTarget.selectedItem);
             super.removeAllChildren();
             var bookForm:BookForm = new BookForm();
@@ -43,7 +40,6 @@
         }
     ]]>
     </mx:Script>
-    <mx:RemoteObject id="srv" destination="bookManager" fault="faultHandler(event)"/>
 
     <mx:VBox height="100%" width="100%">
         <mx:VBox width="{myBooks.width}">
@@ -64,7 +60,7 @@
                 </mx:HBox>
             </mx:Form>
         </mx:VBox>
-        <mx:DataGrid id="myBooks" dataProvider="{srv.obtainFilteredBooks.lastResult}" verticalScrollPolicy="on"
+        <mx:DataGrid id="myBooks" dataProvider="{bookService.filteredBooks}" verticalScrollPolicy="on"
                      height="100%" itemClick="selectBook(event)">
             <mx:columns>
                 <mx:DataGridColumn id="titleColumn" dataField="title" width="300" draggable="false"/>

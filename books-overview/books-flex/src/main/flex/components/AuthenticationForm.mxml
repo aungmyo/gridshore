@@ -1,25 +1,27 @@
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml">
 
     <mx:Script><![CDATA[
+        import events.AuthenticationFailureEvent;
+        import services.SecurityService;
         import mx.core.Application;
         import flash.events.Event;
         import mx.rpc.events.FaultEvent;
         import mx.rpc.events.ResultEvent;
         import mx.utils.ObjectUtil;
         import mx.controls.Alert;
-        
+
+        public var securityService:SecurityService;
+
         private function submitLogin():void {
             submitButton.enabled = false;
-            loginService.send();
-            submitButton.enabled = true;
+            Application.application.addEventListener(AuthenticationFailureEvent.AUTHENTICATION_FAILURE,loginServiceFaultHandler)
+            securityService.authenticatePrincipal(userName.text,password.text);
         }
 
-        private function loginServiceResultHandler(event:ResultEvent):void {
-            Application.application.initComponent();
-        }
-        private function loginServiceFaultHandler(event:FaultEvent):void {
+        private function loginServiceFaultHandler(event:AuthenticationFailureEvent):void {
             authenticationMessage.text = "Problem while authentication ...";
             authenticationMessage.visible = true;
+            submitButton.enabled = true;
         }
 ]]></mx:Script>
     <mx:Style>
@@ -27,18 +29,7 @@
             color : red;
         }
     </mx:Style>
-    <mx:HTTPService
-            id="loginService"
-            url="j_spring_security_check"
-            showBusyCursor="true"
-            method="POST"
-            result="loginServiceResultHandler(event)"
-            fault="loginServiceFaultHandler(event)">
-        <mx:request>
-            <j_username>{userName.text}</j_username>
-            <j_password>{password.text}</j_password>
-        </mx:request>
-    </mx:HTTPService>
+
     <mx:Text id="authenticationMessage" visible="false" styleName="warning"/>
     <mx:Form defaultButton="{submitButton}">
         <mx:FormItem label="Username">

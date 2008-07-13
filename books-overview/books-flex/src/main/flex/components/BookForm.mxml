@@ -9,14 +9,14 @@
         [Bindable]
         public var book:Book;
 
-        function initBook():void {
+        private function initBook():void {
             if (book == null) {
                 book = new Book();
                 book.authors = new ArrayCollection();
             }
         }
 
-        function submitBook():void {
+        private function submitBook():void {
             submitButton.enabled = false;
             book.title = bookTitle.text;
             book.isbn = bookIsbn.text;
@@ -25,12 +25,12 @@
             submitButton.enabled = true;
         }
 
-        function clearForm():void {
+        private function clearForm():void {
             book = null;
             initBook();
         }
 
-        function faultHandler(event:FaultEvent):* {
+        private function faultHandler(event:FaultEvent):* {
             Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
         }
         

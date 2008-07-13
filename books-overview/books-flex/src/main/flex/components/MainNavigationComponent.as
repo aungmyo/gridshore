@@ -1,20 +1,20 @@
 package components {
+    import model.UserData;
     import mx.controls.Alert;
     import flash.events.Event;
     import flash.events.MouseEvent;
     import mx.controls.Button;
     import mx.containers.HBox;
-    import mx.core.Application;
-    
+
     public class MainNavigationComponent extends HBox {
         public function MainNavigationComponent() {
             super();
             initMyComponent();
         }
 
-        function initMyComponent():void {
+        private function initMyComponent():void {
             addChild(createNewButton('allbooks', 'All Books'));
-            if (Application.application.isAuthorized() && Application.application.authorization.userIsAdmin()) {
+            if (UserData.getInstance().isAdmin()) {
                 addChild(createNewButton('newbook', 'New Book'));
             }
         }

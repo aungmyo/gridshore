@@ -15,12 +15,24 @@
             <factory>spring</factory>
             <source>bookManager</source>
         </properties>
+        <!--<security>-->
+            <!--<security-constraint ref="custom-springsecurity"/>-->
+        <!--</security>-->
     </destination>
 
     <destination id="booksSecurityServices">
         <properties>
             <factory>spring</factory>
             <source>booksSecurityServices</source>
+        </properties>
+        <!--<security>-->
+            <!--<security-constraint ref="custom-springsecurity"/>-->
+        <!--</security>-->
+    </destination>
+
+    <destination id="authenticationHelper">
+        <properties>
+            <source>nl.gridshore.samples.books.web.security.security.AuthenticationHelper</source>
         </properties>
     </destination>
 

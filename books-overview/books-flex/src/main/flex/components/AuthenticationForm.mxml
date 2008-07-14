@@ -14,7 +14,8 @@
 
         private function submitLogin():void {
             submitButton.enabled = false;
-            Application.application.addEventListener(AuthenticationFailureEvent.AUTHENTICATION_FAILURE,loginServiceFaultHandler)
+            Application.application.addEventListener(
+                    AuthenticationFailureEvent.AUTHENTICATION_FAILURE,loginServiceFaultHandler);
             securityService.authenticatePrincipal(userName.text,password.text);
         }
 

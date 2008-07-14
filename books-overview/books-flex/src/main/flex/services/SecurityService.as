@@ -34,7 +34,8 @@ package services {
             var userData:UserData = UserData.getInstance();
             userData.username = username;
             userData.password = password;
-            remoteObject.authenticatePrincipal.addEventListener(ResultEvent.RESULT,handleAuthenticatePrincipal)
+            remoteObject.authenticatePrincipal.addEventListener(
+                    ResultEvent.RESULT,handleAuthenticatePrincipal);
             remoteObject.authenticatePrincipal(username,password);
         }
 
@@ -54,7 +55,8 @@ package services {
                 userData.addGrantedRole(obtainedRoles[i])
             }
 
-            Application.application.dispatchEvent(new AuthenticationEvent(AuthenticationEvent.AUTHENTICATION,"user is authenticated"));
+            Application.application.dispatchEvent(
+                    new AuthenticationEvent(AuthenticationEvent.AUTHENTICATION,"user is authenticated"));
         };
 
     }

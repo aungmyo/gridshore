@@ -15,9 +15,6 @@
             <factory>spring</factory>
             <source>bookManager</source>
         </properties>
-        <!--<security>-->
-            <!--<security-constraint ref="custom-springsecurity"/>-->
-        <!--</security>-->
     </destination>
 
     <destination id="booksSecurityServices">
@@ -25,9 +22,6 @@
             <factory>spring</factory>
             <source>booksSecurityServices</source>
         </properties>
-        <!--<security>-->
-            <!--<security-constraint ref="custom-springsecurity"/>-->
-        <!--</security>-->
     </destination>
 
     <destination id="authenticationHelper">

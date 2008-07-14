@@ -22,10 +22,10 @@
         <login-command class="flex.messaging.security.WebSphereLoginCommand" server="WebSphere"/>
         -->
 
-        <!--<security-constraint id="custom-springsecurity">-->
+        <!--<security-constraint id="trusted">-->
             <!--<auth-method>Custom</auth-method>-->
             <!--<roles>-->
-                <!--<role>ROLE_USER</role>-->
+                <!--<role>trustedUser</role>-->
             <!--</roles>-->
         <!--</security-constraint>-->
         <!--

@@ -57,12 +57,6 @@ import events.RemoteExceptionEvent;
          * @param event
          */
         private function handleAuthenticationEvent(event:AuthenticationEvent):void {
-            trace(
-                    event.message +
-                    " : username - " + UserData.getInstance().username +
-                    ", admin - " + UserData.getInstance().isAdmin() +
-                    ", user - " + UserData.getInstance().isUser());
-
             var mainNavigation:MainNavigationComponent = new MainNavigationComponent();
             menuDock.addChild(mainNavigation);
             mainNavigation.visible = true;

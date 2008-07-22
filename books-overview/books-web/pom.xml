@@ -14,19 +14,27 @@
     <dependencies>
         <!-- internal dependencies -->
         <dependency>
-            <groupId>nl.gridshore.samples.books</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>books-common</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>nl.gridshore.samples.books</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>books-domain</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
         <dependency>
-            <groupId>nl.gridshore.samples.books</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>books-business</artifactId>
             <version>${project.parent.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>books-flex-config</artifactId>
+            <version>${project.parent.version}</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
         </dependency>
         <!-- spring dependencies -->
         <dependency>
@@ -85,5 +93,34 @@
     </dependencies>
     <build>
         <finalName>books-web</finalName>
+        <plugins>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-config</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex
+                            </outputDirectory>
+                            <includeArtifacIds>books-flex-config</includeArtifacIds>
+                            <includeGroupIds>${project.groupId}</includeGroupIds>
+                            <includeClassifiers>resources</includeClassifiers>
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludeTypes>jar,swf</excludeTypes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>info.rvin.mojo</groupId>
+                <artifactId>flex-compiler-mojo</artifactId>
+
+                <extensions>true</extensions>
+            </plugin>
+        </plugins>
     </build>
 </project>

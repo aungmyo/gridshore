@@ -1,3 +1,77 @@
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml">
-    <mx:Button label="Test"/>
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*"
+                creationComplete="initializeApplication()">
+    <mx:Script><![CDATA[
+import events.RemoteExceptionEvent;
+        import model.UserData;
+        import events.AuthenticationEvent;
+        import mx.core.Application;
+        import services.SecurityService;
+        import mx.containers.utilityClasses.Flex;
+        import mx.utils.ObjectUtil;
+        import flash.events.Event;
+        import components.MainNavigationComponent;
+        import components.AuthenticationForm;
+        import mx.controls.Label;
+        import security.AuthorizationControl;
+        import mx.rpc.events.FaultEvent;
+        import mx.controls.Alert;
+
+        private var authorization:AuthorizationControl;
+
+        private var authenticationHelper:SecurityService = new SecurityService();
+
+        /**
+         * Mainly used to set some listeners and parameters on application scope, it also calls the function
+         * to present the form to enter credentials for authentication of a user. The successfull authentication
+         * event is handled on an application scope, the listener for this event is added here.
+         */
+        private function initializeApplication():void {
+            Application.application.addEventListener(AuthenticationEvent.AUTHENTICATION, handleAuthenticationEvent);
+            Application.application.addEventListener(RemoteExceptionEvent.REMOTE_EXCEPTION, handleRemoteExceptionEvent);
+            authenticateUser();
+        }
+
+        /**
+         * Used to present the form where a user can enter his credentials and ask for authentication
+         */
+        private function authenticateUser():void {
+            myMainContentPanel.removeAllChildren();
+            var authenticationForm:AuthenticationForm = new AuthenticationForm();
+            authenticationForm.securityService = authenticationHelper;
+            myMainContentPanel.addChild(authenticationForm);
+        }
+
+        /**
+         * Called when a NavigationEvent is dispatched, based on the event, the right UIComponent is created
+         * and presented in the main panel.
+         * @param event NavigationEvent thrown when a user clicks a menu item (by example)
+         */
+        private function handleNavigationEvent(event:components.MainNavigationEvent):void {
+            myMainContentPanel.removeAllChildren();
+            myMainContentPanel.addChild(event.createRightUIComponent());
+        }
+
+        /**
+         * This method is called after a succesfull authentication request. It initializes the application
+         * for normal use by adding navigation and other global items.
+         * @param event
+         */
+        private function handleAuthenticationEvent(event:AuthenticationEvent):void {
+            var mainNavigation:MainNavigationComponent = new MainNavigationComponent();
+            menuDock.addChild(mainNavigation);
+            mainNavigation.visible = true;
+            mainNavigation.addEventListener(components.MainNavigationEvent.SELECT_ITEM, handleNavigationEvent);
+            myMainContentPanel.removeAllChildren();
+        }
+
+        private function handleRemoteExceptionEvent(event:RemoteExceptionEvent):void {
+            Alert.show(event.message);
+        }
+        ]]>
+    </mx:Script>
+
+    <mx:ApplicationControlBar dock="true" id="menuDock"/>
+
+    <mx:Panel id="myMainContentPanel" title="My Books demo app" status="Welcome" width="90%" height="90%"/>
+
 </mx:Application>

@@ -13,6 +13,14 @@
     <url>http://maven.apache.org</url>
     <dependencies>
         <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>books-flex-config</artifactId>
+            <version>${project.parent.version}</version>
+            <classifier>resources</classifier>
+            <type>zip</type>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
             <groupId>com.adobe.flex.sdk</groupId>
             <artifactId>playerglobal</artifactId>
             <version>3.0.0.3.0.0.477</version>
@@ -58,6 +66,7 @@
             <type>swc</type>
         </dependency>
     </dependencies>
+
     <build>
         <sourceDirectory>src/main/flex</sourceDirectory>
         <plugins>
@@ -70,9 +79,46 @@
                     <locales>
                         <param>en_US</param>
                     </locales>
+                    <contextRoot>books-web</contextRoot>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>unpack-config</id>
+                        <goals>
+                            <goal>unpack-dependencies</goal>
+                        </goals>
+                        <phase>generate-resources</phase>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex
+                            </outputDirectory>
+                            <includeArtifacIds>books-flex-config</includeArtifacIds>
+                            <includeGroupIds>${project.groupId}</includeGroupIds>
+                            <includeClassifiers>resources</includeClassifiers>
+                            <excludeTransitive>true</excludeTransitive>
+                            <excludeTypes>jar,swf</excludeTypes>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>info.rvin.mojo</groupId>
+                <artifactId>flex-compiler-mojo</artifactId>
+
+                <extensions>true</extensions>
             </plugin>
         </plugins>
         <defaultGoal>install</defaultGoal>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${basedir}/target/generated-resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
     </build>
 </project>

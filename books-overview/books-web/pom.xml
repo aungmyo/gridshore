@@ -36,6 +36,12 @@
             <type>zip</type>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>books-ria</artifactId>
+            <version>${project.version}</version>
+            <type>swf</type>
+        </dependency>
         <!-- spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
@@ -111,6 +117,17 @@
                             <includeClassifiers>resources</includeClassifiers>
                             <excludeTransitive>true</excludeTransitive>
                             <excludeTypes>jar,swf</excludeTypes>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>copy-swf</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>copy-dependencies</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.directory}/${project.build.finalName}</outputDirectory>
+                            <includeTypes>swf</includeTypes>
                         </configuration>
                     </execution>
                 </executions>

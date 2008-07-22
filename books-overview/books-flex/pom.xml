@@ -9,7 +9,7 @@
     <groupId>nl.gridshore.samples.books</groupId>
     <artifactId>books-flex</artifactId>
     <packaging>war</packaging>
-    <name>books-flex Maven Webapp</name>
+    <name>books-web Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
         <!-- internal dependencies -->
@@ -71,37 +71,6 @@
             <artifactId>xalan</artifactId>
             <version>2.6.0</version>
         </dependency>
-        <!-- created these dependencies myself from libraries provided -->
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>cfgatewayadapter</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>flex-messaging-common</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>flex-messaging-core</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>flex-messaging-opt</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>flex-messaging-proxy</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
-        <dependency>
-            <groupId>adobe</groupId>
-            <artifactId>flex-messaging-remoting</artifactId>
-            <version>3.0.0.544</version>
-        </dependency>
         <!-- other dependencies -->
         <dependency>
 			<groupId>commons-logging</groupId>
@@ -122,5 +91,30 @@
     </dependencies>
     <build>
         <finalName>books-flex</finalName>
+        <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>prepare-package</phase>
+            <configuration>
+              <tasks>
+                  <ant antfile="build.xml" target="compile"/>
+
+                <!--
+                  Place any ant task here. You can add anything
+                  you can add between <target> and </target> in a
+                  build.xml.
+                -->
+
+              </tasks>
+            </configuration>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
     </build>
 </project>

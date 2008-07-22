@@ -12,26 +12,18 @@
         This application is used to get overview of all my books.
     </description>
 
-    <!--<licenses>-->
-        <!--<license>-->
-            <!--<url>http://www.myurl.com</url>-->
-            <!--<name>custom</name>-->
-            <!--<distribution>donotknow</distribution>-->
-            <!--<comments>self made</comments>-->
-        <!--</license>-->
-    <!--</licenses>-->
-
     <properties>
         <spring.version>2.5.3</spring.version>
     </properties>
 
     <modules>
+        <module>books-flex-config</module>
         <module>books-common</module>
         <module>books-domain</module>
         <module>books-integration</module>
         <module>books-business</module>
         <module>books-web</module>
-        <module>books-flex</module>
+        <module>books-ria</module>
     </modules>
 
     <dependencies>
@@ -139,18 +131,6 @@
     </distributionManagement>
     <build>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>nl.gridshore.samples.maven.plugins.license</groupId>-->
-                <!--<artifactId>maven-licenseoverview-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>writeoverview</id>-->
-                        <!--<goals>-->
-                            <!--<goal>writeoverview</goal>-->
-                        <!--</goals>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -178,13 +158,64 @@
                 </executions>
             </plugin>
         </plugins>
-<!--        <extensions> -->
-<!--            <extension> -->
-<!--                <groupId>org.apache.maven.wagon</groupId> -->
-<!--                <artifactId>wagon-ftp</artifactId> -->
-                <!--<version>1.0-alpha-6</version>-->
-<!--            </extension> -->
-<!--        </extensions> -->
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-assembly-plugin</artifactId>
+                    <version>2.2-beta-2</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+    <repositories>
+        <repository>
+            <id>flex-mojos-repository</id>
+            <url>http://flex-mojos.googlecode.com/svn/trunk/repository/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>epseelon-repository</id>
+            <url>http://m2repo.epseelon.org/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>flex-mojos-repository</id>
+            <url>http://flex-mojos.googlecode.com/svn/trunk/repository/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>epseelon-repository</id>
+            <url>http://m2repo.epseelon.org/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
 </project>
 

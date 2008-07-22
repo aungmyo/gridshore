@@ -1,0 +1,20 @@
+<project default="compile" basedir=".">
+    <property file="local.build.properties"/>
+    <property name="mxmlc.jar" location="${flex.sdk.dir}/lib/mxmlc.jar"/>
+    <property name="deployDirectory" value="${deploymentPath}"/>
+    <property name="testApplication" value="${testAppPath}"/>
+    <target name="compile">
+        <java
+                jar="${mxmlc.jar}"
+                fork="true"
+                maxmemory="512m"
+                failonerror="true">
+            <arg value="+flexlib=${flex.sdk.dir}/frameworks"/>
+            <arg line="-load-config+=flex-config.xml"/>
+            <arg line="-source-path ."/>
+            <arg line="-compiler.services ../webapp/WEB-INF/flex/services-config.xml"/>
+            <arg line="-compiler.context-root books-flex"/>
+            <arg line="-output='${deployDirectory}/${testAppFileName}'"/>
+        </java>
+    </target>
+</project>

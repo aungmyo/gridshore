@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<service id="remoting-service"
+         class="flex.messaging.services.RemotingService">
+    <adapters>
+        <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter"
+                            default="true"/>
+    </adapters>
+
+    <default-channels>
+        <channel ref="my-amf"/>
+    </default-channels>
+
+    <destination id="bookManager">
+        <properties>
+            <factory>spring</factory>
+            <source>bookManager</source>
+        </properties>
+    </destination>
+
+    <destination id="booksSecurityServices">
+        <properties>
+            <factory>spring</factory>
+            <source>booksSecurityServices</source>
+        </properties>
+    </destination>
+
+    <destination id="authenticationHelper">
+        <properties>
+            <source>nl.gridshore.samples.books.web.security.security.AuthenticationHelper</source>
+        </properties>
+    </destination>
+
+</service>

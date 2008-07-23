@@ -92,8 +92,7 @@
                         </goals>
                         <phase>generate-resources</phase>
                         <configuration>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex
-                            </outputDirectory>
+                            <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
                             <includeArtifacIds>books-flex-config</includeArtifacIds>
                             <includeGroupIds>${project.groupId}</includeGroupIds>
                             <includeClassifiers>resources</includeClassifiers>

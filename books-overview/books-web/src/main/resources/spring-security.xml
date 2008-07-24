@@ -7,9 +7,10 @@
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.xsd">
 
     <security:http auto-config="true">
-        <security:intercept-url pattern="index.html" filters="none"/>
+        <security:intercept-url pattern="/index.html" filters="none"/>
         <security:intercept-url pattern="/**/*.swf" filters="none"/>
-        <security:intercept-url pattern="*.html" access="ROLE_USER"/>
+        <security:intercept-url pattern="/**/*.html" access="ROLE_USER"/>
+        <security:intercept-url pattern="/**" filters="none"/>
     </security:http>
 
     <security:global-method-security>

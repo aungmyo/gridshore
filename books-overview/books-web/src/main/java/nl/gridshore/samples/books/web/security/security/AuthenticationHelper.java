@@ -28,7 +28,7 @@ public class AuthenticationHelper {
     }
 
     public AuthorizationData authenticatePrincipal(String username, String password) {
-        ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(flex.messaging.FlexContext.getServletConfig().getServletContext());
+        ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(FlexContext.getServletConfig().getServletContext());
         AuthenticationManager manager = (AuthenticationManager)appContext.getBean("_authenticationManager");
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username,password);
 

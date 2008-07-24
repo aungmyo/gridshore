@@ -10,17 +10,24 @@ import org.springframework.beans.factory.annotation.Autowired;
  * User: jettro
  * Date: Mar 21, 2008
  * Time: 8:50:45 AM
- * Helper class to create an initial set of objects in the datastore. We use the beans from this
+ * Helper class to create an initial set of objects in the datastore. We use the bean from this
  * application to fill the datastore
  */
 public class PrefillDatastore {
     private BookManager bookManager;
 
+    /**
+     * Constructor accepting the BookManager for access to creating books.
+     * @param bookManager
+     */
     @Autowired
     public PrefillDatastore(BookManager bookManager) {
         this.bookManager = bookManager;
     }
 
+    /**
+     * Method that uses the BookManager to create books in the datasource
+     */
     public void initializeDatastore() {
         createBookAndAuthors("Professional Java Development with the Spring Framework","0764574833",
                 "Rod Johnson", "Alef Arendsen");

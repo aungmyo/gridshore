@@ -9,10 +9,6 @@
         <service-include file-path="remoting-config.xml"/>
     </services>
 
-    <!--<security>-->
-        <!--<login-command class="flex.messaging.security.TomcatLoginCommand" server="Tomcat"/>-->
-    <!--</security>-->
-
     <channels>
         <channel-definition id="my-amf" class="mx.messaging.channels.AMFChannel">
             <endpoint url="http://{server.name}:{server.port}/{context.root}/messagebroker/amf"

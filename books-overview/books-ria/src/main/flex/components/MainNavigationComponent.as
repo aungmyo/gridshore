@@ -1,4 +1,5 @@
 package components {
+    import events.MainNavigationEvent;
     import model.UserData;
     import mx.controls.Alert;
     import flash.events.Event;

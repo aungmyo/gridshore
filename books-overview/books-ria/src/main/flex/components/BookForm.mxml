@@ -1,13 +1,18 @@
+<?xml version="1.0"?>
+<!-- components/AuthenticationForm.mxml -->
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" width="100%" height="100%" creationComplete="initBook()">
     <mx:Script>
         <![CDATA[
+        import services.BookService;
         import mx.controls.Alert;
         import mx.rpc.events.FaultEvent;
         import mx.collections.ArrayCollection;
-        import valueobjects.Book;
+        import model.Book;
 
         [Bindable]
         public var book:Book;
+
+        public var bookService:BookService = new BookService();
 
         private function initBook():void {
             if (book == null) {
@@ -20,7 +25,7 @@
             submitButton.enabled = false;
             book.title = bookTitle.text;
             book.isbn = bookIsbn.text;
-            srv.storeBook(book);            
+            bookService.storeBook(book);
             clearForm();
             submitButton.enabled = true;
         }
@@ -30,15 +35,9 @@
             initBook();
         }
 
-        private function faultHandler(event:FaultEvent):* {
-            Alert.show(event.fault.faultCode + ' ' + event.fault.faultString + ' ' + event.fault.faultDetail);
-        }
-        
         ]]>
     </mx:Script>
 
-    <mx:RemoteObject id="srv" destination="bookManager" fault="faultHandler(event)"/>
-    
     <mx:HBox>
         <mx:Form>
             <mx:FormItem label="title">
@@ -56,8 +55,4 @@
         </mx:VBox>
     </mx:HBox>
 
-    <!--<mx:Validator source="{bookTitle}" property="text" required="true"-->
-                  <!--trigger="{bookTitle}" triggerEvent="valueCommit"/>-->
-    <!--<mx:Validator source="{bookIsbn}" property="text" required="true"-->
-                  <!--trigger="{bookIsbn}" triggerEvent="valueCommit"/>-->
 </mx:Canvas>

@@ -1,4 +1,4 @@
-package valueobjects {
+package model {
     import mx.collections.ArrayCollection;
     [Bindable]
     [RemoteClass(alias="nl.gridshore.samples.books.domain.Book")]

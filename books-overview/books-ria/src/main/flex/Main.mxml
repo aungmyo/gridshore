@@ -12,7 +12,6 @@
         import components.MainNavigationComponent;
         import components.AuthenticationForm;
         import mx.controls.Label;
-        import security.AuthorizationControl;
         import mx.rpc.events.FaultEvent;
         import mx.controls.Alert;
 

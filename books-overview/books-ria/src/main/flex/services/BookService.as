@@ -1,7 +1,7 @@
 package services {
     import mx.collections.ArrayCollection;
     import mx.rpc.events.ResultEvent;
-    import valueobjects.BookSearchRequest;
+    import model.BookSearchRequest;
     import services.RemoteService;
 
     /**

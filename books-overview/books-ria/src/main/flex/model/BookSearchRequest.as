@@ -1,4 +1,4 @@
-package valueobjects {
+package model {
 [Bindable]
 [RemoteClass(alias="nl.gridshore.samples.books.common.vo.BookSearchRequest")]
     public class BookSearchRequest {

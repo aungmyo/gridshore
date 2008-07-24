@@ -13,13 +13,29 @@ import java.util.List;
  * Manager class for all book related functionality
  */
 public interface BookManager {
+    /**
+     * Returns a list of all books
+     * @return List of books
+     */
     List<Book> obtainAllBooks();
+
+    /**
+     * Returns a list of books filtered by the provided parameters in the BookSearchRequest object
+     * @param searchRequest BookSearchRequest object to contain parameters to filter the books on.
+     * @return List of books
+     */
     List<Book> obtainFilteredBooks(BookSearchRequest searchRequest);
+
+    /**
+     * Stored a book into the repository
+     * @param book Book to store
+     */
     void storeBook(Book book);
 
     /**
      * This method is used to prefill the database, this is not a good practice in real applications.
-     * We need this to be able to demonstrate the security requirements.
+     * We need this to be able to demonstrate the security requirements. The other store method is secured
+     * while this one is not.
      * @param book Book to store in the database
      */
     void internalUseStoreBook(Book book);

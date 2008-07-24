@@ -21,16 +21,29 @@ import nl.gridshore.samples.books.web.security.vo.AuthorizationData;
  * Class used to interact with the spring context and do the actual authentication.
  */
 public class AuthenticationHelper {
+    /**
+     * Checks if the current user is authenticated by evaluating the FlexContext
+     * @return Boolean true if the current user is authenticated and false elsewise
+     */
     public boolean principleIsAuthenticated() {
         Principal userPrincipal = FlexContext.getUserPrincipal();
         return userPrincipal != null;
 
     }
 
+    /**
+     * Takes the username and password as provided and checks the validaty of the credentials. Spring security is used to
+     * check the credentielas and to return the authenticated principal with it's authorized roles.
+     * @param username
+     * @param password
+     * @return
+     */
     public AuthorizationData authenticatePrincipal(String username, String password) {
-        ApplicationContext appContext = WebApplicationContextUtils.getWebApplicationContext(FlexContext.getServletConfig().getServletContext());
+        ApplicationContext appContext =
+                WebApplicationContextUtils.getWebApplicationContext(FlexContext.getServletConfig().getServletContext());
         AuthenticationManager manager = (AuthenticationManager)appContext.getBean("_authenticationManager");
-        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(username,password);
+        UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken =
+                new UsernamePasswordAuthenticationToken(username,password);
 
         Authentication authentication = manager.authenticate(usernamePasswordAuthenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);

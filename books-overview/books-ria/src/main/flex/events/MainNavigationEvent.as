@@ -1,4 +1,4 @@
-package components {
+package events {
     import mx.controls.Label;
     import mx.core.UIComponent;
     import flash.events.Event;

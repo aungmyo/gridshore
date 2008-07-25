@@ -12,7 +12,7 @@
         [Bindable]
         public var book:Book;
 
-        public var bookService:BookService = new BookService();
+        private var bookService:BookService = new BookService();
 
         private function initBook():void {
             if (book == null) {

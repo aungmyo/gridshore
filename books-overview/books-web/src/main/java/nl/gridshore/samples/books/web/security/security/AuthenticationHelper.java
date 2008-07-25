@@ -33,10 +33,11 @@ public class AuthenticationHelper {
 
     /**
      * Takes the username and password as provided and checks the validaty of the credentials. Spring security is used to
-     * check the credentielas and to return the authenticated principal with it's authorized roles.
-     * @param username
-     * @param password
-     * @return
+     * check the credentielas and to return the authenticated principal with it's authorized roles. An exception is thrown
+     * if the authentication failes.
+     * @param username String containing the username of the principal to login
+     * @param password String containing the password used to identify the current user
+     * @return AuthorizationData object containing the name of the principal and the authorized roles.
      */
     public AuthorizationData authenticatePrincipal(String username, String password) {
         ApplicationContext appContext =

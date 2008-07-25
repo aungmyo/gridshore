@@ -1,6 +1,7 @@
 <mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*"
                 creationComplete="initializeApplication()">
     <mx:Script><![CDATA[
+        import events.MainNavigationEvent;
         import events.RemoteExceptionEvent;
         import model.UserData;
         import events.AuthenticationEvent;
@@ -14,8 +15,6 @@
         import mx.controls.Label;
         import mx.rpc.events.FaultEvent;
         import mx.controls.Alert;
-
-        private var authorization:AuthorizationControl;
 
         private var authenticationHelper:SecurityService = new SecurityService();
 
@@ -45,7 +44,7 @@
          * and presented in the main panel.
          * @param event NavigationEvent thrown when a user clicks a menu item (by example)
          */
-        private function handleNavigationEvent(event:components.MainNavigationEvent):void {
+        private function handleNavigationEvent(event:MainNavigationEvent):void {
             myMainContentPanel.removeAllChildren();
             myMainContentPanel.addChild(event.createRightUIComponent());
         }
@@ -59,7 +58,7 @@
             var mainNavigation:MainNavigationComponent = new MainNavigationComponent();
             menuDock.addChild(mainNavigation);
             mainNavigation.visible = true;
-            mainNavigation.addEventListener(components.MainNavigationEvent.SELECT_ITEM, handleNavigationEvent);
+            mainNavigation.addEventListener(MainNavigationEvent.SELECT_ITEM, handleNavigationEvent);
             myMainContentPanel.removeAllChildren();
         }
 

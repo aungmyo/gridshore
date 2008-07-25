@@ -2,6 +2,9 @@ package events {
     import mx.controls.Label;
     import mx.core.UIComponent;
     import flash.events.Event;
+    import components.FilteredBooks;
+    import components.BookForm;
+
     public class MainNavigationEvent extends Event {
         public static var SELECT_ITEM:String = 'selectitem';
 

@@ -1,4 +1,4 @@
-package nl.gridshore.samples.books.web.security.security;
+package nl.gridshore.samples.books.web.security;
 
 import flex.messaging.FlexContext;
 

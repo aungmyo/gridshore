@@ -19,7 +19,7 @@
 
     <destination id="authenticationHelper">
         <properties>
-            <source>nl.gridshore.samples.books.web.security.security.AuthenticationHelper</source>
+            <source>nl.gridshore.samples.books.web.security.AuthenticationHelper</source>
         </properties>
     </destination>
 

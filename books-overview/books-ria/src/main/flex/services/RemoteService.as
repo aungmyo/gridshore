@@ -3,7 +3,6 @@ package services {
     import events.RemoteExceptionEvent;
     import events.AuthenticationFailureEvent;
     import mx.core.Application;
-    import mx.controls.Alert;
     import mx.rpc.events.FaultEvent;
 
     /**

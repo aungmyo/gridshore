@@ -46,7 +46,7 @@
         private function handleAuthenticationEvent(event:AuthenticationEvent):void {
             mainNavigation.initMyComponent();
             mainNavigation.addEventListener(MainNavigationEvent.SELECT_ITEM, handleNavigationEvent);
-            filteredBooks.addEventListener(BookSelectedEvent.SELECT_BOOK, handleBookSelectedEvent)
+            filteredBooks.addEventListener(BookSelectedEvent.SELECT_BOOK, handleBookSelectedEvent);
             showRightUIComponent("default");
         }
 

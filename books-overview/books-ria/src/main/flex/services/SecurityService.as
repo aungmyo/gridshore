@@ -1,14 +1,8 @@
 package services {
     import events.AuthenticationEvent;
-    import flash.events.Event;
     import mx.core.Application;
-    import mx.collections.ArrayCollection;
     import model.UserData;
-    import mx.utils.ObjectUtil;
-    import mx.controls.Alert;
     import mx.rpc.events.ResultEvent;
-    import mx.rpc.events.FaultEvent;
-    import mx.rpc.remoting.mxml.RemoteObject;
 
     /**
      * Class that extends the RemoteService class, therefore it makes use of the default error handling for
@@ -57,7 +51,6 @@ package services {
 
             Application.application.dispatchEvent(
                     new AuthenticationEvent(AuthenticationEvent.AUTHENTICATION,"user is authenticated"));
-        };
-
+        }
     }
 }

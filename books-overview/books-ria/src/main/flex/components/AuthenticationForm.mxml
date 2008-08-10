@@ -3,17 +3,16 @@
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml">
 
     <mx:Script><![CDATA[
+        import mx.core.Application;
         import events.AuthenticationFailureEvent;
         import services.SecurityService;
-        import mx.core.Application;
-        import flash.events.Event;
-        import mx.rpc.events.FaultEvent;
-        import mx.rpc.events.ResultEvent;
-        import mx.utils.ObjectUtil;
-        import mx.controls.Alert;
 
         public var securityService:SecurityService;
 
+        /**
+         * Handle the form submission. Try to authenticate the current user using the data from the form
+         * @return void
+         */
         private function submitLogin():void {
             submitButton.enabled = false;
             Application.application.addEventListener(
@@ -21,6 +20,11 @@
             securityService.authenticatePrincipal(userName.text,password.text);
         }
 
+        /**
+         * Used to handle a login failure event
+         * @param event : AuthenticationFailureEvent
+         * @return void
+         */
         private function loginServiceFaultHandler(event:AuthenticationFailureEvent):void {
             authenticationMessage.text = "Problem while authentication ...";
             authenticationMessage.visible = true;

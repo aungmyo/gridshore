@@ -1,23 +1,28 @@
 <?xml version="1.0"?>
-<!-- FilteredBooks.mxml -->
+<!-- components/FilteredBooks.mxml -->
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="initScreen()" width="100%" height="100%">
     <mx:Script><![CDATA[
+        import events.BookSelectedEvent;
         import model.BookSearchRequest;
         import services.BookService;
         import model.Book;
         import mx.events.ListEvent;
-        import mx.rpc.events.FaultEvent;
-        import mx.controls.Alert;
-        import mx.utils.ObjectUtil;
-        import mx.rpc.events.ResultEvent;
-        import mx.core.Application;
 
+        [Bindable]
         private var bookService:BookService = new BookService();
 
+        /**
+         * Initializing the screen for the first time it is opened
+         * @return void
+         */
         private function initScreen():void {
             doFilterBooks();
         }
 
+        /**
+         * Requests all books from the bookService using a filter
+         * @return void
+         */
         private function doFilterBooks():void {
             var bookSearchRequest:BookSearchRequest = new BookSearchRequest();
             bookSearchRequest.bookTitle = titleFilter.text;
@@ -25,18 +30,24 @@
             bookService.obtainFilteredBooks(bookSearchRequest)
         }
 
+        /**
+         * Remove all text from the filter
+         * @return void
+         */
         private function clearFilter():void {
             titleFilter.text = "";
             isbnFilter.text = "";
             doFilterBooks();
         }
 
+        /**
+         * Handles the click event by dispatching a unique BookSelectedEvent containing the clicked book
+         * @param event : ListEvent
+         * @return void
+         */
         private function selectBook(event:ListEvent):void {
             var selectedBook:Book = Book(event.currentTarget.selectedItem);
-            super.removeAllChildren();
-            var bookForm:BookForm = new BookForm();
-            bookForm.book = selectedBook;
-            super.addChild(bookForm);
+            dispatchEvent(new BookSelectedEvent(BookSelectedEvent.SELECT_BOOK,selectedBook));
         }
     ]]>
     </mx:Script>

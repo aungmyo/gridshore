@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!-- components/MainNavigationComponent.mxml -->
+<mx:HBox xmlns:mx="http://www.adobe.com/2006/mxml">
+    <mx:Script><![CDATA[
+        import events.MainNavigationEvent;
+        import model.UserData;
+
+        /**
+         * Makes the buttons visible that the current user should see
+         * @return void
+         */
+        public function initMyComponent():void {
+            allBooksButton.visible = true;
+            if (UserData.getInstance().isAdmin()) {
+                newBookButton.visible = true;
+            }
+        }
+
+        /**
+         * Uses the provided string to dispatch a new event to indicate that a button has been pressed.
+         * @param clickedItem : String
+         * @return void
+         */
+        private function clickHandler(clickedItem:String):void {
+            dispatchEvent(new MainNavigationEvent(MainNavigationEvent.SELECT_ITEM, clickedItem));
+        }
+
+]]></mx:Script>
+
+    <mx:Button id="allBooksButton" click="clickHandler('allbooks')" visible="false" label="All Books"/>
+    <mx:Button id="newBookButton" click="clickHandler('newbook')" visible="false" label="New Book"/>
+</mx:HBox>

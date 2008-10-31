@@ -10,21 +10,17 @@
     <bean class="nl.gridshore.stability.circuitbreaker.AnnotatedMethodCircuitBreakerInterceptor">
         <constructor-arg>
             <map>
-                <entry key="someWeirdSystem" value-ref="simpleCircuitBreaker"/>
-                <!--<entry key="someUnusedSystem" value-ref="unusedCircuitBreaker"/>-->
+                <entry key="someWeirdSystem" value-ref="circuitBreaker"/>
             </map>
         </constructor-arg>
     </bean>
 
-    <bean name="simpleCircuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>
-    <!--<bean name="unusedCircuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>-->
+    <bean name="circuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>
+    <bean name="unusedCircuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>
 
-   <bean id="mbeanExporter" class="org.springframework.jmx.export.MBeanExporter" lazy-init="false">
-        <property name="beans">
-            <map>
-                <entry key="Stability.CircuitBreakers:name=someWeirdSystem" value-ref="simpleCircuitBreaker"/>
-                <!--<entry key="Stability.CircuitBreakers:name=someUnusedSystem" value-ref="unusedCircuitBreaker"/>-->
-            </map>
+    <bean class="org.springframework.jmx.export.annotation.AnnotationMBeanExporter">
+        <property name="namingStrategy">
+            <bean class="nl.gridshore.stability.NamingStrategy"/>
         </property>
     </bean>
 </beans>

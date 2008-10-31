@@ -1,20 +1,9 @@
-package nl.gridshore.stability.circuitbreaker;/*
- * Copyright (c) 2008 JTeam B.V.
- * www.jteam.nl
- * All rights reserved.
- *
- * This software is the confidential and proprietary information of
- * JTeam B.V. ("Confidential Information").
- * You shall not disclose such Confidential Information and shall use
- * it only in accordance with the terms of the license agreement you
- * entered into with JTeam.
- */
+package nl.gridshore.stability.circuitbreaker;
 
-import nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker;
-import nl.gridshore.stability.circuitbreaker.Status;
 import nl.gridshore.stability.circuitbreaker.testutils.TestHarness;
-import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
 import java.io.IOException;
 
@@ -60,7 +49,7 @@ public class SimpleCircuitBreakerTest extends AbstractDependencyInjectionSpringC
     }
 
     @Autowired
-    public void setSimpleCircuitBreaker(final SimpleCircuitBreaker simpleCircuitBreaker) {
+    public void setSimpleCircuitBreaker(final @Qualifier("circuitBreaker")SimpleCircuitBreaker simpleCircuitBreaker) {
         this.simpleCircuitBreaker = simpleCircuitBreaker;
     }
 }

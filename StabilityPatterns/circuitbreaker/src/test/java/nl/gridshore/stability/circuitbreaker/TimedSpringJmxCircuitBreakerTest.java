@@ -7,9 +7,9 @@ import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
 
 import java.io.IOException;
 
-public class SimpleCircuitBreakerTest extends AbstractDependencyInjectionSpringContextTests {
+public class TimedSpringJmxCircuitBreakerTest extends AbstractDependencyInjectionSpringContextTests {
 
-    private SimpleCircuitBreaker simpleCircuitBreaker;
+    private TimedSpringJmxCircuitBreaker timedSpringJmxCircuitBreaker;
     private TestHarness testHarness;
 
     @Override
@@ -19,11 +19,11 @@ public class SimpleCircuitBreakerTest extends AbstractDependencyInjectionSpringC
 
     public void testCircuitBreakerOpens() throws IOException, InterruptedException {
         testHarness.setWaitTime(0);
-        assertEquals(Status.CLOSED, simpleCircuitBreaker.getStatus());
+        assertEquals(Status.CLOSED, timedSpringJmxCircuitBreaker.getStatus());
 
         testHarness.doMonitoredFailingOperation();
 
-        assertEquals(Status.CLOSED, simpleCircuitBreaker.getStatus());
+        assertEquals(Status.CLOSED, timedSpringJmxCircuitBreaker.getStatus());
 
         testHarness.setFail(true);
         for (int t = 0; t < 4; t++) {
@@ -34,14 +34,14 @@ public class SimpleCircuitBreakerTest extends AbstractDependencyInjectionSpringC
                 // swallow
             }
         }
-        assertEquals(Status.CLOSED, simpleCircuitBreaker.getStatus());
+        assertEquals(Status.CLOSED, timedSpringJmxCircuitBreaker.getStatus());
         try {
             testHarness.doMonitoredFailingOperation();
         }
         catch (RuntimeException ex) {
             // swallow
         }
-        assertEquals(Status.OPEN, simpleCircuitBreaker.getStatus());
+        assertEquals(Status.OPEN, timedSpringJmxCircuitBreaker.getStatus());
     }
 
     public void setTestHarness(final TestHarness testHarness) {
@@ -49,7 +49,7 @@ public class SimpleCircuitBreakerTest extends AbstractDependencyInjectionSpringC
     }
 
     @Autowired
-    public void setSimpleCircuitBreaker(final @Qualifier("circuitBreaker")SimpleCircuitBreaker simpleCircuitBreaker) {
-        this.simpleCircuitBreaker = simpleCircuitBreaker;
+    public void setSimpleCircuitBreaker(final @Qualifier("circuitBreaker")TimedSpringJmxCircuitBreaker timedSpringJmxCircuitBreaker) {
+        this.timedSpringJmxCircuitBreaker = timedSpringJmxCircuitBreaker;
     }
 }

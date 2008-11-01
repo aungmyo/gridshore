@@ -15,8 +15,8 @@
         </constructor-arg>
     </bean>
 
-    <bean name="circuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>
-    <bean name="unusedCircuitBreaker" class="nl.gridshore.stability.circuitbreaker.SimpleCircuitBreaker"/>
+    <bean name="circuitBreaker" class="nl.gridshore.stability.circuitbreaker.TimedSpringJmxCircuitBreaker"/>
+    <bean name="unusedCircuitBreaker" class="nl.gridshore.stability.circuitbreaker.TimedSpringJmxCircuitBreaker"/>
 
     <bean class="org.springframework.jmx.export.annotation.AnnotationMBeanExporter">
         <property name="namingStrategy">

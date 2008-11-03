@@ -30,4 +30,12 @@ public interface CircuitBreaker {
      * @param args       The arguments of the intercepted method call
      */
     void registerSuccessfulCall(String methodName, Object target, Object retVal, Object... args);
+
+    /**
+     * Return the current status of the Circuit Breaker. CLOSED means the Circuit Breaker doesn't block any calls and
+     * operation is as expected. OPEN means the circuit breaker is currently blocking calls.
+     *
+     * @return the current status of the Circuit Breaker
+     */
+    Status getStatus();
 }

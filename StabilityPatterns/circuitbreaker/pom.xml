@@ -10,7 +10,7 @@
     <version>1.0-SNAPSHOT</version>
 
     <parent>
-		<groupId>nl.gridshore.stability</groupId>
+        <groupId>nl.gridshore.stability</groupId>
         <artifactId>stability</artifactId>
         <version>1.0-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -22,25 +22,29 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-aop</artifactId>
             <version>${spring-version}</version>
+            <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring-version}</version>
+            <optional>true</optional>
         </dependency>
-
 
         <dependency>
             <groupId>aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.5.3</version>
+            <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.5.3</version>
+            <optional>true</optional>
         </dependency>
-
 
     </dependencies>
 

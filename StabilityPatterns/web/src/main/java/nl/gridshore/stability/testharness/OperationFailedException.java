@@ -1,4 +1,4 @@
-package nl.gridshore.stability.circuitbreaker.testutils;
+package nl.gridshore.stability.testharness;
 
 public class OperationFailedException extends RuntimeException {
 

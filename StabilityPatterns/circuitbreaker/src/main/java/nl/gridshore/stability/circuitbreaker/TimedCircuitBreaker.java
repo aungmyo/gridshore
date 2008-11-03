@@ -30,7 +30,7 @@ public class TimedCircuitBreaker implements CircuitBreaker, CircuitBreakerStatis
     /**
      * The current status of the circuit breaker
      */
-    private volatile Status status = Status.CLOSED;
+    private AtomicReference<Status> status = new AtomicReference<Status>(Status.CLOSED);
 
     /**
      * The last exception registered with the circuit breaker. Should be <code>null</code> if the status is <code>CLOSED</cod>.
@@ -52,7 +52,7 @@ public class TimedCircuitBreaker implements CircuitBreaker, CircuitBreakerStatis
      * {@inheritDoc}
      */
     public void registerCall(String methodName, Object target, Object... args) throws Exception {
-        if (status == Status.OPEN) {
+        if (status.get() == Status.OPEN) {
             long currentCoolDown = coolDown.get();
             if (currentCoolDown > System.currentTimeMillis() || !coolDown.compareAndSet(currentCoolDown, currentCoolDown + retryThreshold)) {
                 blockedCalls.incrementAndGet();
@@ -67,26 +67,30 @@ public class TimedCircuitBreaker implements CircuitBreaker, CircuitBreakerStatis
     public void registerFailedCall(String methodName, Object target, Exception exception, Object... args) {
         long failed = failedCalls.incrementAndGet();
         if (failed >= failedCallThreshold) {
-            status = Status.OPEN;
+            if (status.compareAndSet(Status.CLOSED, Status.OPEN)) {
+                sendStateChangeNotification(Status.CLOSED, Status.OPEN);
+            }
             lastException.compareAndSet(null, exception);
             coolDown.set(System.currentTimeMillis() + retryThreshold);
         }
+    }
+
+    protected void sendStateChangeNotification(Status oldStatus, Status newStatus) {
+        // no notifications for this implementation.
     }
 
     /**
      * {@inheritDoc}
      */
     public void registerSuccessfulCall(String methodName, Object target, Object retVal, Object... args) {
-        if (status == Status.OPEN) {
-            reset();
-        }
+        reset();
     }
 
     /**
      * {@inheritDoc}
      */
     public Status getStatus() {
-        return status;
+        return status.get();
     }
 
 
@@ -101,7 +105,9 @@ public class TimedCircuitBreaker implements CircuitBreaker, CircuitBreakerStatis
 
     /* Helper methods */
     protected void reset() {
-        status = Status.CLOSED;
+        if (status.compareAndSet(Status.OPEN, Status.CLOSED)) {
+            sendStateChangeNotification(Status.OPEN, Status.CLOSED);
+        }
         failedCalls.set(0);
         blockedCalls.set(0);
         lastException.set(null);

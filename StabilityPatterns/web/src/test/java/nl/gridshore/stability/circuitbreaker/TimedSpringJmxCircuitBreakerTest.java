@@ -1,6 +1,6 @@
 package nl.gridshore.stability.circuitbreaker;
 
-import nl.gridshore.stability.circuitbreaker.testutils.TestHarness;
+import nl.gridshore.stability.testharness.TestHarness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.test.AbstractDependencyInjectionSpringContextTests;
@@ -14,11 +14,13 @@ public class TimedSpringJmxCircuitBreakerTest extends AbstractDependencyInjectio
 
     @Override
     protected String[] getConfigLocations() {
-        return new String[]{"context/circuitbreaker-config.xml", "/context/testharness-config.xml"};
+        return new String[]{"classpath:/context/circuitbreaker-config.xml", "classpath:/context/testharness-config.xml"};
     }
 
     public void testCircuitBreakerOpens() throws IOException, InterruptedException {
+        testHarness.setFail(false);
         testHarness.setWaitTime(0);
+
         assertEquals(Status.CLOSED, timedSpringJmxCircuitBreaker.getStatus());
 
         testHarness.doMonitoredFailingOperation();

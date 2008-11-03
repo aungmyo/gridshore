@@ -1,11 +1,11 @@
-package nl.gridshore.stability.circuitbreaker.testutils;
+package nl.gridshore.stability.testharness;
 
 import nl.gridshore.stability.circuitbreaker.Monitored;
 
 public class TestHarness {
 
-    private volatile int waitTime = 5000;
-    private volatile boolean fail = false;
+    private volatile int waitTime = 2000;
+    private volatile boolean fail = true;
 
     @Monitored("someWeirdSystem")
     public void doMonitoredFailingOperation() {
@@ -15,7 +15,7 @@ public class TestHarness {
             } catch (InterruptedException e) {
                 throw new RuntimeException("Did not have enough time to finish operation", e);
             }
-            throw new OperationFailedException("That was the other call");
+            throw new OperationFailedException("That was the failed call");
         }
     }
 

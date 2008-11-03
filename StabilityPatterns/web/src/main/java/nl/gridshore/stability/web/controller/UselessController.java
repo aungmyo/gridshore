@@ -1,7 +1,7 @@
 package nl.gridshore.stability.web.controller;
 
-import nl.gridshore.stability.circuitbreaker.testutils.OperationFailedException;
-import nl.gridshore.stability.circuitbreaker.testutils.TestHarness;
+import nl.gridshore.stability.testharness.OperationFailedException;
+import nl.gridshore.stability.testharness.TestHarness;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

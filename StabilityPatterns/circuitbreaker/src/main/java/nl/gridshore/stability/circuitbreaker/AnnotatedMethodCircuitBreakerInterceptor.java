@@ -5,16 +5,17 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
-import java.util.Collections;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 
 @Aspect
 public class AnnotatedMethodCircuitBreakerInterceptor {
 
-    private final Map<String, CircuitBreaker> circuitBreakers;
+    private final ConcurrentMap<String, CircuitBreaker> circuitBreakers;
 
     public AnnotatedMethodCircuitBreakerInterceptor(final Map<String, CircuitBreaker> circuitBreakers) {
-        this.circuitBreakers = Collections.unmodifiableMap(circuitBreakers);
+        this.circuitBreakers = new ConcurrentHashMap<String, CircuitBreaker>(circuitBreakers);
     }
 
     @Pointcut(value = "@annotation(monitored)", argNames = "monitored")
@@ -39,6 +40,10 @@ public class AnnotatedMethodCircuitBreakerInterceptor {
             relevantCircuitBreaker.registerFailedCall(methodName, pjp.getTarget(), ex, pjp.getArgs());
             throw ex;
         }
+    }
+
+    public void registerCircuitBreaker(String systemName, CircuitBreaker circuitBreaker) {
+        circuitBreakers.put(systemName, circuitBreaker);
     }
 
 }

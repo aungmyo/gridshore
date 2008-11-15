@@ -56,6 +56,9 @@ public class BookManagerImpl implements BookManager {
                 authorDao.save(author);
             }
         }
+        if (book.getId() != null && book.getId() == 0) {
+            book.setId(null);
+        }
         bookDao.save(book);
     }
 

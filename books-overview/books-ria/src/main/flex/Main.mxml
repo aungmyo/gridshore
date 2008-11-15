@@ -19,13 +19,14 @@
         private function initializeApplication():void {
             Application.application.addEventListener(AuthenticationEvent.AUTHENTICATION, handleAuthenticationEvent);
             Application.application.addEventListener(RemoteExceptionEvent.REMOTE_EXCEPTION, handleRemoteExceptionEvent);
-            authenticateUser();
+            Application.application.addEventListener(AuthenticationEvent.NEEDS_AUTHENTICATION, handleNeedsAuthenticationEvent);
+            authenticationHelper.isPrincipalAuthenticatedBefore();
         }
 
         /**
          * Used to present the form where a user can enter his credentials and ask for authentication
          */
-        private function authenticateUser():void {
+        private function handleNeedsAuthenticationEvent(event:AuthenticationEvent):void {
             showRightUIComponent('authentication');
         }
 

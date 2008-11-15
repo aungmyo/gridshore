@@ -49,6 +49,10 @@ public class AuthenticationHelper {
         Authentication authentication = manager.authenticate(usernamePasswordAuthenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
 
+        return obtainGrantedAuthorities();
+    }
+
+    private AuthorizationData obtainGrantedAuthorities() {
         GrantedAuthority[] authorities =
                 SecurityContextHolder.getContext().getAuthentication().getAuthorities();
         int numAuthorities = authorities.length;
@@ -58,5 +62,14 @@ public class AuthenticationHelper {
         }
         String name = SecurityContextHolder.getContext().getAuthentication().getName();
         return new AuthorizationData(grantedRoles,name);
+    }
+
+    /**
+     * Returns all data from the current logged in principal. Since we make use of the anonymous user, there
+     * will always be an authenticated principal
+     * @return AuthorizationData containing info about the curent user and the current authorized roles
+     */
+    public AuthorizationData checkUserIsAllreadyAuthenticated() {
+        return obtainGrantedAuthorities();
     }
 }

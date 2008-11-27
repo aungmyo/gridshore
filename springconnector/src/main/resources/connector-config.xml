@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- loads the propety file from the classpath with some configuration parameters
+         default file is loaded from the jar file. Place your on version ealier on the classpath.
+     -->
+    <bean id="jcrConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="jcrconfig.properties"/>
+        <property name="placeholderPrefix" value="$jcr{"/>
+    </bean>
+
+    <!-- bean that should be used by client code -->
+    <bean id="sessionTemplate" class="nl.gridshore.samples.hippo.impl.RepoSessionTemplateImpl">
+        <property name="hippoSessionFactory" ref="sessionFactory"/>
+        <property name="hippoSessionPool" ref="hippoSessionPool"/>
+    </bean>
+
+    <!-- Special spring factory bean to create a HippoRepository instance -->
+    <bean id="hippoRepositoryFactory" class="nl.gridshore.samples.hippo.HippoRepositoryFactory">
+        <!-- Since we use the default the following is optional -->
+        <constructor-arg index="0" value="$jcr{jcr.rmi.connection.url}"/>
+    </bean>
+
+    <!-- Session pool that contains pooled session for read only actions -->
+    <bean id="hippoSessionPool" class="nl.gridshore.samples.hippo.impl.HippoSessionPoolImpl">
+        <property name="hippoSessionFactory" ref="sessionFactory"/>
+        <property name="amountSessionsAtStart" value="$jcr{max.sessions.in.pool}"/>
+    </bean>
+
+    <!-- Factory bean used to create new Sessions for the hippo repository -->
+    <bean id="sessionFactory" class="nl.gridshore.samples.hippo.impl.HippoSessionFactoryImpl">
+        <property name="hippoRepository" ref="hippoRepositoryFactory"/>
+        <!-- following parameters are optional -->
+        <property name="defaultUsername" value="$jcr{jcr.username}"/>
+        <property name="defaultPassword" value="$jcr{jcr.password}"/>
+    </bean>
+
+</beans>

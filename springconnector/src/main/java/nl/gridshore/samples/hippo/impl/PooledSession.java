@@ -23,7 +23,7 @@ public class PooledSession extends WrappedSession implements RepoSession {
      * @param session Session that is wrapped and contains the actal connection to the hippo repository
      * @param hippoSessionPool HippoSessionPool that this session is coming from.
      */
-    public PooledSession(Session session, HippoSessionPool hippoSessionPool) {
+    PooledSession(Session session, HippoSessionPool hippoSessionPool) {
         super(session);
         this.hippoSessionPool = hippoSessionPool;
     }
@@ -36,7 +36,7 @@ public class PooledSession extends WrappedSession implements RepoSession {
     /**
      * Protected method that should only be called by the HttpSessionPool
      */
-    protected void doClose() {
+    void doClose() {
         super.close();
     }
 }

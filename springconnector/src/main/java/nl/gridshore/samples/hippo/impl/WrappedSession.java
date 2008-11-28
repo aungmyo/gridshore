@@ -17,7 +17,7 @@ import javax.jcr.RepositoryException;
 public class WrappedSession implements RepoSession {
     private Session session;
 
-    public WrappedSession(Session session) {
+    WrappedSession(Session session) {
         this.session = session;
     }
 

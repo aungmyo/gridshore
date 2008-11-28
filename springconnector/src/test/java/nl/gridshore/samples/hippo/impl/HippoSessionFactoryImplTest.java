@@ -9,7 +9,7 @@ import static org.easymock.EasyMock.*;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
 
-import nl.gridshore.samples.hippo.exception.ConfigurationException;
+import nl.gridshore.samples.hippo.ConfigurationException;
 
 /**
  * Created by IntelliJ IDEA.

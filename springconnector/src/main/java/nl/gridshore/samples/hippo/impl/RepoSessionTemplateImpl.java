@@ -30,7 +30,7 @@ public class RepoSessionTemplateImpl implements RepoSessionTemplate {
 
     public Node readFromSession(SessionCallback sessionCallback) throws RepositoryException {
         logger.debug("Read from session is called without username");
-        PooledWrappedSession session = hippoSessionPool.obtainSession();
+        PooledSession session = hippoSessionPool.obtainSession();
         return doReadFromSession(sessionCallback, session);
     }
 

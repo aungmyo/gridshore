@@ -1,4 +1,8 @@
-package nl.gridshore.samples.hippo;
+package nl.gridshore.samples.hippo.impl;
+
+import nl.gridshore.samples.hippo.impl.WrappedSession;
+import nl.gridshore.samples.hippo.RepoSession;
+import nl.gridshore.samples.hippo.HippoSessionPool;
 
 import javax.jcr.Session;
 
@@ -10,7 +14,7 @@ import javax.jcr.Session;
  * Special extension to the <code>WrappedSession</code> that makes it easier to pool the session. The close method is
  * overridden to make sure the session are only closed by the Session pool.
  */
-public class PooledWrappedSession extends WrappedSession implements RepoSession{
+public class PooledSession extends WrappedSession implements RepoSession {
     private HippoSessionPool hippoSessionPool;
 
     /**
@@ -19,7 +23,7 @@ public class PooledWrappedSession extends WrappedSession implements RepoSession{
      * @param session Session that is wrapped and contains the actal connection to the hippo repository
      * @param hippoSessionPool HippoSessionPool that this session is coming from.
      */
-    public PooledWrappedSession(Session session, HippoSessionPool hippoSessionPool) {
+    public PooledSession(Session session, HippoSessionPool hippoSessionPool) {
         super(session);
         this.hippoSessionPool = hippoSessionPool;
     }
@@ -32,7 +36,7 @@ public class PooledWrappedSession extends WrappedSession implements RepoSession{
     /**
      * Protected method that should only be called by the HttpSessionPool
      */
-    public void doClose() {
+    protected void doClose() {
         super.close();
     }
 }

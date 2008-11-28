@@ -7,6 +7,8 @@ import javax.jcr.Node;
 import javax.jcr.NodeIterator;
 import javax.jcr.RepositoryException;
 
+import nl.gridshore.samples.hippo.impl.WrappedSession;
+
 /**
  * Created by IntelliJ IDEA.
  * User: jettro

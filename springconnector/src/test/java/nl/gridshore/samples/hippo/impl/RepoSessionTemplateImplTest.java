@@ -36,17 +36,17 @@ public class RepoSessionTemplateImplTest {
     @Test
     public void executePooledCallback() throws RepositoryException {
         final Node mockNode = createMock(Node.class);
-        PooledWrappedSession mockPooledWrappedSession = createMock(PooledWrappedSession.class);
-        expect(mockHippoSessionPool.obtainSession()).andReturn(mockPooledWrappedSession);
+        PooledSession mockPooledSession = createMock(PooledSession.class);
+        expect(mockHippoSessionPool.obtainSession()).andReturn(mockPooledSession);
 
-        mockPooledWrappedSession.close();
+        mockPooledSession.close();
         expectLastCall().once();
 
-        replay(mockHippoSessionPool,mockNode,mockPooledWrappedSession);
+        replay(mockHippoSessionPool,mockNode, mockPooledSession);
 
         Node returnedNode = repoSessionTemplate.readFromSession(new SessionCallback() {
             public Node readFromSession(WrappedSession session) throws RepositoryException {
-                assertTrue(session instanceof PooledWrappedSession);
+                assertTrue(session instanceof PooledSession);
                 assertNotNull(session);
                 return mockNode;
             }

@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.easymock.EasyMock.*;
 import nl.gridshore.samples.hippo.HippoSessionFactory;
-import nl.gridshore.samples.hippo.PooledWrappedSession;
+import nl.gridshore.samples.hippo.impl.PooledSession;
 
 import javax.jcr.Session;
 
@@ -41,7 +41,7 @@ public class HippoSessionPoolImplTest {
 
         hippoSessionPool.afterPropertiesSet();
 
-        PooledWrappedSession session = hippoSessionPool.obtainSession();
+        PooledSession session = hippoSessionPool.obtainSession();
 
         assertNotNull(session);
         verify(mockHippoSessionFactory,mockSession);
@@ -59,8 +59,8 @@ public class HippoSessionPoolImplTest {
 
         hippoSessionPool.afterPropertiesSet();
 
-        PooledWrappedSession session1 = hippoSessionPool.obtainSession();
-        PooledWrappedSession session2 = hippoSessionPool.obtainSession();
+        PooledSession session1 = hippoSessionPool.obtainSession();
+        PooledSession session2 = hippoSessionPool.obtainSession();
 
         assertNotNull(session1);
         assertNotNull(session2);

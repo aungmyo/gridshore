@@ -1,4 +1,6 @@
-package nl.gridshore.samples.hippo;
+package nl.gridshore.samples.hippo.impl;
+
+import nl.gridshore.samples.hippo.RepoSession;
 
 import javax.jcr.Session;
 import javax.jcr.Node;

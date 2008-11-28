@@ -1,5 +1,7 @@
 package nl.gridshore.samples.hippo;
 
+import nl.gridshore.samples.hippo.impl.PooledSession;
+
 import javax.jcr.RepositoryException;
 
 /**
@@ -12,6 +14,6 @@ import javax.jcr.RepositoryException;
  * returned to the pool.
  */
 public interface HippoSessionPool {
-    PooledWrappedSession obtainSession() throws RepositoryException;
-    void returnSession(PooledWrappedSession session);
+    PooledSession obtainSession() throws RepositoryException;
+    void returnSession(PooledSession session);
 }

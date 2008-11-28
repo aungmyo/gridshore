@@ -1,4 +1,4 @@
-package nl.gridshore.samples.hippo;
+package nl.gridshore.samples.hippo.impl;
 
 import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;

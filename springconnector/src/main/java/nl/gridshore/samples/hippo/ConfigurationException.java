@@ -1,4 +1,4 @@
-package nl.gridshore.samples.hippo.exception;
+package nl.gridshore.samples.hippo;
 
 /**
  * Created by IntelliJ IDEA.

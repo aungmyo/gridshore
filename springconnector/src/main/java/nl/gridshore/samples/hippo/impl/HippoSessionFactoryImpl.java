@@ -1,7 +1,7 @@
 package nl.gridshore.samples.hippo.impl;
 
 import nl.gridshore.samples.hippo.HippoSessionFactory;
-import nl.gridshore.samples.hippo.exception.ConfigurationException;
+import nl.gridshore.samples.hippo.ConfigurationException;
 import org.hippoecm.repository.HippoRepository;
 import org.springframework.beans.factory.annotation.Required;
 

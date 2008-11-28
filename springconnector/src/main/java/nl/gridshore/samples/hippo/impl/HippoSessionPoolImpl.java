@@ -1,7 +1,7 @@
 package nl.gridshore.samples.hippo.impl;
 
 import nl.gridshore.samples.hippo.HippoSessionPool;
-import nl.gridshore.samples.hippo.PooledWrappedSession;
+import nl.gridshore.samples.hippo.impl.PooledSession;
 import nl.gridshore.samples.hippo.HippoSessionFactory;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
@@ -32,15 +32,15 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
     private static Logger logger = LoggerFactory.getLogger(HippoSessionPoolImpl.class);
 
     private HippoSessionFactory hippoSessionFactory;
-    private ConcurrentLinkedQueue<PooledWrappedSession> concurrentMap;
+    private ConcurrentLinkedQueue<PooledSession> concurrentMap;
     private int amountSessionsAtStart = 10;
 
     public HippoSessionPoolImpl() {
-        concurrentMap = new ConcurrentLinkedQueue<PooledWrappedSession>();
+        concurrentMap = new ConcurrentLinkedQueue<PooledSession>();
     }
 
-    public PooledWrappedSession obtainSession() throws RepositoryException {
-        PooledWrappedSession session = null;
+    public PooledSession obtainSession() throws RepositoryException {
+        PooledSession session = null;
         while (session == null && !concurrentMap.isEmpty()) {
             session = concurrentMap.poll();
             if (!session.isLive()) {
@@ -52,7 +52,7 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
 
         if (session == null) {
             Session hippoSession = hippoSessionFactory.createNewSession();
-            session = new PooledWrappedSession(hippoSession,this);
+            session = new PooledSession(hippoSession,this);
             logger.debug("A new session object with id {} is created since the pool was empty",session.toString());
         } else {
             logger.debug("A pooled session object is returned from the pool with object id {}",session.toString());
@@ -61,7 +61,7 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
         return session;
     }
 
-    public void returnSession(PooledWrappedSession session) {
+    public void returnSession(PooledSession session) {
         logger.debug("A session with id {} is returned to the pool",session.toString());
         concurrentMap.add(session);
     }
@@ -71,9 +71,9 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
 
         for (int i = 0; i < amountSessionsAtStart; i++) {
             Session session = hippoSessionFactory.createNewSession();
-            PooledWrappedSession pooledWrappedSession = new PooledWrappedSession(session,this);
-            logger.debug("A pooled session is created with id {}",pooledWrappedSession.toString());
-            concurrentMap.add(pooledWrappedSession);
+            PooledSession pooledSession = new PooledSession(session,this);
+            logger.debug("A pooled session is created with id {}", pooledSession.toString());
+            concurrentMap.add(pooledSession);
         }
     }
 

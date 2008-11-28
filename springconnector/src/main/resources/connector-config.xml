@@ -18,7 +18,7 @@
     </bean>
 
     <!-- Special spring factory bean to create a HippoRepository instance -->
-    <bean id="hippoRepositoryFactory" class="nl.gridshore.samples.hippo.HippoRepositoryFactory">
+    <bean id="hippoRepositoryFactory" class="nl.gridshore.samples.hippo.impl.HippoRepositoryFactory">
         <!-- Since we use the default the following is optional -->
         <constructor-arg index="0" value="$jcr{jcr.rmi.connection.url}"/>
     </bean>

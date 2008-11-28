@@ -1,6 +1,6 @@
 package nl.gridshore.samples.hippo;
 
-import nl.gridshore.samples.hippo.WrappedSession;
+import nl.gridshore.samples.hippo.impl.WrappedSession;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;

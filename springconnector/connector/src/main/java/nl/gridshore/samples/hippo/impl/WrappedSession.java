@@ -5,6 +5,7 @@ import nl.gridshore.samples.hippo.RepoSession;
 import javax.jcr.Session;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Workspace;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,5 +32,9 @@ public class WrappedSession implements RepoSession {
 
     public Node getRootNode() throws RepositoryException {
         return session.getRootNode();
+    }
+
+    public Workspace getWorkspace() {
+        return session.getWorkspace();
     }
 }

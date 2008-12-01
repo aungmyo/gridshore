@@ -1,6 +1,7 @@
 package nl.gridshore.samples.hippo.web;
 
 import org.springframework.ws.server.endpoint.AbstractJDomPayloadEndpoint;
+import org.springframework.beans.factory.annotation.Required;
 import org.jdom.Element;
 import org.jdom.Namespace;
 import org.jdom.JDOMException;
@@ -9,6 +10,15 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Date;
+
+import nl.gridshore.samples.hippo.RepoSessionTemplate;
+import nl.gridshore.samples.hippo.SessionCallback;
+import nl.gridshore.samples.hippo.impl.WrappedSession;
+
+import javax.jcr.query.QueryResult;
+import javax.jcr.query.QueryManager;
+import javax.jcr.query.Query;
+import javax.jcr.*;
 
 
 /**
@@ -20,6 +30,8 @@ import java.util.Date;
  */
 public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
     private static Logger logger = LoggerFactory.getLogger(SearchNewsEndpoint.class);
+
+    private RepoSessionTemplate repoSessionTemplate;
 
     private XPath searchTextExpression;
     private Namespace namespace;
@@ -36,23 +48,46 @@ public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
     }
 
     protected Element invokeInternal(Element requestElement) throws Exception {
-        String searchText = searchTextExpression.valueOf(requestElement);
-        logger.info(searchText);
+        final String searchText = searchTextExpression.valueOf(requestElement);
 
         Element searchResponse = new Element("SearchResponse",namespace);
 
-        Element title = new Element("Title",namespace);
-        title.setText("The title");
+        QueryResult queryResult = repoSessionTemplate.readFromSession(new SessionCallback() {
+            public QueryResult readFromSession(WrappedSession session) throws RepositoryException {
+                Workspace workspace = session.getWorkspace();
+                QueryManager queryManager = workspace.getQueryManager();
+                Query query = queryManager.createQuery("//element(*,poc:document)[jcr:like(@poc:introductie,'%"
+                        + searchText + "%')]", Query.XPATH);
+                return query.execute();
+            }
+        });
+        NodeIterator nodes = queryResult.getNodes();
+        while (nodes.hasNext()) {
+            Node node = nodes.nextNode();
+            Property introductie = node.getProperty("poc:introductie");
+            Property titel = node.getProperty("poc:titel");
+            Property documentdatum = node.getProperty("poc:documentdatum");
 
-        Element messageContent = new Element("MessageContent",namespace);
-        messageContent.setText("the message");
+            Element document = new Element("NewsDocument",namespace);
+            Element title = new Element("Title",namespace);
+            Element messageContent = new Element("MessageContent",namespace);
+            Element publicationDate = new Element("PublicationDate",namespace);
 
-        Element publicationDate = new Element("PublicationDate",namespace);
-        publicationDate.setText((new Date()).toString());
+            title.setText(introductie.getString());
+            messageContent.setText(titel.getString());
+            publicationDate.setText(documentdatum.getString());
 
-        searchResponse.addContent(title);
-        searchResponse.addContent(messageContent);
-        searchResponse.addContent(publicationDate);
+            document.addContent(title);
+            document.addContent(messageContent);
+            document.addContent(publicationDate);
+            searchResponse.addContent(document);
+        }
+
         return searchResponse;
+    }
+
+    @Required
+    public void setRepoSessionTemplate(RepoSessionTemplate repoSessionTemplate) {
+        this.repoSessionTemplate = repoSessionTemplate;
     }
 }

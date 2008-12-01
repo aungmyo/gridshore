@@ -5,6 +5,18 @@
 
     <display-name>ws-exposure</display-name>
 
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:connector-config.xml,
+            classpath:spring-servlet.xml
+        </param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 
     <servlet>
         <servlet-name>spring</servlet-name>
@@ -13,6 +25,11 @@
             <param-name>transformWsdlLocations</param-name>
             <param-value>true</param-value>
         </init-param>
+        <init-param>
+            <param-name>namespace</param-name>
+            <param-value>/classes/spring-servlet</param-value>
+        </init-param>
+
     </servlet>
 
     <servlet-mapping>

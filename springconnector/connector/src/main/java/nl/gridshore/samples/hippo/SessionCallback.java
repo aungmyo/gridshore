@@ -4,6 +4,7 @@ import nl.gridshore.samples.hippo.impl.WrappedSession;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
@@ -19,5 +20,5 @@ public interface SessionCallback {
      * @return Node as a result from the implemented callback method
      * @throws RepositoryException Thrown when something goes wrong with the repository
      */
-    Node readFromSession(WrappedSession session) throws RepositoryException;
+    QueryResult readFromSession(WrappedSession session) throws RepositoryException;
 }

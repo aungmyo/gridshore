@@ -5,6 +5,7 @@ import nl.gridshore.samples.hippo.*;
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.query.QueryResult;
 
 import static org.easymock.classextension.EasyMock.*;
 import org.junit.Before;
@@ -35,7 +36,7 @@ public class RepoSessionTemplateImplTest {
 
     @Test
     public void executePooledCallback() throws RepositoryException {
-        final Node mockNode = createMock(Node.class);
+        final QueryResult mockNode = createMock(QueryResult.class);
         PooledSession mockPooledSession = createMock(PooledSession.class);
         expect(mockHippoSessionPool.obtainSession()).andReturn(mockPooledSession);
 
@@ -44,8 +45,8 @@ public class RepoSessionTemplateImplTest {
 
         replay(mockHippoSessionPool,mockNode, mockPooledSession);
 
-        Node returnedNode = repoSessionTemplate.readFromSession(new SessionCallback() {
-            public Node readFromSession(WrappedSession session) throws RepositoryException {
+        QueryResult returnedNode = repoSessionTemplate.readFromSession(new SessionCallback() {
+            public QueryResult readFromSession(WrappedSession session) throws RepositoryException {
                 assertTrue(session instanceof PooledSession);
                 assertNotNull(session);
                 return mockNode;
@@ -57,7 +58,7 @@ public class RepoSessionTemplateImplTest {
 
     @Test
     public void executeCallback() throws RepositoryException {
-        final Node mockNode = createMock(Node.class);
+        final QueryResult mockNode = createMock(QueryResult.class);
         Session mockSession = createMock(Session.class);
         expect(mockHippoSessionFactory.createNewSession("admin","admin")).andReturn(mockSession);
 
@@ -66,8 +67,8 @@ public class RepoSessionTemplateImplTest {
 
         replay(mockHippoSessionFactory,mockNode,mockSession);
 
-        Node returnedNode = repoSessionTemplate.readFromSession("admin","admin",new SessionCallback() {
-            public Node readFromSession(WrappedSession session) throws RepositoryException {
+        QueryResult returnedNode = repoSessionTemplate.readFromSession("admin","admin",new SessionCallback() {
+            public QueryResult readFromSession(WrappedSession session) throws RepositoryException {
                 assertNotNull(session);
                 return mockNode;
             }

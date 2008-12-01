@@ -7,7 +7,7 @@
          default file is loaded from the jar file. Place your on version ealier on the classpath.
      -->
     <bean id="jcrConfig" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="location" value="jcrconfig.properties"/>
+        <property name="location" value="classpath:/jcrconfig.properties"/>
         <property name="placeholderPrefix" value="$jcr{"/>
     </bean>
 

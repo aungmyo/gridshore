@@ -2,6 +2,7 @@ package nl.gridshore.samples.hippo;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,6 +12,6 @@ import javax.jcr.RepositoryException;
  * To change this template use File | Settings | File Templates.
  */
 public interface RepoSessionTemplate {
-    Node readFromSession(String username, String password, SessionCallback sessionCallback) throws RepositoryException;
-    Node readFromSession(SessionCallback sessionCallback) throws RepositoryException;
+    QueryResult readFromSession(String username, String password, SessionCallback sessionCallback) throws RepositoryException;
+    QueryResult readFromSession(SessionCallback sessionCallback) throws RepositoryException;
 }

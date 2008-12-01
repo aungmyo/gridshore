@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Required;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,27 +23,27 @@ public class RepoSessionTemplateImpl implements RepoSessionTemplate {
     private HippoSessionFactory hippoSessionFactory;
     private HippoSessionPool hippoSessionPool;
 
-    public Node readFromSession(String username, String password, SessionCallback sessionCallback) throws RepositoryException {
+    public QueryResult readFromSession(String username, String password, SessionCallback sessionCallback) throws RepositoryException {
         logger.debug("Read from session is called with username {}", username);
         WrappedSession session = new WrappedSession(hippoSessionFactory.createNewSession(username, password));
         return doReadFromSession(sessionCallback, session);
     }
 
-    public Node readFromSession(SessionCallback sessionCallback) throws RepositoryException {
+    public QueryResult readFromSession(SessionCallback sessionCallback) throws RepositoryException {
         logger.debug("Read from session is called without username");
         PooledSession session = hippoSessionPool.obtainSession();
         return doReadFromSession(sessionCallback, session);
     }
 
-    protected Node doReadFromSession(SessionCallback sessionCallback, WrappedSession session) throws RepositoryException {
+    protected QueryResult doReadFromSession(SessionCallback sessionCallback, WrappedSession session) throws RepositoryException {
         logger.debug("Execute the callback and close the session afterwards");
-        Node node;
+        QueryResult queryResult;
         try {
-            node = sessionCallback.readFromSession(session);
+            queryResult = sessionCallback.readFromSession(session);
         } finally {
             session.close();
         }
-        return node;
+        return queryResult;
     }
 
     @Required

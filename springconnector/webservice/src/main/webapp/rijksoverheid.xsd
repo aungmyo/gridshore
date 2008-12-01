@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://rijksoverheid.nl/schemas" elementFormDefault="qualified"
+           targetNamespace="http://rijksoverheid.nl/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="SearchRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="SearchText" type="SearchTextType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="SearchResponse">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="NewsDocument" type="NewsDocumentType"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="NewsDocumentType">
+        <xs:all>
+            <xs:element name="Title" type="TitleType"/>
+            <xs:element name="MessageContent" type="MessageContentType"/>
+            <xs:element name="PublicationDate" type="PublicationDateType"/>
+        </xs:all>
+    </xs:complexType>
+    <xs:simpleType name="SearchTextType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="TitleType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="MessageContentType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="PublicationDateType">
+        <xs:restriction base="xs:date"/>
+    </xs:simpleType>
+</xs:schema>

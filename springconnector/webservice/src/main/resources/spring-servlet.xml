@@ -16,7 +16,7 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
     <bean class="org.springframework.ws.server.endpoint.mapping.PayloadRootQNameEndpointMapping">
         <property name="mappings">
             <props>
-                <prop key="{http://rijksoverheid.nl/schemas}SearchRequest">searchEndpoint</prop>
+                <prop key="{http://gridshore.nl/schemas}SearchRequest">searchEndpoint</prop>
             </props>
         </property>
         <property name="interceptors">
@@ -28,10 +28,10 @@ http://www.springframework.org/schema/context http://www.springframework.org/sch
         <property name="schema" ref="schema"/>
         <property name="portTypeName" value="Search"/>
         <property name="locationUri" value="/searchService/"/>
-        <property name="targetNamespace" value="http://rijksoverheid.nl/schemas"/>
+        <property name="targetNamespace" value="http://gridshore.nl/schemas"/>
     </bean>
 
     <bean id="schema" class="org.springframework.xml.xsd.SimpleXsdSchema">
-        <property name="xsd" value="/rijksoverheid.xsd"/>
+        <property name="xsd" value="/document.xsd"/>
     </bean>
 </beans>

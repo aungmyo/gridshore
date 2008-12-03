@@ -1,8 +1,7 @@
 package nl.gridshore.samples.hippo.impl;
 
-import nl.gridshore.samples.hippo.impl.WrappedSession;
-import nl.gridshore.samples.hippo.RepoSession;
 import nl.gridshore.samples.hippo.HippoSessionPool;
+import nl.gridshore.samples.hippo.RepoSession;
 
 import javax.jcr.Session;
 
@@ -20,7 +19,8 @@ public class PooledSession extends WrappedSession implements RepoSession {
     /**
      * Constructor for the PooledWrappedSession taking the session to be wrapped and the pool to return the session
      * to when done.
-     * @param session Session that is wrapped and contains the actal connection to the hippo repository
+     *
+     * @param session          Session that is wrapped and contains the actal connection to the hippo repository
      * @param hippoSessionPool HippoSessionPool that this session is coming from.
      */
     PooledSession(Session session, HippoSessionPool hippoSessionPool) {

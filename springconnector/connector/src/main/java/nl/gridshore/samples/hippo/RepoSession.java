@@ -2,6 +2,7 @@ package nl.gridshore.samples.hippo;
 
 import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Workspace;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,4 +30,10 @@ public interface RepoSession {
      * @return boolean yes if the wrapped session is still alive
      */
     boolean isLive();
+
+    /**
+     * Returns the workspace the session is created for
+     * @return Workspace for the created session
+     */
+    Workspace getWorkspace();
 }

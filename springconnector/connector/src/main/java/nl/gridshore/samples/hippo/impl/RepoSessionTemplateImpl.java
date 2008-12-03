@@ -5,8 +5,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Required;
 
-import javax.jcr.Node;
 import javax.jcr.RepositoryException;
+import javax.jcr.Workspace;
 import javax.jcr.query.QueryResult;
 
 /**
@@ -31,15 +31,16 @@ public class RepoSessionTemplateImpl implements RepoSessionTemplate {
 
     public QueryResult readFromSession(SessionCallback sessionCallback) throws RepositoryException {
         logger.debug("Read from session is called without username");
-        PooledSession session = hippoSessionPool.obtainSession();
+        RepoSession session = hippoSessionPool.obtainSession();
         return doReadFromSession(sessionCallback, session);
     }
 
-    protected QueryResult doReadFromSession(SessionCallback sessionCallback, WrappedSession session) throws RepositoryException {
+    protected QueryResult doReadFromSession(SessionCallback sessionCallback, RepoSession session) throws RepositoryException {
         logger.debug("Execute the callback and close the session afterwards");
         QueryResult queryResult;
         try {
-            queryResult = sessionCallback.readFromSession(session);
+            Workspace workspace = session.getWorkspace();
+            queryResult = sessionCallback.readFromSession(workspace.getQueryManager());
         } finally {
             session.close();
         }

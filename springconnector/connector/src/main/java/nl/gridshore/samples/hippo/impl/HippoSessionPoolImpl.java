@@ -1,18 +1,16 @@
 package nl.gridshore.samples.hippo.impl;
 
-import nl.gridshore.samples.hippo.HippoSessionPool;
-import nl.gridshore.samples.hippo.impl.PooledSession;
 import nl.gridshore.samples.hippo.HippoSessionFactory;
-
-import java.util.concurrent.ConcurrentLinkedQueue;
-
-import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Required;
+import nl.gridshore.samples.hippo.HippoSessionPool;
+import nl.gridshore.samples.hippo.RepoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Required;
 
-import javax.jcr.Session;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,12 +37,12 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
         concurrentMap = new ConcurrentLinkedQueue<PooledSession>();
     }
 
-    public PooledSession obtainSession() throws RepositoryException {
+    public RepoSession obtainSession() throws RepositoryException {
         PooledSession session = null;
         while (session == null && !concurrentMap.isEmpty()) {
             session = concurrentMap.poll();
             if (!session.isLive()) {
-                logger.debug("The session with id {} is not live and will therefore be logged out.",session.toString());
+                logger.debug("The session with id {} is not live and will therefore be logged out.", session.toString());
                 session.doClose();
                 session = null;
             }
@@ -52,26 +50,30 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
 
         if (session == null) {
             Session hippoSession = hippoSessionFactory.createNewSession();
-            session = new PooledSession(hippoSession,this);
-            logger.debug("A new session object with id {} is created since the pool was empty",session.toString());
+            session = new PooledSession(hippoSession, this);
+            logger.debug("A new session object with id {} is created since the pool was empty", session.toString());
         } else {
-            logger.debug("A pooled session object is returned from the pool with object id {}",session.toString());
+            logger.debug("A pooled session object is returned from the pool with object id {}", session.toString());
         }
 
         return session;
     }
 
-    public void returnSession(PooledSession session) {
-        logger.debug("A session with id {} is returned to the pool",session.toString());
-        concurrentMap.add(session);
+    public void returnSession(RepoSession session) {
+        if (session instanceof PooledSession) {
+            logger.debug("A session with id {} is returned to the pool", session.toString());
+            concurrentMap.add((PooledSession) session);
+        } else {
+            logger.debug("A session with id {} is not a pooled session", session.toString());
+        }
     }
 
     public void afterPropertiesSet() throws Exception {
-        logger.debug("Initialize {} sessions in the pool",amountSessionsAtStart);
+        logger.debug("Initialize {} sessions in the pool", amountSessionsAtStart);
 
         for (int i = 0; i < amountSessionsAtStart; i++) {
             Session session = hippoSessionFactory.createNewSession();
-            PooledSession pooledSession = new PooledSession(session,this);
+            PooledSession pooledSession = new PooledSession(session, this);
             logger.debug("A pooled session is created with id {}", pooledSession.toString());
             concurrentMap.add(pooledSession);
         }

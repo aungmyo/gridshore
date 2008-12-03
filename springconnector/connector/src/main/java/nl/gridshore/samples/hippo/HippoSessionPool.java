@@ -14,6 +14,16 @@ import javax.jcr.RepositoryException;
  * returned to the pool.
  */
 public interface HippoSessionPool {
-    PooledSession obtainSession() throws RepositoryException;
-    void returnSession(PooledSession session);
+    /**
+     * Return a session from the session pool
+     * @return RepoSession from the session pool
+     * @throws RepositoryException thrown when creating a sessions goes wrong
+     */
+    RepoSession obtainSession() throws RepositoryException;
+
+    /**
+     * Return a session to the session pool.
+     * @param session PooledRepoSession that is returned to the pool
+     */
+    void returnSession(RepoSession session);
 }

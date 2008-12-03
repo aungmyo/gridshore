@@ -5,7 +5,7 @@ package nl.gridshore.samples.hippo.web;
  * User: jettro
  * Date: Dec 1, 2008
  * Time: 9:14:18 AM
- * To change this template use File | Settings | File Templates.
+ * Exception thrown when a problem is detecte while initializing the endpoint
  */
 public class EndpointConfigurationException extends RuntimeException {
     public EndpointConfigurationException(String s) {

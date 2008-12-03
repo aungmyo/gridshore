@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns="http://rijksoverheid.nl/schemas" elementFormDefault="qualified"
-           targetNamespace="http://rijksoverheid.nl/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:schema xmlns="http://gridshore.nl/schemas" elementFormDefault="qualified"
+           targetNamespace="http://gridshore.nl/schemas" xmlns:xs="http://www.w3.org/2001/XMLSchema">
     <xs:element name="SearchRequest">
         <xs:complexType>
             <xs:sequence>
@@ -11,27 +11,29 @@
     <xs:element name="SearchResponse">
         <xs:complexType>
             <xs:all>
-                <xs:element name="NewsDocument" type="NewsDocumentType"/>
+                <xs:element name="Article" type="ArticleType"/>
             </xs:all>
         </xs:complexType>
     </xs:element>
-    <xs:complexType name="NewsDocumentType">
+    <xs:complexType name="ArticleType">
         <xs:all>
             <xs:element name="Title" type="TitleType"/>
-            <xs:element name="MessageContent" type="MessageContentType"/>
-            <xs:element name="PublicationDate" type="PublicationDateType"/>
+            <xs:element name="Introduction" type="IntroductionType"/>
+            <xs:element name="Body" type="BodyType"/>
         </xs:all>
+        <xs:attribute name="uuid" type="xs:string"/>
     </xs:complexType>
+    
     <xs:simpleType name="SearchTextType">
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
     <xs:simpleType name="TitleType">
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
-    <xs:simpleType name="MessageContentType">
+    <xs:simpleType name="IntroductionType">
         <xs:restriction base="xs:string"/>
     </xs:simpleType>
-    <xs:simpleType name="PublicationDateType">
-        <xs:restriction base="xs:date"/>
+    <xs:simpleType name="BodyType">
+        <xs:restriction base="xs:string"/>
     </xs:simpleType>
 </xs:schema>

@@ -6,6 +6,8 @@ package model {
 
         private static var userData:UserData;
 
+        public function UserData() {}
+
         public var username:String;
         public var password:String;
         public var grantedRoles:ArrayCollection;

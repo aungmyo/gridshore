@@ -13,7 +13,10 @@
     </description>
 
     <properties>
-        <spring.version>2.5.3</spring.version>
+        <spring.version>2.5.6</spring.version>
+        <flex.sdk.version>[3.0.0.477,3.1.0.2710]</flex.sdk.version>
+        <flexUnit.version>0.9</flexUnit.version>
+        <flex-mojos.version>2.0M10</flex-mojos.version>
     </properties>
 
     <modules>
@@ -126,7 +129,7 @@
         <site>
             <id>gridshorenl</id>
             <name>Springframework Archetype</name>
-            <url>scp://www.gridshore.nl/var/www/vhosts/gridshore.nl/httpdocs/projects/trainingoverview</url>
+            <url>scp://www.gridshore.nl/var/www/vhosts/gridshore.nl/httpdocs/projects/books-overview</url>
         </site>
     </distributionManagement>
     <build>
@@ -176,17 +179,7 @@
     <repositories>
         <repository>
             <id>flex-mojos-repository</id>
-            <url>http://flex-mojos.googlecode.com/svn/trunk/repository/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>epseelon-repository</id>
-            <url>http://m2repo.epseelon.org/</url>
+            <url>http://svn.sonatype.org/flexmojos/repository/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -195,20 +188,11 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
             <id>flex-mojos-repository</id>
-            <url>http://flex-mojos.googlecode.com/svn/trunk/repository/</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </pluginRepository>
-        <pluginRepository>
-            <id>epseelon-repository</id>
-            <url>http://m2repo.epseelon.org/</url>
+            <url>http://svn.sonatype.org/flexmojos/repository/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

@@ -126,7 +126,7 @@
                         <configuration>
                             <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex
                             </outputDirectory>
-                            <includeArtifacIds>books-flex-config</includeArtifacIds>
+                            <includeArtifactIds>books-flex-config</includeArtifactIds>
                             <includeGroupIds>${project.groupId}</includeGroupIds>
                             <includeClassifiers>resources</includeClassifiers>
                             <excludeTransitive>true</excludeTransitive>

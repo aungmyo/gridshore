@@ -25,6 +25,13 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  * When the pool is out of sessions, a new session is created and should be returned as well, since the client does
  * notice the difference.</p>
  * <p>Before a session is given to the caller, it is checked for the right state.</p>
+ * <p>Sessions are not tracked, if clients do not return sessions, the pool does not function very well and memory leaks
+ * could occur if the clients keep a reference to the sessions. Which is very easy when for instance they are storing
+ * nodes.</p>
+ * <p><strong>Beware</strong>, session pooling is interesting for performance reasons. However the default api of jcr
+ * gives a user access to the underlying session of a Node, which gives the Workspace and the repository. That way a
+ * user can even create his own session using this repository. Therefore the pooling only works if your clients
+ * use it the way it should be used.</p>
  */
 public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean {
     private static Logger logger = LoggerFactory.getLogger(HippoSessionPoolImpl.class);
@@ -33,10 +40,18 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
     private ConcurrentLinkedQueue<PooledSession> concurrentMap;
     private int amountSessionsAtStart = 10;
 
+    /**
+     * Default constructor initializes the queue
+     */
     public HippoSessionPoolImpl() {
         concurrentMap = new ConcurrentLinkedQueue<PooledSession>();
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>Obtain a session from the pool and check if it is still active before returning it. If no sessions
+     * are available, create a new one.</p>
+     */
     public RepoSession obtainSession() throws RepositoryException {
         PooledSession session = null;
         while (session == null && !concurrentMap.isEmpty()) {
@@ -59,6 +74,10 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
         return session;
     }
 
+    /**
+     * {@inheritDoc}
+     * <p>Puts the returned session back into the pool.</p>
+     */
     public void returnSession(RepoSession session) {
         if (session instanceof PooledSession) {
             logger.debug("A session with id {} is returned to the pool", session.toString());
@@ -68,6 +87,9 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
         }
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public void afterPropertiesSet() throws Exception {
         logger.debug("Initialize {} sessions in the pool", amountSessionsAtStart);
 
@@ -79,10 +101,19 @@ public class HippoSessionPoolImpl implements HippoSessionPool, InitializingBean 
         }
     }
 
+    /**
+     * Method that must be called before the after properties set method is called. The provided number of sessions
+     * is used to create the initial pool.
+     * @param amountSessionsAtStart int representing the amount of sessions to start the pool with
+     */
     public void setAmountSessionsAtStart(int amountSessionsAtStart) {
         this.amountSessionsAtStart = amountSessionsAtStart;
     }
 
+    /**
+     * Setter used to set the required HippoSessionFactory
+     * @param hippoSessionFactory HippoSessionFactory used to create the sessions
+     */
     @Required
     public void setHippoSessionFactory(HippoSessionFactory hippoSessionFactory) {
         this.hippoSessionFactory = hippoSessionFactory;

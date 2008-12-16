@@ -6,10 +6,11 @@ import javax.jcr.Workspace;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jettro
+ * User: jettro coenradie
  * Date: Nov 27, 2008
  * Time: 1:53:41 PM
- * Interface used by clients to interact with the repository
+ * <p>Interface used by clients to interact with the repository. Most of the methods are delegate methods to the
+ * wrapped @see javax.jcr.Session.</p>
  */
 public interface RepoSession {
     /**

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Required;
 
 import javax.jcr.RepositoryException;
 import javax.jcr.Workspace;
+import javax.jcr.Session;
 import javax.jcr.query.QueryResult;
 
 /**
@@ -25,7 +26,8 @@ public class RepoSessionTemplateImpl implements RepoSessionTemplate {
 
     public QueryResult readFromSession(String username, String password, SessionCallback sessionCallback) throws RepositoryException {
         logger.debug("Read from session is called with username {}", username);
-        WrappedSession session = new WrappedSession(hippoSessionFactory.createNewSession(username, password));
+        Session jcrSession = hippoSessionFactory.createNewSession(username, password);
+        WrappedSession session = new WrappedSession(jcrSession);
         return doReadFromSession(sessionCallback, session);
     }
 

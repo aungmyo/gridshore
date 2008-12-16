@@ -1,15 +1,17 @@
 package nl.gridshore.samples.hippo;
 
-import javax.jcr.Session;
 import javax.jcr.LoginException;
 import javax.jcr.RepositoryException;
+import javax.jcr.Session;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jettro
+ * User: jettro coenradie
  * Date: Nov 26, 2008
  * Time: 10:32:22 PM
- * This class acts as a factory object to create sessions based on userid and password
+ * <p>This class acts as a factory object to create sessions based on userid and password. It is also possible to
+ * create a session without a username and password. In that case the actual implementation should have a mechanism to
+ * configure a default password.</p>
  */
 public interface HippoSessionFactory {
     /**
@@ -18,15 +20,18 @@ public interface HippoSessionFactory {
      * @param username String representing the username used to create the session
      * @param password String representing the password used to create the session
      * @return A new Session that can be used for adding Nodes to the repository
-     * @throws RepositoryException Thrown when something goes wrong during the creation of the session.
+     * @throws RepositoryException      Rethrown from the underlying hippo login method.
+     * @throws javax.jcr.LoginException Rethrown from the underlying hippo login method.
      */
-    Session createNewSession(String username, String password) throws RepositoryException;
+    Session createNewSession(String username, String password) throws LoginException, RepositoryException;
 
     /**
      * Create a new session based on a default username/password combination
+     *
      * @return Session with the default username password login
-     * @throws RepositoryException thrown if something went wrong with the repository
+     * @throws RepositoryException      Rethrown from the underlying hippo login method.
+     * @throws javax.jcr.LoginException Rethrown from the underlying hippo login method.
      */
-    Session createNewSession() throws RepositoryException;
+    Session createNewSession() throws LoginException, RepositoryException;
 
 }

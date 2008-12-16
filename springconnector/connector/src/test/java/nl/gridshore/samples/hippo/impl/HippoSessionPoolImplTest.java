@@ -1,13 +1,15 @@
 package nl.gridshore.samples.hippo.impl;
 
+import nl.gridshore.samples.hippo.HippoSessionFactory;
+import nl.gridshore.samples.hippo.RepoSession;
+import static org.easymock.EasyMock.*;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.easymock.EasyMock.*;
-import nl.gridshore.samples.hippo.HippoSessionFactory;
-import nl.gridshore.samples.hippo.impl.PooledSession;
 
 import javax.jcr.Session;
+import javax.jcr.LoginException;
+import javax.jcr.RepositoryException;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,14 +39,15 @@ public class HippoSessionPoolImplTest {
         expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession);
 
         expect(mockSession.isLive()).andReturn(true);
-        replay(mockHippoSessionFactory,mockSession);
+        replay(mockHippoSessionFactory, mockSession);
 
+        // The following method is normally called by the spring container
         hippoSessionPool.afterPropertiesSet();
 
-        PooledSession session = hippoSessionPool.obtainSession();
+        RepoSession session = hippoSessionPool.obtainSession();
 
         assertNotNull(session);
-        verify(mockHippoSessionFactory,mockSession);
+        verify(mockHippoSessionFactory, mockSession);
     }
 
     @Test
@@ -55,17 +58,82 @@ public class HippoSessionPoolImplTest {
         expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession2);
 
         expect(mockSession1.isLive()).andReturn(true);
-        replay(mockHippoSessionFactory,mockSession1,mockSession2);
+        replay(mockHippoSessionFactory, mockSession1, mockSession2);
 
         hippoSessionPool.afterPropertiesSet();
 
-        PooledSession session1 = hippoSessionPool.obtainSession();
-        PooledSession session2 = hippoSessionPool.obtainSession();
+        RepoSession session1 = hippoSessionPool.obtainSession();
+        RepoSession session2 = hippoSessionPool.obtainSession();
 
         assertNotNull(session1);
         assertNotNull(session2);
 
-        verify(mockHippoSessionFactory,mockSession1,mockSession2);
+        verify(mockHippoSessionFactory, mockSession1, mockSession2);
     }
 
+    @Test
+    public void testObtainingAConnection_notlive() throws Exception {
+        Session mockSession = createMock(Session.class);
+        expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession);
+
+        expect(mockSession.isLive()).andReturn(false);
+        mockSession.logout();
+        expectLastCall().once();
+        Session newMockSession = createMock(Session.class);
+        expect(mockHippoSessionFactory.createNewSession()).andReturn(newMockSession);
+        replay(mockHippoSessionFactory, mockSession, newMockSession);
+
+        // The following method is normally called by the spring container
+        hippoSessionPool.afterPropertiesSet();
+
+        RepoSession session = hippoSessionPool.obtainSession();
+
+        assertNotNull(session);
+        verify(mockHippoSessionFactory, mockSession, newMockSession);
+
+    }
+
+    @Test
+    public void testReturningANonPooledSession() throws Exception {
+        Session mockSession = createMock(Session.class);
+        Session mockSession2 = createMock(Session.class);
+        expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession);
+        expect(mockSession.isLive()).andReturn(true);
+
+        // since we are not dealing with a pooled session, we expect an additional call to the factory
+        expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession2);
+
+        RepoSession mockRepoSession = createMock(RepoSession.class);
+
+        replay(mockSession, mockSession2, mockHippoSessionFactory, mockRepoSession);
+
+        hippoSessionPool.afterPropertiesSet();
+
+        hippoSessionPool.returnSession(mockRepoSession);
+        assertNotNull(hippoSessionPool.obtainSession());
+        assertNotNull(hippoSessionPool.obtainSession());
+
+        verify(mockSession, mockSession2, mockHippoSessionFactory, mockRepoSession);
+
+    }
+
+    @Test
+    public void testReturningAPooledSession() throws Exception {
+        Session mockSession = createMock(Session.class);
+        expect(mockHippoSessionFactory.createNewSession()).andReturn(mockSession);
+        expect(mockSession.isLive()).andReturn(true).times(2);
+
+
+        replay(mockSession, mockHippoSessionFactory);
+
+        hippoSessionPool.afterPropertiesSet();
+
+        RepoSession repoSession = hippoSessionPool.obtainSession();
+        assertNotNull(repoSession);
+        hippoSessionPool.returnSession(repoSession);
+        assertNotNull(hippoSessionPool.obtainSession());
+
+        verify(mockSession,  mockHippoSessionFactory);
+
+    }
 }

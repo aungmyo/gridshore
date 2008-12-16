@@ -1,16 +1,18 @@
 package nl.gridshore.samples.hippo.impl;
 
-import nl.gridshore.samples.hippo.*;
-
-import javax.jcr.Node;
-import javax.jcr.RepositoryException;
-import javax.jcr.Session;
-import javax.jcr.query.QueryResult;
-
+import nl.gridshore.samples.hippo.HippoSessionFactory;
+import nl.gridshore.samples.hippo.HippoSessionPool;
+import nl.gridshore.samples.hippo.SessionCallback;
 import static org.easymock.classextension.EasyMock.*;
+import static org.junit.Assert.assertNotNull;
 import org.junit.Before;
 import org.junit.Test;
-import static org.junit.Assert.*;
+
+import javax.jcr.RepositoryException;
+import javax.jcr.Session;
+import javax.jcr.Workspace;
+import javax.jcr.query.QueryManager;
+import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,45 +38,53 @@ public class RepoSessionTemplateImplTest {
 
     @Test
     public void executePooledCallback() throws RepositoryException {
-        final QueryResult mockNode = createMock(QueryResult.class);
+        final QueryResult mockQueryResult = createMock(QueryResult.class);
         PooledSession mockPooledSession = createMock(PooledSession.class);
-        expect(mockHippoSessionPool.obtainSession()).andReturn(mockPooledSession);
+        Workspace mockWorkspace = createMock(Workspace.class);
+        QueryManager mockQueryManager = createMock(QueryManager.class);
 
+        expect(mockHippoSessionPool.obtainSession()).andReturn(mockPooledSession);
+        expect(mockPooledSession.getWorkspace()).andReturn(mockWorkspace);
+        expect(mockWorkspace.getQueryManager()).andReturn(mockQueryManager);
         mockPooledSession.close();
         expectLastCall().once();
 
-        replay(mockHippoSessionPool,mockNode, mockPooledSession);
+        replay(mockHippoSessionPool, mockQueryResult, mockPooledSession, mockWorkspace, mockQueryManager);
 
         QueryResult returnedNode = repoSessionTemplate.readFromSession(new SessionCallback() {
-            public QueryResult readFromSession(WrappedSession session) throws RepositoryException {
-                assertTrue(session instanceof PooledSession);
-                assertNotNull(session);
-                return mockNode;
+            public QueryResult readFromSession(QueryManager queryManager) throws RepositoryException {
+                assertNotNull(queryManager);
+                return mockQueryResult;
             }
         });
 
         assertNotNull(returnedNode);
+        verify(mockHippoSessionPool, mockQueryResult, mockPooledSession, mockWorkspace, mockQueryManager);
     }
 
     @Test
     public void executeCallback() throws RepositoryException {
-        final QueryResult mockNode = createMock(QueryResult.class);
+        final QueryResult mockQueryResult = createMock(QueryResult.class);
         Session mockSession = createMock(Session.class);
-        expect(mockHippoSessionFactory.createNewSession("admin","admin")).andReturn(mockSession);
+        Workspace mockWorkspace = createMock(Workspace.class);
+        QueryManager mockQueryManager = createMock(QueryManager.class);
+        expect(mockHippoSessionFactory.createNewSession("admin", "admin")).andReturn(mockSession);
+        expect(mockSession.getWorkspace()).andReturn(mockWorkspace);
+        expect(mockWorkspace.getQueryManager()).andReturn(mockQueryManager);
 
         mockSession.logout();
         expectLastCall().once();
 
-        replay(mockHippoSessionFactory,mockNode,mockSession);
+        replay(mockHippoSessionFactory, mockQueryResult, mockSession, mockWorkspace, mockQueryManager);
 
-        QueryResult returnedNode = repoSessionTemplate.readFromSession("admin","admin",new SessionCallback() {
-            public QueryResult readFromSession(WrappedSession session) throws RepositoryException {
-                assertNotNull(session);
-                return mockNode;
+        QueryResult returnedNode = repoSessionTemplate.readFromSession("admin", "admin", new SessionCallback() {
+            public QueryResult readFromSession(QueryManager queryManager) throws RepositoryException {
+                return mockQueryResult;
             }
         });
 
         assertNotNull(returnedNode);
+        verify(mockHippoSessionFactory, mockQueryResult, mockSession, mockWorkspace, mockQueryManager);
     }
 
 }

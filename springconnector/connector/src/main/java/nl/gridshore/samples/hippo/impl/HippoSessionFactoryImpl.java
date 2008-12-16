@@ -1,7 +1,7 @@
 package nl.gridshore.samples.hippo.impl;
 
-import nl.gridshore.samples.hippo.HippoSessionFactory;
 import nl.gridshore.samples.hippo.ConfigurationException;
+import nl.gridshore.samples.hippo.HippoSessionFactory;
 import org.hippoecm.repository.HippoRepository;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -11,28 +11,35 @@ import javax.jcr.Session;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jettro
+ * User: jettro coenradie
  * Date: Nov 26, 2008
  * Time: 10:37:06 PM
- * Implementation of the session factory that can be used with a default username/password, they can be provided using
- * setters. If they are not provided the normal exception is thrown for not providing a valid username or password
+ * <p>Implementation of the session factory that can be used with a default username/password, that should be provided
+ * using setters. If they are not provided the normal exception is thrown for not providing a valid
+ * username or password</p>
  */
 public class HippoSessionFactoryImpl implements HippoSessionFactory {
     private HippoRepository hippoRepository;
     private String defaultUsername;
     private String defaultPassword;
 
-    public Session createNewSession() throws RepositoryException {
+    /**
+     * {@inheritDoc}
+     */
+    public Session createNewSession() throws LoginException, RepositoryException {
         checkConfiguration();
         return createNewSession(defaultUsername, defaultPassword);
     }
 
-    public Session createNewSession(String username, String password) throws RepositoryException {
+    /**
+     * {@inheritDoc}
+     */
+    public Session createNewSession(String username, String password) throws LoginException, RepositoryException {
         if (username == null || "".equals(username)) {
-            throw new LoginException("Problem with the username or password");
+            throw new LoginException("Problem with the username");
         }
         if (password == null || "".equals(password)) {
-            throw new LoginException("Problem with the username or password");
+            throw new LoginException("Problem with the password");
         }
 
         return hippoRepository.login(username, password.toCharArray());

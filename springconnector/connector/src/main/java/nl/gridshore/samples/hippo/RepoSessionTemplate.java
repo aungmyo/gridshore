@@ -6,11 +6,11 @@ import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jettro
+ * User: jettro coenradie
  * Date: Nov 26, 2008
  * Time: 10:54:00 PM
- * Interface for a session template that takes care of executing a query in the repository and handling the session
- * with the connection to the repository.
+ * <p>Interface for a session template that takes care of executing a query in the repository and handling the session
+ * with the connection to the repository.</p>
  */
 public interface RepoSessionTemplate {
     /**

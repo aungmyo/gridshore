@@ -8,6 +8,7 @@ import static org.easymock.EasyMock.*;
 
 import javax.jcr.RepositoryException;
 import javax.jcr.Session;
+import javax.jcr.LoginException;
 
 import nl.gridshore.samples.hippo.ConfigurationException;
 
@@ -30,7 +31,7 @@ public class HippoSessionFactoryImplTest {
     }
 
     @Test
-    public void obtainingNewConnectionWithoutDefaultUsernameSet() {
+    public void obtainingNewConnection_WithoutCredentialsSet() {
         replay(mockHippoRepository);
         try {
             hippoSessionFactory.createNewSession();
@@ -43,7 +44,33 @@ public class HippoSessionFactoryImplTest {
     }
 
     @Test
-    public void obtainNewConnectionWithExistingusername() throws RepositoryException {
+    public void obtainingNewConnection_WithNullUsernameSet() {
+        replay(mockHippoRepository);
+        try {
+            hippoSessionFactory.createNewSession(null,"test");
+            fail("a repository exception should have been thrown");
+        } catch (LoginException ex) {
+            assertEquals("Problem with the username", ex.getMessage());
+        } catch (RepositoryException e) {
+            fail("The exception should have been cought ealier");
+        }
+    }
+
+    @Test
+    public void obtainingNewConnection_WithNullPasswordSet() {
+        replay(mockHippoRepository);
+        try {
+            hippoSessionFactory.createNewSession("test",null);
+            fail("a repository exception should have been thrown");
+        } catch (LoginException ex) {
+            assertEquals("Problem with the password", ex.getMessage());
+        } catch (RepositoryException e) {
+            fail("The exception should have been cought ealier");
+        }
+    }
+
+    @Test
+    public void obtainNewConnection_WithExistingusername() throws RepositoryException {
         Session mockSession = createMock(Session.class);
         String username = "test";
         String password = "testpwd";

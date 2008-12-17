@@ -22,26 +22,28 @@ import javax.jcr.query.QueryResult;
 
 /**
  * Created by IntelliJ IDEA.
- * User: jettro
+ * User: jettro coenradie
  * Date: Nov 28, 2008
  * Time: 6:11:38 PM
- * Endpoint that makes use of JDom to obtain the request and create the response for a webservice call
+ * <p>Endpoint that makes use of JDom to obtain the request and create the response for a webservice call</p>
+ * <p>Check the schema document.xsd in the webapp folder for expected input and output</p> 
  */
 public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
     private static Logger logger = LoggerFactory.getLogger(SearchNewsEndpoint.class);
 
-    private RepoSessionTemplate repoSessionTemplate;
+    public static final String HTTP_GRIDSHORE_NL_SCHEMAS = "http://gridshore.nl/schemas";
 
+    private RepoSessionTemplate repoSessionTemplate;
     private XPath searchTextExpression;
     private Namespace namespace;
 
     public SearchNewsEndpoint() {
-        namespace = Namespace.getNamespace("grid", "http://gridshore.nl/schemas");
+        namespace = Namespace.getNamespace("grid", HTTP_GRIDSHORE_NL_SCHEMAS);
         try {
             searchTextExpression = XPath.newInstance("//grid:SearchText");
             searchTextExpression.addNamespace(namespace);
         } catch (JDOMException e) {
-            logger.error("Problem while creating an XPath");
+            logger.error("Problem while creating an XPath for searching the input");
             throw new EndpointConfigurationException("Problem in the SearchNewsEndpoint", e);
         }
     }
@@ -49,15 +51,13 @@ public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
     protected Element invokeInternal(Element requestElement) throws Exception {
         final String searchText = searchTextExpression.valueOf(requestElement);
 
-        Element searchResponse = new Element("SearchResponse", namespace);
+        QueryResult queryResult = executeQuery(searchText);
 
-        QueryResult queryResult = repoSessionTemplate.readFromSession(new SessionCallback() {
-            public QueryResult readFromSession(QueryManager queryManager) throws RepositoryException {
-                Query query = queryManager.createQuery("//element(*,defaultcontent:article)[jcr:like(@defaultcontent:title,'%"
-                        + searchText + "%')]", Query.XPATH);
-                return query.execute();
-            }
-        });
+        return createResponseFromQueryResult(queryResult);
+    }
+
+    private Element createResponseFromQueryResult(QueryResult queryResult) throws RepositoryException {
+        Element searchResponse = new Element("SearchResponse", namespace);
         NodeIterator nodes = queryResult.getNodes();
         while (nodes.hasNext()) {
             Node node = nodes.nextNode();
@@ -67,7 +67,7 @@ public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
             Property uuid = node.getProperty("jcr:uuid");
 
             Element articleElement = new Element("Article", namespace);
-            articleElement.setAttribute("uuid",uuid.getString());
+            articleElement.setAttribute("uuid", uuid.getString());
             Element titleElement = new Element("Title", namespace);
             Element introductionElement = new Element("Introduction", namespace);
             Element bodyElement = new Element("Body", namespace);
@@ -81,8 +81,17 @@ public class SearchNewsEndpoint extends AbstractJDomPayloadEndpoint {
             articleElement.addContent(bodyElement);
             searchResponse.addContent(articleElement);
         }
-
         return searchResponse;
+    }
+
+    private QueryResult executeQuery(final String searchText) throws RepositoryException {
+        return repoSessionTemplate.readFromSession(new SessionCallback() {
+            public QueryResult readFromSession(QueryManager queryManager) throws RepositoryException {
+                Query query = queryManager.createQuery("//element(*,defaultcontent:article)[jcr:like(@defaultcontent:title,'%"
+                        + searchText + "%')]", Query.XPATH);
+                return query.execute();
+            }
+        });
     }
 
     @Required

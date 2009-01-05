@@ -38,15 +38,19 @@
     </mx:Style>
 
     <mx:Text id="authenticationMessage" visible="false" styleName="warning"/>
-    <mx:Form defaultButton="{submitButton}">
-        <mx:FormItem label="Username">
-            <mx:TextInput id="userName"/>
-        </mx:FormItem>
-        <mx:FormItem label="Password">
-            <mx:TextInput id="password" displayAsPassword="true"/>
-        </mx:FormItem>
-        <mx:FormItem>
-            <mx:Button id="submitButton" label="Login" click="submitLogin()"/>
-        </mx:FormItem>
-    </mx:Form>
+    <mx:HBox>
+        <mx:Form defaultButton="{submitButton}">
+            <mx:FormItem label="Username">
+                <mx:TextInput id="userName"/>
+            </mx:FormItem>
+            <mx:FormItem label="Password">
+                <mx:TextInput id="password" displayAsPassword="true"/>
+            </mx:FormItem>
+            <mx:FormItem>
+                <mx:Button id="submitButton" label="Login" click="submitLogin()"/>
+            </mx:FormItem>
+        </mx:Form>
+        <mx:Text text="You can use two users, the user 'user' and the user 'admin'. The password for the users is the same as the name."
+                width="300"/>
+    </mx:HBox>
 </mx:Canvas>

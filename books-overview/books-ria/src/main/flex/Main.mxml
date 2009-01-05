@@ -1,22 +1,24 @@
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*" xmlns:rend="renderers.*"
-                creationComplete="initializeApplication()">
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*" xmlns:rend="renderers.*" creationComplete="initializeApplication()">
     <mx:Script><![CDATA[
         import events.BookSelectedEvent;
         import events.MainNavigationEvent;
         import events.RemoteExceptionEvent;
         import events.AuthenticationEvent;
 
-        import model.BookSearchRequest;
-
-        import mx.messaging.config.ServerConfig;
-
-        import services.SecurityService;
-
         import mx.controls.Alert;
 
+        import org.springextensions.actionscript.context.support.XMLApplicationContext;
+
+        import services.BookService;
+        import services.SecurityService;
 
         [Bindable]
-        private var authenticationHelper:SecurityService = new SecurityService();
+        private var authenticationHelper:SecurityService;
+
+        [Bindable]
+        private var bookService:BookService;
+
+        private var _applicationContext:XMLApplicationContext;
 
         /**
          * Mainly used to set some listeners and parameters on application scope, it also calls the function
@@ -24,10 +26,19 @@
          * event is handled on an application scope, the listener for this event is added here.
          */
         private function initializeApplication():void {
+            _applicationContext = new XMLApplicationContext("applicationContext.xml");
+            _applicationContext.addEventListener(Event.COMPLETE, onApplicationContextComplete);
+            _applicationContext.load();
 
             Application.application.addEventListener(AuthenticationEvent.AUTHENTICATION, handleAuthenticationEvent);
             Application.application.addEventListener(RemoteExceptionEvent.REMOTE_EXCEPTION, handleRemoteExceptionEvent);
             Application.application.addEventListener(AuthenticationEvent.NEEDS_AUTHENTICATION, handleNeedsAuthenticationEvent);
+            showRightUIComponent('initializingMessage');
+        }
+
+        private function onApplicationContextComplete(event:Event):void {
+            bookService = _applicationContext.getObject("bookService");
+            authenticationHelper = _applicationContext.getObject("authenticationService");
             authenticationHelper.isPrincipalAuthenticatedBefore();
         }
 
@@ -98,6 +109,9 @@
                     bookForm.clearForm();
                     mainContentViewStack.selectedChild = bookForm;
                     break;
+                case 'initializingMessage' :
+                    mainContentViewStack.selectedChild = initializingMessage;
+                    break;
                 default:
                     mainContentViewStack.selectedChild = welcomeMessage;
             }
@@ -112,9 +126,12 @@
 
     <mx:Panel id="myMainContentPanel" title="My Books demo app" status="Welcome" width="90%" height="90%">
         <mx:ViewStack id="mainContentViewStack" width="100%" height="100%">
+            <mx:HBox id="initializingMessage">
+                <mx:Label text="initializing ..."/>
+            </mx:HBox>
             <myComp:AuthenticationForm id="authenticationForm" securityService="{authenticationHelper}"/>
-            <myComp:FilteredBooks id="filteredBooks"/>
-            <myComp:BookForm id="bookForm"/>
+            <myComp:FilteredBooks id="filteredBooks" bookService="{bookService}"/>
+            <myComp:BookForm id="bookForm" bookService="{bookService}"/>
             <mx:HBox id="welcomeMessage">
                 <mx:Label id="welcomeLabel" text="Welcome"/>
             </mx:HBox>

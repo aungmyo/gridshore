@@ -17,8 +17,8 @@ import mx.rpc.events.ResultEvent;
         /**
          * Constructor
          */
-        public function BookService() {
-            super("bookService", "remoteBookManager");
+        public function BookService(id:String, destination:String, endpoint:String) {
+            super(id,destination,endpoint);
         }
 
         /**

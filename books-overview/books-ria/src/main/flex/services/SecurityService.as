@@ -14,8 +14,8 @@ package services {
          * Default contructor for the SecurityService. This constructur creates the remote object used to connect
          * to the server for security related requests.
          */
-        public function SecurityService() {
-            super("securityService","authenticationHelper");
+        public function SecurityService(id:String, destination:String, endpoint:String) {
+            super(id,destination,endpoint);
         }
 
         /**

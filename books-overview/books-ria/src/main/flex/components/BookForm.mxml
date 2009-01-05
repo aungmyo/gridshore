@@ -10,7 +10,8 @@
         [Bindable]
         public var book:Book;
 
-        private var bookService:BookService = new BookService();
+        [Bindable]
+        public var bookService:BookService;
 
         /**
          * Used to clear the form when creating a new book

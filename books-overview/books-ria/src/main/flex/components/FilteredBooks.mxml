@@ -14,14 +14,14 @@
         import mx.events.ListEvent;
 
         [Bindable]
-        private var bookService:BookService;
+        public var bookService:BookService;
 
         /**
          * Initializing the screen for the first time it is opened
          * @return void
          */
         private function initScreen():void {
-            bookService = new BookService();
+//            bookService = new BookService("bookService", "remoteBookManager");
             doFilterBooks();
         }
 

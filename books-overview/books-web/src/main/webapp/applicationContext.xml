@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<objects xmlns="http://www.pranaframework.org/objects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://www.pranaframework.org/objects
+                             http://www.pranaframework.org/schema/objects/prana-objects-0.7.xsd">
+    <property file="application-context.properties"/>
+
+    <object id="bookService" class="services.BookService">
+        <constructor-arg ref="0" value="bookService"/>
+        <constructor-arg ref="1" value="remoteBookManager"/>
+        <constructor-arg ref="2" value="http://${host}:${port}/${context-root}/messagebroker/amf"/>
+    </object>
+
+    <object id="authenticationService" class="services.SecurityService">
+        <constructor-arg ref="0" value="authenticationService"/>
+        <constructor-arg ref="1" value="authenticationHelper"/>
+        <constructor-arg ref="2" value="http://${host}:${port}/${context-root}/messagebroker/amf"/>
+    </object>
+
+</objects>

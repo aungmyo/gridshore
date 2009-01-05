@@ -14,14 +14,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>books-flex-config</artifactId>
-            <version>${project.parent.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
 			<groupId>com.adobe.flex.framework</groupId>
 			<artifactId>flex-framework</artifactId>
 			<version>3.1.0.2710</version>
@@ -32,26 +24,6 @@
     <build>
         <sourceDirectory>src/main/flex</sourceDirectory>
         <plugins>
-            <!--<plugin>-->
-                <!--<artifactId>maven-dependency-plugin</artifactId>-->
-                <!--<executions>-->
-                    <!--<execution>-->
-                        <!--<id>unpack-config</id>-->
-                        <!--<goals>-->
-                            <!--<goal>unpack-dependencies</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${project.build.directory}/generated-resources</outputDirectory>-->
-                            <!--<includeArtifactIds>books-flex-config</includeArtifactIds>-->
-                            <!--<includeGroupIds>${project.groupId}</includeGroupIds>-->
-                            <!--<includeClassifiers>resources</includeClassifiers>-->
-                            <!--<excludeTransitive>true</excludeTransitive>-->
-                            <!--<excludeTypes>jar,swf</excludeTypes>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
-                <!--</executions>-->
-            <!--</plugin>-->
             <plugin>
 				<groupId>info.flex-mojos</groupId>
 				<artifactId>flex-compiler-mojo</artifactId>
@@ -70,10 +42,6 @@
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
             </resource>
-            <!--<resource>-->
-                <!--<directory>${basedir}/target/generated-resources</directory>-->
-                <!--<filtering>true</filtering>-->
-            <!--</resource>-->
         </resources>
     </build>
 </project>

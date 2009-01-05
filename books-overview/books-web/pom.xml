@@ -30,14 +30,6 @@
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>books-flex-config</artifactId>
-            <version>${project.parent.version}</version>
-            <classifier>resources</classifier>
-            <type>zip</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>books-ria</artifactId>
             <version>${project.version}</version>
             <type>swf</type>
@@ -123,22 +115,6 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
-                    <!--<execution>-->
-                        <!--<id>unpack-config</id>-->
-                        <!--<goals>-->
-                            <!--<goal>unpack-dependencies</goal>-->
-                        <!--</goals>-->
-                        <!--<phase>generate-resources</phase>-->
-                        <!--<configuration>-->
-                            <!--<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex-->
-                            <!--</outputDirectory>-->
-                            <!--<includeArtifactIds>books-flex-config</includeArtifactIds>-->
-                            <!--<includeGroupIds>${project.groupId}</includeGroupIds>-->
-                            <!--<includeClassifiers>resources</includeClassifiers>-->
-                            <!--<excludeTransitive>true</excludeTransitive>-->
-                            <!--<excludeTypes>jar,swf</excludeTypes>-->
-                        <!--</configuration>-->
-                    <!--</execution>-->
                     <execution>
                         <id>copy-swf</id>
                         <phase>process-classes</phase>

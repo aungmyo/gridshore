@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <!-- Bootstraps and exposes the BlazeDS MessageBroker -->
+    <bean id="mySpringManagedMessageBroker" class="org.springframework.flex.messaging.MessageBrokerFactoryBean"/>
+
+    <!-- Maps request paths at /* to the BlazeDS MessageBroker -->
+    <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="mappings">
+            <value>
+                /*=mySpringManagedMessageBroker
+            </value>
+        </property>
+    </bean>
+
+    <!-- Dispatches requests mapped to a MessageBroker -->
+    <bean class="org.springframework.flex.messaging.servlet.MessageBrokerHandlerAdapter"/>
+
+    <!-- remote proxies -->
+    <bean id="remoteBookManager" class="org.springframework.flex.messaging.remoting.FlexRemotingServiceExporter">
+        <property name="messageBroker" ref="mySpringManagedMessageBroker"/>
+        <property name="service" ref="bookManager"/>
+    </bean>
+
+</beans>

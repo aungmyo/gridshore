@@ -45,13 +45,13 @@
         <!-- spring dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <artifactId>spring-webmvc</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-core-tiger</artifactId>
-            <version>2.0.2</version>
+            <version>2.0.3</version>                             
             <exclusions>
                 <exclusion>
                     <groupId>org.springframework</groupId>
@@ -60,19 +60,25 @@
             </exclusions>
         </dependency>
         <dependency>
+            <groupId>org.springframework.flex</groupId>
+            <artifactId>org.springframework.flex</artifactId>
+            <version>1.0.0.M1</version>
+        </dependency>
+        <!-- adobe dependencies -->
+        <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>blazeds-common</artifactId>
-            <version>3.0.0.544</version>
+            <artifactId>flex-messaging-common</artifactId>
+            <version>${blazeds.version}</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>blazeds-core</artifactId>
-            <version>3.0.0.544</version>
+            <artifactId>flex-messaging-core</artifactId>
+            <version>${blazeds.version}</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>blazeds-remoting</artifactId>
-            <version>3.0.0.544</version>
+            <artifactId>flex-messaging-remoting</artifactId>
+            <version>${blazeds.version}</version>
         </dependency>
         <dependency>
             <groupId>backport-util-concurrent</groupId>
@@ -117,22 +123,22 @@
             <plugin>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
-                    <execution>
-                        <id>unpack-config</id>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex
-                            </outputDirectory>
-                            <includeArtifactIds>books-flex-config</includeArtifactIds>
-                            <includeGroupIds>${project.groupId}</includeGroupIds>
-                            <includeClassifiers>resources</includeClassifiers>
-                            <excludeTransitive>true</excludeTransitive>
-                            <excludeTypes>jar,swf</excludeTypes>
-                        </configuration>
-                    </execution>
+                    <!--<execution>-->
+                        <!--<id>unpack-config</id>-->
+                        <!--<goals>-->
+                            <!--<goal>unpack-dependencies</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>generate-resources</phase>-->
+                        <!--<configuration>-->
+                            <!--<outputDirectory>${project.build.directory}/${project.build.finalName}/WEB-INF/flex-->
+                            <!--</outputDirectory>-->
+                            <!--<includeArtifactIds>books-flex-config</includeArtifactIds>-->
+                            <!--<includeGroupIds>${project.groupId}</includeGroupIds>-->
+                            <!--<includeClassifiers>resources</includeClassifiers>-->
+                            <!--<excludeTransitive>true</excludeTransitive>-->
+                            <!--<excludeTypes>jar,swf</excludeTypes>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
                     <execution>
                         <id>copy-swf</id>
                         <phase>process-classes</phase>

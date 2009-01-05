@@ -15,12 +15,12 @@
     <properties>
         <spring.version>2.5.6</spring.version>
         <flex.sdk.version>[3.0.0.477,3.1.0.2710]</flex.sdk.version>
+        <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
         <flex-mojos.version>2.0M10</flex-mojos.version>
     </properties>
 
     <modules>
-        <module>books-flex-config</module>
         <module>books-common</module>
         <module>books-domain</module>
         <module>books-integration</module>
@@ -187,8 +187,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+        <repository>
+            <id>fnh</id>
+            <url>http://fna.googlecode.com/svn/trunk/fna/fna_m2_repository/</url>
+        </repository>
     </repositories>
-
     <pluginRepositories>
         <pluginRepository>
             <id>flex-mojos-repository</id>

@@ -1,12 +1,19 @@
-<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*"
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:myComp="components.*" xmlns:rend="renderers.*"
                 creationComplete="initializeApplication()">
     <mx:Script><![CDATA[
         import events.BookSelectedEvent;
         import events.MainNavigationEvent;
         import events.RemoteExceptionEvent;
         import events.AuthenticationEvent;
+
+        import model.BookSearchRequest;
+
+        import mx.messaging.config.ServerConfig;
+
         import services.SecurityService;
+
         import mx.controls.Alert;
+
 
         [Bindable]
         private var authenticationHelper:SecurityService = new SecurityService();
@@ -17,6 +24,7 @@
          * event is handled on an application scope, the listener for this event is added here.
          */
         private function initializeApplication():void {
+
             Application.application.addEventListener(AuthenticationEvent.AUTHENTICATION, handleAuthenticationEvent);
             Application.application.addEventListener(RemoteExceptionEvent.REMOTE_EXCEPTION, handleRemoteExceptionEvent);
             Application.application.addEventListener(AuthenticationEvent.NEEDS_AUTHENTICATION, handleNeedsAuthenticationEvent);
@@ -112,5 +120,4 @@
             </mx:HBox>
         </mx:ViewStack>
     </mx:Panel>
-
 </mx:Application>

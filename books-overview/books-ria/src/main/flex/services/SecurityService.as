@@ -1,5 +1,4 @@
 package services {
-import model.Author;
     import events.AuthenticationEvent;
     import mx.core.Application;
     import model.UserData;

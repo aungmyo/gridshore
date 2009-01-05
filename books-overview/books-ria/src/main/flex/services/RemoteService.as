@@ -1,5 +1,6 @@
 package services {
-    import mx.rpc.remoting.RemoteObject;
+import mx.messaging.ChannelSet;
+import mx.rpc.remoting.RemoteObject;
     import events.RemoteExceptionEvent;
     import events.AuthenticationFailureEvent;
     import mx.core.Application;

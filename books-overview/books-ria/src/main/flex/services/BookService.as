@@ -2,7 +2,8 @@ package services {
 import mx.controls.Alert;
 import model.Book;
     import mx.collections.ArrayCollection;
-    import mx.rpc.events.ResultEvent;
+import mx.messaging.ChannelSet;
+import mx.rpc.events.ResultEvent;
     import model.BookSearchRequest;
     import services.RemoteService;
 
@@ -17,7 +18,7 @@ import model.Book;
          * Constructor
          */
         public function BookService() {
-            super("bookService", "bookManager");
+            super("bookService", "remoteBookManager");
         }
 
         /**

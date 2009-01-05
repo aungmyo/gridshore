@@ -27,85 +27,31 @@
 			<version>3.1.0.2710</version>
 			<type>pom</type>
 		</dependency>
-        <!-- flex compiler dependencies -->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>playerglobal</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>swc</type>-->
-            <!--<scope>external</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>flex</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>swc</type>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>framework</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>swc</type>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>framework</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>resource-bundle</type>-->
-            <!--<classifier>en_US</classifier>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>rpc</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>swc</type>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>rpc</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>resource-bundle</type>-->
-            <!--<classifier>en_US</classifier>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>com.adobe.flex.sdk</groupId>-->
-            <!--<artifactId>utilities</artifactId>-->
-            <!--<version>${flex.sdk.version}</version>-->
-            <!--<type>swc</type>-->
-        <!--</dependency>-->
-        <!-- flex unit dependencies -->
-        <!--<dependency>-->
-            <!--<groupId>info.flex-mojos</groupId>-->
-            <!--<artifactId>testing-support</artifactId>-->
-            <!--<version>2.0M10</version>-->
-            <!--<type>swc</type>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/flex</sourceDirectory>
         <plugins>
-            <plugin>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-config</id>
-                        <goals>
-                            <goal>unpack-dependencies</goal>
-                        </goals>
-                        <phase>generate-resources</phase>
-                        <configuration>
-                            <outputDirectory>${project.build.directory}/generated-resources</outputDirectory>
-                            <includeArtifactIds>books-flex-config</includeArtifactIds>
-                            <includeGroupIds>${project.groupId}</includeGroupIds>
-                            <includeClassifiers>resources</includeClassifiers>
-                            <excludeTransitive>true</excludeTransitive>
-                            <excludeTypes>jar,swf</excludeTypes>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<artifactId>maven-dependency-plugin</artifactId>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>unpack-config</id>-->
+                        <!--<goals>-->
+                            <!--<goal>unpack-dependencies</goal>-->
+                        <!--</goals>-->
+                        <!--<phase>generate-resources</phase>-->
+                        <!--<configuration>-->
+                            <!--<outputDirectory>${project.build.directory}/generated-resources</outputDirectory>-->
+                            <!--<includeArtifactIds>books-flex-config</includeArtifactIds>-->
+                            <!--<includeGroupIds>${project.groupId}</includeGroupIds>-->
+                            <!--<includeClassifiers>resources</includeClassifiers>-->
+                            <!--<excludeTransitive>true</excludeTransitive>-->
+                            <!--<excludeTypes>jar,swf</excludeTypes>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
 				<groupId>info.flex-mojos</groupId>
 				<artifactId>flex-compiler-mojo</artifactId>
@@ -124,10 +70,10 @@
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
             </resource>
-            <resource>
-                <directory>${basedir}/target/generated-resources</directory>
-                <filtering>true</filtering>
-            </resource>
+            <!--<resource>-->
+                <!--<directory>${basedir}/target/generated-resources</directory>-->
+                <!--<filtering>true</filtering>-->
+            <!--</resource>-->
         </resources>
     </build>
 </project>

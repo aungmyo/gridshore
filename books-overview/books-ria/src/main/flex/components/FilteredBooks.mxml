@@ -1,21 +1,27 @@
 <?xml version="1.0"?>
 <!-- components/FilteredBooks.mxml -->
-<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="initScreen()" width="100%" height="100%">
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*" creationComplete="initScreen()"
+           width="100%" height="100%">
     <mx:Script><![CDATA[
         import events.BookSelectedEvent;
+
         import model.BookSearchRequest;
+
         import services.BookService;
+
         import model.Book;
+
         import mx.events.ListEvent;
 
         [Bindable]
-        private var bookService:BookService = new BookService();
+        private var bookService:BookService;
 
         /**
          * Initializing the screen for the first time it is opened
          * @return void
          */
         private function initScreen():void {
+            bookService = new BookService();
             doFilterBooks();
         }
 
@@ -27,7 +33,7 @@
             var bookSearchRequest:BookSearchRequest = new BookSearchRequest();
             bookSearchRequest.bookTitle = titleFilter.text;
             bookSearchRequest.bookIsbn = isbnFilter.text;
-            bookService.obtainFilteredBooks(bookSearchRequest)
+            bookService.obtainFilteredBooks(bookSearchRequest);
         }
 
         /**
@@ -42,12 +48,12 @@
 
         /**
          * Handles the click event by dispatching a unique BookSelectedEvent containing the clicked book
-         * @param event : ListEvent
+         * @param event : ListEvent event received when a list item is clicked
          * @return void
          */
         private function selectBook(event:ListEvent):void {
             var selectedBook:Book = Book(event.currentTarget.selectedItem);
-            dispatchEvent(new BookSelectedEvent(BookSelectedEvent.SELECT_BOOK,selectedBook));
+            dispatchEvent(new BookSelectedEvent(BookSelectedEvent.SELECT_BOOK, selectedBook));
         }
     ]]>
     </mx:Script>
@@ -75,8 +81,9 @@
                      height="100%" itemClick="selectBook(event)">
             <mx:columns>
                 <mx:DataGridColumn id="titleColumn" dataField="title" width="300" draggable="false"/>
-                <mx:DataGridColumn id="isbnColumn" dataField="isbn"  width="100" draggable="false"/>
-                <mx:DataGridColumn id="authorsColumn" sortable="false"  width="300" draggable="false" headerText="authors">
+                <mx:DataGridColumn id="isbnColumn" dataField="isbn" width="100" draggable="false"/>
+                <mx:DataGridColumn id="authorsColumn" sortable="false" width="300" draggable="false"
+                                   headerText="authors">
                     <mx:itemRenderer>
                         <mx:Component>
                             <rend:BookAuthorsRenderer/>

@@ -1,0 +1,14 @@
+<persistence version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+    <persistence-unit name="enquiry">
+        <class>nl.gridshore.enquiry.def.EnquiryDef</class>
+        <class>nl.gridshore.enquiry.def.MultipleChoiceQuestionDef</class>
+        <class>nl.gridshore.enquiry.def.OpenQuestionDef</class>
+        <class>nl.gridshore.enquiry.def.SingleChoiceQuestionDef</class>
+        <class>nl.gridshore.enquiry.def.ChoiceDef</class>
+
+        <class>nl.gridshore.enquiry.input.ChoiceInstance</class>
+        <class>nl.gridshore.enquiry.input.EnquiryInstance</class>
+        <class>nl.gridshore.enquiry.input.SelectionAnswerInstance</class>
+        <class>nl.gridshore.enquiry.input.OpenAnswerInstance</class>
+    </persistence-unit>
+</persistence>

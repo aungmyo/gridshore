@@ -51,4 +51,8 @@ public abstract class QuestionDef extends BaseEntity {
     public void setIndex(final int index) {
         this.index = index;
     }
+
+    public long getIndex() {
+        return index;
+    }
 }

@@ -11,11 +11,11 @@
  */
 package nl.gridshore.rdm.persistence;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
-import javax.persistence.Column;
 
 @MappedSuperclass
 public abstract class BaseEntity {
@@ -24,6 +24,7 @@ public abstract class BaseEntity {
     @GeneratedValue
     private Long id;
 
+    @SuppressWarnings({"UnusedDeclaration"})
     @Version
     @Column(name = "lock_version")
     private long lockVersion;

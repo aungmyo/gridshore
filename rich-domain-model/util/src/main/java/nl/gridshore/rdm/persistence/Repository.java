@@ -9,11 +9,20 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.repository;
+package nl.gridshore.rdm.persistence;
 
-import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.rdm.persistence.Repository;
+public interface Repository<T extends BaseEntity> {
 
-public interface EnquiryDefRepository extends Repository<EnquiryDef> {
+    public void create(T entity);
+
+    public void update(T entity);
+
+    public void delete(T entity);
+
+    public void delete(long id);
+
+    T findById(long id);
+
+    T load(long id);
 
 }

@@ -9,11 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.repository;
+package nl.gridshore.rdm.persistence;
 
-import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.rdm.persistence.Repository;
+public class EntityNotFoundException extends RuntimeException {
 
-public interface EnquiryDefRepository extends Repository<EnquiryDef> {
+    public EntityNotFoundException(final String message) {
+        super(message);
+    }
 
+    public EntityNotFoundException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }

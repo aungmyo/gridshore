@@ -11,24 +11,26 @@
  */
 package nl.gridshore.enquiry.persitance;
 
-import nl.gridshore.enquiry.context.EnquiryContext;
-import nl.gridshore.enquiry.context.EnquiryContextFactory;
+import nl.gridshore.enquiry.EnquiryContext;
 import nl.gridshore.enquiry.def.EnquiryDef;
+import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
 import nl.gridshore.enquiry.def.SingleChoiceQuestionDef;
+import nl.gridshore.rdm.utils.DomainContextFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.jpa.AbstractJpaTests;
 
 public class IntegrationTest extends AbstractJpaTests {
 
-    private EnquiryContextFactory enquiryContextFactory;
+    private DomainContextFactory<EnquiryContext> enquiryContextFactory;
 
     @Override
     protected void onTearDownInTransaction() throws Exception {
-        assertNull("Expected all contexts to be closed", enquiryContextFactory.getCurrentContext());
+//        assertNull("Expected all contexts to be closed", enquiryContextFactory.getCurrentContext());
     }
 
     public void testSaveEnquiryDef() {
         EnquiryContext enquiryContext = enquiryContextFactory.createContext();
+        assertNotNull("EnquiryContext not properly initialized", enquiryContext);
         EnquiryDef def;
         final SingleChoiceQuestionDef questionDef;
         try {
@@ -36,15 +38,23 @@ public class IntegrationTest extends AbstractJpaTests {
             def.setTitle("Hi there");
             questionDef = new SingleChoiceQuestionDef();
             def.appendQuestion(questionDef);
+            def.appendQuestion(new MultipleChoiceQuestionDef());
+            def.appendQuestion(questionDef);
+            def.appendQuestion(questionDef);
+            def.appendQuestion(questionDef);
         }
         finally {
             enquiryContext.close();
         }
         sharedEntityManager.flush();
         assertNotNull(questionDef.getId());
-        
-        int count = jdbcTemplate.queryForInt("SELECT count(*) FROM EnquiryDef WHERE title = ?", new String[] {"Hi there"});
+
+        int count = jdbcTemplate.queryForInt("SELECT count(*) FROM EnquiryDef WHERE title = ?", new String[]{"Hi there"});
         assertEquals(1, count);
+
+        assertEquals(2, def.getQuestions().size());
+        assertEquals(1, def.getQuestions().get(0).getIndex());
+        assertEquals(2, def.getQuestions().get(1).getIndex());
     }
 
     @Override
@@ -53,7 +63,7 @@ public class IntegrationTest extends AbstractJpaTests {
     }
 
     @Autowired
-    public void setEnquiryContextFactory(final EnquiryContextFactory enquiryContextFactory) {
+    public void setEnquiryContextFactory(final DomainContextFactory<EnquiryContext> enquiryContextFactory) {
         this.enquiryContextFactory = enquiryContextFactory;
     }
 }

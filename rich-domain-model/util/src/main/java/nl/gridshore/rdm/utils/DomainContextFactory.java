@@ -11,42 +11,31 @@
  */
 package nl.gridshore.rdm.utils;
 
-import java.util.Stack;
+public interface DomainContextFactory<T extends DomainContext> {
 
-public abstract class DomainContextFactory<T extends DomainContext> {
+    /**
+     * Create a new context. The calling code is responsible for correctly closing this context.
+     *
+     * @return a new instance of a {@link nl.gridshore.rdm.utils.DomainContext}
+     */
+    T createContext();
 
-    private final ThreadLocal<Stack<T>> contextHolder = new ThreadLocal<Stack<T>>();
+    /**
+     * Get the current {@link nl.gridshore.rdm.utils.DomainContext}. If multiple nested contexts are available, the last created is returned. If there
+     * are no contexts open for this factory, <code>null</code> is returned.
+     * <p>{@link nl.gridshore.rdm.utils.DomainContext} instances obtained this way should no be closed.
+     *
+     * @return an existing {@link nl.gridshore.rdm.utils.DomainContext} instance, if any.
+     */
+    T getCurrentContext();
 
-    public abstract T initializeContext(DomainContextFactory<T> contextFactory);
-
-    public T createContext() {
-        T currentContext = initializeContext(this);
-        Stack<T> stack = contextHolder.get();
-        if (stack == null) {
-            stack = new Stack<T>();
-            contextHolder.set(stack);
-        }
-        stack.push(currentContext);
-        return currentContext;
-    }
-
-    public T getCurrentContext() {
-        T currentContext = null;
-        Stack<T> stack = contextHolder.get();
-        if (stack != null && !stack.empty()) {
-            currentContext = stack.peek();
-        }
-        return currentContext;
-    }
-
-    protected void closeContext(DomainContext domainContext) {
-        Stack<T> stack = contextHolder.get();
-        if (stack == null || stack.isEmpty()) {
-            throw new DomainContextException("Closed a context more than once. Make sure every context is correctly closed in a finally block");
-        }
-        T popped = stack.pop();
-        if (popped != domainContext) {
-            throw new DomainContextException("Closing contexts in a different order than they were craeted. Are you sure all nested contexts are correctly closed?");
-        }
-    }
+    /**
+     * Removes the given {@link nl.gridshore.rdm.utils.DomainContext} from the stack. This method should not be called directly, but only via
+     * the {@link nl.gridshore.rdm.utils.DomainContext#close()} method. Implementations of this method must check the
+     * {@link nl.gridshore.rdm.utils.DomainContext#isOpen()} method to verify the context itself has been correctly
+     * closed().
+     *
+     * @param domainContext The {@link nl.gridshore.rdm.utils.DomainContext} to remove from the stack
+     */
+    void removeContext(DomainContext domainContext);
 }

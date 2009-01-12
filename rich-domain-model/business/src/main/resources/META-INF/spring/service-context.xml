@@ -7,4 +7,8 @@
 
     <context:component-scan base-package="nl.gridshore.enquiry.context"/>
 
+    <bean id="enquiryContextFactory" class="nl.gridshore.rdm.utils.SpringConfigurableDomainContextFactory">
+        <property name="domainContextType" value="nl.gridshore.enquiry.EnquiryContext"/>
+    </bean>
+
 </beans>

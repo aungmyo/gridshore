@@ -14,6 +14,7 @@ package nl.gridshore.enquiry.persitance;
 import nl.gridshore.enquiry.EnquiryContext;
 import nl.gridshore.enquiry.def.EnquiryDef;
 import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
+import nl.gridshore.enquiry.def.QuestionDef;
 import nl.gridshore.enquiry.def.SingleChoiceQuestionDef;
 import nl.gridshore.rdm.utils.DomainContextFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +23,6 @@ import org.springframework.test.jpa.AbstractJpaTests;
 public class IntegrationTest extends AbstractJpaTests {
 
     private DomainContextFactory<EnquiryContext> enquiryContextFactory;
-
-    @Override
-    protected void onTearDownInTransaction() throws Exception {
-//        assertNull("Expected all contexts to be closed", enquiryContextFactory.getCurrentContext());
-    }
 
     public void testSaveEnquiryDef() {
         EnquiryContext enquiryContext = enquiryContextFactory.createContext();
@@ -39,8 +35,6 @@ public class IntegrationTest extends AbstractJpaTests {
             questionDef = new SingleChoiceQuestionDef();
             def.appendQuestion(questionDef);
             def.appendQuestion(new MultipleChoiceQuestionDef());
-            def.appendQuestion(questionDef);
-            def.appendQuestion(questionDef);
             def.appendQuestion(questionDef);
         }
         finally {
@@ -55,6 +49,15 @@ public class IntegrationTest extends AbstractJpaTests {
         assertEquals(2, def.getQuestions().size());
         assertEquals(1, def.getQuestions().get(0).getIndex());
         assertEquals(2, def.getQuestions().get(1).getIndex());
+
+        sharedEntityManager.flush();
+        enquiryContext = enquiryContextFactory.createContext();
+        QuestionDef removedDef = def.removeQuestionIfPresent(questionDef);
+        assertFalse(def.getQuestions().contains(removedDef));
+        enquiryContext.close();
+        sharedEntityManager.flush();
+
+        assertEquals(1, jdbcTemplate.queryForInt("SELECT count(*) FROM QuestionDef"));
     }
 
     @Override

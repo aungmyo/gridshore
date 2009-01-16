@@ -9,13 +9,10 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.def;
+package nl.gridshore.enquiry.repository;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+import nl.gridshore.enquiry.def.QuestionDef;
+import nl.gridshore.rdm.persistence.Dao;
 
-@Entity
-@DiscriminatorValue("SINGLE")
-public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
-
+public interface QuestionDefDao extends Dao<QuestionDef> {
 }

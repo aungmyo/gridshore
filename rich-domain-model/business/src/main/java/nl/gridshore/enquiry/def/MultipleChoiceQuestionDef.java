@@ -16,18 +16,16 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
-import javax.persistence.Inheritance;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @DiscriminatorValue("MULTIPLE")
-@Inheritance
 public class MultipleChoiceQuestionDef extends QuestionDef {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "questionDef")
     @OrderBy("index")
-    private List<ChoiceDef> choices;
+    protected List<ChoiceDef> choices;
 
     public MultipleChoiceQuestionDef() {
         this.choices = new ArrayList<ChoiceDef>();
@@ -38,10 +36,24 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
     }
 
     public void appendChoice(ChoiceDef choiceDef) {
-        choices.add(choiceDef);
+        insertChoice(choiceDef, choices.size());
     }
 
     public void insertChoice(ChoiceDef choiceDef, int index) {
+        removeChoiceIfPresent(choiceDef);
+
         choices.add(index, choiceDef);
+        int t = 1;
+        for (ChoiceDef choice : choices) {
+            choice.setIndex(t++);
+        }
+    }
+
+    public void removeChoiceIfPresent(ChoiceDef choiceDef) {
+        choices.remove(choiceDef);
+    }
+
+    public void removeChoice(int index) {
+        removeChoiceIfPresent(choices.get(index));
     }
 }

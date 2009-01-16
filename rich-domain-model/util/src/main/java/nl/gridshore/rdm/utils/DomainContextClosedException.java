@@ -9,13 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.def;
+package nl.gridshore.rdm.utils;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+public class DomainContextClosedException extends DomainContextException {
 
-@Entity
-@DiscriminatorValue("SINGLE")
-public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
+    public DomainContextClosedException(final String message) {
+        super(message);
+    }
 
+    public DomainContextClosedException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }

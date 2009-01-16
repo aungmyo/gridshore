@@ -11,18 +11,22 @@
  */
 package nl.gridshore.enquiry.def;
 
-import nl.gridshore.rdm.persistence.BaseEntity;
+import nl.gridshore.enquiry.EnquiryContext;
+import nl.gridshore.rdm.persistence.BaseSpringInjectedEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
+import javax.persistence.Transient;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
-public class EnquiryDef extends BaseEntity {
+public class EnquiryDef extends BaseSpringInjectedEntity {
 
     @Column
     private String title;
@@ -30,6 +34,9 @@ public class EnquiryDef extends BaseEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "enquiry")
     @OrderBy("index")
     private List<QuestionDef> questions = new ArrayList<QuestionDef>();
+
+    @Transient
+    private EnquiryContext enquiryContext;
 
     public void appendQuestion(final QuestionDef questionDef) {
         insertQuestion(questionDef, questions.size());
@@ -41,12 +48,11 @@ public class EnquiryDef extends BaseEntity {
      *
      * @param questionDef The question definition to add
      * @param position    The position to add the question, 0 indicates the first question.
-     * @throws IndexOutOfBoundsException if the position has a negative value 0.
+     * @throws IndexOutOfBoundsException if the position has a negative value.
      */
     public void insertQuestion(final QuestionDef questionDef, final int position) {
-        if (questions.contains(questionDef)) {
-            questions.remove(questionDef);
-        }
+        questions.remove(questionDef);
+
         int insertPosition = Math.min(position, questions.size());
         questionDef.setEnquiry(this);
         questions.add(insertPosition, questionDef);
@@ -54,6 +60,18 @@ public class EnquiryDef extends BaseEntity {
         for (QuestionDef question : questions) {
             question.setIndex(t++);
         }
+    }
+
+    public QuestionDef removeQuestionIfPresent(final QuestionDef questionDef) {
+        if (questions.remove(questionDef)) {
+            enquiryContext.registerForDeletion(questionDef);
+            return questionDef;
+        }
+        return null;
+    }
+
+    public QuestionDef removeQuestion(final int position) {
+        return removeQuestionIfPresent(questions.get(position));
     }
 
     public String getTitle() {
@@ -65,6 +83,11 @@ public class EnquiryDef extends BaseEntity {
     }
 
     public List<QuestionDef> getQuestions() {
-        return questions;
+        return Collections.unmodifiableList(questions);
+    }
+
+    @Autowired
+    public void setEnquiryContext(EnquiryContext context) {
+        this.enquiryContext = context;
     }
 }

@@ -9,10 +9,19 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.utils;
+package nl.gridshore.rdm.context;
 
+import nl.gridshore.rdm.utils.AbstractDomainContextFactory;
+import nl.gridshore.rdm.utils.DomainContext;
+import nl.gridshore.rdm.utils.DomainContextException;
+import nl.gridshore.rdm.utils.DomainContextFactory;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
+import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
 import java.lang.reflect.Constructor;
 
@@ -22,7 +31,7 @@ import java.lang.reflect.Constructor;
  * @param <T> The type of DomainContext that is created by this factory.
  */
 public class SpringConfigurableDomainContextFactory<T extends DomainContext> extends AbstractDomainContextFactory<T>
-        implements org.springframework.context.ApplicationContextAware {
+        implements ApplicationContextAware, BeanFactoryPostProcessor {
 
     private ApplicationContext applicationContext;
     private Class<T> domainContextType;
@@ -46,5 +55,14 @@ public class SpringConfigurableDomainContextFactory<T extends DomainContext> ext
 
     public void setDomainContextType(Class<T> domainContextType) {
         this.domainContextType = domainContextType;
+    }
+
+    @Override
+    public void postProcessBeanFactory(final ConfigurableListableBeanFactory beanFactory) throws BeansException {
+        BeanDefinitionRegistry registry = (BeanDefinitionRegistry) beanFactory;
+        BeanDefinitionBuilder bdb = BeanDefinitionBuilder.rootBeanDefinition(DomainContextProxyFactoryBean.class);
+        bdb.addConstructorArgValue(this)
+                .addConstructorArgValue(domainContextType);
+        registry.registerBeanDefinition("newBean", bdb.getBeanDefinition());
     }
 }

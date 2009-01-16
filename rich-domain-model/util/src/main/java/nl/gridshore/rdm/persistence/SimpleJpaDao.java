@@ -14,13 +14,13 @@ package nl.gridshore.rdm.persistence;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-public class AbstractJpaRepository<T extends BaseEntity> implements Repository<T> {
+public class SimpleJpaDao<T extends BaseEntity> implements Dao<T> {
     @PersistenceContext
     protected EntityManager entityManager;
 
     protected final Class<T> entityType;
 
-    public AbstractJpaRepository(Class<T> entityType) {
+    public SimpleJpaDao(Class<T> entityType) {
         this.entityType = entityType;
     }
 

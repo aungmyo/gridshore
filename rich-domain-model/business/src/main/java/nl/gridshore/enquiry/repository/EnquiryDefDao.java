@@ -11,9 +11,9 @@
  */
 package nl.gridshore.enquiry.repository;
 
-import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.rdm.persistence.Repository;
+import nl.gridshore.enquiry.def.EnquiryDef;
+import nl.gridshore.rdm.persistence.Dao;
 
-public interface EnquiryInstanceRepository extends Repository<EnquiryInstance> {
+public interface EnquiryDefDao extends Dao<EnquiryDef> {
 
 }

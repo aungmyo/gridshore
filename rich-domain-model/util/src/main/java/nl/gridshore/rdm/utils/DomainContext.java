@@ -12,20 +12,23 @@
 package nl.gridshore.rdm.utils;
 
 import nl.gridshore.rdm.persistence.BaseEntity;
-import nl.gridshore.rdm.persistence.Repository;
+import nl.gridshore.rdm.persistence.Dao;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public abstract class DomainContext {
 
+    private boolean allowSaveAfterDelete = false;
+    private State state = State.OPEN;
+
     private static enum State {
         OPEN, CLOSED
     }
 
     private final DomainContextFactory<? extends DomainContext> domainContextFactory;
-    private State state = State.OPEN;
-    private final Map<BaseEntity, Repository> autoSaveEntities = new HashMap<BaseEntity, Repository>();
+    private final Map<BaseEntity, Dao> autoSaveEntities = new HashMap<BaseEntity, Dao>();
+    private final Map<BaseEntity, Dao> autoDeleteEntities = new HashMap<BaseEntity, Dao>();
 
     protected DomainContext(final DomainContextFactory<? extends DomainContext> domainContextFactory) {
         this.domainContextFactory = domainContextFactory;
@@ -44,6 +47,7 @@ public abstract class DomainContext {
      * Close this context.
      */
     public void close() {
+        assertNotClosed();
         prepareClose();
         state = State.CLOSED;
         domainContextFactory.removeContext(this);
@@ -55,11 +59,26 @@ public abstract class DomainContext {
      * before the transaction is committed.
      * <p>When an <code>entity</code> is submitted more than once, the last provided <code>repository</code> is used for saving.
      *
-     * @param entity     The entity to register for autosave
-     * @param repository The repository to use for saving the instance.
+     * @param entity The entity to register for autosave
+     * @param dao    The repository to use for saving the instance.
      */
-    protected void registerForAutoSave(BaseEntity entity, Repository repository) {
-        autoSaveEntities.put(entity, repository);
+    protected <T extends BaseEntity> void registerForSave(T entity, Dao<T> dao) {
+        assertNotClosed();
+        if (allowSaveAfterDelete || !autoDeleteEntities.containsKey(entity)) {
+            autoSaveEntities.put(entity, dao);
+        }
+    }
+
+    protected <T extends BaseEntity> void registerForDelete(T entity, Dao<T> dao) {
+        assertNotClosed();
+        autoSaveEntities.remove(entity);
+        autoDeleteEntities.put(entity, dao);
+    }
+
+    protected void assertNotClosed() {
+        if (state == State.CLOSED) {
+            throw new DomainContextClosedException("Operation called on closed domain context");
+        }
     }
 
     /**
@@ -68,13 +87,27 @@ public abstract class DomainContext {
      */
     @SuppressWarnings({"unchecked"})
     protected void prepareClose() {
-        for (Map.Entry<BaseEntity, Repository> entry : autoSaveEntities.entrySet()) {
+        for (Map.Entry<BaseEntity, Dao> entry : autoDeleteEntities.entrySet()) {
+            if (entry.getKey().getId() != null) {
+                entry.getValue().delete(entry.getKey());
+            }
+        }
+        for (Map.Entry<BaseEntity, Dao> entry : autoSaveEntities.entrySet()) {
             if (entry.getKey().getId() == null) {
                 entry.getValue().create(entry.getKey());
             } else {
                 entry.getValue().update(entry.getKey());
             }
-
         }
+        autoSaveEntities.clear();
+        autoDeleteEntities.clear();
+    }
+
+    public boolean isAllowSaveAfterDelete() {
+        return allowSaveAfterDelete;
+    }
+
+    public void setAllowSaveAfterDelete(final boolean allowSaveAfterDelete) {
+        this.allowSaveAfterDelete = allowSaveAfterDelete;
     }
 }

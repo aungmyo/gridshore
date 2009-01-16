@@ -22,17 +22,18 @@ import javax.persistence.*;
 public abstract class QuestionDef extends BaseEntity {
 
     @Column
-    private String questionText;
+    protected String questionText;
 
-    @ManyToOne(optional = false)
-    private EnquiryDef enquiry;
+    @ManyToOne
+//(optional = false)
+    protected EnquiryDef enquiry;
 
     @Column(name = "ordering")
-    private long index;
+    protected int index;
 
     @ManyToOne(optional = true)
     @JoinColumn
-    private ChoiceDef parentChoiceDef;
+    protected ChoiceDef parentChoiceDef;
 
     public EnquiryDef getEnquiry() {
         if (enquiry == null) {
@@ -43,16 +44,23 @@ public abstract class QuestionDef extends BaseEntity {
 
     void setEnquiry(final EnquiryDef enquiry) {
         if (parentChoiceDef != null) {
-            throw new IllegalStateException("Cannot add sub questions to and Enquiry Definition directly");
+            throw new IllegalStateException("Cannot add sub questions to an Enquiry Definition directly");
         }
         this.enquiry = enquiry;
     }
 
-    public void setIndex(final int index) {
+    void setParentChoiceDef(final ChoiceDef parentChoiceDef) {
+        if (this.enquiry != null) {
+            throw new IllegalStateException("Cannot add as sub question when added to an Enquiry Definition directly");
+        }
+        this.parentChoiceDef = parentChoiceDef;
+    }
+
+    protected void setIndex(final int index) {
         this.index = index;
     }
 
-    public long getIndex() {
+    public int getIndex() {
         return index;
     }
 }

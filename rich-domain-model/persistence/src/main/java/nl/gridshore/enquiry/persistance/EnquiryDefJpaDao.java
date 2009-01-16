@@ -12,12 +12,12 @@
 package nl.gridshore.enquiry.persistance;
 
 import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.enquiry.repository.EnquiryDefRepository;
-import nl.gridshore.rdm.persistence.AbstractJpaRepository;
+import nl.gridshore.enquiry.repository.EnquiryDefDao;
+import nl.gridshore.rdm.persistence.SimpleJpaDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EnquiryDefJpaDao extends AbstractJpaRepository<EnquiryDef> implements EnquiryDefRepository {
+public class EnquiryDefJpaDao extends SimpleJpaDao<EnquiryDef> implements EnquiryDefDao {
 
     public EnquiryDefJpaDao() {
         super(EnquiryDef.class);

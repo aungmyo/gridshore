@@ -9,13 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.def;
+package nl.gridshore.rdm.context;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
+public class NoContextAvailableException extends RuntimeException {
 
-@Entity
-@DiscriminatorValue("SINGLE")
-public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
+    public NoContextAvailableException(final String message) {
+        super(message);
+    }
 
+    public NoContextAvailableException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }

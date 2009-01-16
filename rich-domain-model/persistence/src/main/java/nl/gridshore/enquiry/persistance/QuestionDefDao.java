@@ -11,15 +11,14 @@
  */
 package nl.gridshore.enquiry.persistance;
 
-import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.enquiry.repository.EnquiryInstanceDao;
+import nl.gridshore.enquiry.def.QuestionDef;
 import nl.gridshore.rdm.persistence.SimpleJpaDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EnquiryInstanceJpaDao extends SimpleJpaDao<EnquiryInstance> implements EnquiryInstanceDao {
+public class QuestionDefDao extends SimpleJpaDao<QuestionDef> implements nl.gridshore.enquiry.repository.QuestionDefDao {
 
-    public EnquiryInstanceJpaDao() {
-        super(EnquiryInstance.class);
+    public QuestionDefDao() {
+        super(QuestionDef.class);
     }
 }

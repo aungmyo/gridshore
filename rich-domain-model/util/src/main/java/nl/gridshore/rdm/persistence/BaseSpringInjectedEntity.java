@@ -15,6 +15,13 @@ import nl.gridshore.rdm.context.ApplicationContextHolder;
 
 import javax.persistence.MappedSuperclass;
 
+/**
+ * Implementation of a {@link nl.gridshore.rdm.persistence.BaseEntity} that automatically wires the entity during
+ * construction. This class requires that the {@link nl.gridshore.rdm.context.ApplicationContextHolder} is wired inside
+ * the Spring Application Context.
+ *
+ * @see nl.gridshore.rdm.context.ApplicationContextHolder
+ */
 @MappedSuperclass
 public abstract class BaseSpringInjectedEntity extends BaseEntity {
 

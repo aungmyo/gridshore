@@ -7,6 +7,11 @@ import org.springframework.beans.factory.FactoryBean;
 
 import java.lang.reflect.Method;
 
+/**
+ * FactoryBean that creates Proxy instances that delegate all methods to the current context created by the factory.
+ * This class is used by the {@link nl.gridshore.rdm.context.SpringConfigurableDomainContextFactory} to allow injection
+ * of the current domain context is domain entities.
+ */
 class DomainContextProxyFactoryBean implements FactoryBean {
     private final SpringConfigurableDomainContextFactory factory;
     private final Class domainContextType;

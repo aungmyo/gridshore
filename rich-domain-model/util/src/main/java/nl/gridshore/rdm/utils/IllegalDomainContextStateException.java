@@ -9,19 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.context;
+package nl.gridshore.rdm.utils;
 
-/**
- * Exception that indicates that a {@link nl.gridshore.rdm.utils.DomainContext} has been requested while none was
- * currently available.
- */
-public class NoContextAvailableException extends RuntimeException {
+public class IllegalDomainContextStateException extends DomainContextException {
 
-    public NoContextAvailableException(final String message) {
+    public IllegalDomainContextStateException(final String message) {
         super(message);
     }
 
-    public NoContextAvailableException(final String message, final Throwable cause) {
+    public IllegalDomainContextStateException(final String message, final Throwable cause) {
         super(message, cause);
     }
 }

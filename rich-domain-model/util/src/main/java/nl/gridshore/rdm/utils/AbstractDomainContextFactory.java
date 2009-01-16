@@ -20,16 +20,15 @@ public abstract class AbstractDomainContextFactory<T extends DomainContext> impl
     /**
      * Create and initialize a DomainContext instance. This instance does not have to be thread safe.
      *
-     * @param contextFactory The factory that should be notified when the context is closed.
      * @return a fully initialized DomainContext instance.
      */
-    protected abstract T initializeContext(DomainContextFactory<T> contextFactory);
+    protected abstract T initializeContext();
 
     /**
      * {@inheritDoc}
      */
     public T createContext() {
-        T currentContext = initializeContext(this);
+        T currentContext = initializeContext();
         Stack<T> stack = contextHolder.get();
         if (stack == null) {
             stack = new Stack<T>();
@@ -56,15 +55,15 @@ public abstract class AbstractDomainContextFactory<T extends DomainContext> impl
      */
     public void removeContext(DomainContext domainContext) {
         if (domainContext.isOpen()) {
-            throw new DomainContextException("The provided domainContext has not been marked for closing. Make sure close() is called on the DomainContext");
+            throw new IllegalDomainContextStateException("The provided domainContext has not been marked for closing. Make sure close() is called on the DomainContext");
         }
         Stack<T> stack = contextHolder.get();
         if (stack == null || stack.isEmpty()) {
-            throw new DomainContextException("Closed a context more than once. Make sure every context is correctly closed in a finally block");
+            throw new IllegalDomainContextStateException("Closed a context more than once. Make sure every context is correctly closed in a finally block");
         }
         T popped = stack.pop();
         if (popped != domainContext) {
-            throw new DomainContextException("Closing contexts in a different order than they were craeted. Are you sure all nested contexts are correctly closed?");
+            throw new IllegalDomainContextStateException("Closing contexts in a different order than they were craeted. Are you sure all nested contexts are correctly closed?");
         }
     }
 }

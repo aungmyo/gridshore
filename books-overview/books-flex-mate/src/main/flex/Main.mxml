@@ -1,0 +1,57 @@
+<mx:Application xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:map="maps.*" creationComplete="initApp()">
+    <mx:Script><![CDATA[
+        import events.AuthenticationEvent;
+
+        import models.AuthorizationData;
+        import models.Config;
+
+        import mx.controls.Alert;
+
+        [Bindable]
+        public var authorizationData:AuthorizationData = new AuthorizationData();
+        [Bindable]
+        public var properties:Config = new Config();
+
+        private var loader:URLLoader = new URLLoader();
+
+        private function createRequestEvent():void {
+            var authEvent:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.TRY);
+            authEvent.username = inputUsername.text;
+            authEvent.password = inputPassword.text;
+
+            dispatchEvent(authEvent);
+        }
+
+        public function initApp():void {
+            loader.load(new URLRequest('application-context.properties'));
+            loader.addEventListener(Event.COMPLETE, onLoaderComplete);
+            loader.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
+        }
+
+        private function onLoaderComplete(event:Event):void {
+            var content:String = String(loader.data);
+            Alert.show(content);
+        }
+
+        private function onIOError(event:IOErrorEvent):void {
+          dispatchEvent(event);
+        }
+
+        ]]></mx:Script>
+
+    <map:MainEventMap props="{properties}"/>
+
+    <mx:Panel label="Login Form">
+        <mx:Label text="{authorizationData.username}"/>
+        <mx:Label id="testparam"/>
+        <mx:Form defaultButton="{createRequest}">
+            <mx:FormItem label="Username">
+                <mx:TextInput id="inputUsername"/>
+            </mx:FormItem>
+            <mx:FormItem label="Password">
+                <mx:TextInput id="inputPassword" displayAsPassword="true"/>
+            </mx:FormItem>
+            <mx:Button id="createRequest" label="Login" click="createRequestEvent()"/>
+        </mx:Form>
+    </mx:Panel>
+</mx:Application>

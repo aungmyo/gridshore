@@ -21,11 +21,11 @@
         }
 
         /**
-         * Used to handle a login failure event
-         * @param event : AuthenticationFailureEvent
+         * Used to handle a login failure events
+         * @param events : AuthenticationFailureEvent
          * @return void
          */
-        private function loginServiceFaultHandler(event:AuthenticationFailureEvent):void {
+        private function loginServiceFaultHandler(events:AuthenticationFailureEvent):void {
             authenticationMessage.text = "Problem while authentication ...";
             authenticationMessage.visible = true;
             submitButton.enabled = true;

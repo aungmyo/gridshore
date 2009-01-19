@@ -23,7 +23,7 @@
         /**
          * Mainly used to set some listeners and parameters on application scope, it also calls the function
          * to present the form to enter credentials for authentication of a user. The successfull authentication
-         * event is handled on an application scope, the listener for this event is added here.
+         * events is handled on an application scope, the listener for this events is added here.
          */
         private function initializeApplication():void {
             _applicationContext = new XMLApplicationContext("applicationContext.xml");
@@ -36,7 +36,7 @@
             showRightUIComponent('initializingMessage');
         }
 
-        private function onApplicationContextComplete(event:Event):void {
+        private function onApplicationContextComplete(events:Event):void {
             bookService = _applicationContext.getObject("bookService");
             authenticationHelper = _applicationContext.getObject("authenticationService");
             authenticationHelper.isPrincipalAuthenticatedBefore();
@@ -45,25 +45,25 @@
         /**
          * Used to present the form where a user can enter his credentials and ask for authentication
          */
-        private function handleNeedsAuthenticationEvent(event:AuthenticationEvent):void {
+        private function handleNeedsAuthenticationEvent(events:AuthenticationEvent):void {
             showRightUIComponent('authentication');
         }
 
         /**
-         * Called when a NavigationEvent is dispatched, based on the event, the right UIComponent is created
+         * Called when a NavigationEvent is dispatched, based on the events, the right UIComponent is created
          * and presented in the main panel.
-         * @param event NavigationEvent thrown when a user clicks a menu item (by example)
+         * @param events NavigationEvent thrown when a user clicks a menu item (by example)
          */
-        private function handleNavigationEvent(event:MainNavigationEvent):void {
+        private function handleNavigationEvent(events:MainNavigationEvent):void {
             showRightUIComponent(event.clickedItem);
         }
 
         /**
          * This method is called after a succesfull authentication request. It initializes the application
          * for normal use by adding navigation and other global items.
-         * @param event
+         * @param events
          */
-        private function handleAuthenticationEvent(event:AuthenticationEvent):void {
+        private function handleAuthenticationEvent(events:AuthenticationEvent):void {
             mainNavigation.initMyComponent();
             mainNavigation.addEventListener(MainNavigationEvent.SELECT_ITEM, handleNavigationEvent);
             filteredBooks.addEventListener(BookSelectedEvent.SELECT_BOOK, handleBookSelectedEvent);
@@ -72,20 +72,20 @@
 
         /**
          * Used to handle a BookSelectedEvent. Result must be the book form with the data of the selected book.
-         * @param event : BookSelectedEvent
+         * @param events : BookSelectedEvent
          * @return void
          */
-        private function handleBookSelectedEvent(event:BookSelectedEvent):void {
+        private function handleBookSelectedEvent(events:BookSelectedEvent):void {
             bookForm.book = event.selectedBook;
             showRightUIComponent('selectedbook');
         }
 
         /**
          * Called when a remote exception is catched, for now we only show the error message
-         * @param event : RemoteExceptionEvent
+         * @param events : RemoteExceptionEvent
          * @return void
          */
-        private function handleRemoteExceptionEvent(event:RemoteExceptionEvent):void {
+        private function handleRemoteExceptionEvent(events:RemoteExceptionEvent):void {
             Alert.show(event.message);
         }
 

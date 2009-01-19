@@ -1,0 +1,47 @@
+<EventMap xmlns:mx="http://www.adobe.com/2006/mxml" xmlns="http://mate.asfusion.com/">
+    <mx:Script><![CDATA[
+        import com.asfusion.mate.utils.debug.Debugger;
+
+        import events.*;
+
+        import managers.*;
+
+        import models.Config;
+
+        import mx.core.Application;
+        import mx.utils.URLUtil;
+
+        import org.springextensions.actionscript.collections.Properties;
+
+        [Bindable]
+        public var props:Config = new Config();
+
+        ]]></mx:Script>
+
+    <Debugger level="{Debugger.ALL}"/>
+
+    <!-- Remote objects -->
+    <mx:RemoteObject id="booksService"
+                     endpoint="http://{props.host}:{props.port}/{props.webcontext}/messagebroker/amf"
+                     destination="remoteBookManager"/>
+
+    <mx:RemoteObject id="authenticationService"
+                     endpoint="http://{props.host}:{props.port}/{props.webcontext}/messagebroker/amf"
+                     destination="authenticationHelper"/>
+
+    <!-- Event handlers -->
+    <EventHandlers type="{AuthenticationEvent.TRY}" debug="true">
+        <RemoteObjectInvoker instance="{authenticationService}" method="authenticatePrincipal"
+                             arguments="{[event.username,event.password]}">
+            <resultHandlers>
+                <MethodInvoker generator="{AuthenticationManager}" method="storeAuthenticationDetails"
+                               arguments="{resultObject}"/>
+            </resultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+
+    <!-- Injectors -->
+    <Injectors target="{Main}">
+        <PropertyInjector source="{AuthenticationManager}" sourceKey="authorizationData" targetKey="authorizationData"/>
+    </Injectors>
+</EventMap>

@@ -17,7 +17,7 @@ public class RemoteService {
     protected var remoteObject:RemoteObject;
 
     /**
-     * Constructor accepting an id and destination for the actual RemoteObject to create. An event listener
+     * Constructor accepting an id and destination for the actual RemoteObject to create. An events listener
      * is added for exceptions.
      * @param id String representing the id of the new RemoteObject to create
      * @param destination String representing the destination of the RemoteObject to create
@@ -30,8 +30,8 @@ public class RemoteService {
     }
 
     /**
-     * generic fault event handler for all remote object actions. based on the received message an action
-     * is taken, mostly throwing a new event.
+     * generic fault events handler for all remote object actions. based on the received message an action
+     * is taken, mostly throwing a new events.
      * @param event FaultEvent received for handling
      */
     public function onRemoteException(event:FaultEvent):void {

@@ -47,11 +47,11 @@
         }
 
         /**
-         * Handles the click event by dispatching a unique BookSelectedEvent containing the clicked book
-         * @param event : ListEvent event received when a list item is clicked
+         * Handles the click events by dispatching a unique BookSelectedEvent containing the clicked book
+         * @param events : ListEvent events received when a list item is clicked
          * @return void
          */
-        private function selectBook(event:ListEvent):void {
+        private function selectBook(events:ListEvent):void {
             var selectedBook:Book = Book(event.currentTarget.selectedItem);
             dispatchEvent(new BookSelectedEvent(BookSelectedEvent.SELECT_BOOK, selectedBook));
         }
@@ -78,7 +78,7 @@
             </mx:Form>
         </mx:VBox>
         <mx:DataGrid id="myBooks" dataProvider="{bookService.filteredBooks}" verticalScrollPolicy="on"
-                     height="100%" itemClick="selectBook(event)">
+                     height="100%" itemClick="selectBook(events)">
             <mx:columns>
                 <mx:DataGridColumn id="titleColumn" dataField="title" width="300" draggable="false"/>
                 <mx:DataGridColumn id="isbnColumn" dataField="isbn" width="100" draggable="false"/>

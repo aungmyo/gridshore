@@ -17,7 +17,7 @@
         }
 
         /**
-         * Uses the provided string to dispatch a new event to indicate that a button has been pressed.
+         * Uses the provided string to dispatch a new events to indicate that a button has been pressed.
          * @param clickedItem : String
          * @return void
          */

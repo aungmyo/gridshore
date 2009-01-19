@@ -25,7 +25,8 @@
         <module>books-domain</module>
         <module>books-integration</module>
         <module>books-business</module>
-        <module>books-ria</module>
+        <!--<module>books-ria</module>-->
+        <module>books-flex-mate</module>
         <module>books-web</module>
     </modules>
 

@@ -8,7 +8,7 @@ import mx.rpc.events.ResultEvent;
     import services.RemoteService;
 
     /**
-     * Remote object to the book manager for obtaining and storing books
+     * Remote object to the book managers for obtaining and storing books
      */
     public class BookService extends RemoteService {
         [Bindable]

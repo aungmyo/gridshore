@@ -14,10 +14,10 @@
 
     <properties>
         <spring.version>2.5.6</spring.version>
-        <flex.sdk.version>3.1.0.2710</flex.sdk.version>
+        <flex.sdk.version>3.2.0.3958</flex.sdk.version>
         <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
-        <flex-mojos.version>2.0M10</flex-mojos.version>
+        <flex-mojos.version>2.0.1</flex-mojos.version>
     </properties>
 
     <modules>

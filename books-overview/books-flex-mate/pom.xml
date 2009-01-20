@@ -31,12 +31,6 @@
             <version>0.8.5</version>
             <type>swc</type>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-actionscript</artifactId>
-            <version>0.6.1-SNAPSHOT</version>
-            <type>swc</type>
-        </dependency>        
     </dependencies>
 
     <build>
@@ -48,7 +42,7 @@
                 <version>${flex-mojos.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-                    <contextRoot>/books</contextRoot>
+                    <contextRoot>/books-web</contextRoot>
 					<locales>
 						<locale>en_US</locale>
 					</locales>

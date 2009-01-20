@@ -2,12 +2,13 @@
   <compiler>
     <debug>true</debug>
     <source-path><path-element>books-flex-mate/src/main/flex</path-element></source-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/flex/3.1.0.2710/flex-3.1.0.2710.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/framework/3.1.0.2710/framework-3.1.0.2710.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/playerglobal/9-3.1.0.2710/playerglobal-9-3.1.0.2710.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/rpc/3.1.0.2710/rpc-3.1.0.2710.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/utilities/3.1.0.2710/utilities-3.1.0.2710.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/springframework/spring-actionscript/0.6.1-SNAPSHOT/spring-actionscript-0.6.1-SNAPSHOT.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/applicationupdater/3.2.0.3958/applicationupdater-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/applicationupdater_ui/3.2.0.3958/applicationupdater_ui-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/flex/3.2.0.3958/flex-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/framework/3.2.0.3958/framework-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/playerglobal/9-3.2.0.3958/playerglobal-9-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/rpc/3.2.0.3958/rpc-3.2.0.3958.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/utilities/3.2.0.3958/utilities-3.2.0.3958.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/asfusion/mate/0.8.5/mate-0.8.5.swc</path-element></library-path>
   </compiler>
   <static-link-runtime-shared-libraries>false</static-link-runtime-shared-libraries>

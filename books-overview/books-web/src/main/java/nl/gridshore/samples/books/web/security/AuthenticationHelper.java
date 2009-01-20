@@ -11,6 +11,8 @@ import org.springframework.security.Authentication;
 import org.springframework.security.GrantedAuthority;
 import org.springframework.security.context.SecurityContextHolder;
 import org.springframework.security.providers.UsernamePasswordAuthenticationToken;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import nl.gridshore.samples.books.web.security.vo.AuthorizationData;
 
 /**
@@ -21,6 +23,8 @@ import nl.gridshore.samples.books.web.security.vo.AuthorizationData;
  * Class used to interact with the spring context and do the actual authentication.
  */
 public class AuthenticationHelper {
+    private static Logger log = LoggerFactory.getLogger(AuthenticationHelper.class);
+
     /**
      * Checks if the current user is authenticated by evaluating the FlexContext
      * @return Boolean true if the current user is authenticated and false elsewise
@@ -28,7 +32,6 @@ public class AuthenticationHelper {
     public boolean principleIsAuthenticated() {
         Principal userPrincipal = FlexContext.getUserPrincipal();
         return userPrincipal != null;
-
     }
 
     /**
@@ -52,6 +55,32 @@ public class AuthenticationHelper {
         return obtainGrantedAuthorities();
     }
 
+    /**
+     * Returns all data from the current logged in principal. Since we make use of the anonymous user, there
+     * will always be an authenticated principal
+     * @return AuthorizationData containing info about the curent user and the current authorized roles
+     */
+    public AuthorizationData checkUserIsAllreadyAuthenticated() {
+        return obtainGrantedAuthorities();
+    }
+
+    /**
+     * Logout the current principle
+     */
+    public void logoutPrincipal() {
+        String username = "unknown";
+        try {
+            username = SecurityContextHolder.getContext().getAuthentication().getName();
+            FlexContext.setUserPrincipal(null);
+            FlexContext.getHttpRequest().getSession().invalidate();
+            FlexContext.getFlexSession().invalidate();
+            SecurityContextHolder.clearContext();
+            log.debug("logout request is executed for user : " + username);
+        } catch (RuntimeException e) {
+            log.warn("Problem while logging out the current user : " + username);
+        }
+    }
+
     private AuthorizationData obtainGrantedAuthorities() {
         GrantedAuthority[] authorities =
                 SecurityContextHolder.getContext().getAuthentication().getAuthorities();
@@ -64,12 +93,4 @@ public class AuthenticationHelper {
         return new AuthorizationData(grantedRoles,name);
     }
 
-    /**
-     * Returns all data from the current logged in principal. Since we make use of the anonymous user, there
-     * will always be an authenticated principal
-     * @return AuthorizationData containing info about the curent user and the current authorized roles
-     */
-    public AuthorizationData checkUserIsAllreadyAuthenticated() {
-        return obtainGrantedAuthorities();
-    }
 }

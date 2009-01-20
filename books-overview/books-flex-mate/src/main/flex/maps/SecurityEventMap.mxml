@@ -1,0 +1,74 @@
+<EventMap xmlns:mx="http://www.adobe.com/2006/mxml" xmlns="http://mate.asfusion.com/">
+    <mx:Script><![CDATA[
+        import com.asfusion.mate.utils.debug.Debugger;
+
+        import components.*;
+        import events.*;
+        import managers.*;
+        import models.Config;
+
+        [Bindable]
+        public var props:Config = new Config();
+
+        ]]></mx:Script>
+
+    <Debugger level="{Debugger.ALL}"/>
+
+    <!-- Remote objects -->
+    <mx:RemoteObject id="authenticationService"
+                     endpoint="http://{props.host}:{props.port}/{props.webcontext}/messagebroker/amf"
+                     destination="authenticationHelper"/>
+
+    <!-- Event handlers -->
+    <EventHandlers type="{AuthenticationEvent.TRY}" debug="true">
+        <RemoteObjectInvoker instance="{authenticationService}" method="authenticatePrincipal"
+                             arguments="{[event.username,event.password]}">
+            <resultHandlers>
+                <MethodInvoker generator="{AuthenticationManager}" method="storeAuthenticationDetails"
+                               arguments="{resultObject}"/>
+                <EventAnnouncer generator="{AuthenticationEvent}" type="{AuthenticationEvent.AUTHENTICATED}"/>
+            </resultHandlers>
+            <faultHandlers>
+                <MethodInvoker generator="{AuthenticationManager}" method="storeAuthenticationProblem"
+                        arguments="{fault}"/>
+            </faultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.CHECK_NEEDS}" debug="true">
+        <RemoteObjectInvoker instance="{authenticationService}" method="checkUserIsAllreadyAuthenticated">
+            <resultHandlers>
+                <MethodInvoker generator="{AuthenticationManager}" method="evaluateAuthorizationData"
+                               arguments="{resultObject}"/>
+            </resultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.NEEDS}" debug="true">
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.AUTHENTICATED}" debug="true">
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.WELCOME_MESSAGE}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.LOGOUT}" debug="true">
+        <RemoteObjectInvoker instance="{authenticationService}" method="logoutPrincipal"/>
+        <MethodInvoker generator="{AuthenticationManager}" method="logout"/>
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <!-- Injectors -->
+    <Injectors target="{Main}">
+        <PropertyInjector source="{AuthenticationManager}" sourceKey="authorizationData" targetKey="authorizationData"/>
+    </Injectors>
+    <Injectors target="{AuthenticationForm}">
+        <PropertyInjector source="{AuthenticationManager}" sourceKey="faultMessage" targetKey="faultMessage"/>
+    </Injectors>
+</EventMap>

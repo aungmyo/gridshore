@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml"
+           xmlns:mine="components.*"
+           xmlns:mateEvent="com.asfusion.mate.events.*">
+    <mx:Script><![CDATA[
+        import events.AuthenticationEvent;
+import events.MainNavigationEvent;
+
+        private function handleNavigationEvent(event:MainNavigationEvent):void {
+            switch(event.navigationId) {
+                case MainNavigationEvent.AUTHENTICATION_FORM:
+                    mainContentViewStack.selectedChild = authenticationForm;
+                    break;
+                case MainNavigationEvent.WELCOME_MESSAGE:
+                    mainContentViewStack.selectedChild = welcomeMessage;
+                    break;
+                default:
+                    mainContentViewStack.selectedChild = busyMessage;
+            }
+        }
+
+        private function doLogout():void {
+            var event:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.LOGOUT);
+            dispatchEvent(event);
+        }
+]]></mx:Script>
+
+
+    <mateEvent:Listener type="{MainNavigationEvent.NAVIGATION}" method="handleNavigationEvent"/>
+
+    <mx:ViewStack id="mainContentViewStack">
+        <mine:AuthenticationForm id="authenticationForm"/>
+        <mx:HBox id="busyMessage">
+            <mx:Label text="initializing ..."/>
+        </mx:HBox>
+        <mx:HBox id="welcomeMessage">
+            <mx:Label text="You are authenticated"/>
+            <mx:Button label="logout" click="doLogout()"/>
+        </mx:HBox>
+    </mx:ViewStack>
+</mx:Canvas>

@@ -6,6 +6,7 @@
         import events.AuthenticationEvent;
         import models.AuthorizationData;
         import models.Config;
+        import org.springextensions.actionscript.collections.Properties;
 
         [Bindable]
         public var authorizationData:AuthorizationData = new AuthorizationData();
@@ -13,18 +14,17 @@
         public var properties:Config = new Config();
 
         private var loader:URLLoader = new URLLoader();
-
+        private var props:Properties = new Properties();
         public function initApp():void {
-            loader.load(new URLRequest('application-context.properties'));
-            loader.addEventListener(Event.COMPLETE, onLoaderComplete);
-            loader.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
+            props.addEventListener(Event.COMPLETE, onLoaderComplete);
+            props.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
+            props.load("application-context.properties");
         }
 
         private function onLoaderComplete(event:Event):void {
-            var content:String = String(loader.data);
-            properties.host = "localhost";
-            properties.port = "8080";
-            properties.webcontext = "books-web";
+            properties.host = props.getProperty("host");
+            properties.port = props.getProperty("port");
+            properties.webcontext = props.getProperty("context-root");
 
             var authEvent:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.CHECK_NEEDS);
             dispatchEvent(authEvent);

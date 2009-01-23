@@ -12,7 +12,7 @@
         <security:intercept-url pattern="/index.html" filters="none"/>
         <security:intercept-url pattern="/**/*.swf" filters="none"/>
         <security:intercept-url pattern="/**/*.html" access="ROLE_USER"/>
-        <!--<security:intercept-url pattern="/**" filters="none"/>-->
+        <security:intercept-url pattern="/**/*.properties" filters="none"/>
     </security:http>
 
     <security:global-method-security>

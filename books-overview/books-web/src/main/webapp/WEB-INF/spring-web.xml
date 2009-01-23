@@ -10,6 +10,7 @@
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <value>
+                /config.properties=configPropertyController
                 /*=mySpringManagedMessageBroker
             </value>
         </property>
@@ -17,11 +18,19 @@
 
     <!-- Dispatches requests mapped to a MessageBroker -->
     <bean class="org.springframework.flex.messaging.servlet.MessageBrokerHandlerAdapter"/>
+    <bean class="nl.gridshore.samples.books.web.handler.ControllerHandlerAdapter"/>
 
     <!-- remote proxies -->
     <bean id="remoteBookManager" class="org.springframework.flex.messaging.remoting.FlexRemotingServiceExporter">
         <property name="messageBroker" ref="mySpringManagedMessageBroker"/>
         <property name="service" ref="bookManager"/>
+    </bean>
+
+    <bean id="configPropertyController" class="nl.gridshore.samples.books.web.controller.ConfigPropertyController"/>
+    
+    <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="views"/>
+        <property name="order" value="1"/>
     </bean>
 
 </beans>

@@ -11,8 +11,6 @@
         <channel ref="my-amf"/>
     </default-channels>
 
-    <!--<destination id="remoteBookManager"/>-->
-
     <destination id="authenticationHelper">
         <properties>
             <source>nl.gridshore.samples.books.web.security.AuthenticationHelper</source>

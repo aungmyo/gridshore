@@ -15,10 +15,11 @@
 
         private var loader:URLLoader = new URLLoader();
         private var props:Properties = new Properties();
+        
         public function initApp():void {
             props.addEventListener(Event.COMPLETE, onLoaderComplete);
             props.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
-            props.load("application-context.properties");
+            props.load("config.properties");
         }
 
         private function onLoaderComplete(event:Event):void {

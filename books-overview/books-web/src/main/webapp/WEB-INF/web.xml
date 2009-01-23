@@ -51,4 +51,8 @@
         <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
         <url-pattern>/messagebroker/*</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Spring MVC Dispatcher Servlet</servlet-name>
+        <url-pattern>*.properties</url-pattern>
+    </servlet-mapping>
 </web-app>

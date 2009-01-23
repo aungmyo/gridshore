@@ -13,19 +13,18 @@
         [Bindable]
         public var properties:Config = new Config();
 
-        private var loader:URLLoader = new URLLoader();
-        private var props:Properties = new Properties();
+        private var loadedProps:Properties = new Properties();
         
         public function initApp():void {
-            props.addEventListener(Event.COMPLETE, onLoaderComplete);
-            props.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
-            props.load("config.properties");
+            loadedProps.addEventListener(Event.COMPLETE, onLoaderComplete);
+            loadedProps.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
+            loadedProps.load("config.properties");
         }
 
         private function onLoaderComplete(event:Event):void {
-            properties.host = props.getProperty("host");
-            properties.port = props.getProperty("port");
-            properties.webcontext = props.getProperty("context-root");
+            properties.host = loadedProps.getProperty("host");
+            properties.port = loadedProps.getProperty("port");
+            properties.webcontext = loadedProps.getProperty("context-root");
 
             var authEvent:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.CHECK_NEEDS);
             dispatchEvent(authEvent);

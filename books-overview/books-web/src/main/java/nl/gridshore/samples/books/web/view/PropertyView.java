@@ -10,8 +10,10 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * <p></p>
- *
+ * <p>This view class uses the provided map by key <strong>exposedParams</strong>. Using this map,
+ * a file is streamed to the client with content type <strong>text/plain</strong>. All found key
+ * value pairs in the map are written back as a lines in the file.</p>
+ * <p> check {@link nl.gridshore.samples.books.web.controller.PropertyController PropertyController} for implementation specifics.</p>
  * @author jettro coenradie
  *         Date: Jan 23, 2009
  */

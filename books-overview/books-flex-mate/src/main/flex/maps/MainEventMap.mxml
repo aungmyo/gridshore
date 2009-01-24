@@ -19,6 +19,33 @@
                      endpoint="http://{props.host}:{props.port}/{props.webcontext}/messagebroker/amf"
                      destination="remoteBookManager"/>
 
-    <!-- Event handlers: security -->
-    
+    <!-- Event handlers: books -->
+    <EventHandlers type="{BooksEvent.OBTAIN_ALL_BOOKS}" debug="true">
+        <RemoteObjectInvoker instance="{booksService}" method="obtainAllBooks">
+            <resultHandlers>
+                <MethodInvoker generator="{BooksManager}" method="storeBooks" arguments="{resultObject}"/>
+                <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+                    <Properties navigationId="{MainNavigationEvent.ALL_BOOKS}"/>
+                </EventAnnouncer>
+            </resultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+
+    <EventHandlers type="{BooksEvent.FILTER_BOOKS}" debug="true">
+        <MethodInvoker generator="{BooksManager}" method="filterBooks" arguments="{event.bookFilter}"/>
+    </EventHandlers>
+
+    <EventHandlers type="{BooksEvent.CLEAR_FILTER_BOOKS}" debug="true">
+        <MethodInvoker generator="{BooksManager}" method="clearFilterBooks"/>
+    </EventHandlers>
+
+    <EventHandlers type="{BooksEvent.SELECT_CURRENT_BOOK}" debug="true">
+        <MethodInvoker generator="{BooksManager}" method="selectCurrentBook" arguments="{event.currentBook}"/>
+        <!-- initiate a navigation event -->
+    </EventHandlers>
+
+    <!-- Injectors -->
+    <Injectors target="{AllBooks}">
+        <PropertyInjector source="{BooksManager}" sourceKey="books" targetKey="books"/>
+    </Injectors>
 </EventMap>

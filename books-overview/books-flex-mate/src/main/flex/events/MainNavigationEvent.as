@@ -5,6 +5,7 @@ public class MainNavigationEvent extends Event{
 
     public static const AUTHENTICATION_FORM:String = "authenticationForm";
     public static const WELCOME_MESSAGE:String = "welcomeMessage";
+    public static const ALL_BOOKS:String = "allBooks";
 
     public var navigationId:String;
 

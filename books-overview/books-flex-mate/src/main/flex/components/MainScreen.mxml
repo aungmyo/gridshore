@@ -3,39 +3,49 @@
            xmlns:mine="components.*"
            xmlns:mateEvent="com.asfusion.mate.events.*">
     <mx:Script><![CDATA[
-        import events.AuthenticationEvent;
-import events.MainNavigationEvent;
+        import events.MainNavigationEvent;
 
         private function handleNavigationEvent(event:MainNavigationEvent):void {
-            switch(event.navigationId) {
+            switch (event.navigationId) {
                 case MainNavigationEvent.AUTHENTICATION_FORM:
+                    currentState = '';
                     mainContentViewStack.selectedChild = authenticationForm;
                     break;
                 case MainNavigationEvent.WELCOME_MESSAGE:
                     mainContentViewStack.selectedChild = welcomeMessage;
+                    currentState = "authenticated";
+                    break;
+                case MainNavigationEvent.ALL_BOOKS:
+                    mainContentViewStack.selectedChild = allBooks;
                     break;
                 default:
                     mainContentViewStack.selectedChild = busyMessage;
             }
         }
 
-        private function doLogout():void {
-            var event:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.LOGOUT);
-            dispatchEvent(event);
-        }
-]]></mx:Script>
+        ]]></mx:Script>
 
 
     <mateEvent:Listener type="{MainNavigationEvent.NAVIGATION}" method="handleNavigationEvent"/>
 
-    <mx:ViewStack id="mainContentViewStack">
+    <mx:states>
+        <mx:State name="authenticated">
+            <mx:SetProperty target="{mainNavigation}" name="visible" value="true"/>
+        </mx:State>
+    </mx:states>
+
+    <mx:ApplicationControlBar id="mainNavigation" dock="true" visible="false" width="100%">
+        <mine:MainNavigation width="100%"/>
+    </mx:ApplicationControlBar>
+
+    <mx:ViewStack id="mainContentViewStack" top="70" width="100%" height="100%">
         <mine:AuthenticationForm id="authenticationForm"/>
         <mx:HBox id="busyMessage">
             <mx:Label text="initializing ..."/>
         </mx:HBox>
         <mx:HBox id="welcomeMessage">
-            <mx:Label text="You are authenticated"/>
-            <mx:Button label="logout" click="doLogout()"/>
+            <mx:Label text="Welcome to this books application."/>
         </mx:HBox>
+        <mine:AllBooks id="allBooks" width="100%"/>
     </mx:ViewStack>
 </mx:Canvas>

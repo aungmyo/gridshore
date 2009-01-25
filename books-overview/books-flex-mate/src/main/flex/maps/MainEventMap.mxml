@@ -41,11 +41,16 @@
 
     <EventHandlers type="{BooksEvent.SELECT_CURRENT_BOOK}" debug="true">
         <MethodInvoker generator="{BooksManager}" method="selectCurrentBook" arguments="{event.currentBook}"/>
-        <!-- initiate a navigation event -->
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.BOOK_DETAILS}"/>
+        </EventAnnouncer>
     </EventHandlers>
 
     <!-- Injectors -->
     <Injectors target="{AllBooks}">
         <PropertyInjector source="{BooksManager}" sourceKey="books" targetKey="books"/>
+    </Injectors>
+    <Injectors target="{BookDetails}">
+        <PropertyInjector source="{BooksManager}" sourceKey="currentBook" targetKey="book"/>
     </Injectors>
 </EventMap>

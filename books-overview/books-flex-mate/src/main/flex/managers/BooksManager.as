@@ -35,8 +35,7 @@ public class BooksManager {
     }
 
     private function doFilterBooks(item:Object):Boolean {
-        if (item.isbn != null && booksFilter.isbn != null && booksFilter.isbn != ""
-                && item.isbn.toLowerCase().search(booksFilter.isbn.toLowerCase()) == -1) {
+        if (notContainsCaseInsensitive(item.isbn, booksFilter.isbn)) {
             return false;
         }
         if (item.title != null && booksFilter.title != null && booksFilter.title != ""
@@ -45,6 +44,11 @@ public class BooksManager {
         }
 
         return true;
+    }
+
+    private function notContainsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
+        return (searchIn != null && searchFor != null && searchFor != ""
+                && searchIn.toLowerCase().search(searchFor.toLowerCase()) == -1);
     }
 }
 }

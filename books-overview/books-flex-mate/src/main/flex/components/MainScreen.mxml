@@ -18,6 +18,9 @@
                 case MainNavigationEvent.ALL_BOOKS:
                     mainContentViewStack.selectedChild = allBooks;
                     break;
+                case MainNavigationEvent.BOOK_DETAILS:
+                    mainContentViewStack.selectedChild = bookDetails;
+                    break;
                 default:
                     mainContentViewStack.selectedChild = busyMessage;
             }
@@ -47,5 +50,6 @@
             <mx:Label text="Welcome to this books application."/>
         </mx:HBox>
         <mine:AllBooks id="allBooks" width="100%"/>
+        <mine:BookDetails id="bookDetails" width="100%"/>
     </mx:ViewStack>
 </mx:Canvas>

@@ -14,11 +14,11 @@
 
     <dependencies>
         <dependency>
-			<groupId>com.adobe.flex.framework</groupId>
-			<artifactId>flex-framework</artifactId>
-			<version>${flex.sdk.version}</version>
-			<type>pom</type>
-		</dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-actionscript</artifactId>
@@ -37,17 +37,20 @@
         <sourceDirectory>src/main/flex</sourceDirectory>
         <plugins>
             <plugin>
-				<groupId>info.flex-mojos</groupId>
-				<artifactId>flex-compiler-mojo</artifactId>
+                <groupId>info.flex-mojos</groupId>
+                <artifactId>flex-compiler-mojo</artifactId>
                 <version>${flex-mojos.version}</version>
-				<extensions>true</extensions>
-				<configuration>
+                <extensions>true</extensions>
+                <configuration>
                     <contextRoot>/books-web</contextRoot>
-					<locales>
-						<locale>en_US</locale>
-					</locales>
-				</configuration>
-			</plugin>
+                    <mergeResourceBundle>true</mergeResourceBundle>
+                    <resourceBundlePath>${basedir}/src/main/locale/{locale}</resourceBundlePath>
+                    <locales>
+                        <locale>en_US</locale>
+                        <!--<locale>nl_NL</locale>-->
+                    </locales>
+                </configuration>
+            </plugin>
         </plugins>
         <defaultGoal>install</defaultGoal>
         <resources>

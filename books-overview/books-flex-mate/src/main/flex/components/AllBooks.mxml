@@ -42,7 +42,7 @@ import mx.events.ListEvent;
             <mx:Form defaultButton="{doFilterButton}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
                 <mx:HBox width="100%">
                     <mx:Spacer width="100%"/>
-                    <mx:Button id="doFilterButton" label="filter" click="doFilterBooks()"/>
+                    <mx:Button id="doFilterButton" label="Filter" click="doFilterBooks()"/>
                     <mx:Button label="clear" click="clearFilter()"/>
                 </mx:HBox>
                 <mx:HBox width="100%" horizontalGap="0" borderStyle="solid" paddingTop="10" paddingBottom="10">

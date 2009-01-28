@@ -2,7 +2,6 @@ package nl.gridshore.rdm.context;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.InvocationHandler;
-import nl.gridshore.rdm.utils.DomainContextFactory;
 import org.springframework.beans.factory.FactoryBean;
 
 import java.lang.reflect.Method;

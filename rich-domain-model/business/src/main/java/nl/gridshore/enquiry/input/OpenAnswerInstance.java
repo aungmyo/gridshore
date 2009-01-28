@@ -13,6 +13,7 @@ package nl.gridshore.enquiry.input;
 
 import nl.gridshore.enquiry.def.OpenQuestionDef;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 
@@ -22,4 +23,22 @@ public class OpenAnswerInstance extends AnswerInstance {
     @ManyToOne(optional = false)
     private OpenQuestionDef questionDef;
 
+    @Column
+    private String text;
+
+    protected OpenAnswerInstance() {
+    }
+
+    public OpenAnswerInstance(final OpenQuestionDef questionDef, final String text) {
+        this.questionDef = questionDef;
+        this.text = text;
+    }
+
+    public OpenQuestionDef getQuestionDef() {
+        return questionDef;
+    }
+
+    public String getText() {
+        return text;
+    }
 }

@@ -12,7 +12,7 @@
 package nl.gridshore.rdm.context;
 
 /**
- * Exception that indicates that a {@link nl.gridshore.rdm.utils.DomainContext} has been requested while none was
+ * Exception that indicates that a {@link DomainContext} has been requested while none was
  * currently available.
  */
 public class NoContextAvailableException extends RuntimeException {

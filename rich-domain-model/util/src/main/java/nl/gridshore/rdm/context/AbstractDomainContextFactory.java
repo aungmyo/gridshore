@@ -9,7 +9,7 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.utils;
+package nl.gridshore.rdm.context;
 
 import java.util.Stack;
 

@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
     <bean class="nl.gridshore.rdm.context.SpringConfigurableDomainContextFactory">
-        <property name="domainContextType" value="nl.gridshore.rdm.utils.TestDomainContext"/>
+        <property name="domainContextType" value="nl.gridshore.rdm.utils.MockDomainContext"/>
     </bean>
 
 </beans>

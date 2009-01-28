@@ -9,7 +9,7 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.utils;
+package nl.gridshore.rdm.context;
 
 import nl.gridshore.rdm.persistence.BaseEntity;
 import nl.gridshore.rdm.persistence.Dao;
@@ -21,6 +21,7 @@ public abstract class DomainContext {
 
     private boolean allowSaveAfterDelete = false;
     private State state = State.OPEN;
+    private boolean saveOnClose = true;
 
     private static enum State {
         OPEN, CLOSED
@@ -87,20 +88,23 @@ public abstract class DomainContext {
      */
     @SuppressWarnings({"unchecked"})
     protected void prepareClose() {
-        for (Map.Entry<BaseEntity, Dao> entry : autoDeleteEntities.entrySet()) {
-            if (entry.getKey().getId() != null) {
-                entry.getValue().delete(entry.getKey());
+        if (saveOnClose) {
+            for (Map.Entry<BaseEntity, Dao> entry : autoDeleteEntities.entrySet()) {
+                if (entry.getKey().getId() != null) {
+                    entry.getValue().delete(entry.getKey());
+                }
             }
-        }
-        for (Map.Entry<BaseEntity, Dao> entry : autoSaveEntities.entrySet()) {
-            if (entry.getKey().getId() == null) {
-                entry.getValue().create(entry.getKey());
-            } else {
-                entry.getValue().update(entry.getKey());
+            for (Map.Entry<BaseEntity, Dao> entry : autoSaveEntities.entrySet()) {
+                if (entry.getKey().getId() == null) {
+                    entry.getValue().create(entry.getKey());
+                } else {
+                    entry.getValue().update(entry.getKey());
+                }
             }
         }
         autoSaveEntities.clear();
         autoDeleteEntities.clear();
+
     }
 
     public boolean isAllowSaveAfterDelete() {
@@ -109,5 +113,13 @@ public abstract class DomainContext {
 
     public void setAllowSaveAfterDelete(final boolean allowSaveAfterDelete) {
         this.allowSaveAfterDelete = allowSaveAfterDelete;
+    }
+
+    public boolean isSaveOnClose() {
+        return saveOnClose;
+    }
+
+    public void setSaveOnClose(final boolean saveOnClose) {
+        this.saveOnClose = saveOnClose;
     }
 }

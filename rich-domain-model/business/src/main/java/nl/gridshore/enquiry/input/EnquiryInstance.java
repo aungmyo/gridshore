@@ -11,13 +11,16 @@
  */
 package nl.gridshore.enquiry.input;
 
-import nl.gridshore.rdm.persistence.BaseEntity;
 import nl.gridshore.enquiry.def.EnquiryDef;
+import nl.gridshore.enquiry.def.QuestionDef;
+import nl.gridshore.rdm.persistence.BaseEntity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -27,7 +30,7 @@ public class EnquiryInstance extends BaseEntity {
     private EnquiryDef enquiryDef;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "enquiryInstance")
-    private List<AnswerInstance> answerInstances;
+    private List<AnswerInstance> answerInstances = new ArrayList<AnswerInstance>();
 
     protected EnquiryInstance() {
     }
@@ -37,10 +40,30 @@ public class EnquiryInstance extends BaseEntity {
     }
 
     public List<AnswerInstance> getAnswerInstances() {
-        return answerInstances;
+        return Collections.unmodifiableList(answerInstances);
     }
 
     public EnquiryDef getEnquiryDef() {
         return enquiryDef;
+    }
+
+    public void addAnswer(final AnswerInstance answerInstance) {
+        if (!getEnquiryDef().equals(answerInstance.getEnquiryDef())) {
+            throw new EnquiryException("The answer belongs to another enquiry than this instance");
+        }
+        if (getAnswerForQuestion(answerInstance.getQuestionDef()) != null) {
+            throw new EnquiryException("This answer answers a question that is already answered");
+        }
+        answerInstances.add(answerInstance);
+        answerInstance.setEnquiryInstance(this);
+    }
+
+    public AnswerInstance getAnswerForQuestion(QuestionDef questionDef) {
+        for (AnswerInstance answer : answerInstances) {
+            if (questionDef.equals(answer.getQuestionDef())) {
+                return answer;
+            }
+        }
+        return null;
     }
 }

@@ -11,15 +11,32 @@
  */
 package nl.gridshore.enquiry.input;
 
+import nl.gridshore.enquiry.def.EnquiryDef;
+import nl.gridshore.enquiry.def.QuestionDef;
 import nl.gridshore.rdm.persistence.BaseEntity;
 
-import javax.persistence.ManyToOne;
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 
 @Entity
 public abstract class AnswerInstance extends BaseEntity {
 
     @ManyToOne
     private EnquiryInstance enquiryInstance;
-    
+
+    public EnquiryInstance getEnquiryInstance() {
+        return enquiryInstance;
+    }
+
+    protected void setEnquiryInstance(final EnquiryInstance enquiryInstance) {
+        this.enquiryInstance = enquiryInstance;
+    }
+
+    public abstract QuestionDef getQuestionDef();
+
+    public abstract String getText();
+
+    public EnquiryDef getEnquiryDef() {
+        return getQuestionDef().getEnquiry();
+    }
 }

@@ -9,11 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.repository;
+package nl.gridshore.enquiry.input;
 
-import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.rdm.persistence.Dao;
+public class EnquiryException extends RuntimeException {
 
-public interface EnquiryDefDao extends Dao<EnquiryDef> {
+    public EnquiryException(final String message) {
+        super(message);
+    }
 
+    public EnquiryException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }

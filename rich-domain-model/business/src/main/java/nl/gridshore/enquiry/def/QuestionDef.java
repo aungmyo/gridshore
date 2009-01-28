@@ -24,8 +24,7 @@ public abstract class QuestionDef extends BaseEntity {
     @Column
     protected String questionText;
 
-    @ManyToOne
-//(optional = false)
+    @ManyToOne(optional = true)
     protected EnquiryDef enquiry;
 
     @Column(name = "ordering")
@@ -36,7 +35,7 @@ public abstract class QuestionDef extends BaseEntity {
     protected ChoiceDef parentChoiceDef;
 
     public EnquiryDef getEnquiry() {
-        if (enquiry == null) {
+        if (parentChoiceDef != null) {
             return parentChoiceDef.getEnquiry();
         }
         return enquiry;

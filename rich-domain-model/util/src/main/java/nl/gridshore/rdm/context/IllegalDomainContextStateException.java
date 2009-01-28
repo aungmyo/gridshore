@@ -9,11 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.repository;
+package nl.gridshore.rdm.context;
 
-import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.rdm.persistence.Dao;
+public class IllegalDomainContextStateException extends DomainContextException {
 
-public interface EnquiryInstanceDao extends Dao<EnquiryInstance> {
+    public IllegalDomainContextStateException(final String message) {
+        super(message);
+    }
 
+    public IllegalDomainContextStateException(final String message, final Throwable cause) {
+        super(message, cause);
+    }
 }

@@ -11,13 +11,5 @@
  */
 package nl.gridshore.rdm.utils;
 
-public class DomainContextClosedException extends DomainContextException {
-
-    public DomainContextClosedException(final String message) {
-        super(message);
-    }
-
-    public DomainContextClosedException(final String message, final Throwable cause) {
-        super(message, cause);
-    }
+public class StringUtils {
 }

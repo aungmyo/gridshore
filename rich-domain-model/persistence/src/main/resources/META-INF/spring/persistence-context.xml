@@ -4,11 +4,10 @@
        xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
-                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"
+       xmlns:aop="http://www.springframework.org/schema/aop">
 
     <context:component-scan base-package="nl.gridshore.enquiry.persistance"/>
-
-    <context:annotation-config/>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter">
@@ -22,7 +21,9 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean class="org.springframework.transaction.aspectj.AnnotationTransactionAspect" factory-method="aspectOf">
+        <property name="transactionManager" ref="transactionManager"/>
+    </bean>
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
@@ -30,13 +31,12 @@
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.jdbc2.optional.MysqlDataSource"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/enquiry?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
+        <property name="url"
+                  value="jdbc:mysql://localhost:3306/enquiry?useUnicode=true&amp;characterEncoding=utf8&amp;characterSetResults=utf8"/>
         <property name="username" value="build"/>
         <property name="password" value="build"/>
         <property name="initialSize" value="1"/>
         <property name="maxActive" value="1"/>
     </bean>
-
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
 </beans>

@@ -17,6 +17,7 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
@@ -32,7 +33,7 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
     }
 
     public List<ChoiceDef> getChoices() {
-        return choices;
+        return Collections.unmodifiableList(choices);
     }
 
     public void appendChoice(ChoiceDef choiceDef) {
@@ -41,19 +42,29 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
 
     public void insertChoice(ChoiceDef choiceDef, int index) {
         removeChoiceIfPresent(choiceDef);
+        choiceDef.setQuestionDef(this);
+        choices.add(Math.min(index, choices.size()), choiceDef);
+        recalculateIndices();
+    }
 
-        choices.add(index, choiceDef);
+    public ChoiceDef removeChoiceIfPresent(ChoiceDef choiceDef) {
+        if (choices.remove(choiceDef)) {
+            recalculateIndices();
+            return choiceDef;
+        }
+        return null;
+    }
+
+    public ChoiceDef removeChoice(int index) {
+        return removeChoiceIfPresent(choices.get(index));
+    }
+
+    // ======================== Helper methods ==============================
+
+    private void recalculateIndices() {
         int t = 1;
         for (ChoiceDef choice : choices) {
             choice.setIndex(t++);
         }
-    }
-
-    public void removeChoiceIfPresent(ChoiceDef choiceDef) {
-        choices.remove(choiceDef);
-    }
-
-    public void removeChoice(int index) {
-        removeChoiceIfPresent(choices.get(index));
     }
 }

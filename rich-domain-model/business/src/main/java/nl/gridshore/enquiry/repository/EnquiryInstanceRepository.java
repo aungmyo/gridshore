@@ -9,17 +9,11 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.persistance;
+package nl.gridshore.enquiry.repository;
 
 import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.enquiry.repository.EnquiryInstanceDao;
-import nl.gridshore.rdm.persistence.SimpleJpaDao;
-import org.springframework.stereotype.Repository;
+import nl.gridshore.rdm.persistence.Dao;
 
-@Repository
-public class EnquiryInstanceJpaDao extends SimpleJpaDao<EnquiryInstance> implements EnquiryInstanceDao {
+public interface EnquiryInstanceRepository extends Dao<EnquiryInstance> {
 
-    public EnquiryInstanceJpaDao() {
-        super(EnquiryInstance.class);
-    }
 }

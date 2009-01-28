@@ -11,9 +11,12 @@
  */
 package nl.gridshore.rdm.utils;
 
-public class TestDomainContext extends DomainContext {
+import nl.gridshore.rdm.context.DomainContext;
+import nl.gridshore.rdm.context.DomainContextFactory;
 
-    public TestDomainContext(final DomainContextFactory<? extends DomainContext> domainContextFactory) {
+public class MockDomainContext extends DomainContext {
+
+    public MockDomainContext(final DomainContextFactory<? extends DomainContext> domainContextFactory) {
         super(domainContextFactory);
     }
 }

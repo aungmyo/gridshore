@@ -11,10 +11,6 @@
  */
 package nl.gridshore.rdm.context;
 
-import nl.gridshore.rdm.utils.AbstractDomainContextFactory;
-import nl.gridshore.rdm.utils.DomainContext;
-import nl.gridshore.rdm.utils.DomainContextException;
-import nl.gridshore.rdm.utils.DomainContextFactory;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.beans.factory.BeanNameAware;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
@@ -58,12 +54,12 @@ public class SpringConfigurableDomainContextFactory<T extends DomainContext> ext
     }
 
     /**
-     * The type (class) of {@link nl.gridshore.rdm.utils.DomainContext} that is created by this factory. This can be
-     * any class that extends {@link nl.gridshore.rdm.utils.DomainContext} and has a constructor accepting a
-     * {@link nl.gridshore.rdm.utils.DomainContextFactory} as sole parameter.
+     * The type (class) of {@link DomainContext} that is created by this factory. This can be
+     * any class that extends {@link DomainContext} and has a constructor accepting a
+     * {@link DomainContextFactory} as sole parameter.
      *
      * @param domainContextType The type managed by this factory
-     * @see nl.gridshore.rdm.utils.DomainContext
+     * @see DomainContext
      */
     public void setDomainContextType(Class<T> domainContextType) {
         this.domainContextType = domainContextType;

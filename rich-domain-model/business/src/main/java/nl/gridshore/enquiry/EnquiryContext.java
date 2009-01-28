@@ -12,20 +12,17 @@
 package nl.gridshore.enquiry;
 
 import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.enquiry.def.QuestionDef;
 import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.enquiry.repository.EnquiryDefDao;
-import nl.gridshore.enquiry.repository.EnquiryInstanceDao;
-import nl.gridshore.enquiry.repository.QuestionDefDao;
-import nl.gridshore.rdm.utils.DomainContext;
-import nl.gridshore.rdm.utils.DomainContextFactory;
+import nl.gridshore.enquiry.repository.EnquiryDefRepository;
+import nl.gridshore.enquiry.repository.EnquiryInstanceRepository;
+import nl.gridshore.rdm.context.DomainContext;
+import nl.gridshore.rdm.context.DomainContextFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class EnquiryContext extends DomainContext {
 
-    private EnquiryDefDao enquiryDefRepository;
-    private EnquiryInstanceDao enquiryInstanceRepository;
-    private QuestionDefDao questionDefRepository;
+    private EnquiryDefRepository enquiryDefRepository;
+    private EnquiryInstanceRepository enquiryInstanceRepository;
 
     public EnquiryContext(final DomainContextFactory<EnquiryContext> domainContextFactory) {
         super(domainContextFactory);
@@ -43,10 +40,6 @@ public class EnquiryContext extends DomainContext {
         return enquiryInstance;
     }
 
-    public void registerForDeletion(final QuestionDef questionDef) {
-        registerForDelete(questionDef, questionDefRepository);
-    }
-
     public void registerForSave(final EnquiryDef def) {
         registerForSave(def, enquiryDefRepository);
     }
@@ -55,28 +48,24 @@ public class EnquiryContext extends DomainContext {
         registerForSave(instance, enquiryInstanceRepository);
     }
 
-    public EnquiryDefDao getEnquiryDefRepository() {
+    public EnquiryDefRepository getEnquiryDefRepository() {
         return enquiryDefRepository;
     }
 
     // ======================== Setter/Getter ===============================
 
     @Autowired
-    public void setEnquiryDefRepository(final EnquiryDefDao enquiryDefRepository) {
+    public void setEnquiryDefRepository(final EnquiryDefRepository enquiryDefRepository) {
         this.enquiryDefRepository = enquiryDefRepository;
     }
 
-    public EnquiryInstanceDao getEnquiryInstanceRepository() {
+    public EnquiryInstanceRepository getEnquiryInstanceRepository() {
         return enquiryInstanceRepository;
     }
 
     @Autowired
-    public void setEnquiryInstanceRepository(final EnquiryInstanceDao enquiryInstanceRepository) {
+    public void setEnquiryInstanceRepository(final EnquiryInstanceRepository enquiryInstanceRepository) {
         this.enquiryInstanceRepository = enquiryInstanceRepository;
     }
 
-    @Autowired
-    public void setQuestionDefRepository(final QuestionDefDao questionDefRepository) {
-        this.questionDefRepository = questionDefRepository;
-    }
 }

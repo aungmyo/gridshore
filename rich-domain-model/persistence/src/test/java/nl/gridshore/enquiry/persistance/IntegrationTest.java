@@ -9,18 +9,18 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.persitance;
+package nl.gridshore.enquiry.persistance;
 
 import nl.gridshore.enquiry.EnquiryContext;
 import nl.gridshore.enquiry.def.EnquiryDef;
 import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
 import nl.gridshore.enquiry.def.QuestionDef;
 import nl.gridshore.enquiry.def.SingleChoiceQuestionDef;
-import nl.gridshore.rdm.utils.DomainContextFactory;
+import nl.gridshore.rdm.context.DomainContextFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.jpa.AbstractJpaTests;
+import org.springframework.test.jpa.AbstractAspectjJpaTests;
 
-public class IntegrationTest extends AbstractJpaTests {
+public class IntegrationTest extends AbstractAspectjJpaTests {
 
     private DomainContextFactory<EnquiryContext> enquiryContextFactory;
 
@@ -52,6 +52,7 @@ public class IntegrationTest extends AbstractJpaTests {
 
         sharedEntityManager.flush();
         enquiryContext = enquiryContextFactory.createContext();
+        enquiryContext.registerForSave(def);
         QuestionDef removedDef = def.removeQuestionIfPresent(questionDef);
         assertFalse(def.getQuestions().contains(removedDef));
         enquiryContext.close();
@@ -69,4 +70,5 @@ public class IntegrationTest extends AbstractJpaTests {
     public void setEnquiryContextFactory(final DomainContextFactory<EnquiryContext> enquiryContextFactory) {
         this.enquiryContextFactory = enquiryContextFactory;
     }
+
 }

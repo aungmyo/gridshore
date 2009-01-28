@@ -5,10 +5,12 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
 
+    <context:spring-configured/>
+    <context:load-time-weaver/>
+    <context:annotation-config/>
+
     <bean id="enquiryContextFactory" class="nl.gridshore.rdm.context.SpringConfigurableDomainContextFactory">
         <property name="domainContextType" value="nl.gridshore.enquiry.EnquiryContext"/>
     </bean>
-
-    <bean class="nl.gridshore.rdm.context.ApplicationContextHolder"/>
 
 </beans>

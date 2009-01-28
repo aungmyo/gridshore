@@ -12,6 +12,7 @@
 package nl.gridshore.rdm.utils;
 
 import net.sf.cglib.proxy.Enhancer;
+import nl.gridshore.rdm.context.DomainContextException;
 import nl.gridshore.rdm.context.NoContextAvailableException;
 import nl.gridshore.rdm.context.SpringConfigurableDomainContextFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +22,7 @@ import java.util.Map;
 
 public class SpringConfigurableDomainContextFactoryTest extends AbstractDependencyInjectionSpringContextTests {
 
-    private SpringConfigurableDomainContextFactory<TestDomainContext> factory;
+    private SpringConfigurableDomainContextFactory<MockDomainContext> factory;
 
     public void onSetUp() {
         // these tests change the state of beans, so we have to setup the application context for each test
@@ -30,10 +31,10 @@ public class SpringConfigurableDomainContextFactoryTest extends AbstractDependen
 
     public void testFactoryCreatesAndManagesContexts() {
         assertNull("Shouldn't initialize context on getCurrentContext()", factory.getCurrentContext());
-        TestDomainContext context = factory.createContext();
+        MockDomainContext context = factory.createContext();
         assertNotNull("Should have initialized a new context", context);
         assertSame(context, factory.getCurrentContext());
-        TestDomainContext innerContext = factory.createContext();
+        MockDomainContext innerContext = factory.createContext();
         assertNotSame(context, innerContext);
         innerContext.close();
         context.close();
@@ -41,8 +42,8 @@ public class SpringConfigurableDomainContextFactoryTest extends AbstractDependen
     }
 
     public void testClosingContextsInWrongOrder() {
-        TestDomainContext context = factory.createContext();
-        TestDomainContext innerContext = factory.createContext();
+        MockDomainContext context = factory.createContext();
+        MockDomainContext innerContext = factory.createContext();
         try {
             context.close();
             fail("Expected an exception to be thrown");
@@ -54,9 +55,9 @@ public class SpringConfigurableDomainContextFactoryTest extends AbstractDependen
 
     @SuppressWarnings({"unchecked"})
     public void testCurrentContextAvailableAsBean() {
-        Map<String, TestDomainContext> beans = applicationContext.getBeansOfType(TestDomainContext.class);
+        Map<String, MockDomainContext> beans = applicationContext.getBeansOfType(MockDomainContext.class);
         assertEquals(1, beans.size());
-        TestDomainContext context = beans.entrySet().iterator().next().getValue();
+        MockDomainContext context = beans.entrySet().iterator().next().getValue();
 
         assertTrue(Enhancer.isEnhanced(context.getClass()));
         try {
@@ -64,12 +65,12 @@ public class SpringConfigurableDomainContextFactoryTest extends AbstractDependen
             fail("Expected exception");
         }
         catch (NoContextAvailableException ex) {
-            assertTrue(ex.getMessage().contains("TestDomainContext"));
+            assertTrue(ex.getMessage().contains("MockDomainContext"));
         }
         factory.createContext();
-        Map<String, TestDomainContext> beans2 = applicationContext.getBeansOfType(TestDomainContext.class);
+        Map<String, MockDomainContext> beans2 = applicationContext.getBeansOfType(MockDomainContext.class);
         assertEquals(1, beans.size());
-        TestDomainContext context2 = beans2.entrySet().iterator().next().getValue();
+        MockDomainContext context2 = beans2.entrySet().iterator().next().getValue();
         assertTrue(Enhancer.isEnhanced(context2.getClass()));
 
         assertEquals(factory.getCurrentContext().hashCode(), context2.hashCode());
@@ -81,7 +82,7 @@ public class SpringConfigurableDomainContextFactoryTest extends AbstractDependen
     }
 
     @Autowired
-    public void setFactory(final SpringConfigurableDomainContextFactory<TestDomainContext> factory) {
+    public void setFactory(final SpringConfigurableDomainContextFactory<MockDomainContext> factory) {
         this.factory = factory;
     }
 }

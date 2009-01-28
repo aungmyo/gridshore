@@ -42,12 +42,18 @@ public class ChoiceDef extends BaseEntity {
     protected ChoiceDef() {
     }
 
-    public ChoiceDef(final MultipleChoiceQuestionDef questionDef, final String text) {
-        this.questionDef = questionDef;
+    public ChoiceDef(final String text) {
         this.text = text;
     }
 
+    protected void setQuestionDef(final MultipleChoiceQuestionDef questionDef) {
+        this.questionDef = questionDef;
+    }
+
     public EnquiryDef getEnquiry() {
+        if (questionDef == null) {
+            return null;
+        }
         return questionDef.getEnquiry();
     }
 

@@ -11,22 +11,19 @@
  */
 package nl.gridshore.enquiry.def;
 
-import nl.gridshore.enquiry.EnquiryContext;
-import nl.gridshore.rdm.persistence.BaseSpringInjectedEntity;
-import org.springframework.beans.factory.annotation.Autowired;
+import nl.gridshore.rdm.persistence.BaseEntity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
-import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 @Entity
-public class EnquiryDef extends BaseSpringInjectedEntity {
+public class EnquiryDef extends BaseEntity {
 
     @Column
     private String title;
@@ -34,9 +31,6 @@ public class EnquiryDef extends BaseSpringInjectedEntity {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "enquiry")
     @OrderBy("index")
     private List<QuestionDef> questions = new ArrayList<QuestionDef>();
-
-    @Transient
-    private EnquiryContext enquiryContext;
 
     public void appendQuestion(final QuestionDef questionDef) {
         insertQuestion(questionDef, questions.size());
@@ -64,7 +58,7 @@ public class EnquiryDef extends BaseSpringInjectedEntity {
 
     public QuestionDef removeQuestionIfPresent(final QuestionDef questionDef) {
         if (questions.remove(questionDef)) {
-            enquiryContext.registerForDeletion(questionDef);
+            questionDef.setEnquiry(null);
             return questionDef;
         }
         return null;
@@ -84,10 +78,5 @@ public class EnquiryDef extends BaseSpringInjectedEntity {
 
     public List<QuestionDef> getQuestions() {
         return Collections.unmodifiableList(questions);
-    }
-
-    @Autowired
-    public void setEnquiryContext(EnquiryContext context) {
-        this.enquiryContext = context;
     }
 }

@@ -9,15 +9,15 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.utils;
+package nl.gridshore.rdm.context;
 
-public class IllegalDomainContextStateException extends DomainContextException {
+public class DomainContextClosedException extends DomainContextException {
 
-    public IllegalDomainContextStateException(final String message) {
+    public DomainContextClosedException(final String message) {
         super(message);
     }
 
-    public IllegalDomainContextStateException(final String message, final Throwable cause) {
+    public DomainContextClosedException(final String message, final Throwable cause) {
         super(message, cause);
     }
 }

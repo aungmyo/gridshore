@@ -11,10 +11,10 @@
  */
 package nl.gridshore.enquiry.def;
 
-import javax.persistence.Entity;
 import javax.persistence.DiscriminatorValue;
-import javax.persistence.Enumerated;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 @Entity
 @DiscriminatorValue("OPEN")
@@ -22,4 +22,12 @@ public class OpenQuestionDef extends QuestionDef {
 
     @Enumerated(EnumType.STRING)
     private AnswerLength answerLength;
+
+    public AnswerLength getAnswerLength() {
+        return answerLength;
+    }
+
+    public void setAnswerLength(final AnswerLength answerLength) {
+        this.answerLength = answerLength;
+    }
 }

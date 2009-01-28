@@ -12,14 +12,22 @@
 package nl.gridshore.enquiry.persistance;
 
 import nl.gridshore.enquiry.def.EnquiryDef;
-import nl.gridshore.enquiry.repository.EnquiryDefDao;
+import nl.gridshore.enquiry.repository.EnquiryDefRepository;
 import nl.gridshore.rdm.persistence.SimpleJpaDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EnquiryDefJpaDao extends SimpleJpaDao<EnquiryDef> implements EnquiryDefDao {
+public class EnquiryDefJpaDao extends SimpleJpaDao<EnquiryDef> implements EnquiryDefRepository {
 
     public EnquiryDefJpaDao() {
         super(EnquiryDef.class);
+    }
+
+    @Override
+    public void update(final EnquiryDef entity) {
+        super.update(entity);
+        // delete orphaned questions
+        entityManager.createQuery("DELETE FROM QuestionDef q WHERE q.enquiry = NULL AND q.parentChoiceDef = NULL")
+                .executeUpdate();
     }
 }

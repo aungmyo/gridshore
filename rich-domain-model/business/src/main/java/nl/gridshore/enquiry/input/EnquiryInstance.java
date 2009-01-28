@@ -19,9 +19,12 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.PostLoad;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Entity
 public class EnquiryInstance extends BaseEntity {
@@ -31,6 +34,8 @@ public class EnquiryInstance extends BaseEntity {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "enquiryInstance")
     private List<AnswerInstance> answerInstances = new ArrayList<AnswerInstance>();
+
+    private transient Map<QuestionDef, AnswerInstance> answerMap = new HashMap<QuestionDef, AnswerInstance>();
 
     protected EnquiryInstance() {
     }
@@ -56,14 +61,18 @@ public class EnquiryInstance extends BaseEntity {
         }
         answerInstances.add(answerInstance);
         answerInstance.setEnquiryInstance(this);
+        answerMap.put(answerInstance.getQuestionDef(), answerInstance);
     }
 
     public AnswerInstance getAnswerForQuestion(QuestionDef questionDef) {
+        return answerMap.get(questionDef);
+    }
+
+    @PostLoad
+    protected void populateAnswerMap() {
+        answerMap.clear();
         for (AnswerInstance answer : answerInstances) {
-            if (questionDef.equals(answer.getQuestionDef())) {
-                return answer;
-            }
+            answerMap.put(answer.getQuestionDef(), answer);
         }
-        return null;
     }
 }

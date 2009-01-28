@@ -12,7 +12,6 @@ public class QuestionDefTest {
     @Before
     public void setUp() {
         testSubject = new QuestionDef() {
-
         };
     }
 

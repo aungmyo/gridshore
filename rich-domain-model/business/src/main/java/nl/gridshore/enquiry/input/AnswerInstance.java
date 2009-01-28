@@ -32,6 +32,11 @@ public abstract class AnswerInstance extends BaseEntity {
         this.enquiryInstance = enquiryInstance;
     }
 
+    /**
+     * Get the question definition for this answer. May never return null;
+     *
+     * @return the question definition for this answer
+     */
     public abstract QuestionDef getQuestionDef();
 
     public abstract String getText();

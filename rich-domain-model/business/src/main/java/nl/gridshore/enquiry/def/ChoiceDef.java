@@ -67,10 +67,20 @@ public class ChoiceDef extends BaseEntity {
         int insertPosition = Math.min(position, subQuestionDefs.size());
         questionDef.setParentChoiceDef(this);
         subQuestionDefs.add(insertPosition, questionDef);
-        int t = 1;
-        for (QuestionDef question : subQuestionDefs) {
-            question.setIndex(t);
+        recalculateIndices();
+    }
+
+    public QuestionDef removeSubQuestionIfPresent(final QuestionDef questionDef) {
+        if (subQuestionDefs.remove(questionDef)) {
+            questionDef.setParentChoiceDef(null);
+            recalculateIndices();
+            return questionDef;
         }
+        return null;
+    }
+
+    public QuestionDef removeSubQuestion(final int position) {
+        return removeSubQuestionIfPresent(subQuestionDefs.get(position));
     }
 
     public List<QuestionDef> getSubQuestions() {
@@ -87,6 +97,15 @@ public class ChoiceDef extends BaseEntity {
 
     public String getText() {
         return text;
+    }
+
+    // ======================== Helper methods ==============================
+
+    private void recalculateIndices() {
+        int t = 1;
+        for (QuestionDef question : subQuestionDefs) {
+            question.setIndex(t++);
+        }
     }
 
 }

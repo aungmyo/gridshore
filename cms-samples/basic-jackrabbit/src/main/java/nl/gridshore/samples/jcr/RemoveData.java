@@ -15,31 +15,31 @@
 
 package nl.gridshore.samples.jcr;
 
-import nl.gridshore.samples.jcr.util.NodePrinter;
-
-import javax.jcr.Node;
 import javax.jcr.Session;
+import javax.jcr.Node;
 
 /**
- * Class used to demonstrate reading the repository using the root node
+ * <p>Class to demonstrate removing data.</p>
+ *
+ * @author jettro coenradie
+ *         Date: Jan 31, 2009
  */
-public class ReadData extends Base {
+public class RemoveData extends Base {
     public static void main(String[] args) {
-        ReadData readData = new ReadData();
-        readData.run();
+        RemoveData removeDate = new RemoveData();
+        removeDate.run();
     }
 
     @Override
     protected void doRun() throws Exception {
-        Session session = getReadonlySession();
+        Session session = getSession();
         Node rootNode = session.getRootNode();
+        Node foundNode = rootNode.getNode("Jettro");
 
-        Node childnode = rootNode.getNode("Jettro");
+        foundNode.remove();
 
-        StringBuilder printer = new StringBuilder();
-        NodePrinter.printNode(childnode, printer);
+        session.save();
 
-        System.out.println(printer);
         logout(session);
     }
 }

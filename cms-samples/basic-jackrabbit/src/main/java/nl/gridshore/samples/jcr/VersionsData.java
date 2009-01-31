@@ -1,4 +1,21 @@
+/*
+ * Copyright (c) 2009. Gridshore
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *       http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package nl.gridshore.samples.jcr;
+
+import nl.gridshore.samples.jcr.util.NodePrinter;
 
 import javax.jcr.*;
 import javax.jcr.version.Version;
@@ -26,15 +43,18 @@ public class VersionsData extends Base {
         Session session = getSession();
 
         Node rootNode = session.getRootNode();
-        Node foundNode = rootNode.getNode("versionedItem");
-        System.out.println("Primary type : " + foundNode.getPrimaryNodeType().getName());
-        Property property = foundNode.getProperty("title");
-        System.out.println("property : " + property.getPath());
-        System.out.println("Name of found node : " + foundNode.getName());
+        Node foundNode = rootNode.getNode("Jettro");
+
+        StringBuilder printer = new StringBuilder();
+        NodePrinter.printNode(foundNode,printer);
+
         foundNode.checkout();
-        foundNode.getProperty("title").setValue("changed title");
+        foundNode.getProperty("email").setValue("jettro@gridshore.nl");
+
         session.save();
+
         foundNode.checkin();
+
         logout(session);
 
         printVersions();
@@ -72,11 +92,14 @@ public class VersionsData extends Base {
     private void createVersionedNode() throws RepositoryException {
         Session session = getSession();
         Node rootNode = session.getRootNode();
-        Node versionedNode = rootNode.addNode("versionedItem");
-        versionedNode.addMixin("mix:versionable");
-        versionedNode.setProperty("title", "versioned title");
+        Node node = rootNode.addNode("Jettro");
+        node.setProperty("title","Chief Architect");
+        node.setProperty("email","jettro@jteam.nl");
+        node.setProperty("age",36);
+
+        node.addMixin("mix:versionable");
         session.save();
-        versionedNode.checkin();
+        node.checkin();
         logout(session);
     }
 }

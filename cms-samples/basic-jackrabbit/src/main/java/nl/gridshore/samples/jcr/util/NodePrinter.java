@@ -16,7 +16,12 @@
 package nl.gridshore.samples.jcr.util;
 
 import javax.jcr.*;
+import javax.jcr.query.QueryResult;
+import javax.jcr.version.VersionHistory;
+import javax.jcr.version.VersionIterator;
+import javax.jcr.version.Version;
 import javax.jcr.nodetype.NodeType;
+import java.text.SimpleDateFormat;
 
 /**
  * <p>Helper class for printing nodes</p>
@@ -55,7 +60,6 @@ public class NodePrinter {
             }
             printer.append("\n");
         }
-
     }
 
     public static void printMixinNodeTypes(Node node, StringBuilder printer) throws RepositoryException {
@@ -67,8 +71,40 @@ public class NodePrinter {
             printer.append(nodeType.getName()).append(" ");
         }
         printer.append("\n");
+    }
+
+    public static void printVersions(Node node, StringBuilder printer) throws RepositoryException {
+        checkPrinter(printer);
+        checkNode(node);
+        SimpleDateFormat simplDateFormat = new SimpleDateFormat("dd/MMM/yyyy (HH:mm:ss)");
+
+        VersionHistory versionHistory = node.getVersionHistory();
+        VersionIterator versionIterator = versionHistory.getAllVersions();
+
+        printer.append("Versions : \n");
+        while (versionIterator.hasNext()) {
+            Version version = versionIterator.nextVersion();
+            printer.append("create date ").append(simplDateFormat.format(version.getCreated().getTime()));
+            NodeIterator nodes = version.getNodes();
+            while (nodes.hasNext()) {
+                Node frozenNode = nodes.nextNode();
+                printNode(frozenNode,printer);
+            }
+        }
+    }
+
+    public static void printQueryResults(QueryResult queryResult, StringBuilder printer) throws RepositoryException {
+        checkPrinter(printer);
+        checkQueryResults(queryResult);
+        NodeIterator foundNodes = queryResult.getNodes();
+        printer.append("Print found nodes\n");
+        while (foundNodes.hasNext()) {
+            Node node = foundNodes.nextNode();
+            NodePrinter.printNode(node,printer);
+        }
 
     }
+
 
     private static void checkPrinter(StringBuilder printer) {
         if (printer == null) {
@@ -79,6 +115,12 @@ public class NodePrinter {
     private static void checkNode(Node node) {
         if (node == null) {
             throw new IllegalArgumentException("node cannot be null");
+        }
+    }
+
+    private static void checkQueryResults(QueryResult queryResult) {
+        if (queryResult == null) {
+            throw new IllegalArgumentException("queryResult cannot be null");
         }
     }
 }

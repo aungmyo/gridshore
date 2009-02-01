@@ -15,37 +15,33 @@
 
 package nl.gridshore.samples.jcr;
 
-import nl.gridshore.samples.jcr.util.NodePrinter;
-
 import javax.jcr.Session;
-import javax.jcr.NodeIterator;
-import javax.jcr.Node;
-import javax.jcr.query.QueryManager;
-import javax.jcr.query.Query;
-import javax.jcr.query.QueryResult;
+import javax.jcr.NamespaceRegistry;
 
 /**
- * Class used to demonstrate the search capabilities using XPath
+ * <p>Class to demonstrate the use of namespaces</p>
+ *
+ * @author jettro coenradie
+ *         Date: Jan 31, 2009
  */
-public class SearchData extends Base {
-
+public class NamespaceData extends Base {
     public static void main(String[] args) {
-        SearchData searchData = new SearchData();
-        searchData.run();
+        NamespaceData namespaceData = new NamespaceData();
+        namespaceData.run();
     }
 
     @Override
     protected void doRun() throws Exception {
         Session session = getReadonlySession();
-        QueryManager queryManager = session.getWorkspace().getQueryManager();
-        Query query = queryManager.createQuery(
-                "//element(*,nt:unstructured)[jcr:like(@title,'%Chief%')]", Query.XPATH);
-        QueryResult queryResult = query.execute();
-
+        NamespaceRegistry namespaceRegistry = session.getWorkspace().getNamespaceRegistry();
         StringBuilder printer = new StringBuilder();
-        NodePrinter.printQueryResults(queryResult,printer);
-        logout(session);
-        
+        printer.append("Namespaces : \n");
+        for (String namespace :namespaceRegistry.getPrefixes()) {
+            printer.append(namespace).append(" - ").append(namespaceRegistry.getURI(namespace)).append("\n");
+        }
+
         System.out.println(printer);
+        
+        logout(session);
     }
 }

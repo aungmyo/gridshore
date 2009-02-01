@@ -15,37 +15,28 @@
 
 package nl.gridshore.samples.jcr;
 
-import nl.gridshore.samples.jcr.util.NodePrinter;
-
 import javax.jcr.Session;
-import javax.jcr.NodeIterator;
-import javax.jcr.Node;
-import javax.jcr.query.QueryManager;
-import javax.jcr.query.Query;
-import javax.jcr.query.QueryResult;
 
 /**
- * Class used to demonstrate the search capabilities using XPath
+ * <p></p>
+ *
+ * @author jettro coenradie
+ *         Date: Jan 31, 2009
  */
-public class SearchData extends Base {
+public class ExportData extends Base {
 
     public static void main(String[] args) {
-        SearchData searchData = new SearchData();
-        searchData.run();
+        ExportData exportData = new ExportData();
+        exportData.run();
     }
 
     @Override
     protected void doRun() throws Exception {
         Session session = getReadonlySession();
-        QueryManager queryManager = session.getWorkspace().getQueryManager();
-        Query query = queryManager.createQuery(
-                "//element(*,nt:unstructured)[jcr:like(@title,'%Chief%')]", Query.XPATH);
-        QueryResult queryResult = query.execute();
 
-        StringBuilder printer = new StringBuilder();
-        NodePrinter.printQueryResults(queryResult,printer);
+        session.exportDocumentView("/",System.out,false,false);
+        System.out.println("");
+        session.exportSystemView("/Jettro",System.out,false,true);
         logout(session);
-        
-        System.out.println(printer);
     }
 }

@@ -36,7 +36,7 @@ public class StoreNamespaceData extends Base {
         Session session = getSession();
         NamespaceRegistry namespaceRegistry = session.getWorkspace().getNamespaceRegistry();
 
-        namespaceRegistry.registerNamespace("gridshore","http://www.gridshore.nl/");
+        namespaceRegistry.registerNamespace("gridshore","http://www.gridshore.nl/1.0");
 
         logout(session);
     }

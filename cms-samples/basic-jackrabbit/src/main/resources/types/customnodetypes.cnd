@@ -1,0 +1,19 @@
+/* This file documents the imported namespaces and types of our repository, you can find more information
+ * on the following url:
+ * http://jackrabbit.apache.org/node-type-notation.html
+ */
+
+// namespace definitions
+<'gridshore'='http://www.gridshore.nl/samples/1.0'>
+
+[gridshore:address]
+- gridshore:street (string)
+- gridshore:postalcode (string)
+- gridshore:city (string)
+- gridshore:country (string)
+
+[gridshore:person] > nt:unstructured
+- gridshore:age (long)
+- gridshore:title (string)     
+- gridshore:email (string)
++ gridshore:homeaddress (gridshore:address)

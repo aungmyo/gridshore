@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sv:node xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:fn_old="http://www.w3.org/2004/10/xpath-functions"
+         xmlns:gridshore="http://www.gridshore.nl/samples/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+         xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+         xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:rep="internal" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+         sv:name="Jettro">
+    <sv:property sv:name="jcr:primaryType" sv:type="Name">
+        <sv:value>gridshore:person</sv:value>
+    </sv:property>
+    <sv:property sv:name="gridshore:age" sv:type="Long">
+        <sv:value>36</sv:value>
+    </sv:property>
+    <sv:property sv:name="gridshore:email" sv:type="String">
+        <sv:value>jettro@jteam.nl</sv:value>
+    </sv:property>
+    <sv:property sv:name="gridshore:title" sv:type="String">
+        <sv:value>Chief Architect</sv:value>
+    </sv:property>
+    <sv:node sv:name="homeaddress">
+        <sv:property sv:name="jcr:primaryType" sv:type="Name">
+            <sv:value>gridshore:address</sv:value>
+        </sv:property>
+        <sv:property sv:name="gridshore:city" sv:type="String">
+            <sv:value>Amsterdam</sv:value>
+        </sv:property>
+        <sv:property sv:name="gridshore:country" sv:type="String">
+            <sv:value>The Netherlands</sv:value>
+        </sv:property>
+        <sv:property sv:name="gridshore:postalcode" sv:type="String">
+            <sv:value>1017XK</sv:value>
+        </sv:property>
+        <sv:property sv:name="gridshore:street" sv:type="String">
+            <sv:value>Fredriksplein 1</sv:value>
+        </sv:property>
+    </sv:node>
+</sv:node>

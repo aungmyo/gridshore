@@ -36,7 +36,7 @@ public class ExportData extends Base {
 
         session.exportDocumentView("/",System.out,false,false);
         System.out.println("");
-        session.exportSystemView("/Jettro",System.out,false,true);
+        session.exportSystemView("/Jettro",System.out,false,false);
         logout(session);
     }
 }

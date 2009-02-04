@@ -1,0 +1,21 @@
+/* This file documents the imported namespaces and types of our repository, you can find more information
+ * on the following url:
+ * http://jackrabbit.apache.org/node-type-notation.html
+ */
+
+// namespace definitions
+<'gridshore'='http://www.gridshore.nl/samples/1.0'>
+<'hippostd'='http://www.hippoecm.org/hippostd/nt/1.2'>
+<'hippo'='http://www.hippoecm.org/nt/1.2'>
+
+[gridshore:address]
+- gridshore:street (string)
+- gridshore:postalcode (string)
+- gridshore:city (string)
+- gridshore:country (string)
+
+[gridshore:person] > hippostd:publishable, hippostd:publishableSummary, hippo:document
+- gridshore:age (long)
+- gridshore:title (string)
+- gridshore:email (string)
++ gridshore:homeaddress (gridshore:address)

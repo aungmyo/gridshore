@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:fn_old="http://www.w3.org/2004/10/xpath-functions"
+          xmlns:gridshore="http://www.gridshore.nl/samples/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+          xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:mix="http://www.jcp.org/jcr/mix/1.0"
+          xmlns:sv="http://www.jcp.org/jcr/sv/1.0" xmlns:rep="internal" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+          jcr:primaryType="rep:root">
+    <jcr:system jcr:primaryType="rep:system">
+        <jcr:versionStorage jcr:primaryType="rep:versionStorage"/>
+        <jcr:nodeTypes jcr:primaryType="rep:nodeTypes">
+            <gridshore:person jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                              jcr:nodeTypeName="gridshore:person">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:age"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="LONG"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:title"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:email"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:name="gridshore:homeaddress"
+                                         jcr:onParentVersion="COPY" jcr:protected="false" jcr:sameNameSiblings="false"/>
+            </gridshore:person>
+            <rep:Group jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                       jcr:nodeTypeName="rep:Group"/>
+            <nt:file jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                     jcr:nodeTypeName="nt:file" jcr:primaryItemName="jcr:content">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="true" jcr:name="jcr:content" jcr:onParentVersion="COPY"
+                                         jcr:protected="false" jcr:sameNameSiblings="false"/>
+            </nt:file>
+            <rep:Impersonatable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                                jcr:nodeTypeName="rep:Impersonatable">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="rep:impersonators"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+            </rep:Impersonatable>
+            <gridshore:address jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                               jcr:nodeTypeName="gridshore:address">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:street"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:postalcode"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:city"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="gridshore:country"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+            </gridshore:address>
+            <nt:versionedChild jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                               jcr:nodeTypeName="nt:versionedChild">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:childVersionHistory"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+            </nt:versionedChild>
+            <nt:versionLabels jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                              jcr:nodeTypeName="nt:versionLabels">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:onParentVersion="ABORT"
+                                        jcr:protected="true" jcr:requiredType="REFERENCE"/>
+            </nt:versionLabels>
+            <nt:folder jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                       jcr:nodeTypeName="nt:folder">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:onParentVersion="VERSION" jcr:protected="false"
+                                         jcr:sameNameSiblings="false"/>
+            </nt:folder>
+            <rep:AccessControllable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                                    jcr:nodeTypeName="rep:AccessControllable">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:name="rep:policy" jcr:onParentVersion="IGNORE"
+                                         jcr:protected="true" jcr:sameNameSiblings="false"/>
+            </rep:AccessControllable>
+            <rep:versionStorage jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                                jcr:nodeTypeName="rep:versionStorage">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:versionStorage" jcr:mandatory="false"
+                                         jcr:onParentVersion="ABORT" jcr:protected="true" jcr:sameNameSiblings="true"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:versionHistory" jcr:mandatory="false"
+                                         jcr:onParentVersion="ABORT" jcr:protected="true" jcr:sameNameSiblings="true"/>
+            </rep:versionStorage>
+            <nt:nodeType jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                         jcr:nodeTypeName="nt:nodeType">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:primaryItemName"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:hasOrderableChildNodes"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:isMixin"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:supertypes"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:nodeTypeName"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:childNodeDefinition" jcr:mandatory="false"
+                                         jcr:name="jcr:childNodeDefinition" jcr:onParentVersion="VERSION"
+                                         jcr:protected="false" jcr:sameNameSiblings="true"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:propertyDefinition" jcr:mandatory="false"
+                                         jcr:name="jcr:propertyDefinition" jcr:onParentVersion="VERSION"
+                                         jcr:protected="false" jcr:sameNameSiblings="true"/>
+            </nt:nodeType>
+            <nt:base jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                     jcr:nodeTypeName="nt:base">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:mixinTypes"
+                                        jcr:onParentVersion="COMPUTE" jcr:protected="true" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:primaryType"
+                                        jcr:onParentVersion="COMPUTE" jcr:protected="true" jcr:requiredType="NAME"/>
+            </nt:base>
+            <mix:referenceable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                               jcr:nodeTypeName="mix:referenceable">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:uuid"
+                                        jcr:onParentVersion="INITIALIZE" jcr:protected="true"
+                                        jcr:requiredType="STRING"/>
+            </mix:referenceable>
+            <nt:unstructured jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="true" jcr:isMixin="false"
+                             jcr:nodeTypeName="nt:unstructured">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:onParentVersion="COPY"
+                                        jcr:protected="false" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:onParentVersion="COPY"
+                                        jcr:protected="false" jcr:requiredType="UNDEFINED"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:unstructured" jcr:mandatory="false"
+                                         jcr:onParentVersion="VERSION" jcr:protected="false"
+                                         jcr:sameNameSiblings="true"/>
+            </nt:unstructured>
+            <rep:Policy jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                        jcr:nodeTypeName="rep:Policy"/>
+            <nt:frozenNode jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="true" jcr:isMixin="false"
+                           jcr:nodeTypeName="nt:frozenNode">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:onParentVersion="ABORT"
+                                        jcr:protected="true" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:onParentVersion="ABORT"
+                                        jcr:protected="true" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:frozenUuid"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:frozenMixinTypes"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:frozenPrimaryType"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="NAME"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:onParentVersion="ABORT" jcr:protected="true"
+                                         jcr:sameNameSiblings="true"/>
+            </nt:frozenNode>
+            <rep:ACE jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                     jcr:nodeTypeName="rep:ACE">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:onParentVersion="COPY"
+                                        jcr:protected="true" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="rep:glob"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="rep:nodePath"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="PATH"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="true" jcr:name="rep:privileges"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="rep:principalName"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+            </rep:ACE>
+            <rep:User jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                      jcr:nodeTypeName="rep:User">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="rep:password"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="rep:userId"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+            </rep:User>
+            <rep:system jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="true" jcr:isMixin="false"
+                        jcr:nodeTypeName="rep:system">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:unstructured" jcr:mandatory="false"
+                                         jcr:onParentVersion="IGNORE" jcr:protected="false"
+                                         jcr:sameNameSiblings="true"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:nodeTypes" jcr:mandatory="true"
+                                         jcr:name="jcr:nodeTypes" jcr:onParentVersion="ABORT" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:versionStorage" jcr:mandatory="true"
+                                         jcr:name="jcr:versionStorage" jcr:onParentVersion="ABORT" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:system>
+            <rep:GrantACE jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                          jcr:nodeTypeName="rep:GrantACE"/>
+            <nt:query jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                      jcr:nodeTypeName="nt:query">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:language"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:statement"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+            </nt:query>
+            <nt:linkedFile jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                           jcr:nodeTypeName="nt:linkedFile" jcr:primaryItemName="jcr:content">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:content"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="REFERENCE"/>
+            </nt:linkedFile>
+            <rep:ACL jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                     jcr:nodeTypeName="rep:ACL">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:GrantACE" jcr:mandatory="false"
+                                         jcr:onParentVersion="IGNORE" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:ACL>
+            <rep:nodeTypes jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                           jcr:nodeTypeName="rep:nodeTypes">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:nodeType" jcr:mandatory="false"
+                                         jcr:onParentVersion="ABORT" jcr:protected="true" jcr:sameNameSiblings="false"/>
+            </rep:nodeTypes>
+            <mix:versionable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                             jcr:nodeTypeName="mix:versionable">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:mergeFailed"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="true" jcr:name="jcr:predecessors"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:isCheckedOut"
+                                        jcr:onParentVersion="IGNORE" jcr:protected="true" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:baseVersion"
+                                        jcr:onParentVersion="IGNORE" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:versionHistory"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+            </mix:versionable>
+            <rep:DenyACE jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                         jcr:nodeTypeName="rep:DenyACE"/>
+            <rep:AccessControl jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                               jcr:nodeTypeName="rep:AccessControl">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:onParentVersion="IGNORE" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:AccessControl>
+            <nt:hierarchyNode jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                              jcr:nodeTypeName="nt:hierarchyNode">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:created"
+                                        jcr:onParentVersion="INITIALIZE" jcr:protected="true" jcr:requiredType="DATE"/>
+            </nt:hierarchyNode>
+            <nt:version jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                        jcr:nodeTypeName="nt:version">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:successors"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:predecessors"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:created"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="DATE"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:mandatory="false" jcr:name="jcr:frozenNode" jcr:onParentVersion="ABORT"
+                                         jcr:protected="true" jcr:sameNameSiblings="false"/>
+            </nt:version>
+            <nt:propertyDefinition jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                                   jcr:nodeTypeName="nt:propertyDefinition">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:multiple"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:defaultValues"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="jcr:valueConstraints"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:requiredType"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:protected"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:onParentVersion"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:mandatory"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:autoCreated"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:name"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+            </nt:propertyDefinition>
+            <mix:shareable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                           jcr:nodeTypeName="mix:shareable"/>
+            <nt:childNodeDefinition jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                                    jcr:nodeTypeName="nt:childNodeDefinition">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:sameNameSiblings"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:defaultPrimaryType"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="true" jcr:name="jcr:requiredPrimaryTypes"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:protected"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:onParentVersion"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:mandatory"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:autoCreated"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:name"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="NAME"/>
+            </nt:childNodeDefinition>
+            <nt:resource jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                         jcr:nodeTypeName="nt:resource" jcr:primaryItemName="jcr:data">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:lastModified"
+                                        jcr:onParentVersion="IGNORE" jcr:protected="false" jcr:requiredType="DATE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:data"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="BINARY"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:mimeType"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:encoding"
+                                        jcr:onParentVersion="COPY" jcr:protected="false" jcr:requiredType="STRING"/>
+            </nt:resource>
+            <rep:Authorizable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                              jcr:nodeTypeName="rep:Authorizable">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:onParentVersion="COPY"
+                                        jcr:protected="false" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:onParentVersion="COPY"
+                                        jcr:protected="false" jcr:requiredType="UNDEFINED"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="rep:groups"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="REFERENCE"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="true" jcr:name="rep:referees"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="rep:principalName"
+                                        jcr:onParentVersion="COPY" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:Authorizable" jcr:mandatory="false"
+                                         jcr:onParentVersion="VERSION" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:AuthorizableFolder" jcr:mandatory="false"
+                                         jcr:onParentVersion="VERSION" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:Authorizable>
+            <nt:versionHistory jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                               jcr:nodeTypeName="nt:versionHistory">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="true"
+                                        jcr:mandatory="true" jcr:multiple="false" jcr:name="jcr:versionableUuid"
+                                        jcr:onParentVersion="ABORT" jcr:protected="true" jcr:requiredType="STRING"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="nt:version" jcr:mandatory="false"
+                                         jcr:onParentVersion="ABORT" jcr:protected="true" jcr:sameNameSiblings="false"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="true"
+                                         jcr:defaultPrimaryType="nt:versionLabels" jcr:mandatory="true"
+                                         jcr:name="jcr:versionLabels" jcr:onParentVersion="ABORT" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="true"
+                                         jcr:defaultPrimaryType="nt:version" jcr:mandatory="true"
+                                         jcr:name="jcr:rootVersion" jcr:onParentVersion="ABORT" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </nt:versionHistory>
+            <mix:lockable jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="true"
+                          jcr:nodeTypeName="mix:lockable">
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:lockIsDeep"
+                                        jcr:onParentVersion="IGNORE" jcr:protected="true" jcr:requiredType="BOOLEAN"/>
+                <jcr:propertyDefinition jcr:primaryType="nt:propertyDefinition" jcr:autoCreated="false"
+                                        jcr:mandatory="false" jcr:multiple="false" jcr:name="jcr:lockOwner"
+                                        jcr:onParentVersion="IGNORE" jcr:protected="true" jcr:requiredType="STRING"/>
+            </mix:lockable>
+            <rep:AuthorizableFolder jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="false" jcr:isMixin="false"
+                                    jcr:nodeTypeName="rep:AuthorizableFolder">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:AuthorizableFolder" jcr:mandatory="false"
+                                         jcr:onParentVersion="VERSION" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:User" jcr:mandatory="false"
+                                         jcr:onParentVersion="VERSION" jcr:protected="true"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:AuthorizableFolder>
+            <rep:root jcr:primaryType="nt:nodeType" jcr:hasOrderableChildNodes="true" jcr:isMixin="false"
+                      jcr:nodeTypeName="rep:root">
+                <jcr:childNodeDefinition jcr:primaryType="nt:childNodeDefinition" jcr:autoCreated="false"
+                                         jcr:defaultPrimaryType="rep:system" jcr:mandatory="true" jcr:name="jcr:system"
+                                         jcr:onParentVersion="IGNORE" jcr:protected="false"
+                                         jcr:sameNameSiblings="false"/>
+            </rep:root>
+        </jcr:nodeTypes>
+    </jcr:system>
+    <Jettro jcr:primaryType="gridshore:person" gridshore:age="36" gridshore:email="jettro@jteam.nl"
+            gridshore:title="Chief Architect">
+        <homeaddress jcr:primaryType="gridshore:address" gridshore:city="Amsterdam" gridshore:country="The Netherlands"
+                     gridshore:postalcode="1017XK" gridshore:street="Fredriksplein 1"/>
+    </Jettro>
+</jcr:root>

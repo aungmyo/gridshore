@@ -14,6 +14,7 @@
 
     <modules>
         <module>basic-jackrabbit</module>
+        <module>basic-hippo</module>
     </modules>
 
     <inceptionYear>2009</inceptionYear>

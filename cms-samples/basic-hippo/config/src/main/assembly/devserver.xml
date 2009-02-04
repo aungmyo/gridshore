@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<assembly>
+
+    <id>devserver-distributable</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <fileSets>
+
+        <!-- Configuration files -->
+        <fileSet>
+            <directory>src/main/config/devserver</directory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+            <outputDirectory>conf</outputDirectory>
+        </fileSet>
+
+    </fileSets>
+</assembly>

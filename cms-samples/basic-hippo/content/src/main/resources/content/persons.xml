@@ -20,6 +20,11 @@
     <sv:property sv:name="jcr:mixinTypes" sv:type="Name">
         <sv:value>hippo:harddocument</sv:value>
     </sv:property>
+    <!-- Add a folder type to limit the amount of options for this folder -->
+    <sv:property sv:name="hippostd:foldertype" sv:type="String">
+        <sv:value>New folder Persons</sv:value>
+        <sv:value>New Person</sv:value>
+    </sv:property>
 
     <sv:node sv:name="Jettro Coenradie">
         <sv:property sv:name="jcr:primaryType" sv:type="Name">

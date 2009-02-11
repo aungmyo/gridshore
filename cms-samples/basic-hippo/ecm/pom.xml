@@ -88,7 +88,7 @@
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <connectors>
                         <connector implementation="org.mortbay.jetty.nio.SelectChannelConnector">
-                            <port>8080</port>
+                            <port>8085</port>
                         </connector>
                     </connectors>
                     <contextPath>/</contextPath>

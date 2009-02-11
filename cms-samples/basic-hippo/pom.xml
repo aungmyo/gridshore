@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <properties>
-        <org.hippoecm.version>2.02.03</org.hippoecm.version>
+        <org.hippoecm.version>2.03.00</org.hippoecm.version>
         <org.hst.version>2.02.02</org.hst.version>
     </properties>
 
@@ -57,16 +57,6 @@
                 <updatePolicy>never</updatePolicy>
             </releases>
             <layout>default</layout>
-        </repository>
-        <repository>
-            <id>hippoecm.legacy</id>
-            <name>Hippo ECM Maven 1 repository.</name>
-            <url>http://repository.hippocms.org/maven/</url>
-            <snapshots/>
-            <releases>
-                <updatePolicy>never</updatePolicy>
-            </releases>
-            <layout>legacy</layout>
         </repository>
         <repository>
           <id>javanet</id>

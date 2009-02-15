@@ -43,19 +43,27 @@ public class BooksManager {
         }
 
         var authors:ArrayCollection = item.authors;
+        var foundAuthor:Boolean = false;
         for each (var author:Object in authors) {
-            if (notContainsCaseInsensitive(booksFilter.author,author.fullName)) {
-                return false;
+            if (containsCaseInsensitive(booksFilter.author,author.fullName)) {
+                foundAuthor = true;
+                break;
             }
         }
-
+        if (!foundAuthor) {
+            return false;
+        }
 
         return true;
     }
 
-    public function notContainsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
+    private function notContainsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
         return (searchIn != null && searchFor != null && searchFor != ""
                 && searchIn.toLowerCase().search(searchFor.toLowerCase()) == -1);
+    }
+
+    private function containsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
+        return !notContainsCaseInsensitive(searchFor, searchIn);
     }
 }
 }

@@ -16,6 +16,7 @@
             var bookFilter:BookFilter = new BookFilter();
             bookFilter.isbn = isbnFilter.text;
             bookFilter.title = titleFilter.text;
+            bookFilter.author = authorFilter.text;
 
             var event:BooksEvent = new BooksEvent(BooksEvent.FILTER_BOOKS);
             event.bookFilter = bookFilter;
@@ -25,6 +26,7 @@
         private function clearFilter():void {
             isbnFilter.text = '';
             titleFilter.text = '';
+            authorFilter.text = '';
 
             var event:BooksEvent = new BooksEvent(BooksEvent.CLEAR_FILTER_BOOKS);
             dispatchEvent(event);
@@ -52,7 +54,7 @@
                     <mx:Spacer width="20"/>
                     <mx:TextInput id="isbnFilter" width="{isbnColumn.width-20}"/>
                     <mx:Spacer width="20"/>
-                    <mx:Text id="authorFilter" width="{authorsColumn.width-20}" text=""/>
+                    <mx:TextInput id="authorFilter" width="{authorsColumn.width-20}" text=""/>
                     <mx:Spacer width="10"/>
                 </mx:HBox>
             </mx:Form>

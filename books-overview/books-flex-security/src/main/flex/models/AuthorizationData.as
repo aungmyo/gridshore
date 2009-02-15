@@ -1,4 +1,5 @@
 package models {
+
 import mx.collections.ArrayCollection;
 [Bindable]
 [RemoteClass(alias="nl.gridshore.samples.books.web.security.vo.AuthorizationData")]

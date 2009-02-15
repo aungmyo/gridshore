@@ -7,9 +7,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.gridshore.samples.books</groupId>
-    <artifactId>books-flex-mate</artifactId>
-    <packaging>swf</packaging>
-    <name>books-flex-mate</name>
+    <artifactId>books-flex-security</artifactId>
+    <packaging>swc</packaging>
+    <name>books-flex-security</name>
     <url>http://www.gridshore.nl</url>
 
     <dependencies>
@@ -31,14 +31,6 @@
             <version>${mate.version}</version>
             <type>swc</type>
         </dependency>
-        <!-- internal -->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>books-flex-security</artifactId>
-            <version>${project.version}</version>
-            <type>swc</type>
-        </dependency>
-        <!-- testing -->
         <dependency>
             <groupId>info.flex-mojos</groupId>
             <artifactId>testing-support</artifactId>

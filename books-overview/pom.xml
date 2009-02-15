@@ -18,6 +18,8 @@
         <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
         <flex-mojos.version>2.0.3</flex-mojos.version>
+        <spring-actionscript.version>0.7</spring-actionscript.version>
+        <mate.version>0.8.5</mate.version>
     </properties>
 
     <modules>
@@ -26,6 +28,7 @@
         <module>books-integration</module>
         <module>books-business</module>
         <!--<module>books-ria</module>-->
+        <module>books-flex-security</module>
         <module>books-flex-mate</module>
         <module>books-web</module>
     </modules>

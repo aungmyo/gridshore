@@ -43,31 +43,14 @@
             </resultHandlers>
         </RemoteObjectInvoker>
     </EventHandlers>
-
-    <EventHandlers type="{AuthenticationEvent.NEEDS}" debug="true">
-        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
-            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
-        </EventAnnouncer>
-    </EventHandlers>
-
-    <EventHandlers type="{AuthenticationEvent.AUTHENTICATED}" debug="true">
-        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
-            <Properties navigationId="{MainNavigationEvent.WELCOME_MESSAGE}"/>
-        </EventAnnouncer>
-    </EventHandlers>
-
+    
     <EventHandlers type="{AuthenticationEvent.LOGOUT}" debug="true">
         <RemoteObjectInvoker instance="{authenticationService}" method="logoutPrincipal"/>
         <MethodInvoker generator="{AuthenticationManager}" method="logout"/>
-        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
-            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
-        </EventAnnouncer>
+        <EventAnnouncer generator="{AuthenticationEvent}" type="{AuthenticationEvent.LOGGEDOUT}"/>
     </EventHandlers>
 
     <!-- Injectors -->
-    <Injectors target="{Main}">
-        <PropertyInjector source="{AuthenticationManager}" sourceKey="authorizationData" targetKey="authorizationData"/>
-    </Injectors>
     <Injectors target="{AuthenticationForm}">
         <PropertyInjector source="{AuthenticationManager}" sourceKey="faultMessage" targetKey="faultMessage"/>
     </Injectors>

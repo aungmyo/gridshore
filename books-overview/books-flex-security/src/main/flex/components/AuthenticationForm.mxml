@@ -19,6 +19,7 @@
         }
 ]]></mx:Script>
     <mx:VBox>
+        <mx:Label text="Welcome to this library application, you can login with : user/user and admin/admin"/>
         <mx:Label text="{faultMessage}"/>
         <mx:Form defaultButton="{createRequest}">
             <mx:FormItem label="Username">

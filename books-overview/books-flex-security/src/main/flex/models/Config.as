@@ -1,5 +1,6 @@
 package models {
-[Bindable]
+
+    [Bindable]
 public class Config {
     public var host:String;
     public var port:String;

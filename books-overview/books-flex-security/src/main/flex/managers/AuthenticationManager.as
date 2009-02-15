@@ -1,4 +1,5 @@
 package managers {
+
 import com.asfusion.mate.events.Dispatcher;
 import events.AuthenticationEvent;
 import models.AuthorizationData;

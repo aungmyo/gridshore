@@ -46,6 +46,26 @@
         </EventAnnouncer>
     </EventHandlers>
 
+    <!-- Event Handlers Security navigation -->
+    <EventHandlers type="{AuthenticationEvent.NEEDS}" debug="true">
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.AUTHENTICATED}" debug="true">
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.WELCOME_MESSAGE}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <EventHandlers type="{AuthenticationEvent.LOGGEDOUT}" debug="true">
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+    
+
     <!-- Injectors -->
     <Injectors target="{AllBooks}">
         <PropertyInjector source="{BooksManager}" sourceKey="books" targetKey="books"/>
@@ -53,4 +73,9 @@
     <Injectors target="{BookDetails}">
         <PropertyInjector source="{BooksManager}" sourceKey="currentBook" targetKey="book"/>
     </Injectors>
+    <!-- Security injected properties-->
+    <Injectors target="{Main}">
+        <PropertyInjector source="{AuthenticationManager}" sourceKey="authorizationData" targetKey="authorizationData"/>
+    </Injectors>
+    
 </EventMap>

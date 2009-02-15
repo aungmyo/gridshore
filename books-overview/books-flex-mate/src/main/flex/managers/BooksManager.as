@@ -35,18 +35,25 @@ public class BooksManager {
     }
 
     private function doFilterBooks(item:Object):Boolean {
-        if (notContainsCaseInsensitive(item.isbn, booksFilter.isbn)) {
+        if (notContainsCaseInsensitive(booksFilter.isbn, item.isbn)) {
             return false;
         }
-        if (item.title != null && booksFilter.title != null && booksFilter.title != ""
-                && item.title.toLowerCase().search(booksFilter.title.toLowerCase()) == -1) {
+        if (notContainsCaseInsensitive(booksFilter.title, item.title)) {
             return false;
         }
+
+        var authors:ArrayCollection = item.authors;
+        for each (var author:Object in authors) {
+            if (notContainsCaseInsensitive(booksFilter.author,author.fullName)) {
+                return false;
+            }
+        }
+
 
         return true;
     }
 
-    private function notContainsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
+    public function notContainsCaseInsensitive(searchFor:String, searchIn:String):Boolean {
         return (searchIn != null && searchFor != null && searchFor != ""
                 && searchIn.toLowerCase().search(searchFor.toLowerCase()) == -1);
     }

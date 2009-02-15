@@ -2,11 +2,12 @@
 <mx:Canvas xmlns:mx="http://www.adobe.com/2006/mxml" xmlns:rend="renderers.*">
     <mx:Script><![CDATA[
         import events.BooksEvent;
+
         import models.Book;
-import models.BookFilter;
+        import models.BookFilter;
+
         import mx.collections.ArrayCollection;
-        import mx.controls.Alert;
-import mx.events.ListEvent;
+        import mx.events.ListEvent;
 
         [Bindable]
         public var books:ArrayCollection = new ArrayCollection();
@@ -15,7 +16,7 @@ import mx.events.ListEvent;
             var bookFilter:BookFilter = new BookFilter();
             bookFilter.isbn = isbnFilter.text;
             bookFilter.title = titleFilter.text;
-            
+
             var event:BooksEvent = new BooksEvent(BooksEvent.FILTER_BOOKS);
             event.bookFilter = bookFilter;
             dispatchEvent(event);
@@ -23,7 +24,7 @@ import mx.events.ListEvent;
 
         private function clearFilter():void {
             isbnFilter.text = '';
-            titleFilter.text= '';
+            titleFilter.text = '';
 
             var event:BooksEvent = new BooksEvent(BooksEvent.CLEAR_FILTER_BOOKS);
             dispatchEvent(event);
@@ -36,14 +37,14 @@ import mx.events.ListEvent;
             dispatchEvent(booksEvent);
         }
 
-]]></mx:Script>
+        ]]></mx:Script>
     <mx:VBox height="100%" width="100%">
         <mx:VBox width="{myBooks.width}">
             <mx:Form defaultButton="{doFilterButton}" paddingBottom="0" paddingLeft="0" paddingRight="0" paddingTop="0">
                 <mx:HBox width="100%">
                     <mx:Spacer width="100%"/>
                     <mx:Button id="doFilterButton" label="Filter" click="doFilterBooks()"/>
-                    <mx:Button label="clear" click="clearFilter()"/>
+                    <mx:Button label="Clear" click="clearFilter()"/>
                 </mx:HBox>
                 <mx:HBox width="100%" horizontalGap="0" borderStyle="solid" paddingTop="10" paddingBottom="10">
                     <mx:Spacer width="10"/>

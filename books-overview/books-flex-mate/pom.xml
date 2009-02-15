@@ -31,10 +31,18 @@
             <version>0.8.5</version>
             <type>swc</type>
         </dependency>
+        <dependency>
+            <groupId>info.flex-mojos</groupId>
+            <artifactId>testing-support</artifactId>
+            <version>${flex-mojos.version}</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
         <sourceDirectory>src/main/flex</sourceDirectory>
+        <testSourceDirectory>src/test/flex</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>info.flex-mojos</groupId>

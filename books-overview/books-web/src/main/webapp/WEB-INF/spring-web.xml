@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       xmlns:flex="http://www.springframework.org/schema/flex"
+       xsi:schemaLocation="
+            http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+            http://www.springframework.org/schema/flex http://www.springframework.org/schema/flex/spring-flex-1.0.xsd">
 
     <!-- Bootstraps and exposes the BlazeDS MessageBroker -->
-    <bean id="mySpringManagedMessageBroker" class="org.springframework.flex.messaging.MessageBrokerFactoryBean"/>
+    <flex:message-broker disable-default-mapping="true">
+        <flex:secured />
+    </flex:message-broker>
 
-    <!-- Maps request paths at /* to the BlazeDS MessageBroker -->
+    <!-- remote proxies -->
+    <flex:remote-service service-id="remoteBookManager" ref="bookManager"
+                         exclude-methods="internalUseStoreBook"/>
+
+    <!-- Non default url handler mapping needed for the property file -->
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
         <property name="mappings">
             <value>
                 /config.properties=configPropertyController
-                /*=mySpringManagedMessageBroker
+                /*=_messageBroker
             </value>
         </property>
     </bean>
 
-    <!-- Dispatches requests mapped to a MessageBroker -->
-    <bean class="org.springframework.flex.messaging.servlet.MessageBrokerHandlerAdapter"/>
     <!-- Dispatches request mapped to a Controller -->
     <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
-
-    <!-- remote proxies -->
-    <bean id="remoteBookManager" class="org.springframework.flex.messaging.remoting.FlexRemotingServiceExporter">
-        <property name="messageBroker" ref="mySpringManagedMessageBroker"/>
-        <property name="service" ref="bookManager"/>
-    </bean>
 
     <!-- Controllers for property configuration files -->
     <bean id="configPropertyController" class="nl.gridshore.samples.books.web.controller.ConfigPropertyController"/>

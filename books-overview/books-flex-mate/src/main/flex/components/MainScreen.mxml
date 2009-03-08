@@ -3,7 +3,9 @@
            xmlns:mine="components.*"
            xmlns:mateEvent="com.asfusion.mate.events.*">
     <mx:Script><![CDATA[
-        import events.MainNavigationEvent;
+        import com.asfusion.mate.events.UnhandledFaultEvent;
+import events.MainNavigationEvent;
+        import mx.controls.Alert;
 
         private function handleNavigationEvent(event:MainNavigationEvent):void {
             switch (event.navigationId) {
@@ -26,10 +28,16 @@
             }
         }
 
+        private function handleUnhandledFaultEvent(event:UnhandledFaultEvent):void {
+            Alert.show(event.fault.faultString);
+        }
+
         ]]></mx:Script>
 
 
     <mateEvent:Listener type="{MainNavigationEvent.NAVIGATION}" method="handleNavigationEvent"/>
+    <mateEvent:Listener type="{UnhandledFaultEvent.FAULT}" method="handleUnhandledFaultEvent"/>
+
 
     <mx:states>
         <mx:State name="authenticated">

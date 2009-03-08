@@ -7,20 +7,19 @@
             http://www.springframework.org/schema/flex http://www.springframework.org/schema/flex/spring-flex-1.0.xsd">
 
     <!-- Bootstraps and exposes the BlazeDS MessageBroker -->
-    <flex:message-broker disable-default-mapping="true">
+    <flex:message-broker>
         <flex:secured />
     </flex:message-broker>
 
     <!-- remote proxies -->
-    <flex:remote-service service-id="remoteBookManager" ref="bookManager"
-                         exclude-methods="internalUseStoreBook"/>
+    <flex:remote-service service-id="remoteBookManager" ref="bookManager" exclude-methods="internalUseStoreBook"/>
 
     <!-- Non default url handler mapping needed for the property file -->
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+        <property name="order" value="0"/>
         <property name="mappings">
             <value>
                 /config.properties=configPropertyController
-                /*=_messageBroker
             </value>
         </property>
     </bean>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:si="http://www.springframework.org/schema/integration"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tool="http://www.springframework.org/schema/tool"
+       xmlns:lang="http://www.springframework.org/schema/lang"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration-1.0.xsd
+           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+           http://www.springframework.org/schema/tool http://www.springframework.org/schema/tool/spring-tool-2.5.xsd
+           http://www.springframework.org/schema/lang http://www.springframework.org/schema/lang/spring-lang-2.5.xsd">
+
+    <!-- input channel for rss feeds -->
+    <si:channel id="inputRssFeedChannel"/>
+    <si:channel id="inputNewsItemChannel"/>
+
+    <!--<si:publish-subscribe-channel id="outputSubscriberChannel"/>-->
+
+    <!-- Channel adapter for the external feed-->
+    <si:inbound-channel-adapter channel="inputRssFeedChannel" ref="rssReader">
+        <si:poller max-messages-per-poll="1">
+            <si:interval-trigger interval="10" time-unit="SECONDS"/>
+        </si:poller>
+    </si:inbound-channel-adapter>
+
+    <!-- Transformer for SyndFeed to NewsItem -->
+    <si:transformer input-channel="inputRssFeedChannel" output-channel="inputNewsItemChannel"
+                    ref="syndFeedNewsItemTransformer"/>
+
+    <!-- message handler for the feed -->
+    <si:service-activator input-channel="inputNewsItemChannel" ref="rssFeedMessageHandler"/>
+
+    <!-- publish message to subscribers -->
+
+    <!-- Other beans-->
+    <bean id="rssReader" class="nl.gridshore.samples.si.RssReader">
+        <property name="fetcherListener">
+            <bean class="nl.gridshore.samples.si.helper.FetcherEventListenerImpl"/>
+        </property>
+    </bean>
+
+    <bean id="rssFeedMessageHandler" class="nl.gridshore.samples.si.RssFeedMessageHandler"/>
+
+    <bean id="syndFeedNewsItemTransformer" class="nl.gridshore.samples.si.SyndFeedToNewsItemTransformer"/>
+</beans>

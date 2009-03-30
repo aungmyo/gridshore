@@ -30,6 +30,12 @@ public abstract class AbstractPersistenceTest extends AbstractJpaTests {
         sharedEntityManager.flush();
     }
 
+    /**
+     * Creates an enquiry instance with an open question and a multiple choice question with two options. The second
+     * option has an open sub question.
+     *
+     * @return a simple Enquiry structure for test purposes
+     */
     protected EnquiryDef createSimpleEnquiry() {
         List<QuestionDef> questions = new ArrayList<QuestionDef>();
         questions.add(new OpenQuestionDef("Question 1", AnswerLength.SINGLE_LINE));
@@ -39,7 +45,6 @@ public abstract class AbstractPersistenceTest extends AbstractJpaTests {
         subQuestions.add(new OpenQuestionDef("Give some details", AnswerLength.SINGLE_LINE));
         choices.add(new ChoiceDef("Option requiring additional info", subQuestions));
         questions.add(new MultipleChoiceQuestionDef("Make a choice", choices));
-        EnquiryDef enquiry = new EnquiryDef("My new enquiry", questions);
-        return enquiry;
+        return new EnquiryDef("My new enquiry", questions);
     }
 }

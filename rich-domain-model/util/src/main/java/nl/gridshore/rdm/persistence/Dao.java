@@ -22,8 +22,9 @@ public interface Dao<T extends BaseEntity> {
      * Persist the given non-persisted entity in the repository.
      *
      * @param entity the entity to persist
+     * @return The identifier of the persisted entity
      */
-    public void create(T entity);
+    public long insert(T entity);
 
     /**
      * Update the given entity in the repository

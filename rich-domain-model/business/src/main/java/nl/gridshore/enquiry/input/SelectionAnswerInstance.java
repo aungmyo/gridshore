@@ -13,12 +13,14 @@ package nl.gridshore.enquiry.input;
 
 import nl.gridshore.enquiry.def.ChoiceDef;
 import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
+import org.springframework.util.Assert;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -33,11 +35,29 @@ public class SelectionAnswerInstance extends AnswerInstance {
     @ManyToOne
     private MultipleChoiceQuestionDef questionDef;
 
-    public SelectionAnswerInstance() {
+    protected SelectionAnswerInstance() {
     }
 
-    public SelectionAnswerInstance(final MultipleChoiceQuestionDef questionDef) {
+    public SelectionAnswerInstance(final MultipleChoiceQuestionDef questionDef, final ChoiceDef... choices) {
+        this(questionDef, Arrays.asList(choices));
+    }
+
+    public SelectionAnswerInstance(final MultipleChoiceQuestionDef questionDef, final List<ChoiceDef> choices) {
+        Assert.notNull(choices, "The choices parameter may not be null");
+        Assert.notNull(questionDef, "The questionDef parameter may not be null");
+        Assert.isTrue(fromSameQuestion(questionDef, choices), "Not all provided choices belong to the same question");
+
         this.questionDef = questionDef;
+        choiceDefs.addAll(choices);
+    }
+
+    private boolean fromSameQuestion(final MultipleChoiceQuestionDef expectedQuestionDef, final List<ChoiceDef> choices) {
+        for (ChoiceDef choice : choices) {
+            if (!expectedQuestionDef.sameIdentityAs(choice.getQuestionDef())) {
+                return false;
+            }
+        }
+        return true;
     }
 
     public List<ChoiceDef> getChoiceDefs() {
@@ -49,7 +69,7 @@ public class SelectionAnswerInstance extends AnswerInstance {
         return questionDef;
     }
 
-    public boolean isChosen(ChoiceDef choiceDef) {
+    public boolean isSelected(ChoiceDef choiceDef) {
         for (ChoiceDef def : choiceDefs) {
             if (def.equals(choiceDef)) {
                 return true;
@@ -58,23 +78,8 @@ public class SelectionAnswerInstance extends AnswerInstance {
         return false;
     }
 
-    public void addChoice(ChoiceDef choiceDef) {
-        if (!isChosen(choiceDef)) {
-            choiceDefs.add(choiceDef);
-        }
-    }
-
-    public void removeChoice(ChoiceDef choiceDef) {
-        for (ChoiceDef def : choiceDefs) {
-            if (def.equals(choiceDef)) {
-                choiceDefs.remove(def);
-                return;
-            }
-        }
-    }
-
     @Override
-    public String getText() {
+    public String getAsText() {
         StringBuilder sb = new StringBuilder();
         Iterator<ChoiceDef> iterator = choiceDefs.iterator();
         while (iterator.hasNext()) {

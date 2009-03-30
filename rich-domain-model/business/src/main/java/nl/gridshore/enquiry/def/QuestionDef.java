@@ -12,6 +12,7 @@
 package nl.gridshore.enquiry.def;
 
 import nl.gridshore.rdm.persistence.BaseEntity;
+import org.springframework.util.Assert;
 
 import javax.persistence.*;
 
@@ -34,6 +35,13 @@ public abstract class QuestionDef extends BaseEntity {
     @JoinColumn
     protected ChoiceDef parentChoiceDef;
 
+    protected QuestionDef() {
+    }
+
+    protected QuestionDef(final String questionText) {
+        this.questionText = questionText;
+    }
+
     public EnquiryDef getEnquiry() {
         if (parentChoiceDef != null) {
             return parentChoiceDef.getEnquiry();
@@ -41,25 +49,25 @@ public abstract class QuestionDef extends BaseEntity {
         return enquiry;
     }
 
+    public String getQuestionText() {
+        return questionText;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
     void setEnquiry(final EnquiryDef enquiry) {
-        if (parentChoiceDef != null) {
-            throw new IllegalStateException("Cannot add sub questions to an Enquiry Definition directly");
-        }
+        Assert.isNull(parentChoiceDef, "Cannot add sub questions to an Enquiry Definition directly");
         this.enquiry = enquiry;
     }
 
     void setParentChoiceDef(final ChoiceDef parentChoiceDef) {
-        if (this.enquiry != null) {
-            throw new IllegalStateException("Cannot add as sub question when added to an Enquiry Definition directly");
-        }
+        Assert.isNull(this.enquiry, "Cannot add as sub question when added to an Enquiry Definition directly");
         this.parentChoiceDef = parentChoiceDef;
     }
 
     protected void setIndex(final int index) {
         this.index = index;
-    }
-
-    public int getIndex() {
-        return index;
     }
 }

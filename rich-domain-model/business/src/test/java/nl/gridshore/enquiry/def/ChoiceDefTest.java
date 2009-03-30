@@ -4,6 +4,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ChoiceDefTest {
 
     private ChoiceDef testSubject;
@@ -17,59 +20,34 @@ public class ChoiceDefTest {
     public void testGetEnquiry() {
         final EnquiryDef mockEnquiry = new EnquiryDef();
         assertNull(testSubject.getEnquiry());
-        testSubject.setQuestionDef(new MultipleChoiceQuestionDef() {
+        final MultipleChoiceQuestionDef questionDef = new MultipleChoiceQuestionDef() {
             @Override
             public EnquiryDef getEnquiry() {
                 return mockEnquiry;
             }
-        });
+        };
+        testSubject.setQuestionDef(questionDef);
 
+        assertSame(questionDef, testSubject.getQuestionDef());
         assertSame(mockEnquiry, testSubject.getEnquiry());
     }
 
     @Test
-    public void testAppendAndInsertSubQuestions() {
-        assertEquals(0, testSubject.getSubQuestions().size());
-        QuestionDef mockQuestion = new QuestionDef() {
-        };
-        testSubject.appendSubQuestion(mockQuestion);
-        assertEquals(1, testSubject.getSubQuestions().size());
-        assertSame(testSubject, mockQuestion.parentChoiceDef);
-        assertEquals(1, mockQuestion.getIndex());
-
-        testSubject.insertSubQuestion(new OpenQuestionDef(), 0);
-        assertEquals(2, testSubject.getSubQuestions().size());
-        assertEquals(2, mockQuestion.getIndex());
-
-        testSubject.insertSubQuestion(mockQuestion, 0);
-        assertEquals(2, testSubject.getSubQuestions().size());
-        assertEquals(1, mockQuestion.getIndex());
-    }
-
-    @Test
-    public void testRemoveSubQuestions() {
-        QuestionDef mockQuestion = new QuestionDef() {
-        };
-        testSubject.appendSubQuestion(mockQuestion);
-        testSubject.appendSubQuestion(new OpenQuestionDef());
-        assertEquals(2, testSubject.getSubQuestions().size());
-
-        assertNull(testSubject.removeSubQuestionIfPresent(new OpenQuestionDef()));
-        assertEquals(2, testSubject.getSubQuestions().size());
-
-        assertNotNull(testSubject.removeSubQuestion(1));
-        assertNotNull(testSubject.removeSubQuestionIfPresent(mockQuestion));
-        assertEquals(0, testSubject.getSubQuestions().size());
-
-    }
-
-    @Test
-    public void testGettersAndSetters() {
+    public void testConstructor_TextOnly() {
         testSubject = new ChoiceDef("Testing");
         assertEquals("Testing", testSubject.getText());
+    }
 
-        assertEquals(0, testSubject.getIndex());
-        testSubject.setIndex(3);
-        assertEquals(3, testSubject.getIndex());
+
+    @Test
+    public void testConstructor_TextAndQuestions() {
+        List<QuestionDef> subQuestions = new ArrayList<QuestionDef>();
+        subQuestions.add(new OpenQuestionDef());
+        subQuestions.add(new OpenQuestionDef());
+        testSubject = new ChoiceDef("Testing", subQuestions);
+        assertEquals("Testing", testSubject.getText());
+        assertEquals(2, testSubject.getSubQuestions().size());
+        assertEquals(1, testSubject.getSubQuestions().get(1).getIndex());
+        assertEquals(1, testSubject.getSubQuestions().get(1).getIndex());
     }
 }

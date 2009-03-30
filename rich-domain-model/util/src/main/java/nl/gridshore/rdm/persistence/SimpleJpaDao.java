@@ -25,8 +25,9 @@ public class SimpleJpaDao<T extends BaseEntity> implements Dao<T> {
     }
 
     @Override
-    public void create(final T entity) {
+    public long insert(final T entity) {
         entityManager.persist(entity);
+        return entity.getId();
     }
 
     @Override

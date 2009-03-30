@@ -9,14 +9,10 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.rdm.utils;
+package nl.gridshore.enquiry.def;
 
-import nl.gridshore.rdm.context.DomainContext;
-import nl.gridshore.rdm.context.DomainContextFactory;
+import nl.gridshore.rdm.persistence.Dao;
 
-public class MockDomainContext extends DomainContext {
+public interface EnquiryDefRepository extends Dao<EnquiryDef> {
 
-    public MockDomainContext(final DomainContextFactory<? extends DomainContext> domainContextFactory) {
-        super(domainContextFactory);
-    }
 }

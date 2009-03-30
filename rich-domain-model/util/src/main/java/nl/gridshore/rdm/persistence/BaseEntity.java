@@ -51,20 +51,32 @@ public abstract class BaseEntity {
     }
 
     /**
-     * Sets the identifier of this entity
+     * Sets the identifier of this entity. Exclusively for testing.
      *
      * @param id the new id for this entity
      */
-    protected void setId(Long id) {
+    void setId(Long id) {
         this.id = id;
     }
 
     /**
-     * Sets the version used for optimistic locking of this entity
+     * Returns true if this instance has the same identity as <code>other</code>. The identity is regarded equal if the
+     * <code>id</code> of both objects is equal and not null, and both instances are from the exact same class.
+     *
+     * @param other The instance to compare
+     * @return True if the instances have the same identity, otherwise false.
+     */
+    public boolean sameIdentityAs(BaseEntity other) {
+        return other != null && id != null && getClass().equals(other.getClass()) && id.equals(other.getId());
+    }
+
+    /**
+     * Sets the version used for optimistic locking of this entity. Exclusively for testing.
      *
      * @param lockVersion the new lockVersion for this entity
      */
-    protected void setLockVersion(long lockVersion) {
+    void setLockVersion(long lockVersion) {
         this.lockVersion = lockVersion;
     }
+
 }

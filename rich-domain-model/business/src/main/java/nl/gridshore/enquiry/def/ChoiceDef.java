@@ -12,6 +12,8 @@
 package nl.gridshore.enquiry.def;
 
 import nl.gridshore.rdm.persistence.BaseEntity;
+import org.hibernate.annotations.Cascade;
+import org.springframework.util.Assert;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -31,6 +33,7 @@ public class ChoiceDef extends BaseEntity {
 
     @OneToMany(mappedBy = "parentChoiceDef", cascade = CascadeType.ALL)
     @OrderBy("index")
+    @Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.DELETE_ORPHAN})
     private List<QuestionDef> subQuestionDefs = new ArrayList<QuestionDef>();
 
     @Column(name = "ordering")
@@ -46,8 +49,15 @@ public class ChoiceDef extends BaseEntity {
         this.text = text;
     }
 
-    protected void setQuestionDef(final MultipleChoiceQuestionDef questionDef) {
-        this.questionDef = questionDef;
+    public ChoiceDef(final String text, List<QuestionDef> subQuestions) {
+        this(text);
+        int i = 0;
+        for (QuestionDef question : subQuestions) {
+            Assert.isNull(question.getEnquiry());
+            question.setIndex(i++);
+            question.setParentChoiceDef(this);
+            subQuestionDefs.add(question);
+        }
     }
 
     public EnquiryDef getEnquiry() {
@@ -57,34 +67,16 @@ public class ChoiceDef extends BaseEntity {
         return questionDef.getEnquiry();
     }
 
-    public void appendSubQuestion(QuestionDef questionDef) {
-        insertSubQuestion(questionDef, subQuestionDefs.size());
-    }
-
-    public void insertSubQuestion(QuestionDef questionDef, final int position) {
-        subQuestionDefs.remove(questionDef);
-
-        int insertPosition = Math.min(position, subQuestionDefs.size());
-        questionDef.setParentChoiceDef(this);
-        subQuestionDefs.add(insertPosition, questionDef);
-        recalculateIndices();
-    }
-
-    public QuestionDef removeSubQuestionIfPresent(final QuestionDef questionDef) {
-        if (subQuestionDefs.remove(questionDef)) {
-            questionDef.setParentChoiceDef(null);
-            recalculateIndices();
-            return questionDef;
-        }
-        return null;
-    }
-
-    public QuestionDef removeSubQuestion(final int position) {
-        return removeSubQuestionIfPresent(subQuestionDefs.get(position));
-    }
-
     public List<QuestionDef> getSubQuestions() {
         return Collections.unmodifiableList(subQuestionDefs);
+    }
+
+    public MultipleChoiceQuestionDef getQuestionDef() {
+        return questionDef;
+    }
+
+    protected void setQuestionDef(final MultipleChoiceQuestionDef questionDef) {
+        this.questionDef = questionDef;
     }
 
     protected void setIndex(final int index) {
@@ -97,15 +89,6 @@ public class ChoiceDef extends BaseEntity {
 
     public String getText() {
         return text;
-    }
-
-    // ======================== Helper methods ==============================
-
-    private void recalculateIndices() {
-        int t = 1;
-        for (QuestionDef question : subQuestionDefs) {
-            question.setIndex(t++);
-        }
     }
 
 }

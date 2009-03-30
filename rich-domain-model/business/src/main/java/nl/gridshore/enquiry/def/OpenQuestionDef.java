@@ -23,11 +23,16 @@ public class OpenQuestionDef extends QuestionDef {
     @Enumerated(EnumType.STRING)
     private AnswerLength answerLength;
 
+    protected OpenQuestionDef() {
+    }
+
+    public OpenQuestionDef(final String questionText, final AnswerLength answerLength) {
+        super(questionText);
+        this.answerLength = answerLength;
+    }
+
     public AnswerLength getAnswerLength() {
         return answerLength;
     }
 
-    public void setAnswerLength(final AnswerLength answerLength) {
-        this.answerLength = answerLength;
-    }
 }

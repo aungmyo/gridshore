@@ -9,17 +9,18 @@
  * it only in accordance with the terms of the license agreement you
  * entered into with JTeam.
  */
-package nl.gridshore.enquiry.persistance;
+package nl.gridshore.enquiry.persistence;
 
-import nl.gridshore.enquiry.input.EnquiryInstance;
-import nl.gridshore.enquiry.repository.EnquiryInstanceRepository;
+import nl.gridshore.enquiry.def.EnquiryDef;
+import nl.gridshore.enquiry.def.EnquiryDefRepository;
 import nl.gridshore.rdm.persistence.SimpleJpaDao;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class EnquiryInstanceJpaRepository extends SimpleJpaDao<EnquiryInstance> implements EnquiryInstanceRepository {
+public class EnquiryDefJpaDao extends SimpleJpaDao<EnquiryDef> implements EnquiryDefRepository {
 
-    public EnquiryInstanceJpaRepository() {
-        super(EnquiryInstance.class);
+    public EnquiryDefJpaDao() {
+        super(EnquiryDef.class);
     }
+
 }

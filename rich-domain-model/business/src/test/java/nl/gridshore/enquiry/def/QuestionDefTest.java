@@ -24,7 +24,7 @@ public class QuestionDefTest {
             testSubject.setEnquiry(new EnquiryDef());
             fail("Expected exception");
         }
-        catch (IllegalStateException ex) {
+        catch (IllegalArgumentException ex) {
 
         }
         testSubject.setParentChoiceDef(null);
@@ -33,7 +33,7 @@ public class QuestionDefTest {
             testSubject.setParentChoiceDef(new ChoiceDef());
             fail("Expected exception");
         }
-        catch (IllegalStateException ex) {
+        catch (IllegalArgumentException ex) {
         }
     }
 

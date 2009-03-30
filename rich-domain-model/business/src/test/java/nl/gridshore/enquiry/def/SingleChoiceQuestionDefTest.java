@@ -7,7 +7,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MultipleChoiceQuestionDefTest {
+public class SingleChoiceQuestionDefTest {
 
     @Test
     public void testConstructor() {
@@ -16,13 +16,11 @@ public class MultipleChoiceQuestionDefTest {
         final ChoiceDef choiceDef2 = new ChoiceDef();
         choiceDefs.add(choiceDef);
         choiceDefs.add(choiceDef2);
-        MultipleChoiceQuestionDef testSubject = new MultipleChoiceQuestionDef("Test", choiceDefs);
+        SingleChoiceQuestionDef testSubject = new SingleChoiceQuestionDef("Test", choiceDefs);
 
         assertEquals("Test", testSubject.getQuestionText());
         assertEquals(2, testSubject.getChoiceDefs().size());
         assertSame(choiceDef, testSubject.getChoiceDefs().get(0));
         assertEquals(1, choiceDef2.getIndex());
     }
-
-
 }

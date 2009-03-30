@@ -38,7 +38,7 @@ public class OpenAnswerInstance extends AnswerInstance {
         return questionDef;
     }
 
-    public String getText() {
+    public String getAsText() {
         return text;
     }
 }

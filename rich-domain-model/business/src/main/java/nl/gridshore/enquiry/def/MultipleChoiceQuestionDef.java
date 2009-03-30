@@ -11,6 +11,9 @@
  */
 package nl.gridshore.enquiry.def;
 
+import org.hibernate.annotations.Cascade;
+import org.springframework.util.Assert;
+
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
@@ -26,45 +29,40 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "questionDef")
     @OrderBy("index")
-    protected List<ChoiceDef> choices;
+    @Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.DELETE_ORPHAN})
+    protected List<ChoiceDef> choiceDefs = new ArrayList<ChoiceDef>();
 
-    public MultipleChoiceQuestionDef() {
-        this.choices = new ArrayList<ChoiceDef>();
+    /**
+     * Solely fro user by Hibernate/JPA
+     */
+    protected MultipleChoiceQuestionDef() {
     }
 
-    public List<ChoiceDef> getChoices() {
-        return Collections.unmodifiableList(choices);
-    }
-
-    public void appendChoice(ChoiceDef choiceDef) {
-        insertChoice(choiceDef, choices.size());
-    }
-
-    public void insertChoice(ChoiceDef choiceDef, int index) {
-        removeChoiceIfPresent(choiceDef);
-        choiceDef.setQuestionDef(this);
-        choices.add(Math.min(index, choices.size()), choiceDef);
-        recalculateIndices();
-    }
-
-    public ChoiceDef removeChoiceIfPresent(ChoiceDef choiceDef) {
-        if (choices.remove(choiceDef)) {
-            recalculateIndices();
-            return choiceDef;
-        }
-        return null;
-    }
-
-    public ChoiceDef removeChoice(int index) {
-        return removeChoiceIfPresent(choices.get(index));
-    }
-
-    // ======================== Helper methods ==============================
-
-    private void recalculateIndices() {
-        int t = 1;
-        for (ChoiceDef choice : choices) {
-            choice.setIndex(t++);
+    /**
+     * Primary constructor for a MultipleChoiceQuestionDef
+     *
+     * @param text       The text (or resource identifier)
+     * @param choiceDefs The possible choices for this question
+     */
+    public MultipleChoiceQuestionDef(final String text, final List<ChoiceDef> choiceDefs) {
+        super(text);
+        int i = 0;
+        for (ChoiceDef choice : choiceDefs) {
+            Assert.isNull(choice.getEnquiry(), "One of the provided choiceDefs is already added to another enquiry");
+            choice.setIndex(i++);
+            choice.setQuestionDef(this);
+            this.choiceDefs.add(choice);
         }
     }
+
+    /**
+     * Get the list of choice for this question. The choices are returned in the same order they were provided in in the
+     * constructor.
+     *
+     * @return the list of choice for this question
+     */
+    public List<ChoiceDef> getChoiceDefs() {
+        return Collections.unmodifiableList(choiceDefs);
+    }
+
 }

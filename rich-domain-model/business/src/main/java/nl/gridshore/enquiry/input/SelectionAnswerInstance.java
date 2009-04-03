@@ -25,6 +25,12 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Represents an answer to a question that provides one or more options to choose from.
+ *
+ * @see nl.gridshore.enquiry.def.MultipleChoiceQuestionDef MultipleChoiceQuestionDef
+ * @see nl.gridshore.enquiry.def.SingleChoiceQuestionDef SingleChoiceQuestionDef
+ */
 @Entity
 public class SelectionAnswerInstance extends AnswerInstance {
 
@@ -35,13 +41,30 @@ public class SelectionAnswerInstance extends AnswerInstance {
     @ManyToOne
     private MultipleChoiceQuestionDef questionDef;
 
+    /**
+     * Solely for use by Hibernate/JPA
+     */
     protected SelectionAnswerInstance() {
     }
 
+    /**
+     * Construct a new answer to the given <code>questionDef</code> using the <code>choices</code>. Each of the choices
+     * provided must belong to the provided questionDef.
+     *
+     * @param questionDef The question to answer
+     * @param choices     The choices that make up this answer
+     */
     public SelectionAnswerInstance(final MultipleChoiceQuestionDef questionDef, final ChoiceDef... choices) {
         this(questionDef, Arrays.asList(choices));
     }
 
+    /**
+     * Construct a new answer to the given <code>questionDef</code> using the <code>choices</code>. Each of the choices
+     * provided must belong to the provided questionDef.
+     *
+     * @param questionDef The question to answer
+     * @param choices     The choices that make up this answer
+     */
     public SelectionAnswerInstance(final MultipleChoiceQuestionDef questionDef, final List<ChoiceDef> choices) {
         Assert.notNull(choices, "The choices parameter may not be null");
         Assert.notNull(questionDef, "The questionDef parameter may not be null");

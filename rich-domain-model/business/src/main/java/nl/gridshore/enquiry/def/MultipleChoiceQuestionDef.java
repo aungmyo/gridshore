@@ -11,6 +11,7 @@
  */
 package nl.gridshore.enquiry.def;
 
+import nl.gridshore.enquiry.input.SelectionAnswerInstance;
 import org.hibernate.annotations.Cascade;
 import org.springframework.util.Assert;
 
@@ -20,9 +21,15 @@ import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Represents a question with a number of predefined answers from which one or more may be selected.
+ *
+ * @see nl.gridshore.enquiry.input.SelectionAnswerInstance SelectionAnswerInstance
+ */
 @Entity
 @DiscriminatorValue("MULTIPLE")
 public class MultipleChoiceQuestionDef extends QuestionDef {
@@ -39,7 +46,17 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
     }
 
     /**
-     * Primary constructor for a MultipleChoiceQuestionDef
+     * Constructor for a MultipleChoiceQuestionDef
+     *
+     * @param text       The text (or resource identifier)
+     * @param choiceDefs The possible choices for this question
+     */
+    public MultipleChoiceQuestionDef(final String text, final ChoiceDef... choiceDefs) {
+        this(text, Arrays.asList(choiceDefs));
+    }
+
+    /**
+     * Constructor for a MultipleChoiceQuestionDef
      *
      * @param text       The text (or resource identifier)
      * @param choiceDefs The possible choices for this question
@@ -53,6 +70,18 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
             choice.setQuestionDef(this);
             this.choiceDefs.add(choice);
         }
+    }
+
+    /**
+     * Construct an answer to this type of question with the given <code>choiceDefs</code>. Each <code>ChoiceDef</code>
+     * represents an option that has been selected.
+     *
+     * @param choiceDefs The options that have been selected
+     * @return an answer instance for this question with the provided choices
+     */
+    public SelectionAnswerInstance newAnswer(ChoiceDef... choiceDefs) {
+        Assert.isTrue(this.choiceDefs.containsAll(Arrays.asList(choiceDefs)), "One or more of the given choices do not belong to this question definition");
+        return new SelectionAnswerInstance(this, choiceDefs);
     }
 
     /**

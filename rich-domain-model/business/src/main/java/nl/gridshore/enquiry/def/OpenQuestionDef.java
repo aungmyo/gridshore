@@ -13,26 +13,28 @@ package nl.gridshore.enquiry.def;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 
+/**
+ * Represents an open question. I.e. a question where the user can enter an amount of free text to answer it.
+ */
 @Entity
 @DiscriminatorValue("OPEN")
 public class OpenQuestionDef extends QuestionDef {
 
-    @Enumerated(EnumType.STRING)
-    private AnswerLength answerLength;
-
+    /**
+     * Constructor solely for use by Hibernate/JPA
+     */
     protected OpenQuestionDef() {
     }
 
-    public OpenQuestionDef(final String questionText, final AnswerLength answerLength) {
+    /**
+     * Construct a new Open Question Definition instance using the given <code>questionText</code>.
+     *
+     * @param questionText The text for this question
+     */
+    public OpenQuestionDef(final String questionText) {
         super(questionText);
-        this.answerLength = answerLength;
     }
 
-    public AnswerLength getAnswerLength() {
-        return answerLength;
-    }
 
 }

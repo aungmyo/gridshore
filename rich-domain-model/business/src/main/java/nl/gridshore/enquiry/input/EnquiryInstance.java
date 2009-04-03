@@ -28,6 +28,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Represents an instance of an enquiry as defined by the provided {@link EnquiryDef Enquiry Definition}, containing the
+ * answers of an enquiry.
+ */
 @Entity
 public class EnquiryInstance extends BaseEntity {
 

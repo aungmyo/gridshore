@@ -18,7 +18,7 @@ import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING, length = 8)
+@DiscriminatorColumn(name = "type", discriminatorType = DiscriminatorType.STRING, length = 50)
 @Table(name = "QuestionDef")
 public abstract class QuestionDef extends BaseEntity {
 

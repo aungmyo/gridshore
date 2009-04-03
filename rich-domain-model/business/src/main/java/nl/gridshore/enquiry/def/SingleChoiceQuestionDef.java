@@ -15,6 +15,11 @@ import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import java.util.List;
 
+/**
+ * Represents a question where only one of multiple options may be selected.
+ *
+ * @see nl.gridshore.enquiry.input.SelectionAnswerInstance SelectionAnswerInstance
+ */
 @Entity
 @DiscriminatorValue("SINGLE")
 public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
@@ -26,7 +31,17 @@ public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
     }
 
     /**
-     * Primary constructor for a SingleChoiceQuestionDef
+     * Constructor for a SingleChoiceQuestionDef
+     *
+     * @param text       The text (or resource identifier)
+     * @param choiceDefs The possible choices for this question
+     */
+    public SingleChoiceQuestionDef(final String text, final ChoiceDef... choiceDefs) {
+        super(text, choiceDefs);
+    }
+
+    /**
+     * Constructor for a SingleChoiceQuestionDef
      *
      * @param text       The text (or resource identifier)
      * @param choiceDefs The possible choices for this question

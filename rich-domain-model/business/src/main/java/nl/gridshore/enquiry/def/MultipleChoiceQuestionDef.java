@@ -85,7 +85,8 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
      * @return an answer instance for this question with the provided choices
      */
     public SelectionAnswerInstance newAnswer(ChoiceDef... choiceDefs) {
-        Assert.isTrue(this.choiceDefs.containsAll(Arrays.asList(choiceDefs)), "One or more of the given choices do not belong to this question definition");
+        Assert.isTrue(this.choiceDefs.containsAll(Arrays.asList(choiceDefs)),
+                      "One or more of the given choices do not belong to this question definition");
         return new SelectionAnswerInstance(this, choiceDefs);
     }
 
@@ -97,6 +98,12 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
      */
     public List<ChoiceDef> getChoiceDefs() {
         return Collections.unmodifiableList(choiceDefs);
+    }
+
+    @Override
+    QuestionDef getSubQuestionByPath(final int[] path) {
+        int[] subPath = Arrays.copyOfRange(path, 1, path.length);
+        return choiceDefs.get(path[0]).getSubQuestionByPath(subPath);
     }
 
 }

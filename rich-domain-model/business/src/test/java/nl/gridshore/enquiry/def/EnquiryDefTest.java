@@ -47,4 +47,26 @@ public class EnquiryDefTest {
         assertSame(testSubject, questionDef.getEnquiry());
         assertSame(testSubject, questionDef2.getEnquiry());
     }
+
+    @Test
+    public void testFindQuestionByPath() {
+        final ArrayList<QuestionDef> questionDefs = new ArrayList<QuestionDef>();
+        final QuestionDef questionDef = new QuestionDef() {
+            @Override
+            QuestionDef getSubQuestionByPath(final int[] path) {
+                assertEquals(2, path.length);
+                assertEquals(3, path[0]);
+                assertEquals(5, path[1]);
+
+                return new OpenQuestionDef("This is the one");
+            }
+        };
+        final OpenQuestionDef questionDef2 = new OpenQuestionDef("");
+        questionDefs.add(questionDef);
+        questionDefs.add(questionDef2);
+        testSubject = new EnquiryDef("title", questionDefs);
+
+        QuestionDef actualResult = testSubject.getQuestionByPath("0.3.5");
+        assertEquals("This is the one", actualResult.getQuestionText());
+    }
 }

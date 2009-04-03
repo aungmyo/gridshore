@@ -27,6 +27,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderBy;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
@@ -96,4 +97,8 @@ public class ChoiceDef extends BaseEntity {
         return text;
     }
 
+    QuestionDef getSubQuestionByPath(final int[] path) {
+        int[] subPath = Arrays.copyOfRange(path, 1, path.length);
+        return subQuestionDefs.get(path[0]).getSubQuestionByPath(subPath);
+    }
 }

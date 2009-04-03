@@ -119,4 +119,8 @@ public abstract class QuestionDef extends BaseEntity {
     void setIndex(final int index) {
         this.index = index;
     }
+
+    abstract QuestionDef getSubQuestionByPath(final int[] path);
+
+
 }

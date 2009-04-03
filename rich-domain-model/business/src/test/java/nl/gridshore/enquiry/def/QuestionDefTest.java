@@ -28,6 +28,10 @@ public class QuestionDefTest {
     @Before
     public void setUp() {
         testSubject = new QuestionDef() {
+            @Override
+            QuestionDef getSubQuestionByPath(final int[] path) {
+                throw new UnsupportedOperationException("Method not implemented");
+            }
         };
     }
 

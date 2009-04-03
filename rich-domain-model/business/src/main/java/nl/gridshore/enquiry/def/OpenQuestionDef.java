@@ -41,5 +41,10 @@ public class OpenQuestionDef extends QuestionDef {
         super(questionText);
     }
 
+    @Override
+    QuestionDef getSubQuestionByPath(final int[] path) {
+        throw new UnsupportedOperationException("Subquestions are not supported for open questions");
+    }
+
 
 }

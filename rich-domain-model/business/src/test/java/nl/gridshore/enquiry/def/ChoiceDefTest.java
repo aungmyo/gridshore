@@ -66,4 +66,24 @@ public class ChoiceDefTest {
         assertEquals(1, testSubject.getSubQuestions().get(1).getIndex());
         assertEquals(1, testSubject.getSubQuestions().get(1).getIndex());
     }
+
+    @Test
+    public void testFindQuestionByPath() {
+        List<QuestionDef> subQuestions = new ArrayList<QuestionDef>();
+        subQuestions.add(new QuestionDef() {
+            @Override
+            QuestionDef getSubQuestionByPath(final int[] path) {
+                assertEquals(2, path.length);
+                assertEquals(1, path[0]);
+                assertEquals(2, path[1]);
+                return new OpenQuestionDef("This is the one");
+            }
+        });
+        subQuestions.add(new OpenQuestionDef());
+        testSubject = new ChoiceDef("Testing", subQuestions);
+
+        QuestionDef actualResult = testSubject.getSubQuestionByPath(new int[]{0, 1, 2});
+
+        assertEquals("This is the one", actualResult.getQuestionText());
+    }
 }

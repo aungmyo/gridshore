@@ -40,5 +40,27 @@ public class MultipleChoiceQuestionDefTest {
         assertEquals(1, choiceDef2.getIndex());
     }
 
+    @Test
+    public void testFindQuestionByPath() {
+        List<ChoiceDef> choiceDefs = new ArrayList<ChoiceDef>();
+        final ChoiceDef choiceDef = new ChoiceDef() {
+            @Override
+            QuestionDef getSubQuestionByPath(final int[] path) {
+                assertEquals(2, path.length);
+                assertEquals(1, path[0]);
+                assertEquals(2, path[1]);
+                return new OpenQuestionDef("This is the one");
+            }
+        };
+        final ChoiceDef choiceDef2 = new ChoiceDef();
+        choiceDefs.add(choiceDef);
+        choiceDefs.add(choiceDef2);
+        MultipleChoiceQuestionDef testSubject = new MultipleChoiceQuestionDef("Test", choiceDefs);
+
+        QuestionDef actualResult = testSubject.getSubQuestionByPath(new int[]{0, 1, 2});
+
+        assertEquals("This is the one", actualResult.getQuestionText());
+    }
+
 
 }

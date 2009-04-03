@@ -16,7 +16,6 @@
 
 package nl.gridshore.enquiry.persistence;
 
-import nl.gridshore.enquiry.def.AnswerLength;
 import nl.gridshore.enquiry.def.ChoiceDef;
 import nl.gridshore.enquiry.def.EnquiryDef;
 import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
@@ -54,11 +53,11 @@ public abstract class AbstractPersistenceTest extends AbstractJpaTests {
      */
     protected EnquiryDef createSimpleEnquiry() {
         List<QuestionDef> questions = new ArrayList<QuestionDef>();
-        questions.add(new OpenQuestionDef("Question 1", AnswerLength.SINGLE_LINE));
+        questions.add(new OpenQuestionDef("Question 1"));
         List<ChoiceDef> choices = new ArrayList<ChoiceDef>();
         choices.add(new ChoiceDef("Some text"));
         List<QuestionDef> subQuestions = new ArrayList<QuestionDef>();
-        subQuestions.add(new OpenQuestionDef("Give some details", AnswerLength.SINGLE_LINE));
+        subQuestions.add(new OpenQuestionDef("Give some details"));
         choices.add(new ChoiceDef("Option requiring additional info", subQuestions));
         questions.add(new MultipleChoiceQuestionDef("Make a choice", choices));
         return new EnquiryDef("My new enquiry", questions);

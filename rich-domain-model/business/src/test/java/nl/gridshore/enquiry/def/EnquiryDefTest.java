@@ -35,8 +35,8 @@ public class EnquiryDefTest {
     @Test
     public void testConstructor() {
         final ArrayList<QuestionDef> questionDefs = new ArrayList<QuestionDef>();
-        final OpenQuestionDef questionDef = new OpenQuestionDef("", AnswerLength.MULTILINE);
-        final OpenQuestionDef questionDef2 = new OpenQuestionDef("", AnswerLength.MULTILINE);
+        final OpenQuestionDef questionDef = new OpenQuestionDef("");
+        final OpenQuestionDef questionDef2 = new OpenQuestionDef("");
         questionDefs.add(questionDef);
         questionDefs.add(questionDef2);
         testSubject = new EnquiryDef("title", questionDefs);

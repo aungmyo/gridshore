@@ -16,7 +16,6 @@
 
 package nl.gridshore.enquiry.input;
 
-import nl.gridshore.enquiry.def.AnswerLength;
 import nl.gridshore.enquiry.def.EnquiryDef;
 import nl.gridshore.enquiry.def.OpenQuestionDef;
 import nl.gridshore.enquiry.def.QuestionDef;
@@ -38,8 +37,8 @@ public class EnquiryInstanceTest {
     @Before
     public void setUp() {
         List<QuestionDef> questions = new ArrayList<QuestionDef>();
-        question1 = new OpenQuestionDef("This is question 1", AnswerLength.SINGLE_LINE);
-        question2 = new OpenQuestionDef("This is question 2", AnswerLength.SINGLE_LINE);
+        question1 = new OpenQuestionDef("This is question 1");
+        question2 = new OpenQuestionDef("This is question 2");
         questions.add(question1);
         questions.add(question2);
         enquiryDef = new EnquiryDef("Test definition", questions);
@@ -60,7 +59,7 @@ public class EnquiryInstanceTest {
         testSubject.addAnswer(new OpenAnswerInstance(question1, "Revised answer"));
         assertEquals(1, testSubject.getAnswers().size());
         try {
-            testSubject.addAnswer(new OpenAnswerInstance(new OpenQuestionDef("", AnswerLength.MULTILINE), "Wrong question"));
+            testSubject.addAnswer(new OpenAnswerInstance(new OpenQuestionDef(""), "Wrong question"));
             fail("Expected an IllegalArgumentException");
         }
         catch (IllegalArgumentException ex) {

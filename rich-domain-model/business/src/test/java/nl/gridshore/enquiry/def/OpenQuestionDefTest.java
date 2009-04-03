@@ -17,7 +17,6 @@
 package nl.gridshore.enquiry.def;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertSame;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -32,8 +31,7 @@ public class OpenQuestionDefTest {
 
     @Test
     public void testConstructor() {
-        testSubject = new OpenQuestionDef("Text", AnswerLength.MULTILINE);
+        testSubject = new OpenQuestionDef("Text");
         assertEquals("Text", testSubject.getQuestionText());
-        assertSame(AnswerLength.MULTILINE, testSubject.getAnswerLength());
     }
 }

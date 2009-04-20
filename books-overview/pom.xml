@@ -18,7 +18,7 @@
         <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
         <flex-mojos.version>2.0.3</flex-mojos.version>
-        <spring-actionscript.version>0.7</spring-actionscript.version>
+        <spring-actionscript.version>0.7.1</spring-actionscript.version>
         <mate.version>0.8.5</mate.version>
     </properties>
 
@@ -183,7 +183,7 @@
     <repositories>
         <repository>
             <id>flex-mojos-repository</id>
-            <url>http://svn.sonatype.org/flexmojos/repository/</url>
+            <url>http://repository.sonatype.org/content/groups/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -195,11 +195,51 @@
             <id>fnh</id>
             <url>http://fna.googlecode.com/svn/trunk/fna/fna_m2_repository/</url>
         </repository>
+        <repository>
+            <id>Servebox</id>
+            <url>http://maven.servebox.org/repository</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Springframework-milestone</id>
+            <url>http://repository.springsource.com/maven/bundles/milestone</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Springframework-release</id>
+            <url>http://repository.springsource.com/maven/bundles/release</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>Springframework-external</id>
+            <url>http://repository.springsource.com/maven/bundles/external</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
     </repositories>
     <pluginRepositories>
         <pluginRepository>
             <id>flex-mojos-repository</id>
-            <url>http://svn.sonatype.org/flexmojos/repository/</url>
+            <url>http://repository.sonatype.org/content/groups/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

@@ -1,7 +1,0 @@
-Bundle-Version: 1.0
-Bundle-SymbolicName: nl.gridshore.samples.springosgi.bookreviewservice
-Bundle-Name: nl.gridshore.samples.springosgi.bookreview-service
-Export-Package: nl.gridshore.samples.springosgi
-Bundle-ClassPath: .,
- target/classes/
-

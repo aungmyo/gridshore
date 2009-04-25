@@ -16,53 +16,45 @@ package nl.gridshore.maven.plugins;
  * limitations under the License.
  */
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.util.Properties;
-
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+
+import java.io.*;
+import java.util.Properties;
 
 /**
  * Goal that creates a version.properties file that contains version related properties.
  *
  * @goal write
- * 
  * @phase generate-sources
- * 
  * @description creates a version.properties file in the classes folder
  */
 public class ExportBuildPropertiesMojo
-    extends AbstractMojo
-{
+        extends AbstractMojo {
     /**
      * Location of the file.
+     *
      * @parameter expression="${project.build.outputDirectory}"
      * @required
      */
     private String outputDirectory;
 
-    
+
     /**
      * @parameter expression="${project.version}"
      * @required
      * @readonly
      */
     private String version;
-    
+
     public void execute()
-        throws MojoExecutionException
-    {
+            throws MojoExecutionException {
         Properties projectProperties = new Properties();
         projectProperties.put("version", version);
 
-        try
-        {
+        try {
             File targetDirectory = new File(outputDirectory);
-            if (!targetDirectory.exists())
-            {
+            if (!targetDirectory.exists()) {
                 targetDirectory.mkdirs();
             }
 
@@ -73,8 +65,7 @@ public class ExportBuildPropertiesMojo
             projectProperties.store(propertiesStream, "Properties from Maven POM");
             propertiesStream.close();
         }
-        catch (IOException e)
-        {
+        catch (IOException e) {
             getLog().error(e);
             throw new MojoExecutionException("Unable to open properties file for write");
         }

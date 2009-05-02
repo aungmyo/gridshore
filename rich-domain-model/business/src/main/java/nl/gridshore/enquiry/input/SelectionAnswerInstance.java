@@ -47,12 +47,6 @@ public class SelectionAnswerInstance extends AnswerInstance {
     private MultipleChoiceQuestionDef questionDef;
 
     /**
-     * Solely for use by Hibernate/JPA
-     */
-    protected SelectionAnswerInstance() {
-    }
-
-    /**
      * Construct a new answer to the given <code>questionDef</code> using the <code>choices</code>. Each of the choices
      * provided must belong to the provided questionDef.
      *
@@ -77,15 +71,6 @@ public class SelectionAnswerInstance extends AnswerInstance {
 
         this.questionDef = questionDef;
         choiceDefs.addAll(choices);
-    }
-
-    private boolean fromSameQuestion(final MultipleChoiceQuestionDef expectedQuestionDef, final List<ChoiceDef> choices) {
-        for (ChoiceDef choice : choices) {
-            if (!expectedQuestionDef.sameIdentityAs(choice.getQuestionDef())) {
-                return false;
-            }
-        }
-        return true;
     }
 
     public List<ChoiceDef> getChoiceDefs() {
@@ -118,4 +103,20 @@ public class SelectionAnswerInstance extends AnswerInstance {
         }
         return sb.toString();
     }
+
+    // ======================== Helper methods ==============================
+
+    private boolean fromSameQuestion(final MultipleChoiceQuestionDef expectedQuestionDef, final List<ChoiceDef> choices) {
+        for (ChoiceDef choice : choices) {
+            if (!expectedQuestionDef.sameIdentityAs(choice.getQuestionDef())) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    SelectionAnswerInstance() {
+        // needed by Hibernate
+    }
+
 }

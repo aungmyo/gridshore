@@ -41,16 +41,11 @@ public class EnquiryDef extends BaseEntity {
 
     @Basic
     private String title;
+
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "enquiry")
     @OrderBy("index")
     @Cascade({org.hibernate.annotations.CascadeType.ALL, org.hibernate.annotations.CascadeType.DELETE_ORPHAN})
     private List<QuestionDef> questions = new ArrayList<QuestionDef>();
-
-    /**
-     * Constructor solely for use by hibernate/JPA
-     */
-    protected EnquiryDef() {
-    }
 
     /**
      * Constructs a new Enquiry Definition instance with the given <code>title</code> and <code>questions</code>.
@@ -89,17 +84,6 @@ public class EnquiryDef extends BaseEntity {
         return question;
     }
 
-    private int[] splitPath(final String path) {
-        StringTokenizer tokenizer = new StringTokenizer(path, PATH_SEPARATOR);
-        int[] items = new int[tokenizer.countTokens()];
-        int i = 0;
-        while (tokenizer.hasMoreElements()) {
-            String token = tokenizer.nextToken();
-            items[i++] = (Integer.parseInt(token));
-        }
-        return items;
-    }
-
     /**
      * Get the title of this enquiry as provided in the constructor
      *
@@ -117,4 +101,22 @@ public class EnquiryDef extends BaseEntity {
     public List<QuestionDef> getQuestions() {
         return Collections.unmodifiableList(questions);
     }
+
+    // ======================== Helper methods ==============================
+
+    private int[] splitPath(final String path) {
+        StringTokenizer tokenizer = new StringTokenizer(path, PATH_SEPARATOR);
+        int[] items = new int[tokenizer.countTokens()];
+        int i = 0;
+        while (tokenizer.hasMoreElements()) {
+            String token = tokenizer.nextToken();
+            items[i++] = (Integer.parseInt(token));
+        }
+        return items;
+    }
+
+    EnquiryDef() {
+        // needed by Hibernate
+    }
+
 }

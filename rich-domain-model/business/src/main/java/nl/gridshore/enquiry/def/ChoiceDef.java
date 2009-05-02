@@ -48,9 +48,6 @@ public class ChoiceDef extends BaseEntity {
     @Column
     private String text;
 
-    protected ChoiceDef() {
-    }
-
     public ChoiceDef(final String text) {
         this.text = text;
     }
@@ -65,6 +62,8 @@ public class ChoiceDef extends BaseEntity {
             subQuestionDefs.add(question);
         }
     }
+
+    // ======================== Setter/Getter ===============================
 
     public EnquiryDef getEnquiry() {
         if (questionDef == null) {
@@ -81,14 +80,6 @@ public class ChoiceDef extends BaseEntity {
         return questionDef;
     }
 
-    protected void setQuestionDef(final MultipleChoiceQuestionDef questionDef) {
-        this.questionDef = questionDef;
-    }
-
-    protected void setIndex(final int index) {
-        this.index = index;
-    }
-
     public int getIndex() {
         return index;
     }
@@ -97,8 +88,22 @@ public class ChoiceDef extends BaseEntity {
         return text;
     }
 
+    // ======================== Helper methods ==============================
+
     QuestionDef getSubQuestionByPath(final int[] path) {
         int[] subPath = Arrays.copyOfRange(path, 1, path.length);
         return subQuestionDefs.get(path[0]).getSubQuestionByPath(subPath);
+    }
+
+    void setQuestionDef(final MultipleChoiceQuestionDef questionDef) {
+        this.questionDef = questionDef;
+    }
+
+    void setIndex(final int index) {
+        this.index = index;
+    }
+
+    ChoiceDef() {
+        // needed for Hibernate
     }
 }

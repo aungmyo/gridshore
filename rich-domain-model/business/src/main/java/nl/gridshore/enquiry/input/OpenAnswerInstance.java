@@ -36,12 +36,6 @@ public class OpenAnswerInstance extends AnswerInstance {
     private String text;
 
     /**
-     * Solely for use by Hibernate/JPA
-     */
-    protected OpenAnswerInstance() {
-    }
-
-    /**
      * Constructs an answer to the given {@link OpenQuestionDef open question} using the provided <code>text</code>
      *
      * @param questionDef The question to anwer
@@ -71,4 +65,11 @@ public class OpenAnswerInstance extends AnswerInstance {
     public String getAsText() {
         return text;
     }
+
+    // ======================== Helper methods ==============================
+
+    OpenAnswerInstance() {
+        // needed by Hibernate
+    }
+
 }

@@ -43,15 +43,6 @@ public abstract class AnswerInstance extends BaseEntity {
     }
 
     /**
-     * Setter to be called at the time the answer is connected to an enquiry instance.
-     *
-     * @param enquiryInstance The enquiry instance this answer is assigned to
-     */
-    protected void setEnquiryInstance(final EnquiryInstance enquiryInstance) {
-        this.enquiryInstance = enquiryInstance;
-    }
-
-    /**
      * Get the question definition for this answer. May never return null.
      *
      * @return the question definition for this answer
@@ -74,4 +65,14 @@ public abstract class AnswerInstance extends BaseEntity {
     public EnquiryDef getEnquiryDef() {
         return getQuestionDef().getEnquiry();
     }
+
+    /**
+     * Setter to be called at the time the answer is connected to an enquiry instance.
+     *
+     * @param enquiryInstance The enquiry instance this answer is assigned to
+     */
+    void setEnquiryInstance(final EnquiryInstance enquiryInstance) {
+        this.enquiryInstance = enquiryInstance;
+    }
+
 }

@@ -16,8 +16,12 @@
 
 package nl.gridshore.enquiry.def;
 
+import nl.gridshore.enquiry.input.SelectionAnswerInstance;
+import org.springframework.util.Assert;
+
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -28,12 +32,6 @@ import java.util.List;
 @Entity
 @DiscriminatorValue("SINGLE")
 public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
-
-    /**
-     * Solely for use by Hibernate/JPA
-     */
-    protected SingleChoiceQuestionDef() {
-    }
 
     /**
      * Constructor for a SingleChoiceQuestionDef
@@ -54,4 +52,28 @@ public class SingleChoiceQuestionDef extends MultipleChoiceQuestionDef {
     public SingleChoiceQuestionDef(final String text, final List<ChoiceDef> choiceDefs) {
         super(text, choiceDefs);
     }
+
+    /**
+     * Construct an answer to this type of question with the given <code>choiceDefs</code>. Each <code>ChoiceDef</code>
+     * represents an option that has been selected. Note that this type of question only allows one option to be
+     * selected
+     *
+     * @param choiceDefs The options that have been selected
+     * @return an answer instance for this question with the provided choices
+     * @throws IllegalArgumentException if more than one choice is given or one of the provided choices is not valid for
+     *                                  this question.
+     */
+    public SelectionAnswerInstance newAnswer(ChoiceDef... choiceDefs) {
+        Assert.isTrue(choiceDefs.length == 1, "This type of question allows only one choice");
+        Assert.isTrue(this.choiceDefs.containsAll(Arrays.asList(choiceDefs)),
+                      "One or more of the given choices do not belong to this question definition");
+        return new SelectionAnswerInstance(this, choiceDefs);
+    }
+
+    // ======================== Helper methods ==============================
+
+    SingleChoiceQuestionDef() {
+        // needed for Hibernate
+    }
+
 }

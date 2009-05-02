@@ -27,12 +27,6 @@ import javax.persistence.Entity;
 public class OpenQuestionDef extends QuestionDef {
 
     /**
-     * Constructor solely for use by Hibernate/JPA
-     */
-    protected OpenQuestionDef() {
-    }
-
-    /**
      * Construct a new Open Question Definition instance using the given <code>questionText</code>.
      *
      * @param questionText The text for this question
@@ -41,10 +35,15 @@ public class OpenQuestionDef extends QuestionDef {
         super(questionText);
     }
 
+    // ======================== Helper methods ==============================
+
     @Override
     QuestionDef getSubQuestionByPath(final int[] path) {
         throw new UnsupportedOperationException("Subquestions are not supported for open questions");
     }
 
+    OpenQuestionDef() {
+        // needed by Hibernate
+    }
 
 }

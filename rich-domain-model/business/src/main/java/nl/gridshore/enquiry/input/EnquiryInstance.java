@@ -50,12 +50,6 @@ public class EnquiryInstance extends BaseEntity {
     private transient Map<QuestionDef, AnswerInstance> answerMap = new HashMap<QuestionDef, AnswerInstance>();
 
     /**
-     * Solely for use by Hibernate/JPA
-     */
-    protected EnquiryInstance() {
-    }
-
-    /**
      * Primary constructor for an Enquiry instance.
      *
      * @param enquiryDef The non-null definition that this enquiry is constructed for
@@ -115,7 +109,7 @@ public class EnquiryInstance extends BaseEntity {
      *
      * @param questionDef The question definition to remove the answer for
      */
-    protected void removeAnswerForQuestion(final QuestionDef questionDef) {
+    public void removeAnswerForQuestion(final QuestionDef questionDef) {
         AnswerInstance currentAnswer = getAnswerForQuestion(questionDef);
         if (currentAnswer != null) {
             currentAnswer.setEnquiryInstance(null);
@@ -124,15 +118,22 @@ public class EnquiryInstance extends BaseEntity {
         }
     }
 
+    // ======================== Helper methods ==============================
+
     /**
      * Populate the map of answers for quick lookup of answers for specific questions. This method is to be called after
      * injection of <code>answerInstances</code> has taken place.
      */
     @PostLoad
-    protected void populateAnswerMap() {
+    void populateAnswerMap() {
         answerMap.clear();
         for (AnswerInstance answer : answerInstances) {
             answerMap.put(answer.getQuestionDef(), answer);
         }
     }
+
+    EnquiryInstance() {
+        // needed by Hibernate
+    }
+
 }

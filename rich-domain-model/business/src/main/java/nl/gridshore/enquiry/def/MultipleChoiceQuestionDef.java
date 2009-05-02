@@ -45,12 +45,6 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
     protected List<ChoiceDef> choiceDefs = new ArrayList<ChoiceDef>();
 
     /**
-     * Solely fro user by Hibernate/JPA
-     */
-    protected MultipleChoiceQuestionDef() {
-    }
-
-    /**
      * Constructor for a MultipleChoiceQuestionDef
      *
      * @param text       The text (or resource identifier)
@@ -83,6 +77,7 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
      *
      * @param choiceDefs The options that have been selected
      * @return an answer instance for this question with the provided choices
+     * @throws IllegalArgumentException if one of the provided choices is not valid for this question.
      */
     public SelectionAnswerInstance newAnswer(ChoiceDef... choiceDefs) {
         Assert.isTrue(this.choiceDefs.containsAll(Arrays.asList(choiceDefs)),
@@ -100,10 +95,14 @@ public class MultipleChoiceQuestionDef extends QuestionDef {
         return Collections.unmodifiableList(choiceDefs);
     }
 
+    // ======================== Helper methods ==============================
+
     @Override
     QuestionDef getSubQuestionByPath(final int[] path) {
         int[] subPath = Arrays.copyOfRange(path, 1, path.length);
         return choiceDefs.get(path[0]).getSubQuestionByPath(subPath);
     }
 
+    MultipleChoiceQuestionDef() {
+    }
 }

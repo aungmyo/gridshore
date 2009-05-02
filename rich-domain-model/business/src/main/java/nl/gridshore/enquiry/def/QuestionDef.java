@@ -44,12 +44,6 @@ public abstract class QuestionDef extends BaseEntity {
     protected ChoiceDef parentChoiceDef;
 
     /**
-     * Solely for use by Hibernate/JPA
-     */
-    protected QuestionDef() {
-    }
-
-    /**
      * Constructor to use by subclasses to properly construct a valid question instance
      *
      * @param questionText The text that forms the question
@@ -89,6 +83,8 @@ public abstract class QuestionDef extends BaseEntity {
         return index;
     }
 
+    // ======================== Helper methods ==============================
+
     /**
      * Set the enquiry that this question belongs to. This method is to be called at the moment this question is added
      * as a root question to an enquiry.
@@ -122,5 +118,8 @@ public abstract class QuestionDef extends BaseEntity {
 
     abstract QuestionDef getSubQuestionByPath(final int[] path);
 
+    QuestionDef() {
+        // needed by Hibernate
+    }
 
 }

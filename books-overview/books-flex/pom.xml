@@ -7,10 +7,15 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.gridshore.samples.books</groupId>
-    <artifactId>books-flex-mate</artifactId>
-    <packaging>swf</packaging>
-    <name>books-flex-mate</name>
+    <artifactId>books-flex</artifactId>
+    <packaging>pom</packaging>
+    <name>books-flex</name>
     <url>http://www.gridshore.nl</url>
+
+    <modules>
+        <module>books-flex-mate</module>
+        <module>books-flex-security</module>
+    </modules>
 
     <dependencies>
         <dependency>
@@ -31,13 +36,6 @@
             <version>${mate.version}</version>
             <type>swc</type>
         </dependency>
-        <!-- internal -->
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>books-flex-security</artifactId>
-            <version>${project.version}</version>
-            <type>swc</type>
-        </dependency>
         <!-- testing -->
         <dependency>
             <groupId>org.sonatype.flexmojos</groupId>
@@ -47,32 +45,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <build>
-        <sourceDirectory>src/main/flex</sourceDirectory>
-        <testSourceDirectory>src/test/flex</testSourceDirectory>
-        <plugins>
-            <plugin>
-                <groupId>org.sonatype.flexmojos</groupId>
-                <artifactId>flexmojos-maven-plugin</artifactId>
-                <version>${flex-mojos.version}</version>
-                <extensions>true</extensions>
-                <configuration>
-                    <contextRoot>/books-web</contextRoot>
-                    <mergeResourceBundle>true</mergeResourceBundle>
-                    <resourceBundlePath>${basedir}/src/main/locale/{locale}</resourceBundlePath>
-                    <locales>
-                        <locale>en_US</locale>
-                        <!--<locale>nl_NL</locale>-->
-                    </locales>
-                </configuration>
-            </plugin>
-        </plugins>
-        <defaultGoal>install</defaultGoal>
-        <resources>
-            <resource>
-                <directory>${basedir}/src/main/resources</directory>
-            </resource>
-        </resources>
-    </build>
 </project>

@@ -17,7 +17,7 @@
         <flex.sdk.version>3.2.0.3958</flex.sdk.version>
         <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
-        <flex-mojos.version>2.0.3</flex-mojos.version>
+        <flex-mojos.version>3.1.0</flex-mojos.version>
         <spring-actionscript.version>0.7.1</spring-actionscript.version>
         <mate.version>0.8.5</mate.version>
     </properties>
@@ -55,13 +55,13 @@
         <dependency>
             <groupId>org.easymock</groupId>
             <artifactId>easymock</artifactId>
-            <version>2.3</version>
+            <version>2.4</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.easymock</groupId>
             <artifactId>easymockclassextension</artifactId>
-            <version>2.2.2</version>
+            <version>2.4</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -117,6 +117,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.2</version>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -149,6 +150,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.2</version>
                 <configuration>
                     <instrumentation>
                         <excludes>

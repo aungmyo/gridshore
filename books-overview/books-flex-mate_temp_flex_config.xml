@@ -2,6 +2,14 @@
   <compiler>
     <debug>true</debug>
     <source-path><path-element>books-flex-mate/src/main/flex</path-element></source-path>
+    <source-path><path-element>books-flex-mate/src/main/locale</path-element></source-path>
+    <source-path><path-element>books-flex-mate/src/test/flex</path-element></source-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/slf4j/slf4j-api/1.4.3/slf4j-api-1.4.3.jar</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/slf4j/slf4j-simple/1.4.3/slf4j-simple-1.4.3.jar</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/junit/junit/4.4/junit-4.4.jar</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/easymock/easymock/2.3/easymock-2.3.jar</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/easymock/easymockclassextension/2.2.2/easymockclassextension-2.2.2.jar</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/cglib/cglib-nodep/2.1_3/cglib-nodep-2.1_3.jar</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/applicationupdater/3.2.0.3958/applicationupdater-3.2.0.3958.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/applicationupdater_ui/3.2.0.3958/applicationupdater_ui-3.2.0.3958.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/flex/3.2.0.3958/flex-3.2.0.3958.swc</path-element></library-path>
@@ -9,12 +17,20 @@
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/playerglobal/9-3.2.0.3958/playerglobal-9-3.2.0.3958.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/rpc/3.2.0.3958/rpc-3.2.0.3958.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flex/framework/utilities/3.2.0.3958/utilities-3.2.0.3958.swc</path-element></library-path>
-    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/springframework/spring-actionscript/0.6.1-SNAPSHOT/spring-actionscript-0.6.1-SNAPSHOT.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/springframework/spring-actionscript/0.7/spring-actionscript-0.7.swc</path-element></library-path>
     <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/asfusion/mate/0.8.5/mate-0.8.5.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/sources/gridshore/trunk/books-overview/books-flex-security/target/classes//Users/jettrocoenradie/sources/gridshore/trunk/books-overview/books-flex-security/target/books-flex-security-1.0.0-SNAPSHOT.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/info/flex-mojos/testing-support/2.0.3/testing-support-2.0.3.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/adobe/flexunit/flexunit/0.85/flexunit-0.85.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/org/funit/funit/0.50.0245/funit-0.50.0245.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/swirlyvision/swirly-vision/1.0/swirly-vision-1.0.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/net/digitalprimates/fluint/v1/fluint-v1.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/com/asunit/asunit/20071011/asunit-20071011.swc</path-element></library-path>
+    <library-path append="true"><path-element>/Users/jettrocoenradie/.m2/repository/advancedflex/debugger/0.2alpha2/debugger-0.2alpha2.swc</path-element></library-path>
   </compiler>
   <static-link-runtime-shared-libraries>false</static-link-runtime-shared-libraries>
   <file-specs>
     <path-element>books-flex-mate/src/main/flex/Main.mxml</path-element>
   </file-specs>
-  <output>/Users/jettrocoenradie/sources/gridshore/trunk/books-overview/books-web/target/books-web/books-flex-mate-1.0.0-SNAPSHOT.swf</output>
+  <output>/Users/jettrocoenradie/sources/gridshore/trunk/books-overview/books-flex-mate/target/classes//Users/jettrocoenradie/sources/gridshore/trunk/books-overview/books-flex-mate/target/books-flex-mate-1.0.0-SNAPSHOT.swf</output>
 </flex-config>

@@ -5,8 +5,8 @@
        xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-2.0.xsd">
-
-    <security:http auto-config="true">
+    <!-- TODO check if I want to do this for session fixation -->
+    <security:http auto-config="true" session-fixation-protection="none">
         <security:intercept-url pattern="/Main.html?debug=true" filters="none"/>
         <security:intercept-url pattern="/Main.html" filters="none"/>
         <security:intercept-url pattern="/index.html" filters="none"/>

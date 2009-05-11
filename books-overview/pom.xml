@@ -19,7 +19,7 @@
         <flexUnit.version>0.9</flexUnit.version>
         <flex-mojos.version>3.1.0</flex-mojos.version>
         <spring-actionscript.version>0.7.1</spring-actionscript.version>
-        <mate.version>0.8.5</mate.version>
+        <mate.version>0.8.7.1</mate.version>
     </properties>
 
     <modules>
@@ -27,9 +27,8 @@
         <module>books-domain</module>
         <module>books-integration</module>
         <module>books-business</module>
-        <!--<module>books-ria</module>-->
-        <module>books-flex-security</module>
-        <module>books-flex-mate</module>
+        <!--<module>books-ria</module> I am going to remove this -->
+        <module>books-flex</module>
         <module>books-web</module>
     </modules>
 

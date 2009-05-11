@@ -12,7 +12,7 @@
     </flex:message-broker>
 
     <!-- remote proxies -->
-    <flex:remote-service service-id="remoteBookManager" ref="bookManager" exclude-methods="internalUseStoreBook"/>
+    <flex:remoting-destination destination-id="remoteBookManager" ref="bookManager" exclude-methods="internalUseStoreBook"/>
 
     <!-- Non default url handler mapping needed for the property file -->
     <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">

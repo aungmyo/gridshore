@@ -17,7 +17,7 @@
         <flex.sdk.version>3.2.0.3958</flex.sdk.version>
         <blazeds.version>3.0.1.1755</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
-        <flex-mojos.version>3.1.0</flex-mojos.version>
+        <flex-mojos.version>3.2.0</flex-mojos.version>
         <spring-actionscript.version>0.7.1</spring-actionscript.version>
         <mate.version>0.8.7.1</mate.version>
     </properties>
@@ -206,9 +206,11 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
+
         <repository>
-            <id>Springframework-milestone</id>
-            <url>http://repository.springsource.com/maven/bundles/milestone</url>
+            <id>spring-milestone</id>
+            <name>Spring Portfolio Milestone Repository</name>
+            <url>http://maven.springframework.org/milestone</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -216,26 +218,36 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
-            <id>Springframework-release</id>
-            <url>http://repository.springsource.com/maven/bundles/release</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
-        <repository>
-            <id>Springframework-external</id>
-            <url>http://repository.springsource.com/maven/bundles/external</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
+        <!--<repository>-->
+            <!--<id>Springframework-milestone</id>-->
+            <!--<url>http://repository.springsource.com/maven/bundles/milestone</url>-->
+            <!--<releases>-->
+                <!--<enabled>true</enabled>-->
+            <!--</releases>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>Springframework-release</id>-->
+            <!--<url>http://repository.springsource.com/maven/bundles/release</url>-->
+            <!--<releases>-->
+                <!--<enabled>true</enabled>-->
+            <!--</releases>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
+        <!--<repository>-->
+            <!--<id>Springframework-external</id>-->
+            <!--<url>http://repository.springsource.com/maven/bundles/external</url>-->
+            <!--<releases>-->
+                <!--<enabled>true</enabled>-->
+            <!--</releases>-->
+            <!--<snapshots>-->
+                <!--<enabled>false</enabled>-->
+            <!--</snapshots>-->
+        <!--</repository>-->
     </repositories>
     <pluginRepositories>
         <pluginRepository>

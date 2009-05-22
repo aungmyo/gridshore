@@ -4,12 +4,9 @@
                 creationComplete="initApp()">
     <mx:Script><![CDATA[
         import events.AuthenticationEvent;
-        import models.AuthorizationData;
         import models.Config;
         import org.springextensions.actionscript.collections.Properties;
 
-        [Bindable]
-        public var authorizationData:AuthorizationData = new AuthorizationData();
         [Bindable]
         public var properties:Config = new Config();
 

@@ -10,5 +10,9 @@ public class Book {
 
     public function Book() {
     }
+
+    public function addAuthor(author:Author):void {
+        authors.addItem(author);
+    }
 }
 }

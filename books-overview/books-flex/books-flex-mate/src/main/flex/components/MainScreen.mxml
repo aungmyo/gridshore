@@ -4,7 +4,9 @@
            xmlns:mateEvent="com.asfusion.mate.events.*">
     <mx:Script><![CDATA[
         import com.asfusion.mate.events.UnhandledFaultEvent;
-import events.MainNavigationEvent;
+
+        import events.MainNavigationEvent;
+
         import mx.controls.Alert;
 
         private function handleNavigationEvent(event:MainNavigationEvent):void {
@@ -22,6 +24,9 @@ import events.MainNavigationEvent;
                     break;
                 case MainNavigationEvent.BOOK_DETAILS:
                     mainContentViewStack.selectedChild = bookDetails;
+                    break;
+                case MainNavigationEvent.BOOK_FORM:
+                    mainContentViewStack.selectedChild = bookForm;
                     break;
                 default:
                     mainContentViewStack.selectedChild = busyMessage;
@@ -59,5 +64,6 @@ import events.MainNavigationEvent;
         </mx:HBox>
         <mine:AllBooks id="allBooks" width="100%"/>
         <mine:BookDetails id="bookDetails" width="100%"/>
+        <mine:BookForm id="bookForm" width="100%"/>
     </mx:ViewStack>
 </mx:Canvas>

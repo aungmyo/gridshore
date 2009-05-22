@@ -1,6 +1,7 @@
 package nl.gridshore.samples.books.business;
 
 import nl.gridshore.samples.books.domain.Book;
+import nl.gridshore.samples.books.domain.Author;
 import nl.gridshore.samples.books.common.vo.BookSearchRequest;
 
 import java.util.List;
@@ -31,6 +32,12 @@ public interface BookManager {
      * @param book Book to store
      */
     void storeBook(Book book);
+
+    /**
+     * Returns a list with all available authors
+     * @return List of authors
+     */
+    List<Author> obtainAllAuthors();
 
     /**
      * This method is used to prefill the database, this is not a good practice in real applications.

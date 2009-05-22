@@ -46,6 +46,29 @@
         </EventAnnouncer>
     </EventHandlers>
 
+    <EventHandlers type="{BooksEvent.CREATE_NEW_BOOK}" debug="true">
+        <MethodInvoker generator="{BooksManager}" method="createNewBook"/>
+        <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
+            <Properties navigationId="{MainNavigationEvent.BOOK_FORM}"/>
+        </EventAnnouncer>
+    </EventHandlers>
+
+    <EventHandlers type="{BooksEvent.STORE_BOOK}" debug="true">
+        <RemoteObjectInvoker instance="{booksService}" method="storeBook" arguments="{event.currentBook}">
+            <resultHandlers>
+                <EventAnnouncer generator="{BooksEvent}" type="{BooksEvent.OBTAIN_ALL_BOOKS}"/>
+            </resultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+    <!-- event handlers : authors -->
+    <EventHandlers type="{AuthorsEvent.OBTAIN_ALL}" debug="true">
+        <RemoteObjectInvoker instance="{booksService}" method="obtainAllAuthors">
+            <resultHandlers>
+                <MethodInvoker generator="{AuthorsManager}" method="storeAuthors" arguments="{resultObject}"/>
+            </resultHandlers>
+        </RemoteObjectInvoker>
+    </EventHandlers>
+
     <!-- Event Handlers Security navigation -->
     <EventHandlers type="{AuthenticationEvent.NEEDS}" debug="true">
         <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
@@ -54,6 +77,7 @@
     </EventHandlers>
 
     <EventHandlers type="{AuthenticationEvent.AUTHENTICATED}" debug="true">
+        <EventAnnouncer generator="{AuthorsEvent}" type="{AuthorsEvent.OBTAIN_ALL}"/>
         <EventAnnouncer generator="{MainNavigationEvent}" type="{MainNavigationEvent.NAVIGATION}">
             <Properties navigationId="{MainNavigationEvent.WELCOME_MESSAGE}"/>
         </EventAnnouncer>
@@ -64,7 +88,6 @@
             <Properties navigationId="{MainNavigationEvent.AUTHENTICATION_FORM}"/>
         </EventAnnouncer>
     </EventHandlers>
-    
 
     <!-- Injectors -->
     <Injectors target="{AllBooks}">
@@ -73,9 +96,10 @@
     <Injectors target="{BookDetails}">
         <PropertyInjector source="{BooksManager}" sourceKey="currentBook" targetKey="book"/>
     </Injectors>
-    <!-- Security injected properties-->
-    <Injectors target="{Main}">
-        <PropertyInjector source="{AuthenticationManager}" sourceKey="authorizationData" targetKey="authorizationData"/>
+    <Injectors target="{BookForm}">
+        <PropertyInjector source="{BooksManager}" sourceKey="currentBook" targetKey="book"/>
     </Injectors>
-    
+    <Injectors target="{BookForm}">
+        <PropertyInjector source="{AuthorsManager}" sourceKey="authors" targetKey="authors"/>
+    </Injectors>
 </EventMap>

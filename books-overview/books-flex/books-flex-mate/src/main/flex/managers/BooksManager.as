@@ -30,6 +30,10 @@ public class BooksManager {
         books.refresh();
     }
 
+    public function createNewBook():void {
+        currentBook = new Book();
+    }
+
     public function selectCurrentBook(book:Book):void {
         currentBook = book;
     }

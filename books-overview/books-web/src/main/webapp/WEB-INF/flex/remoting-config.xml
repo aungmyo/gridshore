@@ -8,13 +8,7 @@
     </adapters>
 
     <default-channels>
-        <channel ref="my-amf"/>
+        <channel ref="myAmf"/>
     </default-channels>
-
-    <destination id="authenticationHelper">
-        <properties>
-            <source>nl.gridshore.samples.books.web.security.AuthenticationHelper</source>
-        </properties>
-    </destination>
 
 </service>

@@ -8,6 +8,7 @@ public class MainNavigationEvent extends Event{
     public static const WELCOME_MESSAGE:String = "welcomeMessage";
     public static const ALL_BOOKS:String = "allBooks";
     public static const BOOK_DETAILS:String = "bookdetails";
+    public static const BOOK_FORM:String = "bookform";
 
     public var navigationId:String;
 

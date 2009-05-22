@@ -4,6 +4,15 @@
         import events.AuthenticationEvent;
         import events.BooksEvent;
 
+        import models.AuthorizationData;
+
+        [Bindable] private var authorizationData:AuthorizationData = AuthorizationData.getInstance();
+
+        private function createNewBook():void {
+            var event:BooksEvent = new BooksEvent(BooksEvent.CREATE_NEW_BOOK);
+            dispatchEvent(event);
+        }
+
         private function doLogout():void {
             var event:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.LOGOUT);
             dispatchEvent(event);
@@ -16,6 +25,7 @@
 
 ]]></mx:Script>
     <mx:Button label="All Books" click="doObtainAllBooks()"/>
+    <mx:Button label="New Book" click="createNewBook()" visible="{authorizationData.admin}"/>
     <mx:Spacer width="100%"/>
-    <mx:Button label="logout" click="doLogout()"/>
+    <mx:Button label="{'logout ' + authorizationData.name}" click="doLogout()"/>
 </mx:HBox>

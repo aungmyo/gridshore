@@ -63,6 +63,13 @@ public class BookManagerImpl implements BookManager {
     }
 
     /**
+     * {@inheritDoc} 
+     */
+    public List<Author> obtainAllAuthors() {
+        return authorDao.loadAll();
+    }
+
+    /**
      * {@inheritDoc}
      */
     public void internalUseStoreBook(final Book book) {

@@ -218,36 +218,6 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <!--<repository>-->
-            <!--<id>Springframework-milestone</id>-->
-            <!--<url>http://repository.springsource.com/maven/bundles/milestone</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>Springframework-release</id>-->
-            <!--<url>http://repository.springsource.com/maven/bundles/release</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-        <!--<repository>-->
-            <!--<id>Springframework-external</id>-->
-            <!--<url>http://repository.springsource.com/maven/bundles/external</url>-->
-            <!--<releases>-->
-                <!--<enabled>true</enabled>-->
-            <!--</releases>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
     </repositories>
     <pluginRepositories>
         <pluginRepository>

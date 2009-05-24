@@ -13,38 +13,12 @@
     <url>http://www.gridshore.nl</url>
 
     <dependencies>
-        <dependency>
-            <groupId>com.adobe.flex.framework</groupId>
-            <artifactId>flex-framework</artifactId>
-            <version>${flex.sdk.version}</version>
-            <type>pom</type>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-actionscript</artifactId>
-            <version>${spring-actionscript.version}</version>
-            <type>swc</type>
-        </dependency>
-        <dependency>
-            <groupId>com.asfusion</groupId>
-            <artifactId>mate</artifactId>
-            <version>${mate.version}</version>
-            <type>swc</type>
-        </dependency>
         <!-- internal -->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>books-flex-security</artifactId>
             <version>${project.version}</version>
             <type>swc</type>
-        </dependency>
-        <!-- testing -->
-        <dependency>
-            <groupId>org.sonatype.flexmojos</groupId>
-            <artifactId>flexmojos-unittest-support</artifactId>
-            <version>${flex-mojos.version}</version>
-            <type>swc</type>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

@@ -2,7 +2,6 @@ package extensions {
 import com.asfusion.mate.actionLists.IScope;
 import com.asfusion.mate.actions.AbstractServiceInvoker;
 import com.asfusion.mate.actions.IAction;
-import com.asfusion.mate.core.ISmartObject;
 
 import com.asfusion.mate.core.SmartArguments;
 
@@ -13,9 +12,6 @@ import mx.rpc.events.FaultEvent;
 import mx.rpc.events.ResultEvent;
 
 public class ChannelSetInvoker extends AbstractServiceInvoker implements IAction {
-    //    public var username:Object;
-    //    public var password:Object;
-
     /*-.........................................channelSet..........................................*/
     public var _channelSet:ChannelSet;
     public function get channelSet():ChannelSet {
@@ -56,7 +52,6 @@ public class ChannelSetInvoker extends AbstractServiceInvoker implements IAction
 
     /*-.........................................constructor..........................................*/
     public function ChannelSetInvoker() {
-        trace("******* Constructor is called ... ");
         this.debug = true;
     }
 
@@ -104,15 +99,6 @@ public class ChannelSetInvoker extends AbstractServiceInvoker implements IAction
     override protected function prepare(scope:IScope):void {
         super.prepare(scope);
         currentInstance = channelSet;
-
-//        if (username && password) {
-//            if (username is ISmartObject) {
-//                username = ISmartObject(username).getValue(scope);
-//            }
-//            if (password is ISmartObject) {
-//                password = ISmartObject(password).getValue(scope);
-//            }
-//        }
     }
 
     override protected function complete(scope:IScope):void {

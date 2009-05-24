@@ -18,14 +18,9 @@
 
     <Debugger level="{Debugger.ALL}"/>
 
-    <!-- Remote objects -->
-
     <mx:ChannelSet id="authenticationChannelSet">
         <mx:AMFChannel id="myAmf" uri="http://{props.host}:{props.port}/{props.webcontext}/messagebroker/amf"/>
     </mx:ChannelSet>
-
-    <mx:RemoteObject id="authenticationService" channelSet="{authenticationChannelSet}"
-                     destination="authenticationHelper"/>
 
     <!-- Event handlers -->
     <EventHandlers type="{AuthenticationEvent.TRY}" debug="true">

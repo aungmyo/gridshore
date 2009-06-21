@@ -83,6 +83,13 @@ public abstract class QuestionDef extends BaseEntity {
         return index;
     }
 
+    public String getPath() {
+        if (parentChoiceDef != null) {
+            return parentChoiceDef.getPath() + "." + getIndex();
+        }
+        return Integer.toString(getIndex());
+    }
+
     // ======================== Helper methods ==============================
 
     /**

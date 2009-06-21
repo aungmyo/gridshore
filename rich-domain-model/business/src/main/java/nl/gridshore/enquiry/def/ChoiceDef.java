@@ -88,6 +88,10 @@ public class ChoiceDef extends BaseEntity {
         return text;
     }
 
+    public String getPath() {
+        return questionDef.getPath() + "." + getIndex();
+    }
+
     // ======================== Helper methods ==============================
 
     QuestionDef getSubQuestionByPath(final int[] path) {

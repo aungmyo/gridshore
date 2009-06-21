@@ -22,20 +22,27 @@ public class EnquiryDefJpaDaoIntegrationTest extends AbstractPersistenceTest {
 
     private EnquiryDefJpaDao testSubject;
 
-    public void testSaveAndDeleteEnquiryDef() {
+    public void testSaveAndDeleteEnquiryDef() throws NoSuchFieldException, IllegalAccessException {
         EnquiryDef enquiry = createSimpleEnquiry();
 
         testSubject.insert(enquiry);
         assertNotNull(enquiry.getId());
         assertNotNull(sharedEntityManager.find(EnquiryDef.class, enquiry.getId()));
 
+        sharedEntityManager.flush();
+        sharedEntityManager.clear();
         assertEquals(1, jdbcTemplate.queryForInt("SELECT count(*) FROM EnquiryDef "));
         assertEquals(2, jdbcTemplate.queryForInt("SELECT count(*) FROM QuestionDef WHERE enquiry_id = ?", new Object[]{enquiry.getId()}));
         assertEquals(3, jdbcTemplate.queryForInt("SELECT count(*) FROM QuestionDef"));
         assertEquals(2, jdbcTemplate.queryForInt("SELECT count(*) FROM ChoiceDef"));
+        assertEquals(enquiry.getTitle(), jdbcTemplate.queryForObject("SELECT title FROM EnquiryDef", String.class));
+
+        // the enquiry is properly saved, but we want to know if the final field can be injected
+        EnquiryDef enquiry2 = sharedEntityManager.find(EnquiryDef.class, enquiry.getId());
+        assertEquals(enquiry.getTitle(), enquiry2.getTitle());
 
         // the enquiry is properly saved. Now we delete the enquiry, and it should not leave any traces
-        testSubject.delete(enquiry);
+        testSubject.delete(sharedEntityManager.getReference(EnquiryDef.class, enquiry.getId()));
         sharedEntityManager.flush();
 
         assertEquals(0, jdbcTemplate.queryForInt("SELECT count(*) FROM EnquiryDef "));

@@ -21,13 +21,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
+import java.io.Serializable;
 
 /**
  * Base class for entities that have a primary key column named <code>id</code> of type <code>Long</code> and an
  * optimistic locking column of name <code>lock_version</code> {@link #getLockVersion()} of type <code>long</code>.
  */
 @MappedSuperclass
-public abstract class BaseEntity {
+public abstract class BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue

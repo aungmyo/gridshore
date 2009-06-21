@@ -21,7 +21,7 @@ import nl.gridshore.enquiry.def.MultipleChoiceQuestionDef;
 import nl.gridshore.enquiry.input.SelectionAnswerInstance;
 import org.apache.wicket.markup.html.form.CheckBoxMultipleChoice;
 import org.apache.wicket.markup.html.form.ChoiceRenderer;
-import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.model.util.CollectionModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,11 @@ public class MultipleChoicePanel extends QuestionPanel {
         if (answer != null) {
             choices = answer.getChoiceDefs();
         }
-        CheckBoxMultipleChoice choices = new CheckBoxMultipleChoice("choices", new PropertyModel(this, "choices"), question.getChoiceDefs(), new ChoiceRenderer("text"));
+        CheckBoxMultipleChoice<ChoiceDef> choices = new CheckBoxMultipleChoice<ChoiceDef>(
+                "choices",
+                new CollectionModel<ChoiceDef>(this.choices),
+                question.getChoiceDefs(),
+                new ChoiceRenderer<ChoiceDef>("text"));
         add(choices);
     }
 
@@ -51,13 +55,5 @@ public class MultipleChoicePanel extends QuestionPanel {
             sb.append(choice.getText());
         }
         return new AnswerEntry(questionPath, sb.toString());
-    }
-
-    public List<ChoiceDef> getChoices() {
-        return choices;
-    }
-
-    public void setChoices(final List<ChoiceDef> choices) {
-        this.choices = choices;
     }
 }

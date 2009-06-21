@@ -19,22 +19,22 @@ package nl.gridshore.enquiry.web.question;
 import nl.gridshore.enquiry.def.OpenQuestionDef;
 import nl.gridshore.enquiry.input.OpenAnswerInstance;
 import org.apache.wicket.markup.html.form.TextArea;
-import org.apache.wicket.model.PropertyModel;
+import org.apache.wicket.model.Model;
 
 public class OpenQuestionPanel extends QuestionPanel {
 
-    private AnswerDto answerDto;
+    private Model<String> answerText;
     private String questionPath;
 
     public OpenQuestionPanel(String id, OpenQuestionDef question, OpenAnswerInstance answer) {
         super(id, question);
-        answerDto = new AnswerDto(answer);
         questionPath = question.getPath();
-        add(new TextArea("answer", new PropertyModel(answerDto, "answerText")));
+        answerText = new Model<String>(answer.getAsText());
+        add(new TextArea<String>("answer", answerText));
     }
 
     @Override
     public AnswerEntry getAnswer() {
-        return new AnswerEntry(questionPath, answerDto.getAnswerText());
+        return new AnswerEntry(questionPath, answerText.getObject());
     }
 }

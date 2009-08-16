@@ -15,11 +15,11 @@
     <properties>
         <spring.version>2.5.6</spring.version>
         <flex.sdk.version>3.2.0.3958</flex.sdk.version>
-        <blazeds.version>3.0.1.1755</blazeds.version>
+        <blazeds.version>3.2.0.3978</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
         <flex-mojos.version>3.2.0</flex-mojos.version>
         <spring-actionscript.version>0.7.1</spring-actionscript.version>
-        <mate.version>0.8.7.1</mate.version>
+        <mate.version>0.8.8.1</mate.version>
     </properties>
 
     <modules>
@@ -192,10 +192,10 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-        <repository>
+        <!-- repository>
             <id>fnh</id>
             <url>http://fna.googlecode.com/svn/trunk/fna/fna_m2_repository/</url>
-        </repository>
+        </repository -->
         <repository>
             <id>Servebox</id>
             <url>http://maven.servebox.org/repository</url>
@@ -206,11 +206,21 @@
                 <enabled>false</enabled>
             </snapshots>
         </repository>
-
         <repository>
             <id>spring-milestone</id>
             <name>Spring Portfolio Milestone Repository</name>
             <url>http://maven.springframework.org/milestone</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>javanet</id>
+            <name>Java net maven repository</name>
+            <url>http://download.java.net/maven/2</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

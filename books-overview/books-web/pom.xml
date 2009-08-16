@@ -59,17 +59,17 @@
         <!-- adobe dependencies -->
         <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>flex-messaging-common</artifactId>
+            <artifactId>blazeds-common</artifactId>
             <version>${blazeds.version}</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>flex-messaging-core</artifactId>
+            <artifactId>blazeds-core</artifactId>
             <version>${blazeds.version}</version>
         </dependency>
         <dependency>
             <groupId>com.adobe.blazeds</groupId>
-            <artifactId>flex-messaging-remoting</artifactId>
+            <artifactId>blazeds-remoting</artifactId>
             <version>${blazeds.version}</version>
         </dependency>
         <dependency>

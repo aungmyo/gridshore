@@ -49,4 +49,21 @@ public class NewsItem extends AbstractEntity {
     public void tag(String tag) {
         metaData.tag(tag);
     }
+
+    /* getters */
+    public MetaData getMetaData() {
+        return metaData;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public String getItem() {
+        return item;
+    }
 }

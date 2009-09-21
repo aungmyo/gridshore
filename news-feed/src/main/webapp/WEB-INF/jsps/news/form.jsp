@@ -12,13 +12,23 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td><form:input path="name"/></td>
-                <td><form:errors path="name"/></td>
+                <td><form:input path="author"/></td>
+                <td><form:errors path="author"/></td>
             </tr>
             <tr>
                 <td>Description:</td>
-                <td><form:input path="description"/></td>
-                <td><form:errors path="description"/></td>
+                <td><form:input path="title"/></td>
+                <td><form:errors path="title"/></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><form:input path="introduction"/></td>
+                <td><form:errors path="introduction"/></td>
+            </tr>
+            <tr>
+                <td>Description:</td>
+                <td><form:input path="item"/></td>
+                <td><form:errors path="item"/></td>
             </tr>
             <tr>
                 <td colspan="2">

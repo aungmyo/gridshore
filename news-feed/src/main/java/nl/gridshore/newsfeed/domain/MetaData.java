@@ -92,4 +92,22 @@ public class MetaData {
             tags += newTag;
         }
     }
+
+    /* getters */
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public Date getPublicationDate() {
+        return publicationDate;
+    }
+
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public String getTags() {
+        return tags;
+    }
 }

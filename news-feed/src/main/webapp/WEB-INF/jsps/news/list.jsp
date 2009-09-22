@@ -5,11 +5,25 @@
 
 </head>
 <body>
-<ul id="sortable">
+<a href="/news/form">New item</a><br/>
+<table>
+    <thead>
+        <tr>
+            <td>author</td>
+            <td>title</td>
+            <td>create date</td>
+            <td>introduction</td>
+        </tr>
+    </thead>
     <c:forEach items="${newsItems}" var="newsItem">
-        <li id="newsItem_${newsItem.id}">${newsItem.metaData.author}</li>
+        <tr>
+            <td>${newsItem.metaData.author}</td>
+            <td>${newsItem.title}</td>
+            <td>${newsItem.metaData.creationDate}</td>
+            <td>${newsItem.introduction}</td>
+        </tr>
     </c:forEach>
-</ul>
+</table>
 
 </body>
 </html>

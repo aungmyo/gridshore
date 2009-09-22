@@ -16,19 +16,24 @@
                 <td><form:errors path="author"/></td>
             </tr>
             <tr>
-                <td>Description:</td>
+                <td>Title:</td>
                 <td><form:input path="title"/></td>
                 <td><form:errors path="title"/></td>
             </tr>
             <tr>
-                <td>Description:</td>
+                <td>Introduction:</td>
                 <td><form:input path="introduction"/></td>
                 <td><form:errors path="introduction"/></td>
             </tr>
             <tr>
-                <td>Description:</td>
+                <td>text:</td>
                 <td><form:input path="item"/></td>
                 <td><form:errors path="item"/></td>
+            </tr>
+            <tr>
+                <td>publication date (yyyy-MM-dd):</td>
+                <td><form:input path="publicationDate"/></td>
+                <td><form:errors path="publicationDate"/></td>
             </tr>
             <tr>
                 <td colspan="2">

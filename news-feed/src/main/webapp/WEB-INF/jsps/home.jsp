@@ -5,7 +5,6 @@
     <title>News feed</title>
 </head>
 <body>
-    <a href="/news">Show all news items</a><br/>
-    <a href="/news/form">Create new news item</a>
+    <span>Welcome to the main page of Your news feed</span>
 </body>
 </html>

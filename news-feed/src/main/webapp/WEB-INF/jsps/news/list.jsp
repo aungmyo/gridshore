@@ -5,7 +5,6 @@
 
 </head>
 <body>
-<a href="/news/form">New item</a><br/>
 <table>
     <thead>
         <tr>

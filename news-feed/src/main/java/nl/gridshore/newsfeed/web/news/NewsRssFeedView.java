@@ -1,22 +1,22 @@
 package nl.gridshore.newsfeed.web.news;
 
+import com.sun.syndication.feed.rss.Channel;
+import com.sun.syndication.feed.rss.Content;
+import com.sun.syndication.feed.rss.Item;
+import nl.gridshore.newsfeed.domain.NewsItem;
 import org.springframework.web.servlet.view.feed.AbstractRssFeedView;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.ArrayList;
-
-import com.sun.syndication.feed.rss.Item;
-import com.sun.syndication.feed.rss.Content;
-import com.sun.syndication.feed.rss.Channel;
-import nl.gridshore.newsfeed.domain.NewsItem;
 
 /**
  * @author Jettro Coenradie
  */
+@Component("newsRssFeed")
 public class NewsRssFeedView extends AbstractRssFeedView {
 
     @Override

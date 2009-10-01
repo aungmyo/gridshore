@@ -2,7 +2,11 @@
 
 <html>
 <head>
-
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#publicationDate').datepicker({ dateFormat: 'yy-mm-dd' });
+        });
+    </script>
 </head>
 <body>
 <div id="form-story">
@@ -17,17 +21,17 @@
             </tr>
             <tr>
                 <td>Title:</td>
-                <td><form:input path="title"/></td>
+                <td><form:input path="title" size="50"/></td>
                 <td><form:errors path="title"/></td>
             </tr>
             <tr>
                 <td>Introduction:</td>
-                <td><form:input path="introduction"/></td>
+                <td><form:textarea path="introduction" cols="100" rows="3"/></td>
                 <td><form:errors path="introduction"/></td>
             </tr>
             <tr>
                 <td>text:</td>
-                <td><form:input path="item"/></td>
+                <td><form:textarea path="item" cols="100" rows="10"/></td>
                 <td><form:errors path="item"/></td>
             </tr>
             <tr>

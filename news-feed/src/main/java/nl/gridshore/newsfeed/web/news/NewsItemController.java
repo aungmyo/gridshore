@@ -60,19 +60,15 @@ public class NewsItemController {
     }
 
     @RequestMapping(value = "/news", method = RequestMethod.POST)
-    public String createOrUpdate(@ModelAttribute("newsItem") NewsItemVO newsItem, BindingResult result) {
+    public String create(@ModelAttribute("newsItem") NewsItemVO newsItem, BindingResult result) {
         Assert.notNull(newsItem, "A news item instance must be provided");
-//        new StoryValidator().validate(story, result);
+        new NewsValidator().validate(newsItem, result);
 
         if (result.hasErrors()) {
             return "news/form";
         } else {
-            if (newsItem.getId() == null) {
-                this.newsService.createNewsItem(newsItem.getAuthor(), newsItem.getPublicationDate(),
-                        newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
-            } else {
-//                this.backlogService.changeStory(story.getId(), story.getName(), story.getDescription());
-            }
+            this.newsService.createNewsItem(newsItem.getAuthor(), newsItem.getPublicationDate(),
+                    newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
             return "redirect:/news";
         }
     }

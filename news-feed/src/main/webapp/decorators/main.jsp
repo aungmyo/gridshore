@@ -34,33 +34,6 @@
             width: 90%;
         }
 
-        .kwicks {
-            list-style-type: none;
-            list-style-position: outside;
-            position: relative;
-            margin: 0;
-            padding: 0;
-        }
-
-        .kwicks li {
-            display: block;
-            padding: 0;
-            cursor: pointer;
-            float: left;
-            width: 125px;
-            height: 40px;
-            margin-right: 2px;
-            background-color: #9999ff;
-            text-align: center;
-        }
-
-        .kwicks a {
-            display: block;
-            height: 40px;
-            outline: none;
-            color: white;
-            text-decoration:none;
-        }
         #header {
             position: absolute;
             top: 10px;
@@ -95,7 +68,7 @@
 <body>
 <div id="header">
     <span id="maintitle">News feed</span>
-    <ul class="kwicks">
+    <ul class="jd_menu">
         <li><a href="/news">List all items</a></li>
         <li><span class="newItem"><a href="/news/form">New item</a></span></li>
     </ul>

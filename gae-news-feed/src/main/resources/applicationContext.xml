@@ -18,5 +18,5 @@
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
     <tx:annotation-driven/>
-    <context:component-scan base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence"/>
+    <context:component-scan base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence,nl.gridshore.newsfeed.integration"/>
 </beans>

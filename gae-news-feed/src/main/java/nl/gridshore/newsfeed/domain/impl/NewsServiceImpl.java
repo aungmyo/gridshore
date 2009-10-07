@@ -29,7 +29,7 @@ public class NewsServiceImpl implements NewsService {
         NewsItem newsItem = new NewsItem(author,title, introduction, item);
         newsItemRepository.persist(newsItem);
 
-        messagingService.sendMessage("jettro.coenradie@gmail.com","New item created : " + title);
+        messagingService.sendMessage("jettroc@jteam.nl","New item created : " + title);
     }
 
 }

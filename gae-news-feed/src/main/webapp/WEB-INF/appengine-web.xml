@@ -10,4 +10,5 @@
     <inbound-services>
         <service>xmpp_message</service>
     </inbound-services>
+
 </appengine-web-app>

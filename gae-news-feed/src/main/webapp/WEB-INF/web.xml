@@ -18,7 +18,7 @@
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
-    
+
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/spring/*</url-pattern>
@@ -28,7 +28,29 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/_ah/xmpp/message/chat/</url-pattern>
     </servlet-mapping>
-    
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>create-news</web-resource-name>
+            <description>only logged in users can create news</description>
+            <url-pattern>/spring/news/form</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>*</role-name>
+        </auth-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>delete-news</web-resource-name>
+            <description>only admin can delete news</description>
+            <url-pattern>/spring/news/delete</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>

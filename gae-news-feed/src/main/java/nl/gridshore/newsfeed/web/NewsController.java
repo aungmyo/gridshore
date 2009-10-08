@@ -27,18 +27,13 @@ public class NewsController {
     @Autowired
     private NewsService newsService;
 
-
-    // TODO Document hack for google app engine. This is supported by spring but usually not necessary
-    @InitBinder
-    protected void initBinder(HttpServletRequest request, WebDataBinder binder) throws Exception {
-        binder.registerCustomEditor(String.class, new StringTrimmerEditor(false));
-        binder.registerCustomEditor(Long.class, new CustomNumberEditor(Long.class, true));
-    }
-
-
     @RequestMapping(value = "/news/form", method = RequestMethod.GET)
-    public String form(ModelMap modelMap) {
-        modelMap.addAttribute("newsItem", new NewsItemVO());
+    public String form(ModelMap modelMap, HttpServletRequest request) {
+        NewsItemVO newsItem = new NewsItemVO();
+        if (request.getUserPrincipal() != null) {
+            newsItem.setAuthor(request.getUserPrincipal().getName());
+        }
+        modelMap.addAttribute("newsItem", newsItem);
         return "news/form";
     }
 
@@ -61,5 +56,18 @@ public class NewsController {
         modelMap.addAttribute("newsItems", stories);
         return "news/list";
     }
+
+    /**
+     * Spring uses a classloader to find the required editors that are used during the binding process. This
+     * feature is not supported by google app engine. Therefore we need to provide the binders explicitly.
+     *
+     * @param binder WebDataBinder that is used to register the editors
+     */
+    @InitBinder
+    protected void initBinder(WebDataBinder binder) {
+        binder.registerCustomEditor(String.class, new StringTrimmerEditor(false));
+        binder.registerCustomEditor(Long.class, new CustomNumberEditor(Long.class, true));
+    }
+
 
 }

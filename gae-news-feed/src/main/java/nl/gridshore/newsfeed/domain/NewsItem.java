@@ -11,8 +11,8 @@ public class NewsItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Basic
-    private String author;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Author author;
 
     @Basic
     private String title;
@@ -27,7 +27,8 @@ public class NewsItem {
         // default constructor is required
     }
 
-    public NewsItem(String author, String title, String introduction, String item) {
+    public NewsItem(Author author, String title, String introduction, String item) {
+        this();
         this.author = author;
         this.title = title;
         this.introduction = introduction;
@@ -42,11 +43,11 @@ public class NewsItem {
         this.id = id;
     }
 
-    public String getAuthor() {
+    public Author getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(Author author) {
         this.author = author;
     }
 

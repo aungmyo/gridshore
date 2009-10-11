@@ -12,8 +12,18 @@
         <table>
             <tr>
                 <td>Name:</td>
-                <td><form:input path="author"/></td>
-                <td><form:errors path="author"/></td>
+                <td><form:input path="nickName" readonly="true"/></td>
+                <td><form:errors path="nickName"/></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td><form:input path="email" readonly="true"/></td>
+                <td><form:errors path="email"/></td>
+            </tr>
+            <tr>
+                <td>userId:</td>
+                <td><form:input path="userId" readonly="true"/></td>
+                <td><form:errors path="userId"/></td>
             </tr>
             <tr>
                 <td>Title:</td>

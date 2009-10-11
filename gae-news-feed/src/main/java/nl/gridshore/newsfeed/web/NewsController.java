@@ -1,5 +1,6 @@
 package nl.gridshore.newsfeed.web;
 
+import com.google.appengine.api.users.UserServiceFactory;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,10 @@ public class NewsController {
     public String form(ModelMap modelMap, HttpServletRequest request) {
         NewsItemVO newsItem = new NewsItemVO();
         if (request.getUserPrincipal() != null) {
-            newsItem.setAuthor(request.getUserPrincipal().getName());
+            // TODO refactor into something generic with the tag
+            newsItem.setNickName(UserServiceFactory.getUserService().getCurrentUser().getNickname());
+            newsItem.setUserId(UserServiceFactory.getUserService().getCurrentUser().getUserId());
+            newsItem.setEmail(UserServiceFactory.getUserService().getCurrentUser().getEmail());
         }
         modelMap.addAttribute("newsItem", newsItem);
         return "news/form";
@@ -44,8 +48,9 @@ public class NewsController {
         if (result.hasErrors()) {
             return "news/form";
         } else {
-            this.newsService.createNewsItem(newsItem.getAuthor(), newsItem.getTitle(),
-                    newsItem.getIntroduction(), newsItem.getItem());
+            this.newsService.createNewsItem(
+                    newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
+                    newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
             return "redirect:/spring/news";
         }
     }

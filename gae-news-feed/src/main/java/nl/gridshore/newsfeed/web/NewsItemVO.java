@@ -5,10 +5,12 @@ package nl.gridshore.newsfeed.web;
  */
 public class NewsItemVO {
     private Long id;
-    private String author;
     private String title;
     private String introduction;
     private String item;
+    private String nickName;
+    private String userId;
+    private String email;
 
     public Long getId() {
         return id;
@@ -16,14 +18,6 @@ public class NewsItemVO {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
     }
 
     public String getTitle() {
@@ -48,5 +42,29 @@ public class NewsItemVO {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

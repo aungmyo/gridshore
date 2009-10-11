@@ -5,6 +5,7 @@ import com.google.appengine.tools.development.ApiProxyLocalImpl;
 import com.google.apphosting.api.ApiProxy;
 import static junit.framework.Assert.assertEquals;
 import nl.gridshore.TestEnvironment;
+import nl.gridshore.newsfeed.domain.Author;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsItemRepository;
 import org.junit.AfterClass;
@@ -57,8 +58,9 @@ public class JpaNewsItemRepositoryTest {
     @Transactional(readOnly = false, propagation = Propagation.REQUIRES_NEW)
     @Rollback(false)
     public void insertSomething() {
+        Author author = new Author("jettro.coenradie","Jettro","jettro.coenradie@gmail.com");
         NewsItem newsItem = new NewsItem();
-        newsItem.setAuthor("test author");
+        newsItem.setAuthor(author);
         newsItem.setIntroduction("This is an introduction");
         newsItem.setItem("Here you have the complete text of the article");
         newsItem.setTitle("My test item");

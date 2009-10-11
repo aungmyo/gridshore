@@ -1,5 +1,6 @@
 package nl.gridshore.newsfeed.domain.impl;
 
+import nl.gridshore.newsfeed.domain.Author;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsItemRepository;
 import nl.gridshore.newsfeed.domain.NewsService;
@@ -21,7 +22,8 @@ public class NewsServiceImpl implements NewsService {
         return newsItemRepository.listAllNewsItems();
     }
 
-    public void createNewsItem(String author, String title, String introduction, String item) {
+    public void createNewsItem(String nickName, String userId, String email, String title, String introduction, String item) {
+        Author author = new Author(userId,nickName,email);
         NewsItem newsItem = new NewsItem(author, title, introduction, item);
         newsItemRepository.persist(newsItem);
     }

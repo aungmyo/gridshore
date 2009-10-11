@@ -20,7 +20,7 @@
     <tbody>
     <c:forEach items="${newsItems}" var="newsItem">
         <tr>
-            <td>${newsItem.author}</td>
+            <td>${newsItem.author.nickName}</td>
             <td>${newsItem.title}</td>
             <td>${newsItem.introduction}</td>
             <td>${newsItem.item}</td>

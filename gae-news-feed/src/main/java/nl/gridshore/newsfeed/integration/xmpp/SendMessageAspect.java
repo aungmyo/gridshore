@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
  * <p>This aspect requires a method with two parameters:</p>
  * <ul>
  *     <li>argument 1 : author</li>
- *     <li>argument 2 : title of item</li> 
+ *     <li>argument 3 : title of item</li>
  * </ul>
  *
  * @author Jettro Coenradie
@@ -23,10 +23,8 @@ public class SendMessageAspect {
     public void sendMessageOnCreationOfNewsItem(ProceedingJoinPoint pjp) throws Throwable {
         pjp.proceed();
         Object[] args = pjp.getArgs();
-        String author = (String) args[0];
-        String title = (String) args[1];
-        System.out.println("author : " + author);
-        System.out.println("title : " + title);
+        String author = (String) args[2];
+        String title = (String) args[3];
         xmppMessagingService.sendMessage(author, title);
     }
 }

@@ -12,6 +12,6 @@ public interface NewsService {
     List<NewsItem> listAllNewsItems();
 
     @Transactional
-    void createNewsItem(String author, String title, String introduction, String item);
+    void createNewsItem(String nickName, String userId, String email,String title, String introduction, String item);
 
 }

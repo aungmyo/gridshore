@@ -11,7 +11,7 @@ public class CanEditSecurityTag extends NewsItemSecurityTag {
     @Override
     public int doStartTag() throws JspException {
         if (isAuthenticated()) {
-            if ((userName().equals(newsItem().getAuthor())) || isAdmin()) {
+            if ((userName().equals(newsItem().getAuthor().getNickName())) || isAdmin()) {
                 return EVAL_BODY_INCLUDE; 
             }
         }

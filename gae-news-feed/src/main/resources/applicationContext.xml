@@ -2,10 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
-       xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="entityManagerFactory"
           class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean" lazy-init="true">
@@ -17,6 +18,19 @@
 
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
 
+    <bean id="createNewsItemAspect" class="nl.gridshore.newsfeed.integration.xmpp.SendMessageAspect"/>
+
     <tx:annotation-driven/>
-    <context:component-scan base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence,nl.gridshore.newsfeed.integration"/>
+    <context:component-scan
+            base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence,nl.gridshore.newsfeed.integration"/>
+
+    <!-- TODO : Looks like autoproxy for aspects is not working-->
+    <aop:config>
+        <aop:aspect ref="createNewsItemAspect">
+            <aop:pointcut id="createNewsItem" expression="execution(* nl.gridshore.newsfeed.domain.NewsService.createNewsItem(..))"/>
+            <aop:around method="sendMessageOnCreationOfNewsItem" pointcut-ref="createNewsItem"/>
+        </aop:aspect>
+    </aop:config>
+
+    <!--<aop:aspectj-autoproxy/>-->
 </beans>

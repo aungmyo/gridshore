@@ -20,10 +20,7 @@ public class XmppMessagingServiceImpl implements XmppMessagingService {
     public void handleReceivedMessage(Message receivedMessage) {
         JID fromJid = receivedMessage.getFromJid();
         String body = receivedMessage.getBody();
-
-        System.out.println("from : " + fromJid.getId());
-        System.out.println("message : " + body);
-
+        // TODO : do something with the message
         sendMessage(fromJid,"Thank you for your response");
     }
 

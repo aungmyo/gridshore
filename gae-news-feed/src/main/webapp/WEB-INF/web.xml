@@ -29,7 +29,7 @@
 
     <filter-mapping>
         <filter-name>sitemesh</filter-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/gs/*</url-pattern>
     </filter-mapping>
 
     <servlet>
@@ -40,7 +40,7 @@
 
     <servlet-mapping>
         <servlet-name>dispatcher</servlet-name>
-        <url-pattern>/spring/*</url-pattern>
+        <url-pattern>/gs/*</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -52,7 +52,7 @@
         <web-resource-collection>
             <web-resource-name>create-news</web-resource-name>
             <description>only logged in users can create news</description>
-            <url-pattern>/spring/news/form</url-pattern>
+            <url-pattern>/gs/news/form</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>*</role-name>
@@ -63,7 +63,7 @@
         <web-resource-collection>
             <web-resource-name>delete-news</web-resource-name>
             <description>only admin can delete news</description>
-            <url-pattern>/spring/news/delete</url-pattern>
+            <url-pattern>/gs/news/delete</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>admin</role-name>
@@ -73,7 +73,7 @@
     <welcome-file-list>
         <welcome-file>/index.html</welcome-file>
         <welcome-file>index.jsp</welcome-file>
-        <welcome-file>/spring/home</welcome-file>
+        <welcome-file>/gs/home</welcome-file>
     </welcome-file-list>
 
 </web-app>

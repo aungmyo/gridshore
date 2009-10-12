@@ -24,7 +24,7 @@ import java.util.List;
  * @author Jettro Coenradie
  */
 @Controller
-public class NewsController {
+public class NewsController extends GaeSpringController {
     @Autowired
     private NewsService newsService;
 
@@ -51,7 +51,7 @@ public class NewsController {
             this.newsService.createNewsItem(
                     newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
                     newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
-            return "redirect:/spring/news";
+            return "redirect:/gs/news";
         }
     }
 
@@ -61,18 +61,5 @@ public class NewsController {
         modelMap.addAttribute("newsItems", stories);
         return "news/list";
     }
-
-    /**
-     * Spring uses a classloader to find the required editors that are used during the binding process. This
-     * feature is not supported by google app engine. Therefore we need to provide the binders explicitly.
-     *
-     * @param binder WebDataBinder that is used to register the editors
-     */
-    @InitBinder
-    protected void initBinder(WebDataBinder binder) {
-        binder.registerCustomEditor(String.class, new StringTrimmerEditor(false));
-        binder.registerCustomEditor(Long.class, new CustomNumberEditor(Long.class, true));
-    }
-
 
 }

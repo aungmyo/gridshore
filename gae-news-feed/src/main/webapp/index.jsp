@@ -1,3 +1,3 @@
 <%
-response.sendRedirect("/spring/home");
+response.sendRedirect("/gs/home");
 %>

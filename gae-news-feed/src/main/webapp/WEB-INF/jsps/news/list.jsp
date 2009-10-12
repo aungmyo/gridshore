@@ -24,8 +24,8 @@
             <td>${newsItem.title}</td>
             <td>${newsItem.introduction}</td>
             <td>${newsItem.item}</td>
-            <td><security:canEdit newsItem="${newsItem}"><a href="/spring/news/form/${newsItem.id}">edit</a></security:canEdit>
-                <security:canDelete newsItem="${newsItem}"> - <a href="/spring/news/delete/${newsItem.id}">delete</a></security:canDelete>
+            <td><security:canEdit newsItem="${newsItem}"><a href="/gs/news/form/${newsItem.id}">edit</a></security:canEdit>
+                <security:canDelete newsItem="${newsItem}"> - <a href="/gs/news/delete/${newsItem.id}">delete</a></security:canDelete>
             </td>
         </tr>
     </c:forEach>

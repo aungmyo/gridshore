@@ -32,13 +32,13 @@
 <body>
     <div id="main">
         <div id="navigation">
-            <span><a href="/spring/home">Home</a></span>
-            <span><a href="/spring/news">All news</a></span>
-            <span><a href="/spring/news/form">Create news</a></span>
-            <span class="right"><a href="/spring/contact">Contact</a></span>
+            <span><a href="/gs/home">Home</a></span>
+            <span><a href="/gs/news">All news</a></span>
+            <span><a href="/gs/news/form">Create news</a></span>
+            <span class="right"><a href="/gs/contact/form">Contact</a></span>
             <span class="right"><a href="/about.html">About</a></span>
             <span class="right">&nbsp;:&nbsp;</span>
-            <span class="right"><security:loginUrl destination="/spring/home"/></span>
+            <span class="right"><security:loginUrl destination="/gs/home"/></span>
         </div>
         <div id="maincontent">
             <decorator:body/>

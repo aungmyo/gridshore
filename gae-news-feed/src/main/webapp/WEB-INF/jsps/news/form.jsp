@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <html>
@@ -7,7 +8,7 @@
 <body>
 <div id="form-story">
     <h2>Create/update story</h2>
-    <form:form modelAttribute="newsItem" method="POST" action="/spring/news">
+    <form:form modelAttribute="newsItem" method="POST" action="/gs/news">
         <form:hidden path="id"/>
         <table>
             <tr>

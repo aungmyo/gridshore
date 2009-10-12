@@ -16,7 +16,7 @@ public class LoginSecurityTag extends SecurityTag {
     @Override
     public int doStartTag() throws JspException {
         if (isAuthenticated()) {
-            String url = userService().createLogoutURL("/spring/news");
+            String url = userService().createLogoutURL("/gs/news");
             write("<a href=\""+url+"\">logout</a>");
         } else {
             String url = userService().createLoginURL(destination);

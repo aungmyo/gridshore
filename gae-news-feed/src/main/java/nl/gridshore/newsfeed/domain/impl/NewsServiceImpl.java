@@ -18,14 +18,22 @@ public class NewsServiceImpl implements NewsService {
     @Autowired
     private NewsItemRepository newsItemRepository;
 
+    @Override
     public List<NewsItem> listAllNewsItems() {
         return newsItemRepository.listAllNewsItems();
     }
 
+    @Override
     public void createNewsItem(String nickName, String userId, String email, String title, String introduction, String item) {
         Author author = new Author(userId,nickName,email);
         NewsItem newsItem = new NewsItem(author, title, introduction, item);
         newsItemRepository.persist(newsItem);
+    }
+
+    @Override
+    public void discardNewsItem(long newsItemId) {
+        NewsItem newsItem = newsItemRepository.obtainNewsItemById(newsItemId);
+        newsItemRepository.remove(newsItem);
     }
 
 }

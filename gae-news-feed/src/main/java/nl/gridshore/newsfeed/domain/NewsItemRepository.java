@@ -16,4 +16,5 @@ public interface NewsItemRepository {
 
     List<NewsItem> listAllNewsItems();
 
+    void remove(NewsItem newsItem);
 }

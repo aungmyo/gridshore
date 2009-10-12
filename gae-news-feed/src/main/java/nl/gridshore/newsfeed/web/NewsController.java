@@ -12,10 +12,7 @@ import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.ServletRequestDataBinder;
 import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.InitBinder;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -54,6 +51,17 @@ public class NewsController extends GaeSpringController {
             return "redirect:/gs/news";
         }
     }
+
+    @RequestMapping(value = "/news/delete/{id}", method = RequestMethod.GET)
+    public String delete(@PathVariable long id, ModelMap modelMap) {
+        this.newsService.discardNewsItem(id);
+
+        modelMap.addAttribute("message","News item is discarded.");
+        modelMap.addAttribute("title","news item discarded");
+        return "message";
+    }
+
+
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
     public String list(ModelMap modelMap) {

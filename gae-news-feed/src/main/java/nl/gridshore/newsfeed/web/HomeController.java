@@ -1,6 +1,7 @@
 package nl.gridshore.newsfeed.web;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -13,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
     @RequestMapping("/home")
-    public String welcome() {
-        System.out.println("Yep in the controller");
+    public String welcome(ModelMap model) {
+        model.addAttribute("message","this is the message");
         return "home";
     }
 }

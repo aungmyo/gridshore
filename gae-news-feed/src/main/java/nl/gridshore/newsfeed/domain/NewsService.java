@@ -14,4 +14,6 @@ public interface NewsService {
     @Transactional
     void createNewsItem(String nickName, String userId, String email,String title, String introduction, String item);
 
+    @Transactional
+    void discardNewsItem(long newsItemId);
 }

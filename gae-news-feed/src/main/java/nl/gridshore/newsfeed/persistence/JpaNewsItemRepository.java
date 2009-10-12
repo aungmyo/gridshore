@@ -18,14 +18,22 @@ import java.util.List;
 public class JpaNewsItemRepository implements NewsItemRepository {
     private EntityManager entityManager;
 
+    @Override
     public void persist(NewsItem newsItem) {
         entityManager.persist(newsItem);
     }
 
+    @Override
+    public void remove(NewsItem newsItem) {
+        entityManager.remove(newsItem);
+    }
+
+    @Override
     public NewsItem obtainNewsItemById(long id) {
         return entityManager.find(NewsItem.class, id);
     }
 
+    @Override
     public List<NewsItem> listAllNewsItems() {
         List resultList = entityManager.createQuery("select ni from NewsItem ni").getResultList();
         resultList.size();

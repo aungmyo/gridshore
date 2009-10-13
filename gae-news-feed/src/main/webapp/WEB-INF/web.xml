@@ -52,7 +52,7 @@
         <web-resource-collection>
             <web-resource-name>create-news</web-resource-name>
             <description>only logged in users can create news</description>
-            <url-pattern>/gs/news/form</url-pattern>
+            <url-pattern>/gs/news/form/*</url-pattern>
         </web-resource-collection>
         <auth-constraint>
             <role-name>*</role-name>
@@ -71,7 +71,7 @@
     </security-constraint>
 
     <welcome-file-list>
-        <welcome-file>/index.html</welcome-file>
+        <!--<welcome-file>/index.html</welcome-file>-->
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>/gs/home</welcome-file>
     </welcome-file-list>

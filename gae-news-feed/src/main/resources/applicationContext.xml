@@ -35,4 +35,6 @@
     </aop:config>
 
     <bean id="mailSender" class="nl.gridshore.newsfeed.integration.mail.impl.GaeJavaMailSender"/>
+
+    <bean id="userService" factory-method="getUserService" class="com.google.appengine.api.users.UserServiceFactory"/>
 </beans>

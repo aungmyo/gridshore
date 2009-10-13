@@ -1,5 +1,7 @@
 package nl.gridshore.newsfeed.web;
 
+import com.google.appengine.api.users.User;
+import com.google.appengine.api.users.UserService;
 import com.google.appengine.api.users.UserServiceFactory;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsService;
@@ -25,16 +27,35 @@ public class NewsController extends GaeSpringController {
     @Autowired
     private NewsService newsService;
 
+    @Autowired
+    private UserService userService;
+
     @RequestMapping(value = "/news/form", method = RequestMethod.GET)
     public String form(ModelMap modelMap, HttpServletRequest request) {
         NewsItemVO newsItem = new NewsItemVO();
-        if (request.getUserPrincipal() != null) {
-            // TODO refactor into something generic with the tag
-            newsItem.setNickName(UserServiceFactory.getUserService().getCurrentUser().getNickname());
-            newsItem.setUserId(UserServiceFactory.getUserService().getCurrentUser().getUserId());
-            newsItem.setEmail(UserServiceFactory.getUserService().getCurrentUser().getEmail());
-        }
+
+        User currentUser = userService.getCurrentUser();
+        
+        newsItem.setNickName(currentUser.getNickname());
+        newsItem.setUserId(currentUser.getUserId());
+        newsItem.setEmail(currentUser.getEmail());
+        
         modelMap.addAttribute("newsItem", newsItem);
+        return "news/form";
+    }
+
+    @RequestMapping(value = "/news/form/{id}", method = RequestMethod.GET)
+    public String change(@PathVariable long id, ModelMap modelMap, HttpServletRequest request) {
+        NewsItem newsItem = newsService.obtainNewsItem(id);
+        NewsItemVO newsItemVO = new NewsItemVO();
+        newsItemVO.setNickName(newsItem.getAuthor().getNickName());
+        newsItemVO.setEmail(newsItem.getAuthor().getEmail());
+        newsItemVO.setId(newsItem.getId());
+        newsItemVO.setIntroduction(newsItem.getIntroduction());
+        newsItemVO.setItem(newsItem.getItem());
+        newsItemVO.setTitle(newsItem.getTitle());
+        newsItemVO.setUserId(newsItem.getAuthor().getUserid());
+        modelMap.addAttribute("newsItem", newsItemVO);
         return "news/form";
     }
 
@@ -44,12 +65,17 @@ public class NewsController extends GaeSpringController {
 
         if (result.hasErrors()) {
             return "news/form";
+        }
+        if (newsItem.getId() != null && newsItem.getId() >= 0) {
+            this.newsService.changeNewsItem(newsItem.getId(),
+                    newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
+                    newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
         } else {
             this.newsService.createNewsItem(
                     newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
                     newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
-            return "redirect:/gs/news";
         }
+        return "redirect:/gs/news";
     }
 
     @RequestMapping(value = "/news/delete/{id}", method = RequestMethod.GET)

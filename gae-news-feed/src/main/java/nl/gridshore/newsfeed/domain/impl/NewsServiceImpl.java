@@ -31,6 +31,19 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
+    public void changeNewsItem(long id,String nickName, String userId, String email, String title, String introduction, String item) {
+        NewsItem currentNewsItem = newsItemRepository.obtainNewsItemById(id);
+        currentNewsItem.setIntroduction(introduction);
+        currentNewsItem.setItem(item);
+        currentNewsItem.setTitle(title);
+    }
+
+    @Override
+    public NewsItem obtainNewsItem(long id) {
+        return newsItemRepository.obtainNewsItemById(id);
+    }
+
+    @Override
     public void discardNewsItem(long newsItemId) {
         NewsItem newsItem = newsItemRepository.obtainNewsItemById(newsItemId);
         newsItemRepository.remove(newsItem);

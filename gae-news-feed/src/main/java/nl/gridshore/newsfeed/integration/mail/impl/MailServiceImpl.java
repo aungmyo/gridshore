@@ -41,4 +41,19 @@ public class MailServiceImpl implements MailService {
             System.err.println(ex.getMessage());
         }
     }
+
+    @Override
+    public void sendMailFromAdmin(String toMail, String subject, String message) {
+        try {
+            SimpleMailMessage mailMessage = new SimpleMailMessage();
+            mailMessage.setFrom("jettro.coenradie@gmail.com");
+            mailMessage.setTo(toMail);
+            mailMessage.setText(message);
+            mailMessage.setSubject(subject);
+            this.mailSender.send(mailMessage);
+        }
+        catch (Exception ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
 }

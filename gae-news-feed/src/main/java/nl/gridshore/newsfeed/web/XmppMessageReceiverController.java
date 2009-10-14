@@ -23,11 +23,12 @@ public class XmppMessageReceiverController {
     private XmppMessagingService xmppMessagingService;
 
     @RequestMapping(value = "/_ah/xmpp/message/chat/", method = RequestMethod.POST)
-    public void create(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public String create(HttpServletRequest request) throws IOException {
         XMPPService xmpp = XMPPServiceFactory.getXMPPService();
         Message message = xmpp.parseMessage(request);
 
         xmppMessagingService.handleReceivedMessage(message);
+        return "empty";
     }
 
 }

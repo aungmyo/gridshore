@@ -7,4 +7,5 @@ package nl.gridshore.newsfeed.integration.mail;
  */
 public interface MailService {
     void sendMailToAdmin(String name, String email, String title, String message);
+    void sendMailFromAdmin(String toMail, String subject, String message);
 }

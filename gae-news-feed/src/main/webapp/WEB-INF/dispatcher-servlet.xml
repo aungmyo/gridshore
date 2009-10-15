@@ -9,7 +9,7 @@
             http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
 
     <context:annotation-config/>
-    <context:component-scan base-package="nl.gridshore.newsfeed.web"/>
+    <context:component-scan base-package="nl.gridshore.newsfeed.web.controllers"/>
 
     <!-- used for file uploading, there is a problem with the default spring multipart resolver and GAE. I use this
      custom class to circumvent this problem. Check the following project:

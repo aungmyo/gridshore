@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web.controllers;
+package nl.gridshore.newsfeed.web.receivers;
 
 import nl.gridshore.newsfeed.integration.mail.MailService;
 import org.apache.log4j.Logger;

@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web.controllers;
+package nl.gridshore.newsfeed.web.receivers;
 
 import com.google.appengine.api.xmpp.Message;
 import com.google.appengine.api.xmpp.XMPPService;

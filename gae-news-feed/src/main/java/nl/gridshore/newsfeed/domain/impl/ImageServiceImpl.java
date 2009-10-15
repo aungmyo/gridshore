@@ -3,6 +3,7 @@ package nl.gridshore.newsfeed.domain.impl;
 import nl.gridshore.newsfeed.domain.Image;
 import nl.gridshore.newsfeed.domain.ImageRepository;
 import nl.gridshore.newsfeed.domain.ImageService;
+import nl.gridshore.newsfeed.integration.image.ImageConversionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +24,10 @@ public class ImageServiceImpl implements ImageService {
 
     @Override
     public long createImage(String filename, String contentType,byte[] content) {
-        Image image = new Image(filename,contentType,content);
+        // create the thumbnail
+        byte[] thumbnail = new ImageConversionService().createThumbnail(content);
+
+        Image image = new Image(filename,contentType,content,thumbnail);
 
         return imageRepository.persist(image);
     }
@@ -32,6 +36,13 @@ public class ImageServiceImpl implements ImageService {
     public Image obtainImage(long id) {
         Image foundImage = imageRepository.obtainImageById(id);
         foundImage.getContent();
+        return foundImage;
+    }
+
+    @Override
+    public Image obtainThumbnailImage(long id) {
+        Image foundImage = imageRepository.obtainImageById(id);
+        foundImage.getThumbnail();
         return foundImage;
     }
 }

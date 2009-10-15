@@ -20,13 +20,17 @@ public class Image {
     @Lob
     private byte[] content;
 
+    @Lob
+    private byte[] thumbnail;
+
     public Image() {
     }
 
-    public Image(String filename, String contentType, byte[] content) {
+    public Image(String filename, String contentType, byte[] content, byte[] thumbnail) {
         this.filename = filename;
         this.content = content;
         this.contentType = contentType;
+        this.thumbnail = thumbnail;
     }
 
     public String getFilename() {
@@ -51,5 +55,13 @@ public class Image {
 
     public void setContentType(String contentType) {
         this.contentType = contentType;
+    }
+
+    public byte[] getThumbnail() {
+        return thumbnail;
+    }
+
+    public void setThumbnail(byte[] thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }

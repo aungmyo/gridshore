@@ -23,4 +23,13 @@ public class ImageController {
         modelMap.addAttribute("image",image);
         return "imageView";
     }
+
+    @RequestMapping(value = "/image/{id}/thumb", method = RequestMethod.GET)
+    public String showThumbnailImage(@PathVariable long id, ModelMap modelMap) {
+        Image image = imageService.obtainThumbnailImage(id);
+        modelMap.addAttribute("image",image);
+        modelMap.addAttribute("thumb","yes");  // if this attribute is added, we show the thumb in the view
+        return "imageView";
+    }
+
 }

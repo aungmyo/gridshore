@@ -5,6 +5,8 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 /**
+ * There are to methods to obtain images, you should only call the obtainImage if you need the big one.
+ *
  * @author Jettro Coenradie
  */
 public interface ImageService {
@@ -17,4 +19,6 @@ public interface ImageService {
     @Transactional
     Image obtainImage(long id);
 
+    @Transactional
+    Image obtainThumbnailImage(long id);
 }

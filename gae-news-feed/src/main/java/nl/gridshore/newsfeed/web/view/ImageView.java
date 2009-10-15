@@ -16,6 +16,10 @@ public class ImageView extends AbstractView {
     protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest request, HttpServletResponse response) throws Exception {
         Image image = (Image) model.get("image");
         response.setContentType(image.getContentType());
-        response.getOutputStream().write(image.getContent());
+        if (model.containsKey("thumb")) {
+            response.getOutputStream().write(image.getThumbnail());
+        } else {
+            response.getOutputStream().write(image.getContent());
+        }
     }
 }

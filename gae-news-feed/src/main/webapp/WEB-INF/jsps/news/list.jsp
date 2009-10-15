@@ -21,7 +21,7 @@
     <tbody>
     <c:forEach items="${newsItems}" var="newsItem">
         <tr>
-            <td><img src="/gs/image/${newsItem.imageId}"/></td>
+            <td><img src="/gs/image/${newsItem.imageId}/thumb"/></td>
             <td>${newsItem.author.nickName}</td>
             <td>${newsItem.title}</td>
             <td>${newsItem.introduction}</td>

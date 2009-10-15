@@ -12,7 +12,7 @@ public interface NewsService {
     List<NewsItem> listAllNewsItems();
 
     @Transactional
-    void createNewsItem(Author author, String title, String introduction, String item);
+    void createNewsItem(Author author, String title, String introduction, String item, Long imageId);
 
     @Transactional
     void discardNewsItem(long newsItemId);

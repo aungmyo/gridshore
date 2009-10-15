@@ -8,7 +8,7 @@
 <body>
 <div id="form-story">
     <h2>Create/update story</h2>
-    <form:form modelAttribute="newsItem" method="POST" action="/gs/news">
+    <form:form modelAttribute="newsItem" method="POST" action="/gs/news" enctype="multipart/form-data" >
         <form:hidden path="id"/>
         <table>
             <tr>
@@ -32,6 +32,11 @@
                 <td><form:errors path="title"/></td>
             </tr>
             <tr>
+                <td>Image:</td>
+                <td><input id="image" name="image" type="file"/> </td>
+                <td><form:errors path="image"/></td>
+            </tr>
+            <tr>
                 <td>Introduction:</td>
                 <td><form:textarea path="introduction" cols="100" rows="3"/></td>
                 <td><form:errors path="introduction"/></td>
@@ -42,8 +47,8 @@
                 <td><form:errors path="item"/></td>
             </tr>
             <tr>
-                <td colspan="2">
-                    <input type="submit" value="Save Changes"/>
+                <td colspan="3">
+                    <input type="submit" value="Save Changes" tabindex="0"/>
                 </td>
             </tr>
         </table>

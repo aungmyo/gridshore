@@ -11,12 +11,25 @@
     <context:annotation-config/>
     <context:component-scan base-package="nl.gridshore.newsfeed.web"/>
 
-    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"/>
+    <!-- used for file uploading, there is a problem with the default spring multipart resolver and GAE. I use this
+     custom class to circumvent this problem. Check the following project:
+     http://code.google.com/p/gmultipart/
+     NOTE : the jar is in the WEB-INF lib since it is not available in a repository and I expect to is temporary.
+     -->
+    <bean id="multipartResolver" class="org.gmr.web.multipart.GMultipartResolver">
+        <property name="maxUploadSize" value="1000000"/> <!-- maximum supported file handling GAE is 1 Mb -->
+    </bean>
+
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="0"/>
+    </bean>
 
     <bean id="defaultViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
         <property name="prefix" value="/WEB-INF/jsps/"/>
         <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
     </bean>
 
+    <bean id="imageView" class="nl.gridshore.newsfeed.web.view.ImageView"/>
 </beans>

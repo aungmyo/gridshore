@@ -11,7 +11,6 @@ public class NewsItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-//    @OneToOne(cascade = CascadeType.ALL)
     @Embedded
     private Author author;
 
@@ -24,6 +23,9 @@ public class NewsItem {
     @Basic
     private String item;
 
+    @Basic
+    private Long imageId;
+
     public NewsItem() {
         // default constructor is required
     }
@@ -35,6 +37,16 @@ public class NewsItem {
         this.introduction = introduction;
         this.item = item;
     }
+
+    public NewsItem(Author author, String title, String introduction, String item, Long imageId) {
+        this();
+        this.author = author;
+        this.title = title;
+        this.introduction = introduction;
+        this.item = item;
+        this.imageId = imageId;
+    }
+
 
     public Long getId() {
         return id;
@@ -74,5 +86,13 @@ public class NewsItem {
 
     public void setItem(String item) {
         this.item = item;
+    }
+
+    public Long getImageId() {
+        return imageId;
+    }
+
+    public void setImageId(Long imageId) {
+        this.imageId = imageId;
     }
 }

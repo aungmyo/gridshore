@@ -1,6 +1,7 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.controllers;
 
 import nl.gridshore.newsfeed.integration.mail.MailService;
+import nl.gridshore.newsfeed.web.formbean.ContactForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

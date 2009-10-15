@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.controllers;
 
 import org.springframework.beans.propertyeditors.CustomNumberEditor;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -19,5 +19,6 @@ public abstract class GaeSpringController {
     protected void initBinder(WebDataBinder binder) {
         binder.registerCustomEditor(String.class, new StringTrimmerEditor(false));
         binder.registerCustomEditor(Long.class, new CustomNumberEditor(Long.class, true));
+//        binder.registerCustomEditor(byte[].class, new ByteArrayMultipartFileEditor());
     }    
 }

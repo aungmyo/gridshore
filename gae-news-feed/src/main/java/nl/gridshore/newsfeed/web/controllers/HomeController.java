@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

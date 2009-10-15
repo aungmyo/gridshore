@@ -8,10 +8,6 @@ import javax.persistence.Embeddable;
  */
 @Embeddable
 public class Author {
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.IDENTITY)
-//    private Key key;
-
     @Basic
     private String userid;
 

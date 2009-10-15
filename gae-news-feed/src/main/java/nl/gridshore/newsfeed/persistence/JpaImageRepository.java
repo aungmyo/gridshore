@@ -1,7 +1,7 @@
 package nl.gridshore.newsfeed.persistence;
 
-import nl.gridshore.newsfeed.domain.NewsItem;
-import nl.gridshore.newsfeed.domain.NewsItemRepository;
+import nl.gridshore.newsfeed.domain.Image;
+import nl.gridshore.newsfeed.domain.ImageRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,32 +15,29 @@ import java.util.List;
  */
 @Repository
 @Transactional(propagation = Propagation.MANDATORY)
-public class JpaNewsItemRepository implements NewsItemRepository {
+public class JpaImageRepository implements ImageRepository {
     private EntityManager entityManager;
 
+
     @Override
-    public void persist(NewsItem newsItem) {
-        entityManager.persist(newsItem);
+    public long persist(Image image) {
+        entityManager.persist(image);
+        entityManager.flush();
+        return image.getId();
     }
 
     @Override
-    public void remove(NewsItem newsItem) {
-        entityManager.remove(newsItem);
+    public Image obtainImageById(long id) {
+        return entityManager.find(Image.class,id);
     }
 
     @Override
-    public NewsItem obtainNewsItemById(long id) {
-        return entityManager.find(NewsItem.class, id);
-    }
-
-    @Override
-    public List<NewsItem> listAllNewsItems() {
-        List resultList = entityManager.createQuery("select ni from NewsItem ni").getResultList();
+    public List<Image> listAllImages() {
+        List resultList = entityManager.createQuery("select i from Image i").getResultList();
         resultList.size();
         //noinspection unchecked
         return resultList;
     }
-
 
     /* setters */
     @PersistenceContext

@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.formbean;
 
 /**
  * @author Jettro Coenradie

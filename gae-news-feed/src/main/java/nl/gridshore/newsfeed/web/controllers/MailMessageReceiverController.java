@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.controllers;
 
 import nl.gridshore.newsfeed.integration.mail.MailService;
 import org.apache.log4j.Logger;
@@ -19,8 +19,8 @@ import java.util.Properties;
  * @author Jettro Coenradie
  */
 @Controller
-public class MailMessageReceiver {
-    private final static Logger log = Logger.getLogger(MailMessageReceiver.class);
+public class MailMessageReceiverController {
+    private final static Logger log = Logger.getLogger(MailMessageReceiverController.class);
 
     @Autowired
     private MailService mailService;

@@ -10,6 +10,7 @@
 <table class="tablesorter">
     <thead>
     <tr>
+        <th>&nbsp;</th>
         <th>author</th>
         <th>title</th>
         <th>create date</th>
@@ -20,6 +21,7 @@
     <tbody>
     <c:forEach items="${newsItems}" var="newsItem">
         <tr>
+            <td><img src="/gs/image/${newsItem.imageId}"/></td>
             <td>${newsItem.author.nickName}</td>
             <td>${newsItem.title}</td>
             <td>${newsItem.introduction}</td>

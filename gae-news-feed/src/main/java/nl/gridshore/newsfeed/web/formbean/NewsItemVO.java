@@ -1,4 +1,6 @@
-package nl.gridshore.newsfeed.web;
+package nl.gridshore.newsfeed.web.formbean;
+
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @author Jettro Coenradie
@@ -11,6 +13,7 @@ public class NewsItemVO {
     private String nickName;
     private String userId;
     private String email;
+    private MultipartFile image;
 
     public Long getId() {
         return id;
@@ -66,5 +69,13 @@ public class NewsItemVO {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public MultipartFile getImage() {
+        return image;
+    }
+
+    public void setImage(MultipartFile image) {
+        this.image = image;
     }
 }

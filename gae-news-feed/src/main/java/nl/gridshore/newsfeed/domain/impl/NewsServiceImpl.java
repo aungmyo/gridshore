@@ -23,7 +23,7 @@ public class NewsServiceImpl implements NewsService {
         List<NewsItem> newsItems = newsItemRepository.listAllNewsItems();
         // The following lines are only done to satisfy google app engine. If not done we have problems with
         // detaching objects that are embedded (like our Author in NewsItem)
-        // http://groups.google.com/group/google-appengine-java/browse_thread/thread/4c896fd7db57bfc3/18c31c2c4b436479?hl=en&lnk=gst&q=jpa+detach#18c31c2c4b436479
+        // http://groups.google.com/group/google-appengine-java/browse_thread/thread/4c896fd7db57bfc3/18c31c2c4b436479
         for(NewsItem newsItem : newsItems) {
             newsItem.getAuthor().getNickName();
         }
@@ -31,29 +31,43 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public void createNewsItem(String nickName, String userId, String email, String title, String introduction, String item) {
-        Author author = new Author(userId,nickName,email);
+    public void createNewsItem(Author author, String title, String introduction, String item) {
         NewsItem newsItem = new NewsItem(author, title, introduction, item);
         newsItemRepository.persist(newsItem);
     }
 
     @Override
-    public void changeNewsItem(long id,String nickName, String userId, String email, String title, String introduction, String item) {
-        NewsItem currentNewsItem = newsItemRepository.obtainNewsItemById(id);
-        currentNewsItem.setIntroduction(introduction);
-        currentNewsItem.setItem(item);
-        currentNewsItem.setTitle(title);
+    public void changeNewsItem(long id, Author author, String title, String introduction, String item) {
+        doChangeNewsItem(id, author,title, introduction, item);
     }
 
     @Override
     public NewsItem obtainNewsItem(long id) {
-        return newsItemRepository.obtainNewsItemById(id);
+        NewsItem newsItem = newsItemRepository.obtainNewsItemById(id);
+        // Next line only needed for google app engine and detaching embedded objects, see listAllNewsItems
+        newsItem.getAuthor().getNickName();
+        return newsItem;
     }
 
     @Override
     public void discardNewsItem(long newsItemId) {
         NewsItem newsItem = newsItemRepository.obtainNewsItemById(newsItemId);
         newsItemRepository.remove(newsItem);
+    }
+
+    @Override
+    public void changeNewsItem(long id, String title, String introduction, String item) {
+        doChangeNewsItem(id, null,title, introduction, item);
+    }
+
+    private void doChangeNewsItem(long id, Author author, String title, String introduction, String item) {
+        NewsItem currentNewsItem = newsItemRepository.obtainNewsItemById(id);
+        currentNewsItem.setIntroduction(introduction);
+        currentNewsItem.setItem(item);
+        currentNewsItem.setTitle(title);
+        if (author != null) {
+            currentNewsItem.setAuthor(author);
+        }
     }
 
 }

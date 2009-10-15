@@ -2,19 +2,18 @@ package nl.gridshore.newsfeed.web;
 
 import com.google.appengine.api.users.User;
 import com.google.appengine.api.users.UserService;
-import com.google.appengine.api.users.UserServiceFactory;
+import nl.gridshore.newsfeed.domain.Author;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.propertyeditors.CustomNumberEditor;
-import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.ServletRequestDataBinder;
-import org.springframework.web.bind.WebDataBinder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
@@ -35,11 +34,11 @@ public class NewsController extends GaeSpringController {
         NewsItemVO newsItem = new NewsItemVO();
 
         User currentUser = userService.getCurrentUser();
-        
+
         newsItem.setNickName(currentUser.getNickname());
         newsItem.setUserId(currentUser.getUserId());
         newsItem.setEmail(currentUser.getEmail());
-        
+
         modelMap.addAttribute("newsItem", newsItem);
         return "news/form";
     }
@@ -67,12 +66,11 @@ public class NewsController extends GaeSpringController {
             return "news/form";
         }
         if (newsItem.getId() != null && newsItem.getId() >= 0) {
-            this.newsService.changeNewsItem(newsItem.getId(),
-                    newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
-                    newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
+            this.newsService.changeNewsItem(
+                    newsItem.getId(), newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
         } else {
-            this.newsService.createNewsItem(
-                    newsItem.getNickName(),newsItem.getUserId(),newsItem.getEmail(),
+            Author author = new Author(newsItem.getUserId(), newsItem.getNickName(), newsItem.getEmail());
+            this.newsService.createNewsItem(author,
                     newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
         }
         return "redirect:/gs/news";
@@ -82,11 +80,10 @@ public class NewsController extends GaeSpringController {
     public String delete(@PathVariable long id, ModelMap modelMap) {
         this.newsService.discardNewsItem(id);
 
-        modelMap.addAttribute("message","News item is discarded.");
-        modelMap.addAttribute("title","news item discarded");
+        modelMap.addAttribute("message", "News item is discarded.");
+        modelMap.addAttribute("title", "news item discarded");
         return "message";
     }
-
 
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)

@@ -1,6 +1,5 @@
 package nl.gridshore.newsfeed.domain;
 
-import nl.gridshore.newsfeed.web.NewsItemVO;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -13,13 +12,16 @@ public interface NewsService {
     List<NewsItem> listAllNewsItems();
 
     @Transactional
-    void createNewsItem(String nickName, String userId, String email,String title, String introduction, String item);
+    void createNewsItem(Author author, String title, String introduction, String item);
 
     @Transactional
     void discardNewsItem(long newsItemId);
 
     @Transactional
-    void changeNewsItem(long id,String nickName, String userId, String email, String title, String introduction, String item);
+    void changeNewsItem(long id, Author author, String title, String introduction, String item);
+
+    @Transactional
+    void changeNewsItem(long id, String title, String introduction, String item);
 
     @Transactional
     NewsItem obtainNewsItem(long id);

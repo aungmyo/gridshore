@@ -29,7 +29,7 @@ public class OpenQuestionPanel extends QuestionPanel {
     public OpenQuestionPanel(String id, OpenQuestionDef question, OpenAnswerInstance answer) {
         super(id, question);
         questionPath = question.getPath();
-        answerText = new Model<String>(answer.getAsText());
+        answerText = new Model<String>(answer == null ? null : answer.getAsText());
         add(new TextArea<String>("answer", answerText));
     }
 

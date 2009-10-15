@@ -1,5 +1,5 @@
 <project name="Doingjava" default="datanucleusenhance">
-    <property name="sdk.dir" location="/Users/jettrocoenradie/javalibs/googleappengine/appengine-java-sdk-1.2.6/"/>
+    <property name="sdk.dir" location="/Users/jettropro/javalibs/appengine-java-sdk-1.2.6/"/>
     <import file="${sdk.dir}/config/user/ant-macros.xml"/>
     <property name="war.dir" value="target/gae-news-feed"/>
 

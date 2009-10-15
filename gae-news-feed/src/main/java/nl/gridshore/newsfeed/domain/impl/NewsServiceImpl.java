@@ -20,7 +20,14 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public List<NewsItem> listAllNewsItems() {
-        return newsItemRepository.listAllNewsItems();
+        List<NewsItem> newsItems = newsItemRepository.listAllNewsItems();
+        // The following lines are only done to satisfy google app engine. If not done we have problems with
+        // detaching objects that are embedded (like our Author in NewsItem)
+        // http://groups.google.com/group/google-appengine-java/browse_thread/thread/4c896fd7db57bfc3/18c31c2c4b436479?hl=en&lnk=gst&q=jpa+detach#18c31c2c4b436479
+        for(NewsItem newsItem : newsItems) {
+            newsItem.getAuthor().getNickName();
+        }
+        return newsItems;
     }
 
     @Override

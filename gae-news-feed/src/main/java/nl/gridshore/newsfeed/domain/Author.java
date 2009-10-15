@@ -1,17 +1,16 @@
 package nl.gridshore.newsfeed.domain;
 
-import com.google.appengine.api.datastore.Key;
-
-import javax.persistence.*;
+import javax.persistence.Basic;
+import javax.persistence.Embeddable;
 
 /**
  * @author Jettro Coenradie
  */
-@Entity
+@Embeddable
 public class Author {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Key key;
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private Key key;
 
     @Basic
     private String userid;

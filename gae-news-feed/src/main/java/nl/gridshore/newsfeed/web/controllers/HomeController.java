@@ -1,21 +1,24 @@
 package nl.gridshore.newsfeed.web.controllers;
 
+import com.google.appengine.api.users.UserService;
+import com.google.appengine.api.users.UserServiceFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by IntelliJ IDEA.
- * User: jettrocoenradie
- * Date: Oct 4, 2009
- * Time: 11:52:50 AM
- * To change this template use File | Settings | File Templates.
+ * Controller for handling the basic home page request
  */
 @Controller
 public class HomeController {
     @RequestMapping("/home")
     public String welcome(ModelMap model) {
-        model.addAttribute("message","this is the message");
+        UserService service = UserServiceFactory.getUserService();
+        if (service.isUserLoggedIn()) {
+            model.addAttribute("currentUser", service.getCurrentUser().getNickname() + " ");
+        } else {
+            model.addAttribute("currentUser", "");
+        }
         return "home";
     }
 }

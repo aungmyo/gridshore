@@ -3,6 +3,8 @@ package nl.gridshore.newsfeed.domain;
 import javax.persistence.*;
 
 /**
+ * Root entity object
+ *
  * @author Jettro Coenradie
  */
 @Entity

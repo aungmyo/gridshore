@@ -1,7 +1,8 @@
 body {background-color: white;margin: 0;padding: 0;}
 #main {position: absolute;width: 100%;top: 0;left: 0;}
 #maincontent {position: relative;top: 40px;left: 0;padding: 10px;}
-
+a {color: #24683C}
+a:hover {color: #96CB82;text-decoration: underline;}
 /* Navigation*/
 #navigation {position: relative;background: url(/images/bg_nav.png);height: 22px;top: 10px;left: 0;padding-left: 20px;padding-right: 20px;}
 #navigation a {color: #fff;text-decoration: none;}

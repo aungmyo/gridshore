@@ -1,7 +1,10 @@
 package nl.gridshore.newsfeed.integration.xmpp.impl;
 
 import com.google.appengine.api.xmpp.*;
+import nl.gridshore.newsfeed.domain.ReceivedMessageService;
 import nl.gridshore.newsfeed.integration.xmpp.XmppMessagingService;
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -9,6 +12,10 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class XmppMessagingServiceImpl implements XmppMessagingService {
+    private final static Logger log = Logger.getLogger(XmppMessagingServiceImpl.class);
+
+    @Autowired
+    private ReceivedMessageService receivedMessageService;
 
     @Override
     public void sendMessage(String receiver, String message) {
@@ -20,7 +27,9 @@ public class XmppMessagingServiceImpl implements XmppMessagingService {
     public void handleReceivedMessage(Message receivedMessage) {
         JID fromJid = receivedMessage.getFromJid();
         String body = receivedMessage.getBody();
-        // TODO : do something with the message
+
+        receivedMessageService.createReceivedMessage(fromJid.getId(),body);
+
         sendMessage(fromJid,"Thank you for your response");
     }
 
@@ -37,7 +46,7 @@ public class XmppMessagingServiceImpl implements XmppMessagingService {
         }
 
         if (!messageSent) {
-            System.out.println("NEEEEEEE, het werkt niet");
+            log.error("Cannot send a message using xmpp to : " + jid.toString());
         }
     }
 }

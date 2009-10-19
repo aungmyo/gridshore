@@ -2,7 +2,4 @@
     <decorator name="main" page="main.jsp">
         <pattern>/*</pattern>
     </decorator>
-    <!-- excludes>
-        <pattern>*.rss</pattern>
-    </excludes -->
 </decorators>

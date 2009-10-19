@@ -73,21 +73,23 @@ public class NewsController extends GaeSpringController {
             return "news/form";
         }
 
-        MultipartFile multipartFile = newsItem.getImage();
-        System.out.println("we received a file " + multipartFile.getOriginalFilename());
-        System.out.println("content type " + multipartFile.getContentType());
-        System.out.println("Size " + multipartFile.getSize());
 
         if (newsItem.getId() != null && newsItem.getId() >= 0) {
             this.newsService.changeNewsItem(
                     newsItem.getId(), newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
         } else {
-            long image = this.imageService.createImage(
-                    multipartFile.getOriginalFilename(), multipartFile.getContentType(), multipartFile.getBytes());
-
             Author author = new Author(newsItem.getUserId(), newsItem.getNickName(), newsItem.getEmail());
-            this.newsService.createNewsItem(author,
-                    newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem(),image);
+            MultipartFile multipartFile = newsItem.getImage();
+            if (multipartFile != null && multipartFile.getSize() > 0) {
+                long image = this.imageService.createImage(
+                        multipartFile.getOriginalFilename(), multipartFile.getContentType(), multipartFile.getBytes());
+                this.newsService.createNewsItem(author,
+                        newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem(),image);
+            } else {
+                this.newsService.createNewsItem(author,
+                        newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());
+            }
+
         }
         return "redirect:/gs/news";
     }

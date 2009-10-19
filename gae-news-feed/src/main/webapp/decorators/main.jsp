@@ -30,19 +30,31 @@
 
 </head>
 <body>
-    <div id="main">
-        <div id="navigation">
-            <span><a href="/gs/home">Home</a></span>
-            <span><a href="/gs/news">All news</a></span>
-            <span><a href="/gs/news/form">Create news</a></span>
-            <span class="right"><a href="/gs/contact/form">Contact</a></span>
-            <span class="right"><a href="/about.html">About</a></span>
-            <span class="right">&nbsp;:&nbsp;</span>
-            <span class="right"><security:loginUrl destination="/gs/home"/></span>
-        </div>
-        <div id="maincontent">
-            <decorator:body/>
-        </div>
+<div id="main">
+    <div id="navigation">
+        <span><a href="/gs/home">Home</a></span>
+        <span><a href="/gs/news">All news</a></span>
+        <span><a href="/gs/news/form">Create news</a></span>
+        <span><a href="/gs/messages">Received messages</a></span>
+        <span class="right"><a href="/gs/contact/form">Contact</a></span>
+        <span class="right"><a href="/technology.html">Technology</a></span>
+        <span class="right"><a href="/about.html">About</a></span>
+        <span class="right">&nbsp;:&nbsp;</span>
+        <span class="right"><security:loginUrl destination="/gs/home"/></span>
     </div>
+    <div id="maincontent">
+        <decorator:body/>
+    </div>
+</div>
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-180286-10");
+        pageTracker._trackPageview();
+    } catch(err) {
+    }</script>
 </body>
 </html>

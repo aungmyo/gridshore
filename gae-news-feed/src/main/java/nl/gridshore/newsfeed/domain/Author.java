@@ -4,6 +4,8 @@ import javax.persistence.Basic;
 import javax.persistence.Embeddable;
 
 /**
+ * Author class that is part of a {@code NewsItem}.
+ *
  * @author Jettro Coenradie
  */
 @Embeddable

@@ -31,8 +31,14 @@ public class NewsServiceImpl implements NewsService {
     }
 
     @Override
-    public void createNewsItem(Author author, String title, String introduction, String item, Long imageId) {
+    public void createNewsItem(Author author, String title, String introduction, String item, long imageId) {
         NewsItem newsItem = new NewsItem(author, title, introduction, item, imageId);
+        newsItemRepository.persist(newsItem);
+    }
+
+    @Override
+    public void createNewsItem(Author author, String title, String introduction, String item) {
+        NewsItem newsItem = new NewsItem(author, title, introduction, item);
         newsItemRepository.persist(newsItem);
     }
 

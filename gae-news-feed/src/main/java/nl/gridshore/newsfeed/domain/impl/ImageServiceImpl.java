@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
+ * Default implementation of the {@code ImageService} that makes use of the {@code ImageConversionService}.
+ *
  * @author Jettro Coenradie
  */
 @Service

@@ -1,5 +1,7 @@
-package nl.gridshore.newsfeed.domain;
+package nl.gridshore.newsfeed.service;
 
+import nl.gridshore.newsfeed.domain.Author;
+import nl.gridshore.newsfeed.domain.NewsItem;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

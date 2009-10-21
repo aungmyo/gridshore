@@ -3,7 +3,7 @@ package nl.gridshore.newsfeed.domain;
 import javax.persistence.*;
 
 /**
- * Message received by the application through mail or Xmpp
+ * Root entity for a Message received by the application through mail or Xmpp
  *
  * @author Jettro Coenradie
  */
@@ -23,6 +23,7 @@ public class ReceivedMessage {
     }
 
     public ReceivedMessage(String content, String sender) {
+        this();
         this.content = content;
         this.sender = sender;
     }

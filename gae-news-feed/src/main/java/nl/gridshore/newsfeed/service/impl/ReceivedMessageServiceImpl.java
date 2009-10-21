@@ -1,8 +1,8 @@
-package nl.gridshore.newsfeed.domain.impl;
+package nl.gridshore.newsfeed.service.impl;
 
 import nl.gridshore.newsfeed.domain.ReceivedMessage;
 import nl.gridshore.newsfeed.domain.ReceivedMessageRepository;
-import nl.gridshore.newsfeed.domain.ReceivedMessageService;
+import nl.gridshore.newsfeed.service.ReceivedMessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ public class ReceivedMessageServiceImpl implements ReceivedMessageService {
     private ReceivedMessageRepository receivedMessageRepository;
 
     @Override
-    public void createReceivedMessage(String sender, String content) {
+    public void createReceivedMessage(String sender, String content) {        
         receivedMessageRepository.persist(new ReceivedMessage(content,sender));
     }
 

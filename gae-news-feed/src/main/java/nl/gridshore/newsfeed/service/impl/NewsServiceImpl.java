@@ -1,9 +1,9 @@
-package nl.gridshore.newsfeed.domain.impl;
+package nl.gridshore.newsfeed.service.impl;
 
 import nl.gridshore.newsfeed.domain.Author;
 import nl.gridshore.newsfeed.domain.NewsItem;
 import nl.gridshore.newsfeed.domain.NewsItemRepository;
-import nl.gridshore.newsfeed.domain.NewsService;
+import nl.gridshore.newsfeed.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

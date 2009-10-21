@@ -54,10 +54,10 @@
         <url-pattern>/gs/*</url-pattern>
     </servlet-mapping>
 
-    <servlet-mapping>
-        <servlet-name>receivers</servlet-name>
-        <url-pattern>/_ah/xmpp/message/chat/</url-pattern>
-    </servlet-mapping>
+    <!--<servlet-mapping>-->
+        <!--<servlet-name>receivers</servlet-name>-->
+        <!--<url-pattern>/_ah/xmpp/message/chat/</url-pattern>-->
+    <!--</servlet-mapping>-->
 
     <servlet-mapping>
         <servlet-name>receivers</servlet-name>

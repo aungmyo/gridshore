@@ -1,5 +1,6 @@
-package nl.gridshore.newsfeed.domain;
+package nl.gridshore.newsfeed.service;
 
+import nl.gridshore.newsfeed.domain.Image;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

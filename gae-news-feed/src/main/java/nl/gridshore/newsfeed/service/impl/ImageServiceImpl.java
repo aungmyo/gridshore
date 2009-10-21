@@ -1,9 +1,9 @@
-package nl.gridshore.newsfeed.domain.impl;
+package nl.gridshore.newsfeed.service.impl;
 
 import nl.gridshore.newsfeed.domain.Image;
 import nl.gridshore.newsfeed.domain.ImageRepository;
-import nl.gridshore.newsfeed.domain.ImageService;
 import nl.gridshore.newsfeed.integration.image.ImageConversionService;
+import nl.gridshore.newsfeed.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +27,7 @@ public class ImageServiceImpl implements ImageService {
     @Override
     public long createImage(String filename, String contentType,byte[] content) {
         // create the thumbnail
+        // TODO create a real service object and dependency injection
         byte[] thumbnail = new ImageConversionService().createThumbnail(content);
 
         Image image = new Image(filename,contentType,content,thumbnail);

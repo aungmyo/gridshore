@@ -12,29 +12,34 @@
           class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean" lazy-init="true">
         <property name="persistenceUnitName" value="news-feed"/>
     </bean>
+
     <bean name="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory"/>
     </bean>
 
-    <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor"/>
+    <context:annotation-config/>
+
+    <tx:annotation-driven/>
 
     <bean id="createNewsItemAspect" class="nl.gridshore.newsfeed.integration.xmpp.SendMessageAspect"/>
 
-    <tx:annotation-driven/>
+
     <context:component-scan
-            base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence,nl.gridshore.newsfeed.integration"/>
+            base-package="nl.gridshore.newsfeed.domain,nl.gridshore.newsfeed.persistence,nl.gridshore.newsfeed.integration,nl.gridshore.newsfeed.service"/>
 
     <!-- TODO : Looks like autoproxy for aspects is not working-->
     <!--<aop:aspectj-autoproxy/>-->
     <aop:config>
         <aop:aspect ref="createNewsItemAspect">
             <aop:pointcut id="createNewsItem"
-                          expression="execution(* nl.gridshore.newsfeed.domain.NewsService.createNewsItem(..))"/>
+                          expression="execution(* nl.gridshore.newsfeed.service.NewsService.createNewsItem(..))"/>
             <aop:around method="sendMessageOnCreationOfNewsItem" pointcut-ref="createNewsItem"/>
         </aop:aspect>
     </aop:config>
 
     <bean id="mailSender" class="nl.gridshore.newsfeed.integration.mail.impl.GaeJavaMailSender"/>
 
+
+    <!-- TODO : add other services or remove this one -->
     <bean id="userService" factory-method="getUserService" class="com.google.appengine.api.users.UserServiceFactory"/>
 </beans>

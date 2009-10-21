@@ -1,7 +1,7 @@
 package nl.gridshore.newsfeed.web.controllers;
 
 import nl.gridshore.newsfeed.domain.Image;
-import nl.gridshore.newsfeed.domain.ImageService;
+import nl.gridshore.newsfeed.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;

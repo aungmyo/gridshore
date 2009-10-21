@@ -51,7 +51,7 @@ public class ImageConversionService {
     }
 
     private byte[] doCreateThumbnail(byte[] original, int thumbnailSize) {
-        ImagesService imagesService = getImagesService();
+        ImagesService imagesService = ImagesServiceFactory.getImagesService();
 
         Image oldImage = ImagesServiceFactory.makeImage(original);
         Transform resize = ImagesServiceFactory.makeResize(thumbnailSize,thumbnailSize);
@@ -61,16 +61,13 @@ public class ImageConversionService {
         return newImage.getImageData();
     }
 
-    private ImagesService getImagesService() {
-        return ImagesServiceFactory.getImagesService();
-    }
-
     /* Getters and setters */
 
     /**
      * Setter for the default thumbnail size to be used when creating a thumbnail.
      * @param thumbnailSize int representing the default thumbnail size to set.
      */
+    @SuppressWarnings({"UnusedDeclaration"})
     public void setThumbnailSize(int thumbnailSize) {
         this.thumbnailSize = thumbnailSize;
     }

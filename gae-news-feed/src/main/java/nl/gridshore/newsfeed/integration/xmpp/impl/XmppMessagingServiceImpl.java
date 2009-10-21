@@ -1,10 +1,8 @@
 package nl.gridshore.newsfeed.integration.xmpp.impl;
 
 import com.google.appengine.api.xmpp.*;
-import nl.gridshore.newsfeed.domain.ReceivedMessageService;
 import nl.gridshore.newsfeed.integration.xmpp.XmppMessagingService;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -14,9 +12,6 @@ import org.springframework.stereotype.Service;
 public class XmppMessagingServiceImpl implements XmppMessagingService {
     private final static Logger log = Logger.getLogger(XmppMessagingServiceImpl.class);
 
-    @Autowired
-    private ReceivedMessageService receivedMessageService;
-
     @Override
     public void sendMessage(String receiver, String message) {
         JID jid = new JID(receiver);
@@ -24,16 +19,7 @@ public class XmppMessagingServiceImpl implements XmppMessagingService {
     }
 
     @Override
-    public void handleReceivedMessage(Message receivedMessage) {
-        JID fromJid = receivedMessage.getFromJid();
-        String body = receivedMessage.getBody();
-
-        receivedMessageService.createReceivedMessage(fromJid.getId(),body);
-
-        sendMessage(fromJid,"Thank you for your response");
-    }
-
-    private void sendMessage(JID jid, String message) {
+    public void sendMessage(JID jid, String message) {
         Message msg = new MessageBuilder()
                 .withRecipientJids(jid)
                 .withBody(message)

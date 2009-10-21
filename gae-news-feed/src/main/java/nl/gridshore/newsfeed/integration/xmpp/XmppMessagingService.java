@@ -1,6 +1,6 @@
 package nl.gridshore.newsfeed.integration.xmpp;
 
-import com.google.appengine.api.xmpp.Message;
+import com.google.appengine.api.xmpp.JID;
 
 /**
  * Service used to handle Xmpp (Google talk) message and send message back. To be able to send messages to the
@@ -16,11 +16,5 @@ public interface XmppMessagingService {
      */
     public void sendMessage(String receiver, String message);
 
-    /**
-     * Handle a received message, store the contents of the message and a {@code ReceivedMessage}. A reply to say
-     * thanks for the message is send if possible.
-     *
-     * @param receiveMessage {@code Message} that is received and needs to be handled.
-     */
-    void handleReceivedMessage(Message receiveMessage);
+    void sendMessage(JID jid, String message);
 }

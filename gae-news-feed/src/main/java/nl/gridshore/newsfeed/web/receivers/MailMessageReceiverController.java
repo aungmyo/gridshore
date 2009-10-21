@@ -1,7 +1,7 @@
 package nl.gridshore.newsfeed.web.receivers;
 
-import nl.gridshore.newsfeed.domain.ReceivedMessageService;
 import nl.gridshore.newsfeed.integration.mail.MailService;
+import nl.gridshore.newsfeed.service.ReceivedMessageService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +29,7 @@ public class MailMessageReceiverController {
     private MailService mailService;
 
     @Autowired
-    private ReceivedMessageService  receivedMessageService;
+    private ReceivedMessageService receivedMessageService;
 
     @RequestMapping(value = "/mail/{toEmail}", method = RequestMethod.POST)
     public String receive(@PathVariable String toEmail, HttpServletRequest request)
@@ -61,10 +61,12 @@ public class MailMessageReceiverController {
             MimeMultipart multipart = (MimeMultipart)message.getContent();
             for (int i = 0; i < multipart.getCount(); i++) {
                 BodyPart part = multipart.getBodyPart(i);
-                if (part.getContentType().equals("text/plain; charset=UTF-8") || part.getContentType().equals("text/html; charset=UTF-8")) {
+                log.debug("Content type of received mail is : " + part.getContentType());
+                if (part.getContentType().contains("text/plain") || part.getContentType().contains("text/html")) {
                     content = part.getContent().toString();
+                    break;
                 } else {
-                    log.debug("Obtained a part that is not text plain, but : " + part.getContentType());
+                    log.debug("Obtained a part that is not text plain or html, but : " + part.getContentType());
                 }
             }
         } else {

@@ -15,8 +15,12 @@ import java.util.List;
 @Service
 public class NewsServiceImpl implements NewsService {
 
-    @Autowired
     private NewsItemRepository newsItemRepository;
+
+    @Autowired
+    public NewsServiceImpl(NewsItemRepository newsItemRepository) {
+        this.newsItemRepository = newsItemRepository;
+    }
 
     @Override
     public List<NewsItem> listAllNewsItems() {
@@ -24,7 +28,7 @@ public class NewsServiceImpl implements NewsService {
         // The following lines are only done to satisfy google app engine. If not done we have problems with
         // detaching objects that are embedded (like our Author in NewsItem)
         // http://groups.google.com/group/google-appengine-java/browse_thread/thread/4c896fd7db57bfc3/18c31c2c4b436479
-        for(NewsItem newsItem : newsItems) {
+        for (NewsItem newsItem : newsItems) {
             newsItem.getAuthor().getNickName();
         }
         return newsItems;
@@ -44,7 +48,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public void changeNewsItem(long id, Author author, String title, String introduction, String item) {
-        doChangeNewsItem(id, author,title, introduction, item);
+        doChangeNewsItem(id, author, title, introduction, item);
     }
 
 
@@ -64,7 +68,7 @@ public class NewsServiceImpl implements NewsService {
 
     @Override
     public void changeNewsItem(long id, String title, String introduction, String item) {
-        doChangeNewsItem(id, null,title, introduction, item);
+        doChangeNewsItem(id, null, title, introduction, item);
     }
 
     private void doChangeNewsItem(long id, Author author, String title, String introduction, String item) {

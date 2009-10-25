@@ -12,16 +12,21 @@ import org.springframework.util.Assert;
  * <p>Default implementation for {@code MailService} using the provided {@code JavaMailSender}</p>
  * <p>Beware that in case of google app engine mail integration, mails can only be send by administrators or logged in
  * users.</p>
+ *
  * @author Jettro Coenradie
  */
 @Service
 public class MailServiceImpl implements MailService {
     private static final Logger log = Logger.getLogger(MailServiceImpl.class);
     private static final String ADMIN_MAIL_FROM = "jettro.coenradie@gmail.com";
+    private static final String ADMIN_MAIL_TO = "jettro@coenradie.com";
+
+    private JavaMailSender mailSender;
 
     @Autowired
-    private JavaMailSender mailSender;
-    private static final String ADMIN_MAIL_TO = "jettro@coenradie.com";
+    public MailServiceImpl(JavaMailSender mailSender) {
+        this.mailSender = mailSender;
+    }
 
     @Override
     public void sendMailToAdmin(String name, String email, String subject, String message) {
@@ -34,7 +39,7 @@ public class MailServiceImpl implements MailService {
             log.debug("Sending a mail to admin for : " + email);
         }
 
-        sendEmailMessage(ADMIN_MAIL_TO, ADMIN_MAIL_FROM,subject,message);
+        sendEmailMessage(ADMIN_MAIL_TO, ADMIN_MAIL_FROM, subject, message);
     }
 
     @Override
@@ -47,7 +52,7 @@ public class MailServiceImpl implements MailService {
             log.debug("Sending a mail from admin to : " + toMail);
         }
 
-        sendEmailMessage(toMail, ADMIN_MAIL_FROM,subject, message);
+        sendEmailMessage(toMail, ADMIN_MAIL_FROM, subject, message);
     }
 
     private void sendEmailMessage(String toMail, String fromMail, String subject, String message) {

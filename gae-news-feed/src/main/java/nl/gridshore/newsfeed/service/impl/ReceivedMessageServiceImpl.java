@@ -13,12 +13,16 @@ import java.util.List;
  */
 @Service
 public class ReceivedMessageServiceImpl implements ReceivedMessageService {
-    @Autowired
     private ReceivedMessageRepository receivedMessageRepository;
 
+    @Autowired
+    public ReceivedMessageServiceImpl(ReceivedMessageRepository receivedMessageRepository) {
+        this.receivedMessageRepository = receivedMessageRepository;
+    }
+
     @Override
-    public void createReceivedMessage(String sender, String content) {        
-        receivedMessageRepository.persist(new ReceivedMessage(content,sender));
+    public void createReceivedMessage(String sender, String content) {
+        receivedMessageRepository.persist(new ReceivedMessage(content, sender));
     }
 
     @Override

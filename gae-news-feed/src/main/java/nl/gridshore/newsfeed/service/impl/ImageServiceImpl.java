@@ -16,8 +16,12 @@ import java.util.List;
  */
 @Service
 public class ImageServiceImpl implements ImageService {
-    @Autowired
     private ImageRepository imageRepository;
+
+    @Autowired
+    public ImageServiceImpl(ImageRepository imageRepository) {
+        this.imageRepository = imageRepository;
+    }
 
     @Override
     public List<Image> listAllImages() {
@@ -25,12 +29,12 @@ public class ImageServiceImpl implements ImageService {
     }
 
     @Override
-    public long createImage(String filename, String contentType,byte[] content) {
+    public long createImage(String filename, String contentType, byte[] content) {
         // create the thumbnail
         // TODO create a real service object and dependency injection
         byte[] thumbnail = new ImageConversionService().createThumbnail(content);
 
-        Image image = new Image(filename,contentType,content,thumbnail);
+        Image image = new Image(filename, contentType, content, thumbnail);
 
         return imageRepository.persist(image);
     }

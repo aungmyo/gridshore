@@ -54,11 +54,6 @@
         <url-pattern>/gs/*</url-pattern>
     </servlet-mapping>
 
-    <!--<servlet-mapping>-->
-        <!--<servlet-name>receivers</servlet-name>-->
-        <!--<url-pattern>/_ah/xmpp/message/chat/</url-pattern>-->
-    <!--</servlet-mapping>-->
-
     <servlet-mapping>
         <servlet-name>receivers</servlet-name>
         <url-pattern>/_ah/*</url-pattern>
@@ -85,19 +80,8 @@
             <role-name>admin</role-name>
         </auth-constraint>
     </security-constraint>
-    <!--<security-constraint>-->
-        <!--<web-resource-collection>-->
-            <!--<web-resource-name>receive mail</web-resource-name>-->
-            <!--<description>only admin can receive mail</description>-->
-            <!--<url-pattern>/_ah/mail/*</url-pattern>-->
-        <!--</web-resource-collection>-->
-        <!--<auth-constraint>-->
-            <!--<role-name>admin</role-name>-->
-        <!--</auth-constraint>-->
-    <!--</security-constraint>-->
 
     <welcome-file-list>
-        <!--<welcome-file>/index.html</welcome-file>-->
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>/gs/home</welcome-file>
     </welcome-file-list>

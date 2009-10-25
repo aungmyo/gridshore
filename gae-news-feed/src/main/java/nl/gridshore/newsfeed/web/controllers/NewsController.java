@@ -18,26 +18,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
 /**
+ * Controller class for all news related requests.
+ *
  * @author Jettro Coenradie
  */
 @Controller
 public class NewsController extends GaeSpringController {
-    @Autowired
     private NewsService newsService;
-
-    @Autowired
     private ImageService imageService;
-
-    @Autowired
     private UserService userService;
 
+    @Autowired
+    public NewsController(NewsService newsService, ImageService imageService, UserService userService) {
+        this.newsService = newsService;
+        this.imageService = imageService;
+        this.userService = userService;
+    }
+
     @RequestMapping(value = "/news/form", method = RequestMethod.GET)
-    public String form(ModelMap modelMap, HttpServletRequest request) {
+    public String form(ModelMap modelMap) {
         NewsItemVO newsItem = new NewsItemVO();
 
         User currentUser = userService.getCurrentUser();
@@ -51,7 +54,7 @@ public class NewsController extends GaeSpringController {
     }
 
     @RequestMapping(value = "/news/form/{id}", method = RequestMethod.GET)
-    public String change(@PathVariable long id, ModelMap modelMap, HttpServletRequest request) {
+    public String change(@PathVariable long id, ModelMap modelMap) {
         NewsItem newsItem = newsService.obtainNewsItem(id);
         NewsItemVO newsItemVO = new NewsItemVO();
         newsItemVO.setNickName(newsItem.getAuthor().getNickName());
@@ -84,7 +87,7 @@ public class NewsController extends GaeSpringController {
                 long image = this.imageService.createImage(
                         multipartFile.getOriginalFilename(), multipartFile.getContentType(), multipartFile.getBytes());
                 this.newsService.createNewsItem(author,
-                        newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem(),image);
+                        newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem(), image);
             } else {
                 this.newsService.createNewsItem(author,
                         newsItem.getTitle(), newsItem.getIntroduction(), newsItem.getItem());

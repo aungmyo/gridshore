@@ -22,7 +22,7 @@
             <version>4.7</version>
             <scope>test</scope>
         </dependency>
-		<dependency>
+        <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-stubs</artifactId>
             <version>${gae.version}</version>
@@ -55,7 +55,7 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>jsp-api</artifactId> 
+            <artifactId>jsp-api</artifactId>
             <version>2.0</version>
             <scope>provided</scope>
         </dependency>
@@ -63,7 +63,7 @@
             <groupId>opensymphony</groupId>
             <artifactId>sitemesh</artifactId>
             <version>2.4.2</version>
-        </dependency>        
+        </dependency>
         <!--app engine related dependencies-->
         <dependency>
             <groupId>com.google.appengine</groupId>

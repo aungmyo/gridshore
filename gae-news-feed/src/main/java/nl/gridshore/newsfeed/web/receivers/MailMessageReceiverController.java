@@ -15,24 +15,30 @@ import javax.mail.Session;
 import javax.mail.internet.MimeMessage;
 import javax.mail.internet.MimeMultipart;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.Properties;
 
 /**
+ * Controller class that handles incoming mail (The google app engine way)
+ *
  * @author Jettro Coenradie
  */
 @Controller
 public class MailMessageReceiverController {
     private final static Logger log = Logger.getLogger(MailMessageReceiverController.class);
 
-    @Autowired
     private MailService mailService;
-
-    @Autowired
     private ReceivedMessageService receivedMessageService;
 
+    @Autowired
+    public MailMessageReceiverController(MailService mailService, ReceivedMessageService receivedMessageService) {
+        this.mailService = mailService;
+        this.receivedMessageService = receivedMessageService;
+    }
+
     @RequestMapping(value = "/mail/{toEmail}", method = RequestMethod.POST)
-    public String receive(@PathVariable String toEmail, HttpServletRequest request)
+    public void receive(@PathVariable String toEmail, HttpServletRequest request, HttpServletResponse response)
             throws IOException, MessagingException {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
@@ -44,21 +50,22 @@ public class MailMessageReceiverController {
         String content = obtainContentFromMail(message);
         if (log.isDebugEnabled()) {
             log.debug("Received a message from " + mailFrom);
+            log.debug("to : " + toEmail);
             log.debug("Message contains : " + content);
         }
 
-        receivedMessageService.createReceivedMessage(mailFrom,content);
+        receivedMessageService.createReceivedMessage(mailFrom, content);
 
         mailService.sendMailFromAdmin(mailFrom, "RE : " + subject, "Thank you for your message, we'll get back to you" +
                 "as soon as possible.");
 
-        return "empty";
+        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     private String obtainContentFromMail(MimeMessage message) throws MessagingException, IOException {
         String content = "";
         if (message.getContent() instanceof MimeMultipart) {
-            MimeMultipart multipart = (MimeMultipart)message.getContent();
+            MimeMultipart multipart = (MimeMultipart) message.getContent();
             for (int i = 0; i < multipart.getCount(); i++) {
                 BodyPart part = multipart.getBodyPart(i);
                 log.debug("Content type of received mail is : " + part.getContentType());

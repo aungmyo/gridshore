@@ -29,16 +29,24 @@
               value="http://googleappengine.googlecode.com/files/appengine-java-sdk-${appengine.version}.zip"/>
     <property name="unpack.location" value="${basedir}/target/appengine-java-sdk-${appengine.version}"/>
 
+    <!-- user -->
+    <property name="appengine.api.sdk"
+              value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/user/appengine-api-1.0-sdk-${appengine.version}.jar"/>
+    <property name="appengine.api.labs"
+              value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/user/appengine-api-labs-${appengine.version}.jar"/>
+    <!-- tools -->
     <property name="appengine.tools.api"
               value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/appengine-tools-api.jar"/>
     <property name="appengine.api"
               value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/impl/appengine-api.jar"/>
     <property name="appengine.api.stubs"
               value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/impl/appengine-api-stubs.jar"/>
+    <property name="appengine.api.labs"
+              value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/impl/appengine-api-labs.jar"/>
     <property name="appengine.local.runtime"
               value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/impl/appengine-local-runtime.jar"/>
-    <property name="appengine.local.runtime.shared"
-              value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/shared/appengine-local-runtime-shared.jar"/>
+    <!--<property name="appengine.local.runtime.shared"-->
+    <!--value="${basedir}/target/appengine-java-sdk-${appengine.version}/lib/shared/appengine-local-runtime-shared.jar"/>-->
 
     <target name="check-installed">
         <condition property="already.installed">
@@ -51,6 +59,7 @@
         <condition property="maven.suffix" value=".bat">
             <os family="windows"/>
         </condition>
+        <echo message="sdk is installed : ${already.installed}"/>
     </target>
 
 
@@ -75,7 +84,11 @@
         <antcall target="unpack-appengine-sdk"/>
 
         <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
-            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-tools -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.tools.api}"/>
+            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-api-1.0-sdk -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.api.sdk}"/>
+        </exec>
+
+        <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
+            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-tools-sdk -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.tools.api}"/>
         </exec>
 
         <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
@@ -83,12 +96,17 @@
         </exec>
 
         <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
-            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-local-runtime-shared -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.local.runtime.shared}"/>
+            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-api-1.0-stubs -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.api.stubs}"/>
         </exec>
 
         <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
-            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-tools -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.tools.api}"/>
+            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-api-1.0-labs -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.api.labs}"/>
         </exec>
+
+        <exec executable="mvn${maven.suffix}" dir="${basedir}" failonerror="false">
+            <arg line="install:install-file -DgroupId=com.google.appengine  -DartifactId=appengine-api-1.0-runtime -Dversion=${appengine.version} -Dpackaging=jar -DgeneratePom=true -Dfile=${appengine.local.runtime}"/>
+        </exec>
+
 
     </target>
 

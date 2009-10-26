@@ -10,7 +10,7 @@
 
     <properties>
         <project_charset>UTF-8</project_charset>
-        <gae.version>1.2.5</gae.version>
+        <gae.version>1.2.6</gae.version>
         <spring.version>3.0.0.RC1</spring.version>
     </properties>
 
@@ -68,6 +68,12 @@
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
+            <version>${gae.version}</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>com.google.appengine</groupId>
+            <artifactId>appengine-api-1.0-labs</artifactId>
             <version>${gae.version}</version>
             <!--<scope>provided</scope>-->
         </dependency>

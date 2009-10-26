@@ -81,6 +81,17 @@
         </auth-constraint>
     </security-constraint>
 
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>internal-admin-only</web-resource-name>
+            <description>only admin can use internal links</description>
+            <url-pattern>/_ah/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>admin</role-name>
+        </auth-constraint>
+    </security-constraint>
+
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
         <welcome-file>/gs/home</welcome-file>

@@ -43,6 +43,13 @@ public class MailMessageReceiverController {
         Properties props = new Properties();
         Session session = Session.getDefaultInstance(props, null);
         MimeMessage message = new MimeMessage(session, request.getInputStream());
+
+        handleReceivedMessage(toEmail, message);
+
+        response.setStatus(HttpServletResponse.SC_OK);
+    }
+
+    private void handleReceivedMessage(String toEmail, MimeMessage message) throws MessagingException, IOException {
         String subject = message.getSubject();
 
         String mailFrom = message.getFrom()[0].toString();
@@ -58,8 +65,6 @@ public class MailMessageReceiverController {
 
         mailService.sendMailFromAdmin(mailFrom, "RE : " + subject, "Thank you for your message, we'll get back to you" +
                 "as soon as possible.");
-
-        response.setStatus(HttpServletResponse.SC_OK);
     }
 
     private String obtainContentFromMail(MimeMessage message) throws MessagingException, IOException {

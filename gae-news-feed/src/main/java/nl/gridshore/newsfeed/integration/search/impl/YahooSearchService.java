@@ -1,15 +1,18 @@
 package nl.gridshore.newsfeed.integration.search.impl;
 
 import nl.gridshore.newsfeed.integration.search.SearchService;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+import org.jdom.Namespace;
+import org.jdom.input.SAXBuilder;
 import org.springframework.stereotype.Service;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.util.List;
 
 /**
  * @author Jettro Coenradie
@@ -77,7 +80,7 @@ public class YahooSearchService implements SearchService {
                 buffer.append(line);
             }
             reader.close();
-            return buffer.toString();
+            return safeParseXml(buffer.toString());
         } catch (MalformedURLException e) {
             e.printStackTrace();
             return e.getMessage();
@@ -85,6 +88,37 @@ public class YahooSearchService implements SearchService {
             e.printStackTrace();
             return e.getMessage();
         }
+    }
+
+    private String safeParseXml(String xml) {
+        String result = "";
+        try {
+            result = parseXml(xml);
+        } catch (JDOMException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return result;
+    }
+
+
+    private String parseXml(String xml) throws JDOMException, IOException {
+        SAXBuilder saxBuilder = new SAXBuilder();
+        Document document = saxBuilder.build(new ByteArrayInputStream(xml.getBytes("UTF-8")));
+        Element rootElement = document.getRootElement();
+        Namespace ns = Namespace.getNamespace("http://www.inktomi.com/");
+        Element resultSetWeb = rootElement.getChild("resultset_web", ns);
+        List resultElements = resultSetWeb.getChildren();
+
+        StringBuilder resultBuilder = new StringBuilder();
+        for (Object result : resultElements) {
+            Element resultElement = (Element) result;
+            resultBuilder.append(resultElement.getChildText("abstract", ns)).append("\r\n");
+        }
+        System.out.println(resultBuilder.toString());
+        return resultBuilder.toString();
     }
 
 }

@@ -1,6 +1,7 @@
 package nl.gridshore.newsfeed.web.receivers;
 
 import nl.gridshore.newsfeed.integration.mail.MailService;
+import nl.gridshore.newsfeed.integration.search.SearchService;
 import nl.gridshore.newsfeed.service.ReceivedMessageService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,11 +31,13 @@ public class MailMessageReceiverController {
 
     private MailService mailService;
     private ReceivedMessageService receivedMessageService;
+    private SearchService searchService;
 
     @Autowired
-    public MailMessageReceiverController(MailService mailService, ReceivedMessageService receivedMessageService) {
+    public MailMessageReceiverController(MailService mailService, ReceivedMessageService receivedMessageService, SearchService searchService) {
         this.mailService = mailService;
         this.receivedMessageService = receivedMessageService;
+        this.searchService = searchService;
     }
 
     @RequestMapping(value = "/mail/{toEmail}", method = RequestMethod.POST)
@@ -63,8 +66,11 @@ public class MailMessageReceiverController {
 
         receivedMessageService.createReceivedMessage(mailFrom, content);
 
-        mailService.sendMailFromAdmin(mailFrom, "RE : " + subject, "Thank you for your message, we'll get back to you" +
-                "as soon as possible.");
+        String result = searchService.searchBy(message.getSubject());
+
+        mailService.sendMailFromAdmin(mailFrom, "RE : " + subject,
+                "Thank you for your message : these are your search results : " +
+                        result);
     }
 
     private String obtainContentFromMail(MimeMessage message) throws MessagingException, IOException {

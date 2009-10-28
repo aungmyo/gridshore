@@ -50,6 +50,7 @@ public class MailServiceImpl implements MailService {
 
         if (log.isDebugEnabled()) {
             log.debug("Sending a mail from admin to : " + toMail);
+            log.debug("message : " + message);
         }
 
         sendEmailMessage(toMail, ADMIN_MAIL_FROM, subject, message);

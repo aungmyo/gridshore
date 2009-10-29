@@ -69,43 +69,36 @@
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-sdk</artifactId>
             <version>${gae.version}</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>com.google.appengine</groupId>
             <artifactId>appengine-api-1.0-labs</artifactId>
             <version>${gae.version}</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>com.google.appengine.orm</groupId>
             <artifactId>datanucleus-appengine</artifactId>
             <version>1.0.3</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-jta_1.1_spec</artifactId>
             <version>1.1.1</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-jpa_3.0_spec</artifactId>
             <version>1.1.1</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-core</artifactId>
             <version>1.1.5</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-jpa</artifactId>
             <version>1.1.5</version>
-            <!--<scope>provided</scope>-->
         </dependency>
         <!--jstl -->
         <dependency>
@@ -174,7 +167,11 @@
             <artifactId>jdom</artifactId>
             <version>1.1</version>
         </dependency>
-
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>2.8.1</version>
+        </dependency>
     </dependencies>
 
     <!-- Build Settings -->

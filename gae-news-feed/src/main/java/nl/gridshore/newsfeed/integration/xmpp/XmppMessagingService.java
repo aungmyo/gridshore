@@ -11,10 +11,17 @@ import com.google.appengine.api.xmpp.JID;
 public interface XmppMessagingService {
     /**
      * Send the provided message to the provided receiver using the xmpp protocol.
+     *
      * @param receiver String containing the id of the receiver for the message
+     * @param message  String containing the message to send.
+     */
+    void sendMessage(String receiver, String message);
+
+    /**
+     * Send the provided message to the provided receiver using the xmpp protocol.
+     *
+     * @param jid     JID specifies the receiver for the message
      * @param message String containing the message to send.
      */
-    public void sendMessage(String receiver, String message);
-
     void sendMessage(JID jid, String message);
 }

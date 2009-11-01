@@ -25,8 +25,6 @@ import java.util.List;
 @Service
 public class YahooSearchService implements SearchService {
     private static final Logger log = Logger.getLogger(YahooSearchService.class);
-    private static final String OR = "-";
-    private static final String AND = "+";
 
     /**
      * {@inheritDoc}

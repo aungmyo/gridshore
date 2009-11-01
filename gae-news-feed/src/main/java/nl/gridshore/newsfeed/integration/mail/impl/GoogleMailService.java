@@ -16,18 +16,21 @@ import org.springframework.util.Assert;
  * @author Jettro Coenradie
  */
 @Service
-public class MailServiceImpl implements MailService {
-    private static final Logger log = Logger.getLogger(MailServiceImpl.class);
+public class GoogleMailService implements MailService {
+    private static final Logger log = Logger.getLogger(GoogleMailService.class);
     private static final String ADMIN_MAIL_FROM = "jettro.coenradie@gmail.com";
     private static final String ADMIN_MAIL_TO = "jettro@coenradie.com";
 
     private JavaMailSender mailSender;
 
     @Autowired
-    public MailServiceImpl(JavaMailSender mailSender) {
+    public GoogleMailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void sendMailToAdmin(String name, String email, String subject, String message) {
         Assert.hasText(name, "Name of the sender of an email cannot be empty");
@@ -42,6 +45,9 @@ public class MailServiceImpl implements MailService {
         sendEmailMessage(ADMIN_MAIL_TO, ADMIN_MAIL_FROM, subject, message);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void sendMailFromAdmin(String toMail, String subject, String message) {
         Assert.hasText(toMail, "The toMail of an email cannot be empty");

@@ -10,11 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
  * To be as non intrusive as possible we have used an Around advice.</p>
  * <p>This aspect requires a method with two parameters:</p>
  * <ul>
- *     <li>argument 1 : author</li>
- *     <li>argument 2 : title of item</li>
+ * <li>argument 1 : author</li>
+ * <li>argument 2 : title of item</li>
  * </ul>
  *
- * TODO refactor into event based notification
  * @author Jettro Coenradie
  */
 @Aspect

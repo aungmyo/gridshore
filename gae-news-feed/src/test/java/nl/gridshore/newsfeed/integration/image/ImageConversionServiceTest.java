@@ -4,7 +4,7 @@ import com.google.appengine.api.images.dev.LocalImagesService;
 import com.google.appengine.tools.development.ApiProxyLocalImpl;
 import com.google.apphosting.api.ApiProxy;
 import nl.gridshore.TestEnvironment;
-import nl.gridshore.newsfeed.integration.image.impl.GoogleImageConversionService;
+import nl.gridshore.newsfeed.integration.image.google.GoogleImageConversionService;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;

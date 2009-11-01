@@ -2,7 +2,7 @@ package nl.gridshore.newsfeed.service.impl;
 
 import nl.gridshore.newsfeed.domain.Image;
 import nl.gridshore.newsfeed.domain.ImageRepository;
-import nl.gridshore.newsfeed.integration.image.impl.ImageConversionService;
+import nl.gridshore.newsfeed.integration.image.google.GoogleImageConversionService;
 import nl.gridshore.newsfeed.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,7 +32,7 @@ public class ImageServiceImpl implements ImageService {
     public long createImage(String filename, String contentType, byte[] content) {
         // create the thumbnail
         // TODO create a real service object and dependency injection
-        byte[] thumbnail = new ImageConversionService().createThumbnail(content);
+        byte[] thumbnail = new GoogleImageConversionService().createThumbnail(content);
 
         Image image = new Image(filename, contentType, content, thumbnail);
 

@@ -37,7 +37,7 @@
         </aop:aspect>
     </aop:config>
 
-    <bean id="mailSender" class="nl.gridshore.newsfeed.integration.mail.impl.GaeJavaMailSender"/>
+    <bean id="mailSender" class="nl.gridshore.newsfeed.integration.mail.google.GaeJavaMailSender"/>
 
 
     <!-- TODO : add other services or remove this one -->

@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.integration.image.impl;
+package nl.gridshore.newsfeed.integration.image.google;
 
 import com.google.appengine.api.images.Image;
 import com.google.appengine.api.images.ImagesService;

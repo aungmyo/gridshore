@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.integration.xmpp.impl;
+package nl.gridshore.newsfeed.integration.xmpp.google;
 
 import com.google.appengine.api.xmpp.*;
 import nl.gridshore.newsfeed.integration.xmpp.XmppMessagingService;

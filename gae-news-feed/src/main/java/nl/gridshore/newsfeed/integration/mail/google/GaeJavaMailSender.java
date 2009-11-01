@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.integration.mail.impl;
+package nl.gridshore.newsfeed.integration.mail.google;
 
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 

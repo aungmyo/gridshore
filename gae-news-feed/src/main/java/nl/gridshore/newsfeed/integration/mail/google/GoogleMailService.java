@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.integration.mail.impl;
+package nl.gridshore.newsfeed.integration.mail.google;
 
 import nl.gridshore.newsfeed.integration.mail.MailService;
 import org.apache.log4j.Logger;

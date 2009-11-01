@@ -1,4 +1,4 @@
-package nl.gridshore.newsfeed.integration.search.impl;
+package nl.gridshore.newsfeed.integration.search.yahoo;
 
 import nl.gridshore.newsfeed.integration.search.SearchService;
 import org.apache.log4j.Logger;

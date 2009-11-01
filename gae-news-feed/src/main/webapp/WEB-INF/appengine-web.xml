@@ -3,16 +3,11 @@
     <application>doingjava</application>
     <version>2</version>
 
-    <system-properties>
-        <property name="java.util.logging.config.file" value="WEB-INF/classes/logging.properties"/>
-    </system-properties>
-
     <inbound-services>
         <service>xmpp_message</service>
         <service>mail</service>
     </inbound-services>
 
-    <!-- TODO : do something with this in the presentation -->
     <static-files>
         <exclude path="*.html"/>
     </static-files>

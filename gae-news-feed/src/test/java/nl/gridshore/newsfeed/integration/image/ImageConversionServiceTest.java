@@ -3,8 +3,8 @@ package nl.gridshore.newsfeed.integration.image;
 import com.google.appengine.api.images.dev.LocalImagesService;
 import com.google.appengine.tools.development.ApiProxyLocalImpl;
 import com.google.apphosting.api.ApiProxy;
-import static junit.framework.Assert.assertEquals;
 import nl.gridshore.TestEnvironment;
+import nl.gridshore.newsfeed.integration.image.impl.ImageConversionService;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -21,6 +21,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import static junit.framework.Assert.assertEquals;
+
 /**
  * @author Jettro Coenradie
  */
@@ -36,7 +38,7 @@ public class ImageConversionServiceTest {
         ApiProxy.setDelegate(new ApiProxyLocalImpl(new File("./target")) {
         });
         ApiProxyLocalImpl proxy = (ApiProxyLocalImpl) ApiProxy.getDelegate();
-        imagesService = (LocalImagesService)proxy.getService("images");
+        imagesService = (LocalImagesService) proxy.getService("images");
         imagesService.start();
     }
 
@@ -58,21 +60,21 @@ public class ImageConversionServiceTest {
 
         byte[] thumbnail = service.createThumbnail(bijtje);
 
-        checkSizeThubnail(thumbnail,ImageConversionService.DEFAULT_THUMBNAIL_SIZE);
+        checkSizeThubnail(thumbnail, ImageConversionService.DEFAULT_THUMBNAIL_SIZE);
     }
 
     @Test
     public void createThumbnailCustomSize() throws IOException {
         byte[] bijtje = readByteArrayFromFile();
 
-        byte[] thumbnail = service.createThumbnail(bijtje,75);
-        checkSizeThubnail(thumbnail,75);
+        byte[] thumbnail = service.createThumbnail(bijtje, 75);
+        checkSizeThubnail(thumbnail, 75);
     }
 
     private void checkSizeThubnail(byte[] thumbnail, int expectedSize) throws IOException {
         //noinspection AppEngineForbiddenCode
         BufferedImage image = ImageIO.read(new ByteArrayInputStream(thumbnail));
-        assertEquals(expectedSize,image.getWidth());
+        assertEquals(expectedSize, image.getWidth());
     }
 
     private byte[] readByteArrayFromFile() throws IOException {

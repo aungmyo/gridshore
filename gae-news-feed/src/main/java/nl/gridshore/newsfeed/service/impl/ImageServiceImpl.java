@@ -2,7 +2,7 @@ package nl.gridshore.newsfeed.service.impl;
 
 import nl.gridshore.newsfeed.domain.Image;
 import nl.gridshore.newsfeed.domain.ImageRepository;
-import nl.gridshore.newsfeed.integration.image.ImageConversionService;
+import nl.gridshore.newsfeed.integration.image.impl.ImageConversionService;
 import nl.gridshore.newsfeed.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

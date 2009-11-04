@@ -24,13 +24,8 @@ public class ContactController extends GaeSpringController {
 
     @RequestMapping(value = "/contact/form", method = RequestMethod.GET)
     public String presentContactForm(ModelMap modelMap) {
-        try {
-            ContactForm contactForm = new ContactForm();
-
-            modelMap.addAttribute("contactForm", contactForm);
-        } catch (java.security.AccessControlException e) {
-            e.printStackTrace();
-        }
+        ContactForm contactForm = new ContactForm();
+        modelMap.addAttribute("contactForm", contactForm);
         return "contact/form";
     }
 

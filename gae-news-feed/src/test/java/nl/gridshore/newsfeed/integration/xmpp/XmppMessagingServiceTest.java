@@ -35,15 +35,16 @@ public class XmppMessagingServiceTest {
         xmppService.start();
     }
 
+    @Test
+    public void sendMessage() {
+        xmppMessagingService.sendMessage("gridshore","This is the message");
+
+    }
+
     @AfterClass
     public static void tearDown() {
         ApiProxy.setDelegate(null);
         ApiProxy.setEnvironmentForCurrentThread(null);
         xmppService.stop();
-    }
-
-    @Test
-    public void sendMessage() {
-        xmppMessagingService.sendMessage("gridshore","This is the message");
     }
 }

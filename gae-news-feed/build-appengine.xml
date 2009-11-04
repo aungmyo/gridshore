@@ -23,7 +23,7 @@
 
 
     <property name="appengine.version" value="1.2.6"/>
-    <property name="localRepository" value="/Users/jettrocoenradie/.m2/repository"/>
+    <property name="localRepository" value="/Users/jettropro/.m2/repository"/>
 
     <property name="appengine.distribution.location"
               value="http://googleappengine.googlecode.com/files/appengine-java-sdk-${appengine.version}.zip"/>

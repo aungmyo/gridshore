@@ -16,10 +16,13 @@ public class CreateTaskController {
     @RequestMapping(value = "/task")
     public String createNewQueueItem(ModelMap modelmap) {
         Queue queue = QueueFactory.getQueue("send-mail-queue");
+        queue.add(param("fromMail", "mijnmail@gridshore.nl")
+                .param("fromName","Jettro Coenradie")
+                .param("subject","New task to send mail")
+                .param("body","The contents of the mail to be send using a task."));
 
-        queue.add(param("toMail", "jettro@coenradie.com"));
         modelmap.addAttribute("title", "created task");
-        modelmap.addAttribute("message", "You have just created a task");
+        modelmap.addAttribute("message", "You have just created a task to send an email");
         return "message";
     }
 

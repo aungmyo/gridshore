@@ -106,6 +106,13 @@ public class NewsController extends GaeSpringController {
         return "message";
     }
 
+    @RequestMapping(value = "/news/view/{id}", method = RequestMethod.GET)
+    public String view(@PathVariable long id, ModelMap modelMap) {
+        NewsItem newsItem = this.newsService.obtainNewsItem(id);
+
+        modelMap.addAttribute("newsItem", newsItem);
+        return "news/view";
+    }
 
     @RequestMapping(value = "/news", method = RequestMethod.GET)
     public String list(ModelMap modelMap) {

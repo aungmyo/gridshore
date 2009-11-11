@@ -30,11 +30,15 @@ public class ContactController extends GaeSpringController {
     }
 
     @RequestMapping(value = "/contact/form", method = RequestMethod.POST)
-    public String processContactForm(@ModelAttribute("contactForm") ContactForm contactForm, BindingResult result) {
+    public String processContactForm(@ModelAttribute("contactForm") ContactForm contactForm,
+                                     BindingResult result) {
         if (result.hasErrors()) {
             return "contact/form";
         } else {
-            mailService.sendMailToAdmin(contactForm.getName(), contactForm.getEmail(), contactForm.getTitle(), contactForm.getMessage());
+            mailService.sendMailToAdmin(contactForm.getName(),
+                                        contactForm.getEmail(),
+                                        contactForm.getTitle(),
+                                        contactForm.getMessage());
         }
 
         return "contact/thankyou";

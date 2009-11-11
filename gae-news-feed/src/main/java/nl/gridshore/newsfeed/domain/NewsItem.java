@@ -17,6 +17,9 @@ public class NewsItem {
     private Author author;
 
     @Basic
+    private Long imageId;
+
+    @Basic
     private String title;
 
     @Basic
@@ -24,9 +27,6 @@ public class NewsItem {
 
     @Basic
     private String item;
-
-    @Basic
-    private Long imageId;
 
     public NewsItem() {
         // default constructor is required

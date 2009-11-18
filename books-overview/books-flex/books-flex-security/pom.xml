@@ -13,8 +13,8 @@
     <url>http://www.gridshore.nl</url>
 
     <build>
+        <finalName>backoffice-flex</finalName>
         <sourceDirectory>src/main/flex</sourceDirectory>
-        <testSourceDirectory>src/test/flex</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.sonatype.flexmojos</groupId>
@@ -22,20 +22,27 @@
                 <version>${flex-mojos.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <contextRoot>/books-web</contextRoot>
-                    <mergeResourceBundle>true</mergeResourceBundle>
-                    <resourceBundlePath>${basedir}/src/main/locale/{locale}</resourceBundlePath>
-                    <locales>
-                        <locale>en_US</locale>
-                        <!--<locale>nl_NL</locale>-->
-                    </locales>
+                    <targetPlayer>10.0.0</targetPlayer>
+                    <contextRoot>/bo</contextRoot>
                 </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.adobe.flex</groupId>
+                        <artifactId>compiler</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <type>pom</type>
+                    </dependency>
+                </dependencies>
             </plugin>
         </plugins>
         <defaultGoal>install</defaultGoal>
         <resources>
             <resource>
                 <directory>${basedir}/src/main/resources</directory>
+            </resource>
+            <resource>
+                <directory>${basedir}/target/generated-resources</directory>
+                <filtering>true</filtering>
             </resource>
         </resources>
     </build>

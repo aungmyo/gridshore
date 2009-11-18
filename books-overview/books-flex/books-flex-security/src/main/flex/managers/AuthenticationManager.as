@@ -41,7 +41,7 @@ public class AuthenticationManager {
 
     public function logInSuccess(obj:Object):void {
         AuthorizationData.getInstance().roles = new ArrayCollection(obj.authorities);
-        AuthorizationData.getInstance().name = obj.name;;
+        AuthorizationData.getInstance().name = obj.name;
         
         var event:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.AUTHENTICATED);
         var dispatcher:Dispatcher = new Dispatcher();

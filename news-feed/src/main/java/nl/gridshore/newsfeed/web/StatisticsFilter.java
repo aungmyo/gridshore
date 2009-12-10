@@ -23,6 +23,11 @@ public class StatisticsFilter implements Filter {
             Statistics statistics = cache.getStatistics();
 
             log.info("uri : {}, average get time : {} ms", ((HttpServletRequest)req).getRequestURI(),statistics.getAverageGetTime());
+            log.info("Cache hits           : {}",statistics.getCacheHits());
+            log.info("Cache misses         : {}",statistics.getCacheMisses());
+            log.info("Cache object count   : {}",statistics.getObjectCount());
+            log.info("Cache eviction count : {}",statistics.getEvictionCount());
+            log.info("Cache eviction count : {}",statistics.getEvictionCount());
         } else {
             log.debug("No caching manager available");
         }

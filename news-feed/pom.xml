@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring.version>3.0.0.M4</spring.version>
+        <spring.version>3.0.0.RC3</spring.version>
         <slf4j.version>1.5.6</slf4j.version>
     </properties>
 
@@ -189,7 +189,7 @@
         <dependency>
             <groupId>org.mockito</groupId>
             <artifactId>mockito-all</artifactId>
-            <version>1.7</version>
+            <version>1.8.0</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>

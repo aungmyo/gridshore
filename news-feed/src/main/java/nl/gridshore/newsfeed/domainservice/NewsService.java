@@ -8,7 +8,7 @@ import java.util.Date;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * Domain service that provides services relatedd to {@link nl.gridshore.newsfeed.domain.NewsItem}s.
+ * Domain service that provides services related to {@link nl.gridshore.newsfeed.domain.NewsItem}s.
  *
  * @author Jettro Coenradie
  */

@@ -12,14 +12,22 @@
         <param-value>classpath:persistence-spring-config.xml</param-value>
     </context-param>
 
+    <!--<context-param>-->
+        <!--<param-name>log4jConfigLocation</param-name>-->
+        <!--<param-value>classpath:log4j.properties</param-value>-->
+    <!--</context-param>-->
 
     <!-- ====================================================================== -->
     <!--                             Listeners                                  -->
     <!-- ====================================================================== -->
+    <!--<listener>-->
+        <!--<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>-->
+    <!--</listener>-->
 
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
 
     <!-- ====================================================================== -->
     <!--                             Filters                                    -->
@@ -47,7 +55,7 @@
         <filter-name>sitemesh</filter-name>
         <filter-class>com.opensymphony.sitemesh.webapp.SiteMeshFilter</filter-class>
     </filter>
-    
+
     <filter-mapping>
         <filter-name>LoggingStatistics</filter-name>
         <url-pattern>*.rss</url-pattern>
@@ -68,8 +76,8 @@
     </filter-mapping>
 
     <!--<filter-mapping>-->
-        <!--<filter-name>sitemesh</filter-name>-->
-        <!--<url-pattern>/home</url-pattern>-->
+    <!--<filter-name>sitemesh</filter-name>-->
+    <!--<url-pattern>/home</url-pattern>-->
     <!--</filter-mapping>-->
 
     <!-- ====================================================================== -->

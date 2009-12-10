@@ -3,6 +3,8 @@
 
     <diskStore path="java.io.tmpdir"/>
 
+    <cacheManagerEventListenerFactory 
+            class="nl.gridshore.newsfeed.web.LoggingCacheManagerListenerFactory"/>
 
     <defaultCache
             maxElementsInMemory="10"
@@ -12,11 +14,12 @@
             overflowToDisk="true"
             />
 
-    <cache name="CachePage1CachingFilter"
+    <cache name="RssFeedCachingFilter"
            maxElementsInMemory="5"
            eternal="false"
            timeToIdleSeconds="5"
            timeToLiveSeconds="10000"
            overflowToDisk="true">
+        <cacheEventListenerFactory class="nl.gridshore.newsfeed.web.LoggingCacheListenerFactory"/>
     </cache>
 </ehcache>

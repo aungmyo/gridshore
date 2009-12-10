@@ -42,7 +42,7 @@
         </init-param>
         <init-param>
             <param-name>cacheName</param-name>
-            <param-value>CachePage1CachingFilter</param-value>
+            <param-value>RssFeedCachingFilter</param-value>
         </init-param>
     </filter>
 

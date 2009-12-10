@@ -26,14 +26,14 @@ public class CacheCompleteResponseMonitoringFilter extends SimplePageCachingFilt
     @Override
     protected String calculateKey(HttpServletRequest httpRequest) {
         String key = super.calculateKey(httpRequest);
-        log.info("**Calculated key for item to cache : {}",key);
+        log.info("Calculated key for item to cache : {}",key);
         return key;
     }
 
     @Override
     protected String getCacheName() {
         String cacheName1 = super.getCacheName();
-        log.info("** Cache name {}",cacheName1);
+        log.info("Asked for the Cache name {}",cacheName1);
         return cacheName1;
     }
 }

@@ -19,7 +19,7 @@ public class StatisticsFilter implements Filter {
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
         CacheManager cacheManager = CacheManager.getInstance();
         if (cacheManager != null) {
-            Ehcache cache = cacheManager.getEhcache("CachePage1CachingFilter");
+            Ehcache cache = cacheManager.getEhcache("RssFeedCachingFilter");
             Statistics statistics = cache.getStatistics();
 
             log.info("uri : {}, average get time : {} ms", ((HttpServletRequest)req).getRequestURI(),statistics.getAverageGetTime());

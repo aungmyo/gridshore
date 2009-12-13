@@ -18,4 +18,10 @@ public interface NewsService {
     
     @Transactional
     void createNewsItem(String author, Date publicationDate, String title, String introduction, String item);
+
+    @Transactional(readOnly = true)
+    NewsItem obtainNewsItem(Long newsId);
+
+    @Transactional
+    void addComment(Long newsItemId, String commenter, String content);
 }

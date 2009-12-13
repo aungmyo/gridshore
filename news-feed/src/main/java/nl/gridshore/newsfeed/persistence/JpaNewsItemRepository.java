@@ -32,7 +32,13 @@ public class JpaNewsItemRepository implements NewsItemRepository {
     }
 
     public NewsItem obtainNewsItemById(long id) {
-        return entityManager.find(NewsItem.class, id);
+        NewsItem newsItem = entityManager.find(NewsItem.class, id);
+        if (newsItem == null) {
+            logger.warn("Could not find news item with id {}",id);
+            return null;
+        }
+        newsItem.comments().size();
+        return newsItem;
     }
 
     public List<NewsItem> listAllNewsItems() {

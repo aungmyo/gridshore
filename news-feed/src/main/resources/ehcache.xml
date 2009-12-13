@@ -15,9 +15,9 @@
             />
 
     <cache name="RssFeedCachingFilter"
-           maxElementsInMemory="5"
+           maxElementsInMemory="50"
            eternal="false"
-           timeToIdleSeconds="5"
+           timeToIdleSeconds="50"
            timeToLiveSeconds="10000"
            overflowToDisk="true">
         <cacheEventListenerFactory class="nl.gridshore.newsfeed.web.LoggingCacheListenerFactory"/>

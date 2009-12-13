@@ -9,14 +9,6 @@
 <html>
 <head>
     <title><decorator:title default="News feed"/></title>
-    <%
-        StringBuilder hostBuilder = new StringBuilder();
-        hostBuilder.append("http://").append(request.getServerName());
-        hostBuilder.append(":").append(request.getServerPort());
-        hostBuilder.append(request.getContextPath());
-        String host = hostBuilder.toString();
-    %>
-    <link rel="alternate" type="application/rss+xml" title="Gridshore RSS Feed" href="<%=host%>/news/feed.rss"/>
     <%@ include file="/includes/style.jsp" %>
     <%@ include file="/includes/script.jsp" %>
     <decorator:head/>

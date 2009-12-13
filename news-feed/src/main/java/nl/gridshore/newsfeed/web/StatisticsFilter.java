@@ -17,6 +17,7 @@ public class StatisticsFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+        chain.doFilter(req, resp);
         CacheManager cacheManager = CacheManager.getInstance();
         if (cacheManager != null) {
             Ehcache cache = cacheManager.getEhcache("RssFeedCachingFilter");
@@ -31,7 +32,6 @@ public class StatisticsFilter implements Filter {
         } else {
             log.debug("No caching manager available");
         }
-        chain.doFilter(req, resp);
     }
 
     public void init(FilterConfig config) throws ServletException {

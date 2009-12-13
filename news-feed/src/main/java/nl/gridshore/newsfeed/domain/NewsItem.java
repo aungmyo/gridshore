@@ -1,9 +1,10 @@
 package nl.gridshore.newsfeed.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Column;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Jettro Coenradie
@@ -18,6 +19,9 @@ public class NewsItem extends AbstractEntity {
     private String introduction;
     @Column(name = "item")
     private String item;
+
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Comment> comments = new ArrayList<Comment>();
 
     public NewsItem() {
         super();
@@ -50,7 +54,15 @@ public class NewsItem extends AbstractEntity {
         metaData.tag(tag);
     }
 
-    /* getters */
+    public List<Comment> comments() {
+        return Collections.unmodifiableList(comments);
+    }
+
+    public void addComment(String commenter, String content) {
+        comments.add(new Comment(commenter,content));
+    }
+
+    /* getters only for working with the taglib */
     public MetaData getMetaData() {
         return metaData;
     }
@@ -65,5 +77,9 @@ public class NewsItem extends AbstractEntity {
 
     public String getItem() {
         return item;
+    }
+
+    public List<Comment> getComments() {
+        return comments();
     }
 }

@@ -24,6 +24,7 @@ public class LoggingCacheListenerFactory extends CacheEventListenerFactory {
 
             @Override
             public Object clone() throws CloneNotSupportedException {
+                log.debug("Clone obtained");
                 return super.clone();
             }
 

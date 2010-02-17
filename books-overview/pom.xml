@@ -2,7 +2,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>nl.gridshore.samples.books</groupId>
     <artifactId>books-overview</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <name>Books Overview Application</name>
     <url>http://www.gridshore.nl</url>
@@ -66,9 +66,9 @@
     <inceptionYear>2008</inceptionYear>
 
     <scm>
-        <connection>scm:svn:https://gridshore.googlecode.com/svn/tags/books-overview-1.0.0</connection>
-        <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/tags/books-overview-1.0.0</developerConnection>
-        <url>http://gridshore.googlecode.com/svn/tags/books-overview-1.0.0</url>
+        <connection>scm:svn:https://gridshore.googlecode.com/svn/trunk/books-overview/</connection>
+        <developerConnection>scm:svn:https://gridshore.googlecode.com/svn/trunk/books-overview/</developerConnection>
+        <url>http://gridshore.googlecode.com/svn/</url>
     </scm>
     <developers>
         <developer>

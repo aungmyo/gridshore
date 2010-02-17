@@ -38,8 +38,8 @@
             <type>swc</type>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-actionscript</artifactId>
+            <groupId>org.springextensions.actionscript</groupId>
+            <artifactId>spring-actionscript-core</artifactId>
             <version>${spring-actionscript.version}</version>
             <type>swc</type>
         </dependency>

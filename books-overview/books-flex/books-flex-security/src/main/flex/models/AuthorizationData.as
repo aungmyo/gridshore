@@ -1,6 +1,9 @@
 package models {
 
 import mx.collections.ArrayCollection;
+
+import org.as3commons.lang.StringUtils;
+
 [Bindable]
 public class AuthorizationData {
     private static var authorizationData:AuthorizationData;
@@ -42,7 +45,7 @@ public class AuthorizationData {
 
     private function hasRole(role:String):Boolean {
         for (var i:String in roles) {
-            if (roles[i] == role) {
+            if (StringUtils.equals(roles[i],role)) {
                 return true;
             }
         }

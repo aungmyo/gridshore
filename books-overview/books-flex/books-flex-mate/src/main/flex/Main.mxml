@@ -4,14 +4,16 @@
                 creationComplete="initApp()">
     <mx:Script><![CDATA[
         import events.AuthenticationEvent;
+
         import models.Config;
+
         import org.springextensions.actionscript.collections.Properties;
 
         [Bindable]
         public var properties:Config = new Config();
 
         private var loadedProps:Properties = new Properties();
-        
+
         public function initApp():void {
             loadedProps.addEventListener(Event.COMPLETE, onLoaderComplete);
             loadedProps.addEventListener(IOErrorEvent.IO_ERROR, onIOError);
@@ -28,7 +30,7 @@
         }
 
         private function onIOError(event:IOErrorEvent):void {
-          dispatchEvent(event);
+            dispatchEvent(event);
         }
 
         ]]></mx:Script>

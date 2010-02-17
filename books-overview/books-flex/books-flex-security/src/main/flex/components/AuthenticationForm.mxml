@@ -14,7 +14,7 @@
             var authEvent:AuthenticationEvent = new AuthenticationEvent(AuthenticationEvent.TRY);
             authEvent.username = inputUsername.text;
             authEvent.password = inputPassword.text;
-
+            
             dispatchEvent(authEvent);
         }
 ]]></mx:Script>

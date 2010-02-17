@@ -15,10 +15,9 @@
     <properties>
         <spring.version>2.5.6</spring.version>
         <flex.sdk.version>3.3.0.4852</flex.sdk.version>
-        <blazeds.version>3.2.0.3978</blazeds.version>
         <flexUnit.version>0.9</flexUnit.version>
-        <flex-mojos.version>3.4.2</flex-mojos.version>
-        <spring-actionscript.version>0.7.1</spring-actionscript.version>
+        <flex-mojos.version>3.5.0</flex-mojos.version>
+        <spring-actionscript.version>0.8.1</spring-actionscript.version>
         <mate.version>0.8.9</mate.version>
     </properties>
 
@@ -125,9 +124,9 @@
     </reporting>
     <distributionManagement>
         <repository>
-            <id>coenradiecom</id>
-            <name>Gridshore</name>
-            <url>scp://www.gridshore.nl/var/www/vhosts/gridshore.nl/httpdocs/repository</url>
+            <id>googleCode</id>
+            <url>svn:https://gridshore.googlecode.com/svn/repo/</url>
+            <uniqueVersion>false</uniqueVersion>
         </repository>
         <site>
             <id>gridshorenl</id>
@@ -143,7 +142,11 @@
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
+                    <encoding>UTF-8</encoding>
                 </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-release-plugin</artifactId>
             </plugin>
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -179,6 +182,13 @@
                 </plugin>
             </plugins>
         </pluginManagement>
+        <extensions>
+            <extension>
+                <groupId>org.jvnet.wagon-svn</groupId>
+                <artifactId>wagon-svn</artifactId>
+                <version>1.9</version>
+            </extension>
+        </extensions>
     </build>
     <repositories>
         <repository>
@@ -189,6 +199,17 @@
         <repository>
             <id>flexmojos-repository</id>
             <url>http://repository.sonatype.org/content/groups/public/</url>
+        </repository>
+        <repository>
+            <id>flexmojos-repository</id>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
+        </repository>
+        <repository>
+            <id>yoolab.org-releases</id>
+            <url>http://projects.yoolab.org/maven/content/repositories/releases</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
         </repository>
     </repositories>
     <pluginRepositories>
@@ -201,5 +222,7 @@
             <url>http://download.java.net/maven/2/</url>
         </pluginRepository>
     </pluginRepositories>
+
+    
 </project>
 

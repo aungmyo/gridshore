@@ -25,7 +25,9 @@ public class ConfigPropertyController extends PropertyController {
 
         // The context root path contains a prefix '/', we have to take that of.
         String contextRoot = request.getContextPath();
-        contextRoot = contextRoot.substring(1);
+        if (contextRoot.length() > 0) {
+            contextRoot = contextRoot.substring(1);
+        }
         exposedParams.put("context-root", contextRoot);
 
         return exposedParams;

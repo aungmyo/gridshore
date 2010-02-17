@@ -12,6 +12,33 @@
     <name>books-flex-security</name>
     <url>http://www.gridshore.nl</url>
 
+    <dependencies>
+        <!-- external -->
+        <dependency>
+            <groupId>com.adobe.flex.framework</groupId>
+            <artifactId>flex-framework</artifactId>
+            <version>${flex.sdk.version}</version>
+            <type>pom</type>
+        </dependency>
+
+        <dependency>
+            <groupId>org.as3commons</groupId>
+            <artifactId>as3commons-lang</artifactId>
+            <version>0.2</version>
+            <type>swc</type>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.adobe.flexunit</groupId>
+            <artifactId>flexunit</artifactId>
+            <version>0.85</version>
+            <type>swc</type>
+            <scope>test</scope>
+        </dependency>
+        
+    </dependencies>
+
     <build>
         <finalName>backoffice-flex</finalName>
         <sourceDirectory>src/main/flex</sourceDirectory>
@@ -22,8 +49,8 @@
                 <version>${flex-mojos.version}</version>
                 <extensions>true</extensions>
                 <configuration>
-                    <targetPlayer>10.0.0</targetPlayer>
-                    <contextRoot>/bo</contextRoot>
+                    <debug>true</debug>
+                    <configurationReport>true</configurationReport>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -31,6 +58,13 @@
                         <artifactId>compiler</artifactId>
                         <version>${flex.sdk.version}</version>
                         <type>pom</type>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.adobe.flex.compiler</groupId>
+                        <artifactId>asdoc</artifactId>
+                        <version>${flex.sdk.version}</version>
+                        <classifier>template</classifier>
+                        <type>zip</type>
                     </dependency>
                 </dependencies>
             </plugin>

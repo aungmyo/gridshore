@@ -15,7 +15,7 @@
         <spring.version>2.5.6</spring.version>
         <flex.sdk.version>3.3.0.4852</flex.sdk.version>
         <flexUnit.version>0.9</flexUnit.version>
-        <flex-mojos.version>3.5.0</flex-mojos.version>
+        <flex-mojos.version>3.6.1</flex-mojos.version>
         <spring-actionscript.version>0.8.1</spring-actionscript.version>
         <mate.version>0.8.9</mate.version>
     </properties>
@@ -197,10 +197,6 @@
         </repository>
         <repository>
             <id>flexmojos-repository</id>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
-        </repository>
-        <repository>
-            <id>flexmojos-repository</id>
             <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
         </repository>
         <repository>
@@ -214,7 +210,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>flexmojos-repository</id>
-            <url>http://repository.sonatype.org/content/groups/public/</url>
+            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
         </pluginRepository>
         <pluginRepository>
             <id>maven2-repository.dev.java.net</id>
